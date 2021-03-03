@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>impressão 3d | Mateus C. Pestana</title>
+    <link>https://mateuspestana.github.io/tag/impressao-3d/</link>
+      <atom:link href="https://mateuspestana.github.io/tag/impressao-3d/index.xml" rel="self" type="application/rss+xml" />
+    <description>impressão 3d</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 Matheus C. Pestana</copyright><lastBuildDate>Fri, 15 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>impressão 3d</title>
+      <link>https://mateuspestana.github.io/tag/impressao-3d/</link>
+    </image>
+    
+    <item>
+      <title>Imprimindo gráficos em 3D no R</title>
+      <link>https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/</link>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/</guid>
+      <description>
+&lt;script src=&#34;2019-11-15-imprimindo-gráficos-em-3d-no-r_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;http://hadley.nz/&#34;&gt;Hadley Wickham&lt;/a&gt;, um dos mantenedores do RStudio e criador do pacote &lt;code&gt;tidyverse&lt;/code&gt; (que engloba outros, como &lt;code&gt;dplyr&lt;/code&gt;, &lt;code&gt;ggplot&lt;/code&gt;, &lt;code&gt;forcats&lt;/code&gt;, &lt;code&gt;purrr&lt;/code&gt;, etc), escreveu um excelente livro com &lt;a href=&#34;https://twitter.com/statgarrett?lang=pt&#34;&gt;Garret Grolemund&lt;/a&gt; chamado “R for Data Science”, que pode ser encontrado gratuitamente &lt;a href=&#34;https://r4ds.had.co.nz/&#34;&gt;aqui&lt;/a&gt;. Recomendo fortemente, pois a didática é excelente, os exemplos são claros e os exercícios são desafiadores. Um fato curioso sobr o livro é que o mesmo ensina a fazer gráficos (com o &lt;code&gt;ggplot&lt;/code&gt;) &lt;strong&gt;antes&lt;/strong&gt; de ensinar todas as outras coisas, como funções, objetos, tratamento de bancos, análise exploratória e modelos.&lt;/p&gt;
+&lt;p&gt;O motivo para isso é simples: gráficos são importantíssimos pois é através deles que transmitimos informações aos que nos lêem e nos assistem. No livro, o capítulo de gráficos começa com a seguinte frase:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“O gráfico simples trouxe mais informação para a mente do analista de dados do que qualquer outro dispositivo” &lt;br&gt;
+— John Tukey&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Quanto mais claro o gráfico, mais fácil é de sermos entendidos, e isso é um princípio da ciência: se construímos algo de difícil compreensão, ninguém entende; se ninguém entende, ninguém dialoga; se ninguém dialoga, não há ciência.&lt;/p&gt;
+&lt;p&gt;Entretanto, gráficos são apelos visuais. Gráficos são dados exibidos em um plano, com diversas informações numéricas representadas, que possibilitam comparações dentro daquele plano. Cada eixo de um gráfico é uma dimensão, ou seja, guardam uma escala ou informação. Outras dimensões podem existir em um mesmo gráfico. Em um gráfico de dispersão, por exemplo, o tamanho de cada ponto pode significar um terceiro dado, assim como a cor, podendo representar grupos ou casos similares.&lt;/p&gt;
+&lt;p&gt;Um claro exemplo é o abaixo: um gráfico de hexágonos, feito a partir dos dados das 96.871 seções eleitorais da Rússia, nas eleições para o legislativo em 2016. No eixo X, temos o comparecimento, em porcentagem; no eixo Y, a porcentagem de votos no partido Rússia Unida, que possui maioria absoluta na &lt;em&gt;Duma&lt;/em&gt; (o parlamento russo), e a cor representa o número de seções naquele caso, indo de de um roxo escuro, que indica poucas seções, a um amarelo claro, indicando muitas.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pacman::p_load(tidyverse, rayshader, hrbrthemes, viridis, hexbin)
+
+duma2016 %&amp;gt;%
+  mutate(pct_edinayarossiya = p_edinayarossiya/(ncedval + ncedinval),
+         compa = (ncedval+ncedinval)/nelelist) %&amp;gt;%
+  ggplot(aes(x = compa, y = pct_edinayarossiya))+
+  geom_hex(bins = 40, color = &amp;quot;black&amp;quot;, size = 0.5)+
+  scale_y_percent()+
+  scale_x_percent()+
+  labs(x = &amp;quot;Comparecimento&amp;quot;, y = &amp;quot;% de votos no RU&amp;quot;)+
+  scale_fill_viridis_c()+
+  theme_ipsum_tw()+
+  labs(title  = &amp;quot;Comparecimento x voto no Rússia Unida&amp;quot;,
+       fill = &amp;quot;Nº de seções&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/imprimindo_graficos/2019-11-15-imprimindo-gra%CC%81ficos-em-3d-no-r_files/figure-html/grafico_2d-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;No gráfico acima, temos duas regiões esverdeadas-amareladas: entre 25% e 50% dos ambos os eixos, e próximo de 100% nos dois eixos. O que isso significa? Significa que existiram muitas seções cujo comparecimento (ou seja, a proporção de pessoas que foram votar) ficou entre 25%-50% e que os votos para o partido Rússia Unida ficaram também entre 25%-50%, e também muitas seções cujo comparecimento foi próximo à 100% e o voto no partido também, ou seja, alta mobilização para que seções inteiras votassem no RU. Percebemos também a oposição, já que temos algumas seções com 100% de comparecimento mas pouco voto no Rússia Unida. Todavia, essas seções são poucas e continuam na cor mais escura da escala.&lt;/p&gt;
+&lt;p&gt;Definitivamente, esse não é o mais fácil dos gráficos, e mesmo explicando, é preciso dedicar alguns segundos ou minutos observando-o para compreendê-lo por completo. Mas e se a pessoa para quem queremos transmitir essa informação não for capaz de enxergar, como pessoas com deficiência visual? É justo que elas fiquem excluídas do processo de construção da ciência, ou mesmo de uma exposição simples e descomprometida de dados, como um relatório de uma empresa ou um gráfico de um jornal?&lt;/p&gt;
+&lt;p&gt;Pensei sobre isso ao perceber que, cada vez mais, museus oferecem experiências táteis para que pessoas com deficiência visual possam se entreter e aproveitar as exposições. Em uma recente exposição que fui, chamada &lt;a href=&#34;http://culturabancodobrasil.com.br/portal/egito-antigo-do-cotidiano-a-eternidade/&#34;&gt;“Antigo Egito: do cotidiano à eternidade”&lt;/a&gt;, exibida no &lt;a href=&#34;http://culturabancodobrasil.com.br/portal/rio-de-janeiro/&#34;&gt;Centro Cultural do Banco do Brasil no Rio de Janeiro&lt;/a&gt;, diversas peças exibidas possuíam uma variante que permitia o toque: a mesma peça, em um tamanho reduzido, presa na parede, o que possibilitava a inclusão e tornava a exposição mais democrática.&lt;/p&gt;
+&lt;p&gt;Olhando para aquilo, pensei: e se construíssemos gráficos em três dimensões, imprimindo em uma impressora 3D, para que eles pudessem ser tocados e compreendidos por aqueles que não podem enxergá-lo?&lt;/p&gt;
+&lt;p&gt;Depois de uma extensa pesquisa, descobri um pacote para o R chamado &lt;a href=&#34;https://github.com/tylermorganwall/rayshader/&#34;&gt;&lt;em&gt;rayshader&lt;/em&gt;&lt;/a&gt;, que foi criado inicialmente com o intuito de criar mapas topográficos em 3D, com luz e sombra, além da possibilidade de rotação. O mesmo gráfico acima é exibido da seguinte forma, usando af função &lt;code&gt;plot_gg()&lt;/code&gt; e os ajustes de câmera com a função &lt;code&gt;render_camera()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;grafico &amp;lt;- duma2016 %&amp;gt;%
+  mutate(pct_edinayarossiya = p_edinayarossiya/(ncedval + ncedinval),
+         compa = (ncedval+ncedinval)/nelelist) %&amp;gt;%
+  ggplot(aes(x = compa, 
+             y = pct_edinayarossiya))+
+  geom_hex(bins = 40, 
+           color = &amp;quot;black&amp;quot;, 
+           size = 0.5)+
+  scale_y_percent()+
+  scale_x_percent()+
+  labs(x = &amp;quot;Comparecimento&amp;quot;, 
+       y = &amp;quot;% de votos no RU&amp;quot;)+
+  scale_fill_viridis_c()+
+  labs(fill = &amp;quot;Seções&amp;quot;)
+
+plot_gg(grafico)
+render_camera(fov = 70, zoom = 0.5, theta = 30, phi = 32)
+render_snapshot(clear = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/imprimindo_graficos/2019-11-15-imprimindo-gra%CC%81ficos-em-3d-no-r_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;O passo que falta, agora, para torná-lo definitivamente mais acessível, é transformá-lo em um modelo 3D. O &lt;code&gt;rayshader&lt;/code&gt; possui a função &lt;code&gt;save_3dprint()&lt;/code&gt;, que permite exportar o modelo para um arquivo &lt;strong&gt;&lt;em&gt;.stl&lt;/em&gt;&lt;/strong&gt; , de &lt;em&gt;stereolithography&lt;/em&gt;, que também pode ser processado por uma fatiadora e direcionado para uma impressora 3D, sendo esse o objetivo: imprimir os gráficos em 3D. Para isso, utilizamos o comando abaixo para gerar o &lt;strong&gt;&lt;em&gt;.stl&lt;/em&gt;&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;save_3dprint(filename = &amp;quot;graf_russia.stl&amp;quot;, remove_extras = T, clear = T)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E após isso, processamos o arquivo em uma fatiadora. No caso, eu utilizo o software Flashprint, que dialoga com as impressoras Flashforge. O arquivo gerado, ao ser processado pela fatiadora, fica da seguinte forma:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/img/graf_russia_fatiadora.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Depois de impresso (levou em torno de 47 minutos, como podem ver na imagem acima, e gastou cerca de 2,63m de filamento PLA – ácido polilático, um polímero), temos o seguinte resultado:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/img/graf_russia_print.jpeg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;É possível perceber que no modelo redimensionado, alguns detalhes se perderam, mas ainda assim, facilita para as pessoas que possuem alguma deficiência visual de entenderem o tipo de informação que queremos passar.&lt;/p&gt;
+&lt;p&gt;Impressoras 3D estão cada vez mais baratas, assim como o material usado para a impressão. De qualquer forma, para quem precisar fazer um uso pontual, é possível imprimir modelos em &lt;strong&gt;&lt;em&gt;.stl&lt;/em&gt;&lt;/strong&gt; em diversas lojas e fornecedores, de maneira rápida e fácil.&lt;/p&gt;
+&lt;p&gt;Certamente, não haverá uma rápida popularização do método, porém, provar que é possível (e pelo R) já é um grande avanço em direção à acessibilidade e à inclusão, tão necessários não só na ciência, como em todos os campos da sociedade. É importante também colocar tais modelos impressos para consulta de deficientes visuais para que sejam testados por eles, adequando-os às necessidades percebidas, seja em tamanho, precisão ou organização da impressão.&lt;/p&gt;
+&lt;p&gt;Bom, por hoje é só. Agradeço principalmente ao criador do pacote &lt;code&gt;rayshader&lt;/code&gt;, &lt;a href=&#34;https://twitter.com/tylermorganwall&#34;&gt;Tyler Morgan-Wall&lt;/a&gt;, PhD em Física na Universidade John Hopkins. Qualquer dúvida, correção ou sugestão pode ser enviada para o meu email &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

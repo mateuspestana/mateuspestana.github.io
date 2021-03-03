@@ -1,0 +1,1508 @@
+<!DOCTYPE html><html lang="pt" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Mateus Cavalcanti Pestana" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="No post passado, eu falei sobre segurança de redes e inteligência artificial usando o Pwnagotchi. Se você não leu e se interessa por esses temas, recomendo que volte ao post para entender melhor sobre o que tratarei hoje." />
+
+  
+  <link rel="alternate" hreflang="pt" href="https://mateuspestana.github.io/post/req-apis/requisicoes-em-apis-no-r/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.003d2be57501b5669ca58ef75468ece2.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150193464-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-150193464-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://mateuspestana.github.io/post/req-apis/requisicoes-em-apis-no-r/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Mateus C. Pestana" />
+  <meta property="og:url" content="https://mateuspestana.github.io/post/req-apis/requisicoes-em-apis-no-r/" />
+  <meta property="og:title" content="Requisições em APIs no R | Mateus C. Pestana" />
+  <meta property="og:description" content="No post passado, eu falei sobre segurança de redes e inteligência artificial usando o Pwnagotchi. Se você não leu e se interessa por esses temas, recomendo que volte ao post para entender melhor sobre o que tratarei hoje." /><meta property="og:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="pt" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-12-07T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-12-07T08:54:48-03:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mateuspestana.github.io/post/req-apis/requisicoes-em-apis-no-r/"
+  },
+  "headline": "Requisições em APIs no R",
+  
+  "datePublished": "2019-12-07T00:00:00Z",
+  "dateModified": "2019-12-07T08:54:48-03:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Mateus Cavalcanti Pestana"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mateus C. Pestana",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "No post passado, eu falei sobre segurança de redes e inteligência artificial usando o Pwnagotchi. Se você não leu e se interessa por esses temas, recomendo que volte ao post para entender melhor sobre o que tratarei hoje."
+}
+</script>
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://gist.githubusercontent.com/jeremyyeo/03930a03108330d5579fe88b79604c41/raw/2aa8e8a614dbc47c9af81156d0663d3e2e4bdfc6/htmlwidgets.js"></script>
+
+  <title>Requisições em APIs no R | Mateus C. Pestana</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="30e3d8a32fad65da0f2e40a984885825" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.9f8405b7756f5e178a738a09c302f8b3.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Pesquisar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Pesquisar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Pesquisar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Alterar navegação">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Biografia</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#portfolio"><span>Portfolio</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publicações</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cursos"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/media/resume.pdf"><span>Currículo</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Pesquisar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Requisições em APIs no R</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      <a href="/author/mateus-cavalcanti-pestana/">Mateus Cavalcanti Pestana</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Última atualização em
+      
+    
+    7 de Dec, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 minutos de leitura
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/ciencia-de-dados/">ciência de dados</a>, <a href="/category/r/">r</a>, <a href="/category/programacao/">programação</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="2019-12-07-requisições-em-apis-no-r_files/header-attrs/header-attrs.js"></script>
+
+
+<p>No post passado, eu falei sobre <a href="https://mateuspestana.github.io/post/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/">segurança de redes e inteligência artificial</a> usando o <a href="https://pwnagotchi.ai/">Pwnagotchi</a>. Se você não leu e se interessa por esses temas, recomendo que volte ao post para entender melhor sobre o que tratarei hoje. Se você só quiser saber sobre APIs no R, é só continuar lendo :).</p>
+<p>Bom, para começar, o que é uma <strong>API</strong>?</p>
+<p>Segundo o Wikipedia,</p>
+<blockquote>
+<p>Interface de Programação de Aplicações (pt) ou Interface de Programação de Aplicação (pt-BR)), cujo acrônimo API provém do Inglês Application Programming Interface, é um conjunto de rotinas e padrões estabelecidos por um software para a utilização das suas funcionalidades por aplicativos que não pretendem envolver-se em detalhes da implementação do software, mas apenas usar seus serviços.</p>
+</blockquote>
+<blockquote>
+<p>De modo geral, a API é composta por uma série de funções acessíveis somente por programação, e que permitem utilizar características do software menos evidentes ao utilizador tradicional.</p>
+</blockquote>
+<p>Em outras palavras, uma API é uma espécie de padrão estabelecido em um sistema, site ou aplicativo, pelo desenvolvedor, que permite o acesso facilitado a (pré-)determinadas funções. Por exemplo, algo muito utilizado na Ciência Política, que é minha área principal, são dados da Câmara dos Deputados. A Câmara dos Deputados possui uma API, que pode ser vista <a href="https://dadosabertos.camara.leg.br/swagger/api.html">aqui</a> e que será assunto de um post futuramente. Essa API permite a visualização (e por sua vez, o processamento) de dados sobre parlamentares, incluindo gastos de gabinete, discursos, eventos, frentes parlamentares, partidos, proposições e tramitação de matérias.</p>
+<p>Se eu quisesse desenvolver um aplicativo que acompanhasse os gastos dos deputados, então, eu não precisaria construir um robô que raspa os dados do site da Câmara, os processa, e gera visualizações: eu poderia simplesmente fazer solicitações à API e teria esses dados disponibilizados e consolidados!</p>
+<p><em>Então, como fazer isso no R?</em> Para nosso exemplo, estarei usando a API do Pwnagotchi, a <em>Pwngrid</em>, que é como se fosse um ranking com todos os usuários. Ou seja, como dito no post anterior, é um sistema que funciona como um <em>PokemonGo</em> para redes WiFi. Na Pwngrid, que pode ser vista parcialmente <a href="https://pwnagotchi.ai/map/">aqui</a>, temos todos os usuários com diversos dados sobre as suas últimas sessões: tempo de duração, quantos WiFi foram capturados, quantos <em>handshakes</em>, de quais países são, e por quantos <em>epochs</em>[^1] seu algoritmo treinou.</p>
+<p>No caso de APIs de sites, geralmente temos uma URL para fazer a solicitação. Se quiséssemos transferir algum dado pelo terminal do sistema (ou seja, fora do R), utilizaríamos o <em>cURL</em>, que permite fazer esse tipo de requisição. Dentro do R, entretanto, utilizamos duas bibliotecas: o <code>httr</code> e o <code>jsonlite</code>. O primeiro, lida com as requisições, e o segundo nos permite tratar os dados (que vem em .json), permitindo transformar em um dataframe legível e inteligível pelo R.</p>
+<p>No caso da Pwngrid, cuja API está documentada <a href="https://pwnagotchi.ai/api/">aqui</a>, o layout do endereço é:</p>
+<p><code>https://api.pwnagotchi.ai/api/v1/FUNCAO</code></p>
+<p>Sendo <code>/FUNCAO/</code> a função/dado desejado estabelecido na API. Logo, se eu quisesse saber quantas unidades do <em>pwnagotchi</em> existem por país, eu utilizaria a seguinte URL:</p>
+<p><code>https://api.pwnagotchi.ai/api/v1/units/by_country</code></p>
+<p>Se abrirmos essa URL no navegador do computador, teremos, no momento, o seguinte <em>output</em>:</p>
+<pre><code>[{&quot;country&quot;:&quot;US&quot;,&quot;units&quot;:1205},{&quot;country&quot;:&quot;DE&quot;,&quot;units&quot;:394},{&quot;country&quot;:&quot;FR&quot;,&quot;units&quot;:215},
+{&quot;country&quot;:&quot;GB&quot;,&quot;units&quot;:208},{&quot;country&quot;:&quot;IT&quot;,&quot;units&quot;:193},{&quot;country&quot;:&quot;CA&quot;,&quot;units&quot;:157},
+{&quot;country&quot;:&quot;NL&quot;,&quot;units&quot;:110},{&quot;country&quot;:&quot;AU&quot;,&quot;units&quot;:99},{&quot;country&quot;:&quot;ES&quot;,&quot;units&quot;:74},
+{&quot;country&quot;:&quot;PL&quot;,&quot;units&quot;:55},{&quot;country&quot;:&quot;CH&quot;,&quot;units&quot;:53},{&quot;country&quot;:&quot;AT&quot;,&quot;units&quot;:47},
+{&quot;country&quot;:&quot;RU&quot;,&quot;units&quot;:39},{&quot;country&quot;:&quot;SE&quot;,&quot;units&quot;:35},{&quot;country&quot;:&quot;BE&quot;,&quot;units&quot;:35},
+{&quot;country&quot;:&quot;PT&quot;,&quot;units&quot;:31},{&quot;country&quot;:&quot;SG&quot;,&quot;units&quot;:26},{&quot;country&quot;:&quot;IE&quot;,&quot;units&quot;:25},
+{&quot;country&quot;:&quot;BR&quot;,&quot;units&quot;:24},{&quot;country&quot;:&quot;CZ&quot;,&quot;units&quot;:23},{&quot;country&quot;:&quot;DK&quot;,&quot;units&quot;:22},
+{&quot;country&quot;:&quot;ZA&quot;,&quot;units&quot;:21},{&quot;country&quot;:&quot;MX&quot;,&quot;units&quot;:20},{&quot;country&quot;:&quot;AR&quot;,&quot;units&quot;:19},
+{&quot;country&quot;:&quot;TR&quot;,&quot;units&quot;:16},{&quot;country&quot;:&quot;JP&quot;,&quot;units&quot;:15},{&quot;country&quot;:&quot;SK&quot;,&quot;units&quot;:14},
+{&quot;country&quot;:&quot;VN&quot;,&quot;units&quot;:13},{&quot;country&quot;:&quot;FI&quot;,&quot;units&quot;:12},{&quot;country&quot;:&quot;SI&quot;,&quot;units&quot;:11},
+{&quot;country&quot;:&quot;BN&quot;,&quot;units&quot;:10},{&quot;country&quot;:&quot;NZ&quot;,&quot;units&quot;:10},{&quot;country&quot;:&quot;PH&quot;,&quot;units&quot;:10},
+{&quot;country&quot;:&quot;MY&quot;,&quot;units&quot;:10},{&quot;country&quot;:&quot;IL&quot;,&quot;units&quot;:9},{&quot;country&quot;:&quot;IN&quot;,&quot;units&quot;:9},
+{&quot;country&quot;:&quot;RO&quot;,&quot;units&quot;:9},{&quot;country&quot;:&quot;BG&quot;,&quot;units&quot;:9},{&quot;country&quot;:&quot;NO&quot;,&quot;units&quot;:8},
+{&quot;country&quot;:&quot;CN&quot;,&quot;units&quot;:8},{&quot;country&quot;:&quot;GR&quot;,&quot;units&quot;:8},{&quot;country&quot;:&quot;HK&quot;,&quot;units&quot;:7},
+{&quot;country&quot;:&quot;HU&quot;,&quot;units&quot;:7},{&quot;country&quot;:&quot;CY&quot;,&quot;units&quot;:7},{&quot;country&quot;:&quot;BY&quot;,&quot;units&quot;:6},
+{&quot;country&quot;:&quot;LU&quot;,&quot;units&quot;:6},{&quot;country&quot;:&quot;LT&quot;,&quot;units&quot;:5},{&quot;country&quot;:&quot;CL&quot;,&quot;units&quot;:5},
+{&quot;country&quot;:&quot;CO&quot;,&quot;units&quot;:5},{&quot;country&quot;:&quot;UA&quot;,&quot;units&quot;:5},{&quot;country&quot;:&quot;UY&quot;,&quot;units&quot;:4},
+{&quot;country&quot;:&quot;AE&quot;,&quot;units&quot;:4},{&quot;country&quot;:&quot;DZ&quot;,&quot;units&quot;:4},{&quot;country&quot;:&quot;EE&quot;,&quot;units&quot;:4},
+{&quot;country&quot;:&quot;IS&quot;,&quot;units&quot;:4},{&quot;country&quot;:&quot;TW&quot;,&quot;units&quot;:4},{&quot;country&quot;:&quot;EC&quot;,&quot;units&quot;:3},
+{&quot;country&quot;:&quot;LV&quot;,&quot;units&quot;:3},{&quot;country&quot;:&quot;TH&quot;,&quot;units&quot;:3},{&quot;country&quot;:&quot;HR&quot;,&quot;units&quot;:2},
+{&quot;country&quot;:&quot;LB&quot;,&quot;units&quot;:2},{&quot;country&quot;:&quot;AF&quot;,&quot;units&quot;:2},{&quot;country&quot;:&quot;SV&quot;,&quot;units&quot;:2},
+{&quot;country&quot;:&quot;JO&quot;,&quot;units&quot;:2},{&quot;country&quot;:&quot;CR&quot;,&quot;units&quot;:2},{&quot;country&quot;:&quot;SA&quot;,&quot;units&quot;:1},
+{&quot;country&quot;:&quot;KW&quot;,&quot;units&quot;:1},{&quot;country&quot;:&quot;XX&quot;,&quot;units&quot;:1},{&quot;country&quot;:&quot;PA&quot;,&quot;units&quot;:1},
+{&quot;country&quot;:&quot;PK&quot;,&quot;units&quot;:1},{&quot;country&quot;:&quot;MA&quot;,&quot;units&quot;:1},{&quot;country&quot;:&quot;MK&quot;,&quot;units&quot;:1},
+{&quot;country&quot;:&quot;BA&quot;,&quot;units&quot;:1},{&quot;country&quot;:&quot;QA&quot;,&quot;units&quot;:1},{&quot;country&quot;:&quot;NI&quot;,&quot;units&quot;:1},
+{&quot;country&quot;:&quot;BL&quot;,&quot;units&quot;:1},{&quot;country&quot;:&quot;KR&quot;,&quot;units&quot;:1}]</code></pre>
+<p>Esse bloco de código acima é uma lista com duas chaves/variáveis, onde cada observação está dentro de “{ }”, e as variáveis estão seapradas por vírgula, sendo elas <code>country</code> e <code>units</code>: o país e o número de unidades <em>pwnagotchi</em> em cada um deles. Temos, no caso do Brasil (BR), o seguinte:</p>
+<p><code>{"country":"BR","units":24}</code></p>
+<p>Isso indica que no país BR temos 24 pwnagotchis.</p>
+<p><em>Ok! Entendi! Mas como fazer isso no R, gerando bancos de dados prontos para serem utilizados?</em></p>
+<p>No R, ao carregarmos as bibliotecas necessárias (como sempre, o <em>tidyverse</em> incluído), definimos a URL para qual a requisição será feita, processamos essa URL com base no GET (o tipo de requisição, que pode ser GET ou POST), extraímos o conteúdo, convertemos em JSON e, dali, adaptamos a um banco. A teoria parece mais complicada que a prática, então vamos botar a mão na massa para entender melhor:</p>
+<pre class="r"><code>pacman::p_load(tidyverse, httr, jsonlite, hrbrthemes, ggthemes)
+
+# Definimos a URL
+url_paises &lt;- &quot;https://api.pwnagotchi.ai/api/v1/units/by_country&quot; 
+
+# Solicitamos a mesma
+GET_paises &lt;- GET(url_paises)
+
+# Extraímos o conteúdo
+content_paises &lt;- content(GET_paises, &quot;text&quot;)</code></pre>
+<pre><code>## No encoding supplied: defaulting to UTF-8.</code></pre>
+<pre class="r"><code># Convertemos de JSON
+paises_df &lt;- fromJSON(content_paises)</code></pre>
+<p>Agora, temos um objeto chamado <code>paises_df</code> que pode ser inspecionado, sumarizado e trabalhado como um banco qualquer no R. Se lembrarmos bem, no output dado pelo navegador, tínhamos duas variáveis: <code>country</code> e <code>units</code>. Será que as mesmas são encontradas no banco gerado?</p>
+<pre class="r"><code>glimpse(paises_df)</code></pre>
+<pre><code>## Rows: 99
+## Columns: 2
+## $ country &lt;chr&gt; &quot;US&quot;, &quot;DE&quot;, &quot;GB&quot;, &quot;FR&quot;, &quot;IT&quot;, &quot;CA&quot;, &quot;NL&quot;, &quot;AU&quot;, &quot;ES&quot;, &quot;RU&quot;, &quot;P…
+## $ units   &lt;int&gt; 3727, 1287, 720, 519, 498, 433, 385, 342, 238, 216, 191, 167, …</code></pre>
+<p>Para mostrar que o objeto pode ser trabalhado como qualquer outro objeto nativo, façamos um gráfico dos 10 países com maior número de unidades:</p>
+<pre class="r"><code>paises_df %&gt;% 
+  top_n(10, units) %&gt;% 
+  ggplot(aes(x = reorder(country, units), y = units, fill = country))+
+  geom_col(show.legend = F)+
+  labs(x = &quot;País&quot;, y = &quot;Nº de unidades&quot;, 
+       title = &quot;PwnGrid&quot;, subtitle = &quot;Número de unidades por país&quot;)+
+  coord_flip()+
+  theme_ipsum_tw()+
+  scale_fill_gdocs()</code></pre>
+<p><img src="/post/req-apis/2019-12-07-requisic%CC%A7o%CC%83es-em-apis-no-r_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Percebe-se que os Estados Unidos são o país que mais possuem unidades registradas!</p>
+<p><em>Ok! Entendi como se faz requisição de API no R. Mas e se a API tiver muitas páginas?</em></p>
+<p>Esse exemplo é visto também na Pwngrid. Se observarmos a <a href="https://pwnagotchi.ai/api/grid/#get-api-v1-units">documentação</a>, vemos que se quisermos todas as unidades, temos um novo argumento na URL, que é <code>?p=2</code>, no caso da segunda página. Como baixar todas as páginas? Como descobrir quais são todas as páginas?</p>
+<p>Bom, a solução é simples. O R (e toda linguagem de programação) possui um recurso chamado <strong>for</strong>, que permite faze <em>loops</em>, ou seja, trabalhar recursivamente até determinado ponto. A sintaxe de um <strong>for</strong> funciona da seguinte maneira:</p>
+<pre><code>for(i in n){
+  faça_algo(baseado_em = i)
+}</code></pre>
+<p>Se quiséssemos printar algo de maneira recursiva no R, faríamos da seguinte forma:</p>
+<pre class="r"><code>elec_pres &lt;- seq(1994, 2018, 4)
+for(ano in elec_pres){
+  print(paste(&quot;Em&quot;, ano, &quot;houve uma eleição presidencial no Brasil&quot;))
+}</code></pre>
+<pre><code>## [1] &quot;Em 1994 houve uma eleição presidencial no Brasil&quot;
+## [1] &quot;Em 1998 houve uma eleição presidencial no Brasil&quot;
+## [1] &quot;Em 2002 houve uma eleição presidencial no Brasil&quot;
+## [1] &quot;Em 2006 houve uma eleição presidencial no Brasil&quot;
+## [1] &quot;Em 2010 houve uma eleição presidencial no Brasil&quot;
+## [1] &quot;Em 2014 houve uma eleição presidencial no Brasil&quot;
+## [1] &quot;Em 2018 houve uma eleição presidencial no Brasil&quot;</code></pre>
+<p>O <code>for</code> acima fez um loop que repetiu a mesma frase para cada item do vetor <code>elec_pres</code>, que eu denominei <code>ano</code>. Entenderam?</p>
+<p>O princípio de baixar muitas páginas de uma só vez em uma API é o mesmo. Abaixo, minha saída para tal problema:</p>
+<pre class="r"><code>baixa_pwngrid &lt;- function(z = npages) {
+  pages &lt;- list()
+  base &lt;- &quot;https://api.pwnagotchi.ai/api/v1/units&quot;
+  pagesfun &lt;- function(x = 1) {
+    if (x == 1) {
+      return()
+    }
+    else{
+      paste0(&quot;?p=&quot;, x)
+    }
+  }
+  unit1 &lt;- fromJSON(content(GET(paste0(base, pagesfun(1))),
+                            &quot;text&quot;),
+                    flatten = T)
+  npages &lt;- unit1$pages
+  for(i in 0:z){
+    json &lt;- fromJSON(paste0(base, pagesfun(i)))
+    message(&quot;Requisitando página &quot;, i)
+    pages[[i+1]] &lt;- json$units
+    units_df &lt;- rbind_pages(pages)
+  }
+  return(units_df)
+}</code></pre>
+<p>Explicando o comando acima: como eu frequentemente solicito esses dados da Pwngrid à API, desenvolvi uma função, chamada <code>baixa_pwngrid()</code> que faz o seguinte:</p>
+<ul>
+<li>Cria um objeto denominado <code>pages</code>, vazio, determinando que é uma lista;</li>
+<li>Cria um objeto chamado <code>base</code>, que contém a URL que será requisitada;</li>
+<li>Cria uma subfunção chamada <code>pagesfun</code>, que itera as páginas com o argumento extra, <code>?p=</code> para cada página;</li>
+<li>Baixa, extrai e converte para um objeto denominado <code>unit1</code> a primeira página. Baixar a primeira página é importante pois, nesse caso especificamente, ela contém uma variável que determina quantas páginas são encontradas no total;</li>
+<li>Cria o objeto <code>npages</code>, que possui como valor o total de páginas, visto em <code>unit1</code>;</li>
+<li>Crio um loop para cada página presente em <code>npages</code>, printando no terminal em qual página estou, e direcionando tudo para um objeto, chamado <code>units_df</code>. Todas as páginas são unidas pela função <code>rbind_pages</code>, que serve para isso.</li>
+</ul>
+<p>Para fins de teste, vamos inspecionar o banco e criar um gráfico com as unidades ativas do EUA que possuem pelo menos uma rede capturada:</p>
+<pre class="r"><code># units_df &lt;- baixa_pwngrid() 
+glimpse(units_df)</code></pre>
+<pre><code>## Rows: 525
+## Columns: 8
+## $ enrolled_at &lt;chr&gt; &quot;2021-03-02T23:09:13Z&quot;, &quot;2021-03-02T22:17:15Z&quot;, &quot;2021-03-0…
+## $ updated_at  &lt;chr&gt; &quot;2021-03-02T23:09:13Z&quot;, &quot;2021-03-02T23:19:20Z&quot;, &quot;2021-03-0…
+## $ country     &lt;chr&gt; &quot;US&quot;, &quot;US&quot;, &quot;CH&quot;, &quot;RU&quot;, &quot;CN&quot;, &quot;DE&quot;, &quot;ZA&quot;, &quot;US&quot;, &quot;MX&quot;, &quot;GB&quot;…
+## $ name        &lt;chr&gt; &quot;pwnacartman&quot;, &quot;Joshua&quot;, &quot;pwnagotchi&quot;, &quot;faradeika&quot;, &quot;Shire…
+## $ fingerprint &lt;chr&gt; &quot;5fd38e1fb8af1cbe1fbf6242b7d6907b9fe744de9e53484949bf90afe…
+## $ public_key  &lt;chr&gt; &quot;-----BEGIN RSA PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFA…
+## $ data        &lt;df[,5]&gt; &lt;data.frame[26 x 5]&gt;
+## $ networks    &lt;int&gt; 0, 0, 0, 233, 0, 0, 23, 0, 0, 0, 31, 48, 0, 0, 0, 1, 0,…</code></pre>
+<pre class="r"><code>units_df %&gt;%
+  filter(country == &quot;US&quot; &amp; networks &gt; 0) %&gt;%
+  arrange(-networks) %&gt;% 
+  head(10) %&gt;% 
+  group_by(name) %&gt;% 
+  summarise(networks = sum(networks)) %&gt;% 
+  ggplot(aes(x = reorder(name, networks), y = networks, fill = name))+
+  geom_col(show.legend = F)+
+  labs(x = &quot;Nome da unidade&quot;, y = &quot;Nº de redes&quot;, 
+       title = &quot;PwnGrid US&quot;, subtitle = &quot;Número de redes capturadas por cada unidade&quot;)+
+  coord_flip()+
+  theme_ipsum_tw()+
+  scale_fill_gdocs()</code></pre>
+<p><img src="/post/req-apis/2019-12-07-requisic%CC%A7o%CC%83es-em-apis-no-r_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Legal, não? Toda e qualquer API que utilize esse formato pode ser buscada, tratada e processada no R, podendo então ser inserida em dashboards, shinyApps e muitos outros: as possibilidades são praticamente infinitas.</p>
+<p>Bom, por hoje é só! Qualquer dúvida, correção ou sugestão pode ser enviada para o meu email <a href="mailto:matheus.pestana@iesp.uerj.br" class="email">matheus.pestana@iesp.uerj.br</a></p>
+<p>[^1] <em>Epochs</em> são o tempo de exato um ciclo para o treinamento de um algoritmo. É uma medida extremamente variável. Em tese, quanto mais <em>epochs</em> são utilizados no treinamento, melhor fica o nosso algoritmo.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/inteligencia-artificial/">inteligencia artificial</a>
+  
+  <a class="badge badge-light" href="/tag/pentesting/">pentesting</a>
+  
+  <a class="badge badge-light" href="/tag/pwnagotchi/">pwnagotchi</a>
+  
+  <a class="badge badge-light" href="/tag/r/">r</a>
+  
+  <a class="badge badge-light" href="/tag/api/">api</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://mateuspestana.github.io/post/req-apis/requisicoes-em-apis-no-r/&amp;text=Requisi%c3%a7%c3%b5es%20em%20APIs%20no%20R" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://mateuspestana.github.io/post/req-apis/requisicoes-em-apis-no-r/&amp;t=Requisi%c3%a7%c3%b5es%20em%20APIs%20no%20R" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Requisi%c3%a7%c3%b5es%20em%20APIs%20no%20R&amp;body=https://mateuspestana.github.io/post/req-apis/requisicoes-em-apis-no-r/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://mateuspestana.github.io/post/req-apis/requisicoes-em-apis-no-r/&amp;title=Requisi%c3%a7%c3%b5es%20em%20APIs%20no%20R" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Requisi%c3%a7%c3%b5es%20em%20APIs%20no%20R%20https://mateuspestana.github.io/post/req-apis/requisicoes-em-apis-no-r/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://mateuspestana.github.io/post/req-apis/requisicoes-em-apis-no-r/&amp;title=Requisi%c3%a7%c3%b5es%20em%20APIs%20no%20R" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://mateuspestana.github.io"><img class="avatar mr-3 avatar-circle" src="/author/mateus-cavalcanti-pestana/avatar_hufeccfd6f9380df9b18ea9dcb1ceea097_79518_270x270_fill_q75_lanczos_center.jpg" alt="Mateus Cavalcanti Pestana"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://mateuspestana.github.io">Mateus Cavalcanti Pestana</a></h5>
+      <h6 class="card-subtitle">Doutorando e Mestre em Ciência Política</h6>
+      <p class="card-text">Interessado em ciência de dados, ciência política, política russa, impressão 3D, redes neurais e aprendizado de máquina.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:matheus.pestana@iesp.uerj.br" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/0027872463024148" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.br/citations?user=jpRDWpgAAAAJ&amp;hl=pt-BR" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0002-5388-8950" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/mateuspestana" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionados</h3>
+    <ul>
+      
+      <li><a href="/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/">Imprimindo gráficos em 3D no R</a></li>
+      
+      <li><a href="/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/">Pwnagotchi: segurança de redes e inteligência artificial</a></li>
+      
+      <li><a href="/portfolio/2021-03-02-candidaturas-religiosas/">Candidaturas Religiosas</a></li>
+      
+      <li><a href="/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/">Rtweet: baixando e  salvando todos os tweets de um usuário</a></li>
+      
+      <li><a href="/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/">Textmining: análise dos discursos de Getúlio Vargas</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2021 Matheus C. Pestana
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.f81d0a1705048649befc8b595e455a94.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/pt/js/wowchemy.min.e74a71a7cfab89f71b427a2bd20b61f8.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

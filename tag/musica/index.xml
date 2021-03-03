@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>música | Mateus C. Pestana</title>
+    <link>https://mateuspestana.github.io/tag/musica/</link>
+      <atom:link href="https://mateuspestana.github.io/tag/musica/index.xml" rel="self" type="application/rss+xml" />
+    <description>música</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 Matheus C. Pestana</copyright><lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>música</title>
+      <link>https://mateuspestana.github.io/tag/musica/</link>
+    </image>
+    
+    <item>
+      <title>joRge benjoR</title>
+      <link>https://mateuspestana.github.io/post/jorge-benjor/jorge-benjor/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/jorge-benjor/jorge-benjor/</guid>
+      <description>
+&lt;script src=&#34;https://mateuspestana.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://mateuspestana.github.io/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://mateuspestana.github.io/rmarkdown-libs/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;p&gt;Eu sou um grande fã de Jorge Benjor, gosto que herdei de meu pai. O suíngue, as batidas, as letras… Se o dia não está bom, basta ouvir “&lt;strong&gt;A Tábua de Esmeralda&lt;/strong&gt;”, lançado em 1974, categorizado como “samba rock”, que tudo melhora. É, junto com “&lt;strong&gt;Racional vol. 1&lt;/strong&gt;”, do Tim Maia, “&lt;strong&gt;Gita&lt;/strong&gt;”, do Raul Seixas, e “&lt;strong&gt;Terra&lt;/strong&gt;”, do Sá, Rodrix e Guarabyra, um dos meus discos favoritos.&lt;/p&gt;
+&lt;p&gt;Ao mesmo tempo, sou um entusiasta da ciência de dados. Embora cientista político de formação (e essa se mantém minha maior paixão), enxergo a ciência de dados como uma grande ferramenta para compreender o mundo, que me auxilia diariamente no meu fazer científico. Meu trabalho é todo realizado na linguagem &lt;a href=&#34;https://r-project.org&#34;&gt;&lt;strong&gt;R&lt;/strong&gt;&lt;/a&gt; e no software &lt;a href=&#34;https://rstudio.com&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Recentemente, descobri o pacote &lt;a href=&#34;https://github.com/charlie86/spotifyr&#34;&gt;&lt;strong&gt;spotifyR&lt;/strong&gt;&lt;/a&gt;, que utiliza a API (&lt;em&gt;Application Programming Interface&lt;/em&gt;, ou interface de programação de aplicativos) do Spotify diretamente no R, podendo criar bancos e trabalhar com esses dados, analisando músicas, artistas, playlists, etc.&lt;/p&gt;
+&lt;p&gt;Resolvi então somar os dois gostos: Jorge Benjor e R através do SpotifyR e fazer uma rápida análise do artista, a partir dos dados disponibilizados pelo Spotify, a qual compartilho com vocês, leitores, aqui, em um formato de passo-a-passo.&lt;/p&gt;
+&lt;p&gt;A utilização do &lt;strong&gt;spotifyR&lt;/strong&gt; pode ser vista &lt;a href=&#34;https://github.com/charlie86/spotifyr&#34;&gt;&lt;strong&gt;aqui&lt;/strong&gt;&lt;/a&gt;. Em resumo, é preciso criar uma conta de desenvolvedor no Spotify, para ter acesso à API, gerar um código secreto e um ID, e posteriormente um token. Maiores detalhes no link acima.&lt;/p&gt;
+&lt;p&gt;O primeiro passo, então, é carregar os pacotes que serão utilizados. No meu caso, optei pelo &lt;em&gt;tidyverse, janitor, hrbrthemes, spotifyr, plotly e ggalt&lt;/em&gt;. Utilizo, para agilizar o processo, o &lt;em&gt;pacman&lt;/em&gt;, que é um outro pacote, aqui carregado em &lt;em&gt;lazy&lt;/em&gt;, que me permite abrir diversos pacotes de uma só vez. Vale a pena instalá-lo, pra quem não o conhece.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pacman::p_load(tidyverse, janitor, spotifyr, hrbrthemes, ggalt, plotly, knitr, kableExtra)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Em seguida, baixei todos os dados referentes ao Jorge utilizando a função &lt;em&gt;get_artist_audio_features()&lt;/em&gt;, e armazenei em um banco denominado &lt;em&gt;jbj&lt;/em&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj &amp;lt;- get_artist_audio_features(&amp;quot;jorge benjor&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: `mutate_()` was deprecated in dplyr 0.7.0.
+## Please use `mutate()` instead.
+## See vignette(&amp;#39;programming&amp;#39;) for more help&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Dando uma olhada no que o banco nos oferece…&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;glimpse(jbj)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 751
+## Columns: 39
+## $ artist_name                  &amp;lt;chr&amp;gt; &amp;quot;Jorge Ben Jor&amp;quot;, &amp;quot;Jorge Ben Jor&amp;quot;, &amp;quot;Jorge …
+## $ artist_id                    &amp;lt;chr&amp;gt; &amp;quot;5JYtpnUKxAzXfHEYpOeeit&amp;quot;, &amp;quot;5JYtpnUKxAzXfH…
+## $ album_id                     &amp;lt;chr&amp;gt; &amp;quot;0NdVGJ7e99By4k43k39nUY&amp;quot;, &amp;quot;0NdVGJ7e99By4k…
+## $ album_type                   &amp;lt;chr&amp;gt; &amp;quot;album&amp;quot;, &amp;quot;album&amp;quot;, &amp;quot;album&amp;quot;, &amp;quot;album&amp;quot;, &amp;quot;albu…
+## $ album_images                 &amp;lt;list&amp;gt; [&amp;lt;data.frame[3 x 3]&amp;gt;, &amp;lt;data.frame[3 x 3]…
+## $ album_release_date           &amp;lt;chr&amp;gt; &amp;quot;2015-10-30&amp;quot;, &amp;quot;2015-10-30&amp;quot;, &amp;quot;2015-10-30&amp;quot;,…
+## $ album_release_year           &amp;lt;dbl&amp;gt; 2015, 2015, 2015, 2015, 2015, 2015, 2015,…
+## $ album_release_date_precision &amp;lt;chr&amp;gt; &amp;quot;day&amp;quot;, &amp;quot;day&amp;quot;, &amp;quot;day&amp;quot;, &amp;quot;day&amp;quot;, &amp;quot;day&amp;quot;, &amp;quot;day&amp;quot;,…
+## $ danceability                 &amp;lt;dbl&amp;gt; 0.519, 0.560, 0.704, 0.482, 0.801, 0.429,…
+## $ energy                       &amp;lt;dbl&amp;gt; 0.825, 0.662, 0.716, 0.400, 0.384, 0.699,…
+## $ key                          &amp;lt;int&amp;gt; 1, 6, 9, 6, 3, 9, 4, 0, 7, 9, 11, 6, 0, 4…
+## $ loudness                     &amp;lt;dbl&amp;gt; -9.326, -8.468, -7.726, -11.845, -11.551,…
+## $ mode                         &amp;lt;int&amp;gt; 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0,…
+## $ speechiness                  &amp;lt;dbl&amp;gt; 0.1140, 0.0494, 0.0734, 0.0310, 0.0419, 0…
+## $ acousticness                 &amp;lt;dbl&amp;gt; 0.3250, 0.7060, 0.5310, 0.7690, 0.7260, 0…
+## $ instrumentalness             &amp;lt;dbl&amp;gt; 0.00000000, 0.00035600, 0.00000000, 0.000…
+## $ liveness                     &amp;lt;dbl&amp;gt; 0.4520, 0.6490, 0.2840, 0.1820, 0.1370, 0…
+## $ valence                      &amp;lt;dbl&amp;gt; 0.866, 0.780, 0.972, 0.509, 0.770, 0.752,…
+## $ tempo                        &amp;lt;dbl&amp;gt; 137.533, 137.908, 141.393, 103.447, 120.7…
+## $ track_id                     &amp;lt;chr&amp;gt; &amp;quot;6PcTd0nRu0cJP9np0pe6oF&amp;quot;, &amp;quot;1MGOjMQUJwrz6h…
+## $ analysis_url                 &amp;lt;chr&amp;gt; &amp;quot;https://api.spotify.com/v1/audio-analysi…
+## $ time_signature               &amp;lt;int&amp;gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,…
+## $ artists                      &amp;lt;list&amp;gt; [&amp;lt;data.frame[1 x 6]&amp;gt;, &amp;lt;data.frame[1 x 6]…
+## $ available_markets            &amp;lt;list&amp;gt; [&amp;lt;&amp;gt;, &amp;lt;&amp;quot;AD&amp;quot;, &amp;quot;AE&amp;quot;, &amp;quot;AG&amp;quot;, &amp;quot;AL&amp;quot;, &amp;quot;AM&amp;quot;, &amp;quot;AR&amp;quot;…
+## $ disc_number                  &amp;lt;int&amp;gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+## $ duration_ms                  &amp;lt;int&amp;gt; 239200, 184973, 158533, 246133, 130800, 1…
+## $ explicit                     &amp;lt;lgl&amp;gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,…
+## $ track_href                   &amp;lt;chr&amp;gt; &amp;quot;https://api.spotify.com/v1/tracks/6PcTd0…
+## $ is_local                     &amp;lt;lgl&amp;gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,…
+## $ track_name                   &amp;lt;chr&amp;gt; &amp;quot;A Banda Do Ze Pretinho&amp;quot;, &amp;quot;Taj Mahal&amp;quot;, &amp;quot;A…
+## $ track_preview_url            &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ track_number                 &amp;lt;int&amp;gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13…
+## $ type                         &amp;lt;chr&amp;gt; &amp;quot;track&amp;quot;, &amp;quot;track&amp;quot;, &amp;quot;track&amp;quot;, &amp;quot;track&amp;quot;, &amp;quot;trac…
+## $ track_uri                    &amp;lt;chr&amp;gt; &amp;quot;spotify:track:6PcTd0nRu0cJP9np0pe6oF&amp;quot;, &amp;quot;…
+## $ external_urls.spotify        &amp;lt;chr&amp;gt; &amp;quot;https://open.spotify.com/track/6PcTd0nRu…
+## $ album_name                   &amp;lt;chr&amp;gt; &amp;quot;A Arte De Jorge Ben Jor&amp;quot;, &amp;quot;A Arte De Jor…
+## $ key_name                     &amp;lt;chr&amp;gt; &amp;quot;C#&amp;quot;, &amp;quot;F#&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;F#&amp;quot;, &amp;quot;D#&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;E&amp;quot;, &amp;quot;C…
+## $ mode_name                    &amp;lt;chr&amp;gt; &amp;quot;minor&amp;quot;, &amp;quot;minor&amp;quot;, &amp;quot;major&amp;quot;, &amp;quot;minor&amp;quot;, &amp;quot;mino…
+## $ key_mode                     &amp;lt;chr&amp;gt; &amp;quot;C# minor&amp;quot;, &amp;quot;F# minor&amp;quot;, &amp;quot;A major&amp;quot;, &amp;quot;F# mi…&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;WOW!&lt;/strong&gt; Muitas variáveis, e muitas delas não me servem de muita coisa, pelo menos para o trabalho que quero realizar aqui, que é uma análise exploratória com foco nas músicas, álbuns, e algumas medidas disponibilizadas pela API. Importante limpar esse banco, removendo essas variáveis que não nos interessam:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj &amp;lt;- jbj %&amp;gt;%
+  select(-ends_with(&amp;quot;id&amp;quot;), -album_type, -album_images,
+         -album_release_date_precision, -analysis_url,
+         -available_markets, -track_href,
+         -is_local, -track_preview_url, -type,
+         -track_uri, -external_urls.spotify,
+         -key_name, -mode_name, -artists, 
+         -album_release_date, -explicit)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vamos avançar um pouco. Como todos sabem, Jorge Benjor possui muitas músicas dançantes, como “Banda do Zé Pretinho”, “Taj Mahal”, “Mas Que Nada”, “Balança Pema”, dentre outras. Felizmente, o Spotify nos dá acesso a uma variável nesse banco denominada &lt;em&gt;&lt;strong&gt;danceability&lt;/strong&gt;&lt;/em&gt;, que nada mais é que um índice que vai de 0 a 1 e mensura o nível de dançabilidade de cada uma das faixas.&lt;/p&gt;
+&lt;p&gt;Como será que se comportou, ao longo do tempo, o índice de dançabilidade nos álbums de Jorge Benjor?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj %&amp;gt;%
+  group_by(album_name, album_release_year) %&amp;gt;%
+  summarise(dance_album = mean(danceability)) %&amp;gt;%
+  ggplot(aes(x = album_release_year, y = dance_album))+
+  geom_line(color = &amp;quot;#8fd175&amp;quot;, size = 1.3)+
+  geom_point(size = 0.85, color = &amp;quot;#75b8d1&amp;quot;)+
+  geom_smooth(method = &amp;quot;loess&amp;quot;, se = F, color = &amp;quot;#75b8d1&amp;quot;)+
+  labs(title = &amp;quot;Dançabilidade nos álbuns de Jorge Benjor&amp;quot;,
+       subtitle = &amp;quot;Considerando todos os álbuns disponíveis no Spotify&amp;quot;,
+       caption  = &amp;quot;Fonte: Spotify API&amp;quot;,
+       y = &amp;quot;Média da dançabilidade&amp;quot;,
+       x = &amp;quot;Ano de lançamento do álbum&amp;quot;)+
+  theme_ipsum_tw()+
+  scale_x_continuous(breaks = seq(1960, 2020, 5),
+                     minor_breaks = NULL)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `summarise()` has grouped output by &amp;#39;album_name&amp;#39;. You can override using the `.groups` argument.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `geom_smooth()` using formula &amp;#39;y ~ x&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/jorge-benjor/2019-10-15-jorge-benjor_files/figure-html/danceability_year-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Observamos acima um pequeno problema: em alguns anos, como 1975, 1979, 1993, 1996, 2010, 2011, 2014 e 2015, existe mais de um álbum, o que torna o gráfico um pouco confuso em alguns anos. Podemos perceber os anos em que foi lançado mais de um álbum na tabela a seguir:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj %&amp;gt;%
+  group_by(album_name, album_release_year) %&amp;gt;%
+  summarise(dance_album = mean(danceability)) %&amp;gt;% 
+  tabyl(album_release_year) %&amp;gt;% 
+  filter(n &amp;gt; 1) %&amp;gt;% 
+  select(-percent) %&amp;gt;% 
+  arrange(-n) %&amp;gt;% 
+  kable(col.names = c(&amp;quot;Ano&amp;quot;, &amp;quot;Nº de álbuns&amp;quot;)) %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `summarise()` has grouped output by &amp;#39;album_name&amp;#39;. You can override using the `.groups` argument.&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Ano
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Nº de álbuns
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2011
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1993
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2015
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1964
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1979
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1996
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2010
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Assim, vamos analisar então a distribuição da dançabilidade de Jorge Benjor na sua carreira. Façamos também o seguinte: em 1989, Jorge Ben alterou seu nome artístico para Jorge Benjor. Vamos dividir sua carreira nessas duas fases e analisar, comparando-as, a dançabilidade:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj %&amp;gt;%
+  mutate(nome = ifelse(album_release_year &amp;lt; 1989, &amp;quot;Jorge Ben&amp;quot;, &amp;quot;Jorge Benjor&amp;quot;)) %&amp;gt;%
+  group_by(album_name, album_release_year,  nome) %&amp;gt;%
+  summarise(dance_album = mean(danceability)) %&amp;gt;%
+  ggplot(aes(x = dance_album))+
+  geom_density(aes(fill = nome),
+               alpha = 0.6)+
+  labs(title = &amp;quot;Jorge Ben x Jorge Benjor: o mais dançante&amp;quot;,
+       subtitle = &amp;quot;Em 1989, Jorge Ben se torna Jorge Benjor&amp;quot;,
+       caption  = &amp;quot;Fonte: Spotify API&amp;quot;,
+       y = &amp;quot;Densidade&amp;quot;,
+       x = &amp;quot;Média da Dançabilidade por álbum&amp;quot;,
+       fill = &amp;quot;Nome artístico&amp;quot;)+
+  theme_ipsum_tw()+
+  scale_fill_ipsum()+
+  theme(legend.position = &amp;quot;bottom&amp;quot;)+
+  scale_x_continuous(breaks = seq(0.3, 0.75, 0.05))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `summarise()` has grouped output by &amp;#39;album_name&amp;#39;, &amp;#39;album_release_year&amp;#39;. You can override using the `.groups` argument.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/jorge-benjor/2019-10-15-jorge-benjor_files/figure-html/dance_jb_jbj-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;O que se pode perceber no gráfico acima é que, em extensão, a dançabilidade de ambas as fases artísticas de Jorge Ben/Jorge Benjor está localizada não só no mesmo extensão, como as suas médias se aproximam bastante. Logo, a mudança de nome não representou tanto uma mudança no estilo das músicas: todas continuaram bem dançantes. O que podemos perceber é que existem mais músicas de Jorge Ben entre 0.4 e 0.5 de dançabilidade do que de Jorge Benjor. Em contrapartida, Jorge Benjor possui mais músicas que Jorge Ben nos níveis acima de 0.60.&lt;/p&gt;
+&lt;p&gt;O Spotify, na sua API, nos oferece também uma variável denominada &lt;em&gt;valence&lt;/em&gt;, que representa a positividade de uma música, a partir de sua batida, ritmo, tons, etc, sem considerar o teor das letras. Vamos a seguir analisar os 10 álbuns com as maiores valências, que eu denominarei aqui como &lt;strong&gt;positividade&lt;/strong&gt;, e fazer o mesmo exercício que foi feito no gráfico anterior, dividindo entre Jorge Ben e Jorge Benjor:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj %&amp;gt;%
+  mutate(nome = ifelse(album_release_year &amp;lt; 1989, &amp;quot;Jorge Ben&amp;quot;, &amp;quot;Jorge Benjor&amp;quot;)) %&amp;gt;%
+  group_by(album_name, album_release_year, nome) %&amp;gt;%
+  summarise(valence_album = mean(valence)) %&amp;gt;%
+  head(10) %&amp;gt;%
+  ggplot(aes(x = reorder(album_name, valence_album),
+             y = valence_album, color = nome))+
+  geom_lollipop(horizontal = F, point.size = 2.5)+
+  coord_flip()+
+  theme_ipsum_tw()+
+  scale_color_ipsum()+
+  theme(legend.position = &amp;quot;bottom&amp;quot;)+
+  labs(x = &amp;quot;Álbum&amp;quot;,
+       y = &amp;quot;Média de positividade do álbum&amp;quot;,
+       title = &amp;quot;Positividade em Jorge Benjor&amp;quot;,
+       subtitle = &amp;quot;Separando os dois Jorges&amp;quot;,
+       color = &amp;quot;Nome artístico&amp;quot;,
+       caption = &amp;quot;Fonte: Spotify API&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## `summarise()` has grouped output by &amp;#39;album_name&amp;#39;, &amp;#39;album_release_year&amp;#39;. You can override using the `.groups` argument.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/jorge-benjor/2019-10-15-jorge-benjor_files/figure-html/pirulito-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;É notável que são poucas as diferenças na positividade entre as duas “fases” do artista. De 10 álbuns com maiores índices de positividade, 5 são do Jorge Ben e 5 são do Jorge Benjor. Talvez, se pudéssemos resumir o artista e sua obra à essas duas variáveis (dançabilidade e positividade), poderíamos contrargumentar qualquer um que fale “prefiro o Jorge Ben ao Jorge Benjor…”.&lt;/p&gt;
+&lt;p&gt;Uma variável curiosa também cedida pelo Spotify em sua API é a &lt;em&gt;key_mode&lt;/em&gt;, ou seja, o tom da música. Será que existe um tom que predomine nas músicas de Jorge Benjor? Vamos descobrir:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj %&amp;gt;%
+  tabyl(key_mode) %&amp;gt;%
+  ggplot(aes(x = reorder(key_mode, n), y = n))+
+  geom_col(fill = &amp;quot;#75b8d1&amp;quot;, color = &amp;quot;white&amp;quot;)+
+  coord_flip()+
+  theme_ipsum_tw()+
+  labs(title = &amp;quot;O tom favorito do Jorge Benjor&amp;quot;,
+       subtitle = &amp;quot;Considerando todas as músicas disponíveis no Spotify&amp;quot;,
+       x = &amp;quot;Tom&amp;quot;,
+       y = &amp;quot;Quantidade de músicas&amp;quot;,
+       caption = &amp;quot;Fonte: Spotify API&amp;quot;)+
+  scale_y_continuous(breaks = seq(0, 80, 10))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/jorge-benjor/2019-10-15-jorge-benjor_files/figure-html/key_mode-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Fica claro que, se fôssemos escolher os 5 tons mais predominantes em toda a produção musical do artista, escolheríamos, na ordem: Mi Menor, Si Menor, Dó Maior, Sol Maior e Ré Maior.&lt;/p&gt;
+&lt;p&gt;Para finalizar, vamos analisar meu álbum favorito do Jorge: A Tábua de Esmeralda, considerado um álbum alquímico, no sentido literal da palavra. As faixas presentes no álbum são as seguintes:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj %&amp;gt;%
+  filter(album_name == &amp;quot;A Tabua De Esmeralda&amp;quot;) %&amp;gt;% 
+  select(track_number, track_name) %&amp;gt;%
+  kable(col.names = c(&amp;quot;Nº da faixa&amp;quot;, &amp;quot;Nome da faixa&amp;quot;)) %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Nº da faixa
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Nome da faixa
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Os Alquimistas Estão Chegando Os Alquimistas
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+O Homem Da Gravata Florida
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Errare Humanum Est
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Menina Mulher Da Pele Preta
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Eu Vou Torcer
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Magnólia
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Minha Teimosia, Uma Arma Pra Te Conquistar
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Zumbi
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Brother
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+O Namorado Da Viúva
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Hermes Trismegisto E Sua Celeste Tábua De Esmeralda
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Cinco Minutos (5 Minutos)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Agora, analisando a dançabilidade, a positividade e a energia (outra variável incrível que o Spotify consolida entre seus dados), podemos analisar todo esse álbum:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj %&amp;gt;% 
+  filter(album_name == &amp;quot;A Tabua De Esmeralda&amp;quot;) %&amp;gt;%
+  pivot_longer(cols = c(danceability, valence, energy),
+               names_to = &amp;quot;medida&amp;quot;, values_to = &amp;quot;valor&amp;quot;) %&amp;gt;%
+  ggplot(aes(x = track_number, y = valor, color = medida))+
+  geom_line(size = 1.2)+
+  geom_point(size = 2)+
+  theme_ipsum_tw()+
+  scale_color_ipsum(labels = c(&amp;quot;Dançabilidade&amp;quot;, &amp;quot;Energia&amp;quot;, &amp;quot;Positividade&amp;quot;))+
+  scale_x_continuous(breaks = seq(1,12,1),
+                     minor_breaks = NULL)+
+  scale_y_continuous(breaks = seq(0.3, 1, 0.1),
+                     minor_breaks = NULL)+
+  labs(title = &amp;quot;A Tábua de Esmeralda: análise das músicas&amp;quot;,
+       subtitle = &amp;quot;É verdade sem mentira certo muito e verdadeiro&amp;quot;,
+       x = &amp;quot;Nº da faixa&amp;quot;,
+       y = &amp;quot;&amp;quot;,
+       caption = &amp;quot;Fonte: Spotify API&amp;quot;,
+       color = &amp;quot;&amp;quot;)+
+  theme(legend.position = &amp;quot;bottom&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/jorge-benjor/2019-10-15-jorge-benjor_files/figure-html/tabua_all-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;É possível perceber que a positividade do álbum cresce até a faixa 4, “Menina Mulher da Pele Preta”, e a partir daí, mantém-se estabilizada. A dançabilidade possui certa volatilidade: inicia acima de 0.5, cresce timidamente até a faixa 6, “Magnólia”, cai em “Zumbi”, sobe novamente e atinge o ápice em “Hermes Trismegisto e Sua Celeste Tábua de Esmeralda”, uma música que, de fato, é mais dançante que as demais do álbum, e cai completamente na última faixa, denominada “Cinco Minutos”. Mais volátil ainda é a energia, que começa alta, atinge o valor mínimo em “Magnólia”, cresce em “Minha Teimosia, Uma Arma pra Te Conquistar”, cai em “Brother”, eleva-se novamente em “O Namorado da Viúva” e termina baixa em “Cinco Minutos”.&lt;/p&gt;
+&lt;p&gt;Saindo um pouco desse banco, quais serão as top tracks de Jorge Benjor? Para isso, o &lt;strong&gt;SpotifyR&lt;/strong&gt; oferece a função denominada &lt;code&gt;get_artist_top_tracks()&lt;/code&gt;, que nos oferece as 10 músicas mais ouvidas do artista no Spotify, nos dando algumas das mesmas variáveis de antes. Diferente da função utilizada anteriormente, que permitia que escrevêssemos o nome do artista, a &lt;code&gt;get_artist_top_tracks&lt;/code&gt; só permite o &lt;strong&gt;ID&lt;/strong&gt; do mesmo. Para encontrar o ID do Jorge Benjor, retornaremos ao banco anterior. Sei que a variávei &lt;strong&gt;artist_id&lt;/strong&gt; possui essa informação, repetida para cada faixa presente no banco. Por isso, criarei um objeto com esse id para utilizar a função.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;get_artist_audio_features(&amp;quot;jorge benjor&amp;quot;) %&amp;gt;% 
+  pull(artist_id) %&amp;gt;% 
+  first() -&amp;gt; jbj_id
+
+jbj_top &amp;lt;- get_artist_top_tracks(jbj_id)
+
+glimpse(jbj_top)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 10
+## Columns: 28
+## $ artists                      &amp;lt;list&amp;gt; [&amp;lt;data.frame[26 x 6]&amp;gt;, &amp;lt;data.frame[1 x 6…
+## $ disc_number                  &amp;lt;int&amp;gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+## $ duration_ms                  &amp;lt;int&amp;gt; 168948, 179293, 298026, 184093, 177200, 2…
+## $ explicit                     &amp;lt;lgl&amp;gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,…
+## $ href                         &amp;lt;chr&amp;gt; &amp;quot;https://api.spotify.com/v1/tracks/60M76S…
+## $ id                           &amp;lt;chr&amp;gt; &amp;quot;60M76S6OMP5vnqZW7D4Nad&amp;quot;, &amp;quot;6U03Orwr5Dxt8j…
+## $ is_local                     &amp;lt;lgl&amp;gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,…
+## $ is_playable                  &amp;lt;lgl&amp;gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE,…
+## $ name                         &amp;lt;chr&amp;gt; &amp;quot;Camarão Que Dorme a Onda Leva&amp;quot;, &amp;quot;Mas, Qu…
+## $ popularity                   &amp;lt;int&amp;gt; 61, 57, 0, 56, 55, 37, 55, 53, 52, 52
+## $ preview_url                  &amp;lt;chr&amp;gt; &amp;quot;https://p.scdn.co/mp3-preview/bc19682723…
+## $ track_number                 &amp;lt;int&amp;gt; 13, 1, 6, 5, 4, 11, 6, 1, 5, 12
+## $ type                         &amp;lt;chr&amp;gt; &amp;quot;track&amp;quot;, &amp;quot;track&amp;quot;, &amp;quot;track&amp;quot;, &amp;quot;track&amp;quot;, &amp;quot;trac…
+## $ uri                          &amp;lt;chr&amp;gt; &amp;quot;spotify:track:60M76S6OMP5vnqZW7D4Nad&amp;quot;, &amp;quot;…
+## $ album.album_type             &amp;lt;chr&amp;gt; &amp;quot;album&amp;quot;, &amp;quot;album&amp;quot;, &amp;quot;album&amp;quot;, &amp;quot;album&amp;quot;, &amp;quot;albu…
+## $ album.artists                &amp;lt;list&amp;gt; [&amp;lt;data.frame[1 x 6]&amp;gt;, &amp;lt;data.frame[1 x 6]&amp;gt;…
+## $ album.href                   &amp;lt;chr&amp;gt; &amp;quot;https://api.spotify.com/v1/albums/3dSIcc…
+## $ album.id                     &amp;lt;chr&amp;gt; &amp;quot;3dSIccF3oBqXQTci6p7HEX&amp;quot;, &amp;quot;3xWp6y0HGsHZlX…
+## $ album.images                 &amp;lt;list&amp;gt; [&amp;lt;data.frame[3 x 3]&amp;gt;, &amp;lt;data.frame[3 x 3]…
+## $ album.name                   &amp;lt;chr&amp;gt; &amp;quot;Sambabook Zeca Pagodinho, Vol. 2&amp;quot;, &amp;quot;Samb…
+## $ album.release_date           &amp;lt;chr&amp;gt; &amp;quot;2014-03-20&amp;quot;, &amp;quot;1963-01-01&amp;quot;, &amp;quot;2021-02-26&amp;quot;,…
+## $ album.release_date_precision &amp;lt;chr&amp;gt; &amp;quot;day&amp;quot;, &amp;quot;day&amp;quot;, &amp;quot;day&amp;quot;, &amp;quot;day&amp;quot;, &amp;quot;day&amp;quot;, &amp;quot;day&amp;quot;…
+## $ album.total_tracks           &amp;lt;int&amp;gt; 13, 12, 29, 12, 12, 14, 11, 12, 11, 12
+## $ album.type                   &amp;lt;chr&amp;gt; &amp;quot;album&amp;quot;, &amp;quot;album&amp;quot;, &amp;quot;album&amp;quot;, &amp;quot;album&amp;quot;, &amp;quot;albu…
+## $ album.uri                    &amp;lt;chr&amp;gt; &amp;quot;spotify:album:3dSIccF3oBqXQTci6p7HEX&amp;quot;, &amp;quot;…
+## $ album.external_urls.spotify  &amp;lt;chr&amp;gt; &amp;quot;https://open.spotify.com/album/3dSIccF3o…
+## $ external_ids.isrc            &amp;lt;chr&amp;gt; &amp;quot;BRUKM1400027&amp;quot;, &amp;quot;BRMCA6300083&amp;quot;, &amp;quot;BRMCA020…
+## $ external_urls.spotify        &amp;lt;chr&amp;gt; &amp;quot;https://open.spotify.com/track/60M76S6OM…&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj_top %&amp;gt;% 
+  arrange(-popularity) %&amp;gt;% 
+  select(name) %&amp;gt;% 
+  mutate(index = row_number()) %&amp;gt;% 
+  kable(col.names = c(&amp;quot;Nome da faixa&amp;quot;, &amp;quot;Posição #&amp;quot;)) %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Nome da faixa
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Posição #
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Camarão Que Dorme a Onda Leva
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mas, Que Nada!
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Chove Chuva
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Menina Mulher Da Pele Preta
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Take It Easy My Brother Charles
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Os Alquimistas Estão Chegando Os Alquimistas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+País Tropical
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Por Causa De Você, Menina
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Oba, Lá Vem Ela
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Menina Mulher Da Pele Preta / O Telefone Tocou Novamente - Ao Vivo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Ok, temos as 10 músicas, na ordem de popularidade. Vamos plotar esse gráfico:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj_top %&amp;gt;% 
+  ggplot(aes(x = reorder(name, popularity), y = popularity))+
+  geom_col(fill = &amp;quot;#8fd175&amp;quot;, color = &amp;quot;black&amp;quot;, size = 0.35)+
+  theme_ipsum_tw()+
+  labs(title = &amp;quot;Top Tracks Jorge Benjor&amp;quot;,
+       x = &amp;quot;Nome da faixa&amp;quot;,
+       y = &amp;quot;Popularidade&amp;quot;,
+       caption = &amp;quot;Fonte: Spotify API&amp;quot;)+
+  coord_flip()+
+  scale_y_continuous(breaks = seq(0, 60, 10))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/jorge-benjor/2019-10-15-jorge-benjor_files/figure-html/top10jbj-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Como percebemos, o sucesso “Mas que nada!”, na voz de Jorge Benjor, é o mais popular dentre os usuários do Spotify! Mas estamos falando do mercado global. E se comparássemos 3 mercados diferentes, como por exemplo, Brasil, Estados Unidos e Japão? Será que os 3 países tem as mesmas músicas no Top 10?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj_top_jp &amp;lt;- get_artist_top_tracks(jbj_id, market = &amp;quot;JP&amp;quot;) %&amp;gt;% 
+  select(id, name, popularity_jp = popularity)
+
+jbj_top_br &amp;lt;- get_artist_top_tracks(jbj_id, market = &amp;quot;BR&amp;quot;) %&amp;gt;% 
+  select(id, name, popularity_br = popularity)
+
+jbj_top_us &amp;lt;- get_artist_top_tracks(jbj_id, market = &amp;quot;US&amp;quot;) %&amp;gt;% 
+  select(id, name, popularity_us = popularity)
+
+jbj_top_all &amp;lt;- inner_join(jbj_top, jbj_top_br, by = &amp;quot;name&amp;quot;)
+jbj_top_all &amp;lt;- inner_join(jbj_top_all, jbj_top_jp, by = &amp;quot;name&amp;quot;)
+jbj_top_all &amp;lt;- inner_join(jbj_top_all, jbj_top_us, by = &amp;quot;name&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ao observar cada um dos bancos, percebi que existem músicas que são mais tocadas no Japão, como “Por causa de você, menina”, que não está presente nem no Brasil nem nos Japão. Ao mesmo tempo, a versão &lt;em&gt;pout-pourri&lt;/em&gt; de “Menina Mulher da Pele Preta / O telefone tocou novamente” só existe no Brasil e no Japão, e não nos EUA. Foi preciso, então, fazer um &lt;code&gt;inner_join()&lt;/code&gt; para gerar uma lista que contenha somente as faixas no top 10 de todos os 3 mercados. No caso, restaram 8 músicas. MDessa forma, somente compararemos o que for comparável entre os países.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj_top_all %&amp;gt;% 
+  select(name, starts_with(&amp;quot;pop&amp;quot;)) %&amp;gt;% 
+  kable(col.names = c(&amp;quot;Nome da faixa&amp;quot;, &amp;quot;Pop. Global&amp;quot;, &amp;quot;Pop. BR&amp;quot;, &amp;quot;Pop. JP&amp;quot;, &amp;quot;Pop. US&amp;quot;)) %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Nome da faixa
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Pop. Global
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Pop. BR
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Pop. JP
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Pop. US
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Camarão Que Dorme a Onda Leva
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+61
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+61
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+61
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+61
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Mas, Que Nada!
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+57
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+57
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+57
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+57
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Menina Mulher Da Pele Preta / O Telefone Tocou Novamente - Ao Vivo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+57
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+57
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+0
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Chove Chuva
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+56
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+56
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+56
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+56
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Menina Mulher Da Pele Preta
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Oba, Lá Vem Ela
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Take It Easy My Brother Charles
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Os Alquimistas Estão Chegando Os Alquimistas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+53
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+53
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+53
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+53
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+País Tropical
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+52
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+52
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+52
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+52
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Por Causa De Você, Menina
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+52
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+52
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+52
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+52
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;jbj_top_all[6,9] &amp;lt;- &amp;quot;Os Alquimistas Estão Chegando&amp;quot;
+
+jbj_top_all %&amp;gt;% 
+  pivot_longer(cols = c(starts_with(&amp;quot;Pop&amp;quot;)), values_to = &amp;quot;Popularidade&amp;quot;, names_to = &amp;quot;Mercado&amp;quot;) %&amp;gt;% 
+  select(Faixa = name, Mercado, Popularidade) %&amp;gt;% 
+  mutate(Mercado = case_when(Mercado == &amp;quot;popularity&amp;quot; ~ &amp;quot;Global&amp;quot;,
+                             Mercado == &amp;quot;popularity_br&amp;quot; ~ &amp;quot;Brasil&amp;quot;,
+                             Mercado == &amp;quot;popularity_us&amp;quot; ~ &amp;quot;EUA&amp;quot;,
+                             Mercado == &amp;quot;popularity_jp&amp;quot; ~ &amp;quot;Japão&amp;quot;)) -&amp;gt; jbj_top_graphs 
+jbj_top_graphs %&amp;gt;% 
+  ggplot(aes(x = Faixa, y = Popularidade, fill = Mercado))+
+  geom_col(aes(group = factor(Faixa)), position = &amp;quot;dodge2&amp;quot;)+
+  theme_ipsum_tw()+
+  coord_flip()+
+  scale_fill_ipsum()+
+  theme(legend.position = &amp;quot;bottom&amp;quot;)+
+  scale_y_continuous(breaks = seq(0, 70, 10))+
+  labs(title = &amp;quot;Jorge Benjor pelo Mundo&amp;quot;,
+       subtitle = &amp;quot;Comparando Mundo, Brasil, EUA e Japão&amp;quot;,
+       caption = &amp;quot;Fonte: SpotifyR&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/jorge-benjor/2019-10-15-jorge-benjor_files/figure-html/jbj_graphs-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+O que podemos perceber é que, dentre as 8 músicas que são comuns aos 4 top 10 (o global, o brasileiro, o americano e o japonês), em todas as canções a popularidade é a mesma, menos na música “Oba, Lá Vem Ela”, que é menos gostada nos EUA e no Mundo, mas é muito ouvida no Brasil e no Japão.&lt;/p&gt;
+&lt;p&gt;Bom, por hoje é só! É preciso agradecer principalmente ao criador do SpotifyR, cujo link pode ser encontrando no início do post, e também à &lt;a href=&#34;https://msmith7161.github.io/what-is-speechiness/&#34;&gt;&lt;strong&gt;Mia Smith&lt;/strong&gt;&lt;/a&gt;, com um elucidador artigo que explora a API, e &lt;a href=&#34;https://medium.com/@simranvatsa5/taylor-f656e2a09cc3&#34;&gt;&lt;strong&gt;Simran Vatsa&lt;/strong&gt;&lt;/a&gt;, que serviu de inspiração com seu excelente trabalho sobre os álbuns da Taylor Swift.&lt;/p&gt;
+&lt;p&gt;Qualquer dúvida, correção ou sugestão pode ser encaminhada para &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

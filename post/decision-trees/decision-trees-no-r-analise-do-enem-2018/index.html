@@ -1,0 +1,1996 @@
+<!DOCTYPE html><html lang="pt" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Mateus Cavalcanti Pestana" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Olá! No post de hoje, utilizarei uma ferramenta fascinante para predição e explicação em modelos tanto de regressão quanto de classificação: as árvores de decisão, ou decision trees." />
+
+  
+  <link rel="alternate" hreflang="pt" href="https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.003d2be57501b5669ca58ef75468ece2.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150193464-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-150193464-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Mateus C. Pestana" />
+  <meta property="og:url" content="https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/" />
+  <meta property="og:title" content="Decision Trees no R: Análise do ENEM 2018 | Mateus C. Pestana" />
+  <meta property="og:description" content="Olá! No post de hoje, utilizarei uma ferramenta fascinante para predição e explicação em modelos tanto de regressão quanto de classificação: as árvores de decisão, ou decision trees." /><meta property="og:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="pt" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2020-05-18T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2020-05-18T19:10:15-03:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/"
+  },
+  "headline": "Decision Trees no R: Análise do ENEM 2018",
+  
+  "datePublished": "2020-05-18T00:00:00Z",
+  "dateModified": "2020-05-18T19:10:15-03:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Mateus Cavalcanti Pestana"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mateus C. Pestana",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Olá! No post de hoje, utilizarei uma ferramenta fascinante para predição e explicação em modelos tanto de regressão quanto de classificação: as árvores de decisão, ou decision trees."
+}
+</script>
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://gist.githubusercontent.com/jeremyyeo/03930a03108330d5579fe88b79604c41/raw/2aa8e8a614dbc47c9af81156d0663d3e2e4bdfc6/htmlwidgets.js"></script>
+
+  <title>Decision Trees no R: Análise do ENEM 2018 | Mateus C. Pestana</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="6001c430c72aa1d1869e681d2e4f2f7f" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.9f8405b7756f5e178a738a09c302f8b3.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Pesquisar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Pesquisar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Pesquisar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Alterar navegação">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Biografia</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#portfolio"><span>Portfolio</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publicações</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cursos"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/media/resume.pdf"><span>Currículo</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Pesquisar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Decision Trees no R: Análise do ENEM 2018</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      <a href="/author/mateus-cavalcanti-pestana/">Mateus Cavalcanti Pestana</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Última atualização em
+      
+    
+    18 de May, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    23 minutos de leitura
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/ciencia-de-dados/">ciência de dados</a>, <a href="/category/estatistica/">estatística</a>, <a href="/category/r/">r</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Olá! No post de hoje, utilizarei uma ferramenta fascinante para predição e explicação em modelos tanto de regressão quanto de classificação: as árvores de decisão, ou <strong>decision trees</strong>.</p>
+<p>As árvores de decisão, como no exemplo abaixo, são traçadas a partir de uma combinação de nós e folhas, sendo cada nó uma variável com um determinado valor ou categoria dividida e cada folha com um valor ou categoria predita. Tal recurso é interessante pois a interpretação é facilitada pelo apelo gráfico, e nos permite entender quais variáveis são importantes e determinantes na predição/explicação de um modelo.</p>
+<div class="figure">
+<img src="https://miro.medium.com/max/2000/1*WerHJ14JQAd3j8ASaVjAhw.jpeg" alt="" />
+<p class="caption">Exemplo de Decision Tree</p>
+</div>
+<p>Há algum tempo, vi pela internet diversos posts utilizando os dados do ENEM, que são livres e abertos, disponibilizados no site do <a href="http://inep.gov.br/web/guest/microdados">INEP</a>. O arquivo é um pouco pesado e, por conta disso, limitarei a minha análise. O que busco aqui é entender quais variáveis e como tais variáveis afetam no desempenho em Matemática dos alunos do município do Rio de Janeiro e de São Gonçalo. As justificativas para tal escolha se dão por</p>
+<ul>
+<li>ao utilizar o Brasil inteiro, um enorme poder computacional é exigido;</li>
+<li>utilizando todo o país, estaríamos homogeneizando realidades distantes e assim atribuindo viés à análise. O Estado de São Paulo tem a maioria dos alunos no ENEM, e portanto enviesaria e obfuscaria aspectos que são importantes, talvez, para alunos do interior do Rio Grande do Sul;</li>
+<li>A cidade do Rio, além de capital, tem o segundo melhor IDH do Estado, enquanto São Gonçalo tem um dos piores, sendo duas análises distintas interessantes.</li>
+</ul>
+<p>Mas como uma árvore de decisão funciona e calcula as divisões? Bom, o algoritmo calcula a média de cada preditor agrupando suas possibilidades de maneira ótima, gerando cada divisão e testando qual o melhor preditor para uma árvore, avançando na mesma em profundidade (<em>depth</em>), sendo que ao final do processo, valores ou categorias são apontados em cada região ou “folha”. A ideia é um pouco complexa, mas uma vez na prática, fica mais fácil de entender. Vamos para o R:</p>
+<p>O primeiro passo é carregar os pacotes que iremos utilizar, abrir o banco e determinar uma <em>seed</em>, que nada mais é que um número que permite a reproducibilidade dos valores randômicos obtidos em uma pesquisa. Com a mesma seed, os mesmo valores devem ser obtidos em todos os computadores e sistemas.</p>
+<pre class="r"><code># Setando seed como 93
+set.seed(93)
+
+# Carregando os pacotes
+pacman::p_load(
+  tidyverse,
+  randomForest,
+  gbm,
+  tree,
+  fst,
+  ranger,
+  rpart,
+  rpart.plot,
+  rattle
+)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/qy/4rvcxmfj4bz5vqk9hv_q9pmh0000gn/T//Rtmp1MmSXY/downloaded_packages</code></pre>
+<pre><code>## 
+## gbm installed</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/qy/4rvcxmfj4bz5vqk9hv_q9pmh0000gn/T//Rtmp1MmSXY/downloaded_packages</code></pre>
+<pre><code>## 
+## tree installed</code></pre>
+<pre class="r"><code># Abrindo o banco
+enem2018 &lt;- read.fst(&quot;enem2018_full.fst&quot;)</code></pre>
+<p>Como sempre, utilizarei o tidyverse para pequenas manipulações no banco. o RandomForest, o GBM, o Tree, o Ranger, o Rpart, o Rpart.Plot e o Rattle são pacotes que utilizarei para a análise em si e lidam com árvores de decisão, florestas randômicas, bagging, boosting, e plotagem das mesmas. Já FST é um pacote que se refere ao formato <em>.fst</em>, que permite uma maior compressão dos dados. O banco do ENEM, completo, pesa em torno de 1.8gb em CSV, mas apenas ~800mb em FST com 100% de compressão. Em tempos de SSDs limitados, todo espaço que pode ser salvo é importante.</p>
+<p>No arquivo baixado pelo site do INEP, temos o <a href="/files/dicionario_enem_2018.xlsx">dicionário</a> das variáveis, que indica o que cada variável significa. Essas devem ser trabalhadas, filtradas, alteradas. Como quero utilizar a nota de matemática, todas as outras notas devem ser removidas, e irei remover todos os casos de alunos treineiros, que ainda não tem idade/formação para entrar na faculdade e fazem a prova como um teste. Alterarei algumas variáveis também, para facilitar a leitura das mesmas.</p>
+<pre class="r"><code>enem2018 &lt;- enem2018 %&gt;%
+  # Filtrando só quem não é treineiro e que participou da prova de matemática
+  filter(IN_TREINEIRO == 0,
+         TP_PRESENCA_MT == 1) %&gt;%
+  # Removendo as variáveis que não utilizarei, mantendo somente as que podem se relacionar com a nota, como as variáveis do questionário socioeconômico, representadas pela inicial &quot;Q&quot;.
+  dplyr::select(
+    -c(
+      starts_with(&quot;TX&quot;),
+      starts_with(&quot;CO&quot;),
+      starts_with(&quot;IN&quot;),
+      starts_with(&quot;NU_NOTA_COMP&quot;),
+      starts_with(&quot;TP_P&quot;),
+      NU_ANO,
+      NU_INSCRICAO,
+      starts_with(&quot;SG_UF_R&quot;),
+      TP_NACIONALIDADE,
+      TP_ESTADO_CIVIL,
+      TP_ST_CONCLUSAO,
+      TP_ANO_CONCLUIU,
+      TP_ENSINO,
+      TP_SIT_FUNC_ESC,
+      NU_NOTA_CN,
+      NU_NOTA_CH,
+      NU_NOTA_LC,
+      TP_LINGUA,
+      TP_STATUS_REDACAO,
+      NU_NOTA_REDACAO,
+      SG_UF_NASCIMENTO
+    )
+  ) %&gt;%
+  # Como acredito que o  tipo de escola possa vir a influenciar na variável dependente da nota, 
+  # vou alterar para aparecer cada caso,assim como com a raça e a localização. 
+  mutate(
+    TP_ESCOLA = case_when(
+      TP_ESCOLA == 1 ~ &quot;NR&quot;,
+      TP_ESCOLA == 2 ~ &quot;Pública&quot;,
+      TP_ESCOLA == 3 ~ &quot;Privada&quot;,
+      TP_ESCOLA == 4 ~ &quot;Exterior&quot;
+    ),
+    TP_DEPENDENCIA_ADM_ESC = case_when(
+      TP_DEPENDENCIA_ADM_ESC == 1 ~ &quot;Federal&quot;,
+      TP_DEPENDENCIA_ADM_ESC == 2 ~ &quot;Estadual&quot;,
+      TP_DEPENDENCIA_ADM_ESC == 3 ~ &quot;Municipal&quot;,
+      TP_DEPENDENCIA_ADM_ESC == 4 ~ &quot;Privada&quot;
+    ),
+    TP_LOCALIZACAO_ESC = case_when(
+      TP_LOCALIZACAO_ESC == 1 ~ &quot;Urbana&quot;,
+      TP_LOCALIZACAO_ESC == 2 ~ &quot;Rural&quot;
+    ),
+    TP_COR_RACA = case_when(
+      TP_COR_RACA == 0 ~ &quot;Não declarado&quot;,
+      TP_COR_RACA == 1 ~ &quot;Branca&quot;,
+      TP_COR_RACA == 2 ~ &quot;Preta&quot;,
+      TP_COR_RACA == 3 ~ &quot;Parda&quot;,
+      TP_COR_RACA == 4 ~ &quot;Amarela&quot;,
+      TP_COR_RACA == 5 ~ &quot;Indígena&quot;
+    )
+  ) %&gt;%
+  mutate_if(is.character, as.factor) %&gt;%
+  mutate_at(vars(starts_with(&quot;TP&quot;)), as.factor) %&gt;%
+  mutate(Q005 = as.factor(Q005))</code></pre>
+<p>O próximo passo seria filtrar os alunos cuja escola é no município do Rio e em São Gonçalo, criando dois objetos para tais. Excluirei também os alunos que afirmam terem estudado no Exterior e os que não responderam.</p>
+<pre class="r"><code>enem2018rio &lt;- enem2018 %&gt;%
+  filter(
+    SG_UF_ESC == &quot;RJ&quot;,
+    NO_MUNICIPIO_ESC == &quot;Rio de Janeiro&quot;,
+    TP_ESCOLA != &quot;Exterior&quot;,
+    TP_ESCOLA != &quot;NR&quot;
+  ) %&gt;%
+  select(-c(starts_with(&quot;NO_MUN&quot;),
+            starts_with(&quot;SG_UF&quot;)))
+
+enem2018sg &lt;- enem2018 %&gt;%
+  filter(
+    SG_UF_ESC == &quot;RJ&quot;,
+    NO_MUNICIPIO_ESC == &quot;São Gonçalo&quot;,
+    TP_ESCOLA != &quot;Exterior&quot;,
+    TP_ESCOLA != &quot;NR&quot;
+  ) %&gt;%
+  select(-c(starts_with(&quot;NO_MUN&quot;),
+            starts_with(&quot;SG_UF&quot;)))</code></pre>
+<div id="usando-o-tree" class="section level3">
+<h3>Usando o Tree</h3>
+<p>Pronto, a partir de agora podemos criar as nossas primeiras árvores de decisão para comparar o Rio e São Gonçalo. As árvores são criadas pelo comando <code>tree()</code>, que obedecem à mesma sintaxe de um <code>lm()</code>, com “variável dependente ~ preditores, data”.</p>
+<pre class="r"><code>tree.enemrio &lt;- tree(NU_NOTA_MT ~., data = enem2018rio)
+tree.enemsg &lt;- tree(NU_NOTA_MT~., data = enem2018sg)
+
+summary(tree.enemrio)</code></pre>
+<pre><code>## 
+## Regression tree:
+## tree(formula = NU_NOTA_MT ~ ., data = enem2018rio)
+## Variables actually used in tree construction:
+## [1] &quot;TP_SEXO&quot; &quot;Q006&quot;   
+## Number of terminal nodes:  4 
+## Residual mean deviance:  6680 = 102000000 / 15200 
+## Distribution of residuals:
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## -573.00  -61.00   -8.69    0.00   53.10  374.00</code></pre>
+<pre class="r"><code>summary(tree.enemsg)</code></pre>
+<pre><code>## 
+## Regression tree:
+## tree(formula = NU_NOTA_MT ~ ., data = enem2018sg)
+## Variables actually used in tree construction:
+## [1] &quot;TP_SEXO&quot;  &quot;NU_IDADE&quot;
+## Number of terminal nodes:  3 
+## Residual mean deviance:  5660 = 14600000 / 2580 
+## Distribution of residuals:
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## -149.00  -58.20   -9.07    0.00   49.00  263.00</code></pre>
+<p>Com o comando <code>summary()</code> dado nas árvores acima, temos os preditores utilizados pelo algoritmo para dividir os casos: <code>TP_SEXO</code> e <code>Q006</code>, no Rio, e <code>TP_SEXO</code> e <code>NU_IDADE</code> em São Gonçalo. A primeira variável se refere ao gênero do aluno, enquanto a Q006 se refere à renda famíliar do aluno. A variável <code>NU_IDADE</code> é, como se pressupõe, a idade do aluno. O <code>summary()</code> nos dá outras informações interessantes, e a principal delas por agora é o número de nós terminais: 4 e 3, respectivamente. Podemos plotar essas árvores para compreendê-las melhor:</p>
+<pre class="r"><code>par(mfrow=c(1,2))
+plot(tree.enemrio)
+text(tree.enemrio)
+title(main = &quot;Rio de Janeiro&quot;)
+plot(tree.enemsg)
+text(tree.enemsg)
+title(main = &quot;São Gonçalo&quot;)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/plot_trees-1.png" width="672" /></p>
+<p>Como podemos interpretar esses dois gráficos?</p>
+<ul>
+<li><p>No caso do Rio, se o aluno for do sexo feminino e estiver em uma família cuja renda mensal vai de zero até R$ 1908,00, a nota em matemática gira em torno da média de 493.8. Se for mulher mas tiver renda superior a R$1908,01 , ou seja, mais abastada em comparação ao outro grupo, a nota de matemática tende a aumentar, ficando em torno da média de 525. Agora, quando se é homem, o que é representado pelo lado direito do primeiro plot, mas com renda até R$ 2385,00, a nota ainda se posiciona perto de 532.8, enquanto as rendas superiores a tal valor recebem a nota de 572.6.</p></li>
+<li><p>Em São Gonçalo, a renda não influencia a ponto de aparecer no gráfico, mas sim o sexo e a idade. Mulheres com menos de 18,5 anos recebem a nota, em média, de 500,1, enquanto as mais velhas giram em torno de 471,9. Todavia, a idade não influencia na nota dos homens, que se localiza ao redor de 522,9.</p></li>
+</ul>
+<p>Tivemos sorte que as nossas duas árvores são simples. Algumas árvores podem ser absurdamente complexas, com alta profundidade, utilizando vários preditores e tendo vários nós terminais, o que dificulta a interpretação. Para isso, podemos utilizar o <em>prune</em>, que nada mais é que reduzir ou “podar” nossas árvores para o ponto com o menor <em>deviance</em>. Para fazer isso, fazemos uma validação cruzada da ávore, buscando identificar o número de nodes que leva ao menor desvio. Vamos verificar isso com o comando <code>cv.tree()</code>:</p>
+<pre class="r"><code>cv.rio &lt;- cv.tree(tree.enemrio, K = 100)
+cv.sg &lt;- cv.tree(tree.enemsg, K = 100)
+
+par(mfrow=c(1,2))
+plot(cv.rio$size, cv.rio$dev, type = &quot;b&quot;)
+title(main = &quot;Rio de Janeiro&quot;)
+plot(cv.sg$size, cv.sg$dev, type = &quot;b&quot;)
+title(main = &quot;São Gonçalo&quot;)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/crossvalidation_trees-1.png" width="672" /></p>
+<p>Como podemos ver, o menor valor é encontrado quando a árvore possui respectivamente 4 e 3 nós terminais, ou seja, já temos a árvore com o menor <em>deviance</em>. Mas se quiséssemos fazer o <em>prune</em>, utilizaríamos o seguinte comando:</p>
+<pre class="r"><code>prune.enem &lt;- prune.tree(tree.enemrio, best = 4)</code></pre>
+<p>No argumento <code>best</code>, colocamos o número de nós terminais que desejamos, de acordo com a validação cruzada feita anteriormente.</p>
+</div>
+<div id="usando-o-rpart" class="section level3">
+<h3>Usando o rPart</h3>
+<p>Podemos também fazer as mesmas árvores usando o pacote rPart, que em conjunto com o rpart.plot e o rattle, nos permite a plotagem de árvores com melhor apelo visual. A sintaxe é basicamente a mesma:</p>
+<pre class="r"><code>rpart.rio &lt;- rpart(NU_NOTA_MT ~ ., data = enem2018rio)
+rpart.sg &lt;- rpart(NU_NOTA_MT ~ ., data = enem2018sg)
+
+# No Rio
+summary(rpart.rio)</code></pre>
+<pre><code>## Call:
+## rpart(formula = NU_NOTA_MT ~ ., data = enem2018rio)
+##   n= 15233 
+## 
+##          CP nsplit rel error   xerror      xstd
+## 1 0.0518975      0  1.000000 1.000092 0.0117093
+## 2 0.0158478      1  0.948103 0.948297 0.0110942
+## 3 0.0152261      2  0.932255 0.936489 0.0109793
+## 4 0.0100000      3  0.917029 0.918746 0.0106895
+## 
+## Variable importance
+## TP_SEXO    Q006    Q024    Q002    Q003    Q001    Q010 
+##      58      35       2       2       1       1       1 
+## 
+## Node number 1: 15233 observations,    complexity param=0.0518975
+##   mean=517.931, MSE=7287.81 
+##   left son=2 (9198 obs) right son=3 (6035 obs)
+##   Primary splits:
+##       TP_SEXO  splits as  LR, improve=0.0518975, (0 missing)
+##       Q006     splits as  LLLLLRRRRRRRRRRRR, improve=0.0378755, (0 missing)
+##       Q024     splits as  LRRRR, improve=0.0196952, (0 missing)
+##       NU_IDADE &lt; 18.5 to the right, improve=0.0193174, (0 missing)
+##       Q003     splits as  LLLRRL, improve=0.0192026, (0 missing)
+##   Surrogate splits:
+##       Q006 splits as  LLLLLLLRLLRRLRRRR, agree=0.607, adj=0.007, (0 split)
+##       Q024 splits as  LLRRR, agree=0.606, adj=0.005, (0 split)
+##       Q014 splits as  LLRLR, agree=0.605, adj=0.003, (0 split)
+##       Q005 splits as  RLLLLLLLLLLLRL-LRL-L, agree=0.605, adj=0.002, (0 split)
+##       Q016 splits as  LLR-R, agree=0.605, adj=0.002, (0 split)
+## 
+## Node number 2: 9198 observations,    complexity param=0.0158478
+##   mean=502.178, MSE=5880.98 
+##   left son=4 (6729 obs) right son=5 (2469 obs)
+##   Primary splits:
+##       Q006     splits as  LLLLRRRRRRRRRRRRR, improve=0.0325244, (0 missing)
+##       NU_IDADE &lt; 18.5 to the right, improve=0.0225858, (0 missing)
+##       Q001     splits as  LLLLRRRL, improve=0.0179838, (0 missing)
+##       Q002     splits as  LLLLRRRL, improve=0.0168509, (0 missing)
+##       Q003     splits as  LLLRRL, improve=0.0162138, (0 missing)
+##   Surrogate splits:
+##       Q002 splits as  LLLLLRRL, agree=0.748, adj=0.061, (0 split)
+##       Q024 splits as  LLRRR,    agree=0.745, adj=0.050, (0 split)
+##       Q001 splits as  LLLLLRRL, agree=0.741, adj=0.036, (0 split)
+##       Q003 splits as  LLLRRL,   agree=0.739, adj=0.029, (0 split)
+##       Q010 splits as  LLRRR,    agree=0.737, adj=0.019, (0 split)
+## 
+## Node number 3: 6035 observations,    complexity param=0.0152261
+##   mean=541.941, MSE=8477.31 
+##   left son=6 (4647 obs) right son=7 (1388 obs)
+##   Primary splits:
+##       Q006     splits as  LLLLLRRRRRRRRRRRR, improve=0.0330397, (0 missing)
+##       NU_IDADE &lt; 18.5 to the right, improve=0.0260023, (0 missing)
+##       Q003     splits as  LLLRRL, improve=0.0191681, (0 missing)
+##       Q002     splits as  LLLLRRRL, improve=0.0188350, (0 missing)
+##       Q001     splits as  LLLLRRRL, improve=0.0180970, (0 missing)
+##   Surrogate splits:
+##       Q002 splits as  LLLLLLRL, agree=0.780, adj=0.043, (0 split)
+##       Q024 splits as  LLLRR,    agree=0.779, adj=0.038, (0 split)
+##       Q010 splits as  LLRRL,    agree=0.777, adj=0.031, (0 split)
+##       Q003 splits as  LLLLRL,   agree=0.777, adj=0.030, (0 split)
+##       Q001 splits as  LLLLLLRL, agree=0.775, adj=0.021, (0 split)
+## 
+## Node number 4: 6729 observations
+##   mean=493.801, MSE=5212.72 
+## 
+## Node number 5: 2469 observations
+##   mean=525.01, MSE=6989.69 
+## 
+## Node number 6: 4647 observations
+##   mean=532.794, MSE=7611.91 
+## 
+## Node number 7: 1388 observations
+##   mean=572.563, MSE=10156.9</code></pre>
+<pre class="r"><code># Em São Gonçalo
+summary(rpart.sg)</code></pre>
+<pre><code>## Call:
+## rpart(formula = NU_NOTA_MT ~ ., data = enem2018sg)
+##   n= 2583 
+## 
+##          CP nsplit rel error   xerror      xstd
+## 1 0.0354531      0  1.000000 1.000863 0.0277142
+## 2 0.0158005      1  0.964547 0.966190 0.0264783
+## 3 0.0100000      2  0.948746 0.950902 0.0259432
+## 
+## Variable importance
+##  TP_SEXO NU_IDADE     Q005     Q024     Q002 
+##       67       30        1        1        1 
+## 
+## Node number 1: 2583 observations,    complexity param=0.0354531
+##   mean=504.133, MSE=5955.64 
+##   left son=2 (1613 obs) right son=3 (970 obs)
+##   Primary splits:
+##       TP_SEXO  splits as  LR, improve=0.0354531, (0 missing)
+##       NU_IDADE &lt; 18.5 to the right, improve=0.0207137, (0 missing)
+##       Q001     splits as  LLLLRRLL, improve=0.0159758, (0 missing)
+##       Q006     splits as  LLLRRRLRRLRRLLR-L, improve=0.0153501, (0 missing)
+##       Q002     splits as  LLLRRRRL, improve=0.0128527, (0 missing)
+##   Surrogate splits:
+##       Q024 splits as  LLRRL, agree=0.630, adj=0.013, (0 split)
+##       Q002 splits as  LLLLLLRL, agree=0.627, adj=0.006, (0 split)
+##       Q006 splits as  LLLLLLLLLRLRLLL-L, agree=0.626, adj=0.003, (0 split)
+##       Q005 splits as  LLLLLLLRLL----------, agree=0.625, adj=0.002, (0 split)
+##       Q010 splits as  LLLRR, agree=0.625, adj=0.002, (0 split)
+## 
+## Node number 2: 1613 observations,    complexity param=0.0158005
+##   mean=492.864, MSE=5310.8 
+##   left son=4 (412 obs) right son=5 (1201 obs)
+##   Primary splits:
+##       NU_IDADE &lt; 18.5 to the right, improve=0.02837470, (0 missing)
+##       Q001     splits as  LLLLRRLL, improve=0.02151170, (0 missing)
+##       Q006     splits as  LLRRRRRRRLRRLLR-R, improve=0.01664760, (0 missing)
+##       Q002     splits as  LLLRRRRL, improve=0.01389590, (0 missing)
+##       Q013     splits as  LRRRL, improve=0.00986575, (0 missing)
+##   Surrogate splits:
+##       Q005 splits as  LRRRRRRLRR----------, agree=0.751, adj=0.027, (0 split)
+##       Q002 splits as  LRRRRRRR, agree=0.746, adj=0.005, (0 split)
+##       Q006 splits as  RRRRRRRRRRRRRLL-R, agree=0.746, adj=0.005, (0 split)
+##       Q027 splits as  RRRLR-, agree=0.745, adj=0.002, (0 split)
+## 
+## Node number 3: 970 observations
+##   mean=522.871, MSE=6465.7 
+## 
+## Node number 4: 412 observations
+##   mean=471.906, MSE=3658.29 
+## 
+## Node number 5: 1201 observations
+##   mean=500.054, MSE=5675.3</code></pre>
+<p>O <code>summary()</code> acima nos mostra uma informação importantíssima: a importância de cada variável dentro do conjunto utilizado. No caso do Rio, percebemos que <code>TP_SEXO</code> e <code>Q006</code>, as duas primeiras, estão muito acima das outras variáveis, como a <code>Q024</code>, referente a existência de computador na residência. Isso justifica a utilização das duas primeiras mas não do resto. No caso de São Gonçalo, é possível perceber que <code>TP_SEXO</code> é mais de duas vezes mais importante que <code>NU_IDADE</code>, que por sua vez é bem distante de <code>Q005</code>, que versa sobre a quantidade de pessoas na residência. Como são pouco importantes no cálculo final, não foram utilizadas na árvore.</p>
+<p>Para ver as regras da árvore, temos o comando <code>rpart.rules()</code>, que é usado da seguinte forma:</p>
+<pre class="r"><code>rpart.rules(rpart.rio)</code></pre>
+<pre><code>##  NU_NOTA_MT                                                                                          
+##         494 when TP_SEXO is F &amp; Q006 is                                              A or B or C or D
+##         525 when TP_SEXO is F &amp; Q006 is E or F or G or H or I or J or K or L or M or N or O or P or Q
+##         533 when TP_SEXO is M &amp; Q006 is                                         A or B or C or D or E
+##         573 when TP_SEXO is M &amp; Q006 is      F or G or H or I or J or K or L or M or N or O or P or Q</code></pre>
+<pre class="r"><code>rpart.rules(rpart.sg)</code></pre>
+<pre><code>##  NU_NOTA_MT                                   
+##         472 when TP_SEXO is F &amp; NU_IDADE &gt;= 19
+##         500 when TP_SEXO is F &amp; NU_IDADE &lt;  19
+##         523 when TP_SEXO is M</code></pre>
+<p>E para a plotagem das árvores, utilizo o <code>fancyRpartPlot()</code>:</p>
+<pre class="r"><code># Para o Rio
+rattle::fancyRpartPlot(rpart.rio, sub = NULL)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/fancy-1.png" width="672" /></p>
+<pre class="r"><code># Para São Gonçalo
+rattle::fancyRpartPlot(rpart.sg, sub = NULL)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/fancy-2.png" width="672" /></p>
+<p>Uma vantagem do rPart é que alguns aspectos no cálculo podem ser alterados. Poderíamos tornar a árvore mais complexa alterando o <strong>complexity parameter</strong>, o que poderia aumentar o número de nós, preditores e nós terminais. Para isso, bastaria aperfeiçoar o comando da seguinte maneira:</p>
+<pre class="r"><code>rpart.rio2 &lt;- rpart(NU_NOTA_MT ~ ., enem2018rio, control = rpart.control(cp = .003))
+rpart.sg2 &lt;- rpart(NU_NOTA_MT ~ ., enem2018sg, control = rpart.control(cp = .005))
+
+fancyRpartPlot(rpart.rio2, sub = NULL)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/rpartcp2-1.png" width="672" /></p>
+<pre class="r"><code>fancyRpartPlot(rpart.sg2, sub = NULL)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/rpartcp2-2.png" width="672" /></p>
+<p>Se compararmos o erro relativo nas duas árvores em cada cidade, percebemos que o mesmo se altera quando a complexidade é maior. Todavia, isso também dificulta a interpretação da mesma e adiciona viés.</p>
+<pre class="r"><code>par(mfrow=c(2,2))
+plotcp(rpart.rio)
+plotcp(rpart.rio2)
+plotcp(rpart.sg)
+plotcp(rpart.sg)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>No caso do Rio, o erro relativo diminui, enquanto o menor erro em São Gonçalo é quando a árvore tem apenas 3 nós finais, aumentando suavemente depois.</p>
+</div>
+<div id="bagging-randomforest-e-boosting" class="section level3">
+<h3>Bagging, RandomForest e Boosting</h3>
+<p>Entretanto, quando fazemos essa árvore, que garantia temos de que essa é a melhor árvore possível? Testando com técnicas de bootstrapping, repetindo a criação de árvores centenas ou milhares de vezes, buscando a média dos resultados para ver como a árvore se adapta e quais os melhores preditores usados, é claro!</p>
+<div id="bagging" class="section level4">
+<h4>Bagging</h4>
+<p>A primeira técnica que podemos utilizar é de bagging, que faz uma amostragem de casos usando todos os preditores. Para fazer o bagging, o pacote <code>randomForest</code> é fundamental. Todavia, quando lidamos com bancos muito grandes, é mais interessante usar o <code>ranger</code>, que permite a utilização de todos os núcleos do processador presentes na máquina.</p>
+<pre class="r"><code>bag.enemrio &lt;- ranger(
+  NU_NOTA_MT ~ .,
+  data = enem2018rio,
+  mtry = 33,
+  importance = &quot;impurity&quot;,
+  num.threads = 12,
+  num.trees = 1000
+)
+
+
+bag.enemsg &lt;- ranger(
+  NU_NOTA_MT ~ .,
+  data = enem2018sg,
+  mtry = 33,
+  importance = &quot;impurity&quot;,
+  num.threads = 12,
+  num.trees = 1000
+)</code></pre>
+<p>Acima, criamos 1000 árvores utilizando os 33 preditores presentes no banco (o 34º é NU_NOTA_MT, claro)</p>
+<pre class="r"><code>bag.enemrio</code></pre>
+<pre><code>## Ranger result
+## 
+## Call:
+##  ranger(NU_NOTA_MT ~ ., data = enem2018rio, mtry = 33, importance = &quot;impurity&quot;,      num.threads = 12, num.trees = 1000) 
+## 
+## Type:                             Regression 
+## Number of trees:                  1000 
+## Sample size:                      15233 
+## Number of independent variables:  33 
+## Mtry:                             33 
+## Target node size:                 5 
+## Variable importance mode:         impurity 
+## Splitrule:                        variance 
+## OOB prediction error (MSE):       6471.47 
+## R squared (OOB):                  0.112074</code></pre>
+<pre class="r"><code>bag.enemsg</code></pre>
+<pre><code>## Ranger result
+## 
+## Call:
+##  ranger(NU_NOTA_MT ~ ., data = enem2018sg, mtry = 33, importance = &quot;impurity&quot;,      num.threads = 12, num.trees = 1000) 
+## 
+## Type:                             Regression 
+## Number of trees:                  1000 
+## Sample size:                      2583 
+## Number of independent variables:  33 
+## Mtry:                             33 
+## Target node size:                 5 
+## Variable importance mode:         impurity 
+## Splitrule:                        variance 
+## OOB prediction error (MSE):       5802.14 
+## R squared (OOB):                  0.0261514</code></pre>
+<p>O <span class="math inline">\(R^{2}_{OOB}\)</span> presente ao final de cada um dos comandos é a capacidade explicativa daquela árvore para aquele conjunto de dados. Uma informação interessante e importante que, de certa forma, aprimora as nossas primeiras árvores, é a importância das variáveis, que pode ser buscada em:</p>
+<pre class="r"><code>bag.enemrio$variable.importance</code></pre>
+<pre><code>##               NU_IDADE                TP_SEXO            TP_COR_RACA 
+##             6378165.60             5754041.08             4714652.67 
+##              TP_ESCOLA TP_DEPENDENCIA_ADM_ESC     TP_LOCALIZACAO_ESC 
+##              100129.80              107150.24                   0.00 
+##                   Q001                   Q002                   Q003 
+##             6943347.67             6794857.41             5580028.69 
+##                   Q004                   Q005                   Q006 
+##             4725148.02             7188983.55             9422883.20 
+##                   Q007                   Q008                   Q009 
+##             1042060.45             2357135.74             3892465.06 
+##                   Q010                   Q011                   Q012 
+##             2519658.59             1019978.23             1048116.99 
+##                   Q013                   Q014                   Q015 
+##             2878266.93             1934756.28             1353276.84 
+##                   Q016                   Q017                   Q018 
+##             2277991.45              355740.36             1770814.11 
+##                   Q019                   Q020                   Q021 
+##             3687053.88             2318066.98             2251439.30 
+##                   Q022                   Q023                   Q024 
+##             5108939.28             2361920.88             3689504.05 
+##                   Q025                   Q026                   Q027 
+##             1478319.86                5746.98             2740928.04</code></pre>
+<pre class="r"><code>bag.enemsg$variable.importance</code></pre>
+<pre><code>##               NU_IDADE                TP_SEXO            TP_COR_RACA 
+##             965826.102             552091.844             755000.653 
+##              TP_ESCOLA TP_DEPENDENCIA_ADM_ESC     TP_LOCALIZACAO_ESC 
+##                355.724              16998.611              16013.748 
+##                   Q001                   Q002                   Q003 
+##             967023.439             995490.596             790064.877 
+##                   Q004                   Q005                   Q006 
+##             668391.870             943918.888            1144531.549 
+##                   Q007                   Q008                   Q009 
+##             104452.466             305429.915             567387.939 
+##                   Q010                   Q011                   Q012 
+##             345626.179             125020.846             145582.724 
+##                   Q013                   Q014                   Q015 
+##             373738.937             351303.316             206192.739 
+##                   Q016                   Q017                   Q018 
+##             330894.741              66615.938             185943.435 
+##                   Q019                   Q020                   Q021 
+##             509809.443             334796.907             287964.339 
+##                   Q022                   Q023                   Q024 
+##             794836.643             328621.680             498336.834 
+##                   Q025                   Q026                   Q027 
+##             225205.884              15175.975             409283.488</code></pre>
+<p>Para vermos as 6 variáveis mais importantes de cada banco, basta utilizarmos os seguintes comandos:</p>
+<pre class="r"><code># Para o Rio
+bag.enemrio$variable.importance %&gt;%
+  as.data.frame() %&gt;% 
+  rename(&quot;imp&quot; = 1) %&gt;% 
+  rownames_to_column() %&gt;% 
+  arrange(-imp) %&gt;% 
+  head(6)</code></pre>
+<pre><code>##    rowname     imp
+## 1     Q006 9422883
+## 2     Q005 7188984
+## 3     Q001 6943348
+## 4     Q002 6794857
+## 5 NU_IDADE 6378166
+## 6  TP_SEXO 5754041</code></pre>
+<pre class="r"><code># Para São Gonçalo
+bag.enemsg$variable.importance %&gt;%
+  as.data.frame() %&gt;% 
+  rename(&quot;imp&quot; = 1) %&gt;% 
+  rownames_to_column() %&gt;% 
+  arrange(-imp) %&gt;% 
+  head(6)</code></pre>
+<pre><code>##    rowname     imp
+## 1     Q006 1144532
+## 2     Q002  995491
+## 3     Q001  967023
+## 4 NU_IDADE  965826
+## 5     Q005  943919
+## 6     Q022  794837</code></pre>
+<p>As variáveis novas que ali surgiram e não foram citadas anteriormente são:</p>
+<ul>
+<li>Q005 - número de pessoas que moram com o aluno;</li>
+<li>Q001 - até que série o pai estudou;</li>
+<li>Q002 - até que série a mãe estudou</li>
+<li>Q003 - a ocupação do pai</li>
+</ul>
+</div>
+<div id="randomforests" class="section level4">
+<h4>RandomForests</h4>
+<p>O RandomForests nada mais é que o sampling criado pelo bagging, porém utilizando apenas um determinado número de preditores, e não o máximo. Quando colocamos todos os preditores, todos eles estarão em todas as árvores. É possível que algum seja obfuscado por outro, pouco mais forte, o que impede que o mesmo seja visível. Com apenas um subsetting dos preditores, podemos fazer um “rodízio” das variáveis, não colocando todas ao mesmo tempo e analisando como elas, então, se comportam. O comando é o mesmo, mudando apenas o argumento <code>mtry</code>, que indica o número de preditores usados.</p>
+<pre class="r"><code>rf.enemrio &lt;- ranger(
+  NU_NOTA_MT ~ .,
+  data = enem2018rio,
+  mtry = 11,
+  importance = &quot;impurity&quot;,
+  num.threads = 12,
+  verbose = T,
+  num.trees = 1000,
+)
+
+rf.enemsg &lt;- ranger(
+  NU_NOTA_MT ~ .,
+  data = enem2018sg,
+  mtry = 11,
+  importance = &quot;impurity&quot;,
+  num.threads = 12,
+  verbose = T,
+  num.trees = 1000,
+)</code></pre>
+<p>Coloquei 11 preditores para que <span class="math inline">\(\frac{1}{3}\)</span> do total seja utilizado e possamos diminuir o viés descorrelacionando as árvores, o que não acontece no <em>bagging.</em></p>
+<pre class="r"><code>rf.enemrio</code></pre>
+<pre><code>## Ranger result
+## 
+## Call:
+##  ranger(NU_NOTA_MT ~ ., data = enem2018rio, mtry = 11, importance = &quot;impurity&quot;,      num.threads = 12, verbose = T, num.trees = 1000, ) 
+## 
+## Type:                             Regression 
+## Number of trees:                  1000 
+## Sample size:                      15233 
+## Number of independent variables:  33 
+## Mtry:                             11 
+## Target node size:                 5 
+## Variable importance mode:         impurity 
+## Splitrule:                        variance 
+## OOB prediction error (MSE):       6354.81 
+## R squared (OOB):                  0.128079</code></pre>
+<pre class="r"><code>rf.enemsg</code></pre>
+<pre><code>## Ranger result
+## 
+## Call:
+##  ranger(NU_NOTA_MT ~ ., data = enem2018sg, mtry = 11, importance = &quot;impurity&quot;,      num.threads = 12, verbose = T, num.trees = 1000, ) 
+## 
+## Type:                             Regression 
+## Number of trees:                  1000 
+## Sample size:                      2583 
+## Number of independent variables:  33 
+## Mtry:                             11 
+## Target node size:                 5 
+## Variable importance mode:         impurity 
+## Splitrule:                        variance 
+## OOB prediction error (MSE):       5685.47 
+## R squared (OOB):                  0.0457337</code></pre>
+<p>Notamos um aumento no <span class="math inline">\(R^{2}_{OOB}\)</span> em ambos, ou seja, aprimoramos o modelo. E a importância das variáveis?</p>
+<pre class="r"><code># Para o Rio
+rf.enemrio$variable.importance %&gt;%
+  as.data.frame() %&gt;% 
+  rename(&quot;imp&quot; = 1) %&gt;% 
+  rownames_to_column() %&gt;% 
+  arrange(-imp) %&gt;% 
+  head(6)</code></pre>
+<pre><code>##    rowname     imp
+## 1     Q006 9193883
+## 2     Q005 6647643
+## 3     Q001 6344146
+## 4 NU_IDADE 6269901
+## 5     Q002 6124216
+## 6  TP_SEXO 5355912</code></pre>
+<pre class="r"><code># Para São Gonçalo
+rf.enemsg$variable.importance %&gt;%
+  as.data.frame() %&gt;% 
+  rename(&quot;imp&quot; = 1) %&gt;% 
+  rownames_to_column() %&gt;% 
+  arrange(-imp) %&gt;% 
+  head(6)</code></pre>
+<pre><code>##    rowname     imp
+## 1     Q006 1039199
+## 2     Q002  918182
+## 3 NU_IDADE  914388
+## 4     Q001  909747
+## 5     Q005  863187
+## 6     Q022  752462</code></pre>
+<p>Comparando com os resultados anteriores, percebemos apenas uma mudança da ordem de importância no Rio,e a troca da variável Q003 para Q022 em São Gonçalo. Essa variável questiona sobre a existência de telefone celular na residência.</p>
+<p>Percebemos uma melhora no RandomForests em relação ao bagging! Mas ainda há uma abordagem para vermos, o <strong>boosting</strong>.</p>
+</div>
+<div id="boosting" class="section level4">
+<h4>Boosting</h4>
+<p>Enquanto o bagging e o randomforest fazem bootstrapping, ou seja, calculam centenas ou milhares de árvores e depois unem esse resultado para uma média, o boosting cria várias árvores baseadas no resíduo da árvore anterior, ou seja, a árvore cresce sequencialmente, sendo aprimorada nas partes com maior erro no modelo anterior. O pacote que permite o boosting é o GBM, onde conseguimos limitar o máximo da profundidade possível:</p>
+<pre class="r"><code>boost.enemrio &lt;-
+  gbm(NU_NOTA_MT ~ ., data = enem2018rio, distribution  = &quot;gaussian&quot;,
+      n.trees = 5000, interaction.depth = 6, n.cores = 12)
+boost.enemsg &lt;-
+  gbm(NU_NOTA_MT ~ ., data = enem2018sg, distribution  = &quot;gaussian&quot;,
+      n.trees = 5000, interaction.depth = 6, n.cores =  12)</code></pre>
+<p>Ao fazermos o sumário dos dados, temos a importância de cada variável, em ordem. Observando as 9 primeiras de cada um:</p>
+<pre class="r"><code>summary(boost.enemrio) %&gt;% 
+  head(9)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/boosting.varimp-1.png" width="672" /></p>
+<pre><code>##                     var  rel.inf
+## Q006               Q006 19.21134
+## Q001               Q001 10.31323
+## Q005               Q005  9.79820
+## Q002               Q002  9.24116
+## Q003               Q003  5.52420
+## Q004               Q004  4.71671
+## Q022               Q022  4.61842
+## NU_IDADE       NU_IDADE  4.41251
+## TP_COR_RACA TP_COR_RACA  4.31856</code></pre>
+<pre class="r"><code>summary(boost.enemsg) %&gt;% 
+  head(9)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/boosting.varimp-2.png" width="672" /></p>
+<pre><code>##                     var  rel.inf
+## Q006               Q006 14.13277
+## Q001               Q001 11.36461
+## Q002               Q002 10.45213
+## Q005               Q005  9.09167
+## Q003               Q003  6.21679
+## Q022               Q022  6.00759
+## TP_COR_RACA TP_COR_RACA  5.96695
+## Q004               Q004  4.99026
+## NU_IDADE       NU_IDADE  4.01448</code></pre>
+<p>Em nenhuma das duas, <code>TP_SEXO</code>, nossa variável que indica o gênero, aparece. Todavia, agora a raça (<code>TP_COR_RACA</code>) surge, ainda que em posições baixas. Podemos plotar o efeito isolado de cada um desses preditores na nota de matemática. Vamos tentar plotar a renda no Rio e em São Gonçalo para ver como essa variável influencia no resultado final:</p>
+<pre class="r"><code>plot(boost.enemrio, i =&quot;Q006&quot;, main = &quot;Rio de Janeiro - Renda&quot;)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>plot(boost.enemsg, i = &quot;Q006&quot;, main = &quot;São Gonçalo&quot;)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+<pre class="r"><code>plot(boost.enemrio, i =&quot;TP_COR_RACA&quot;, main = &quot;Rio de Janeiro - Cor/Raça&quot;)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/unnamed-chunk-4-3.png" width="672" /></p>
+<pre class="r"><code>plot(boost.enemsg, i =&quot;TP_COR_RACA&quot;, main = &quot;São Gonçalo - Cor/Raça&quot;)</code></pre>
+<p><img src="/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/unnamed-chunk-4-4.png" width="672" /></p>
+<p>Percebe-se que em ambos quanto maior a renda, maior a nota, no Rio. Já em São Gonçalo, o mesmo se verifica com alguns degraus e, na última faixa de renda, “Q”, para rendas maiores de 19 mil reais, a nota cai, em comparação com “O”, que representa a renda famíliar entre R$ 11448,00 e R$ 14.310,00.</p>
+<p>No que tange à cor/raça, percebemos que a população parda e preta tem um desempenho mais baixo em comparação à população branca, dada as opressões estruturais que atingem esses grupos, afetando o ensino e aumentando a desigualdade social.</p>
+</div>
+</div>
+<div id="algumas-conclusões" class="section level3">
+<h3>Algumas conclusões</h3>
+<p>Algumas conclusões podem ser feitas a partir dos dados preliminares utilizados:</p>
+<ul>
+<li>a renda é sim um fator importantíssimo, junto com a escolaridade do pai e da mãe, na definição da nota de matemática do ENEM. Pais com maior formação tendem a criar filhos melhor instruídos, seja pela criação, seja pela escola;</li>
+<li>o tipo de escola e o fato de pertencer à rede estadual, municipal, federal ou privada não é tão relevante como se pensava, no âmbito do município do Rio e de São Gonçalo;</li>
+<li>a idade, dada por <code>NU_IDADE</code>, parece ser relevante, o que pode ser explicado pelo seguinte pensamento: pessoas mais velhas já passaram pela formação escolar há mais tempo ou apresentam um déficit na mesma, mostrando maior dificuldade devido a isso;</li>
+<li>o sexo não é relevante nas análises, mas uma possível justificativa (e que pode e deve ser investigada posteriormente) é que há uma diminuição na nota de mulheres pois em um considerável número de famílias, o trabalho doméstico não é igualmente dividido entre homense mulheres, restando às mulheres que dividam suas funções, como trabalho e estudo, com tais afazares. Isso diminui consideravelmente o rendimento escolar.</li>
+</ul>
+<p>Quem quiser olhar o dicionário do banco, pode conferir <a href="/files/dicionario_enem_2018.xlsx">aqui</a>.</p>
+<p>Bom pessoal, por hoje é só. Vimos como uma abordagem de árvores de decisão, somada a métodos como bagging, randomforests e boosting podem nos auxiliar no desenho de políticas públicas direcionadas para educação. Que critérios devem ser priorizados? Como poderíamos avaliar o impacto de uma política de renda, por exemplo, em um município? Que grupos devem ser alvo de políticas distributivas primeiro? Todas essas questões podem ser respondidas ou pelo menos iniciadas com os métodos vistos no post de hoje. Além disso, percebemos como a desigualdade afeta alunos de municípios próximos, e nos deixa refletindo como a situação em todo o país é distinta, exigindo cuidados específicos. Porém, um ponto é claro: é preciso democratizar cada vez mais o ensino público e o acesso à universidade, e não é tratando todos os casos como o mesmo (como no caso do atual governo, que propõe a adoção progressiva do ENEM Digital) que a desigualdade será solucionada.</p>
+<p>Qualquer dúvida, correção ou sugestão pode ser encaminhada para <a href="mailto:matheus.pestana@iesp.uerj.br" class="email">matheus.pestana@iesp.uerj.br</a> .</p>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/brasil/">brasil</a>
+  
+  <a class="badge badge-light" href="/tag/governo/">governo</a>
+  
+  <a class="badge badge-light" href="/tag/opendata/">opendata</a>
+  
+  <a class="badge badge-light" href="/tag/randomforests/">randomforests</a>
+  
+  <a class="badge badge-light" href="/tag/decision-trees/">decision trees</a>
+  
+  <a class="badge badge-light" href="/tag/enem/">enem</a>
+  
+  <a class="badge badge-light" href="/tag/rio-de-janeiro/">rio de janeiro</a>
+  
+  <a class="badge badge-light" href="/tag/sao-goncalo/">são gonçalo</a>
+  
+  <a class="badge badge-light" href="/tag/educacao/">educação</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/&amp;text=Decision%20Trees%20no%20R:%20An%c3%a1lise%20do%20ENEM%202018" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/&amp;t=Decision%20Trees%20no%20R:%20An%c3%a1lise%20do%20ENEM%202018" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Decision%20Trees%20no%20R:%20An%c3%a1lise%20do%20ENEM%202018&amp;body=https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/&amp;title=Decision%20Trees%20no%20R:%20An%c3%a1lise%20do%20ENEM%202018" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Decision%20Trees%20no%20R:%20An%c3%a1lise%20do%20ENEM%202018%20https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/&amp;title=Decision%20Trees%20no%20R:%20An%c3%a1lise%20do%20ENEM%202018" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://mateuspestana.github.io"><img class="avatar mr-3 avatar-circle" src="/author/mateus-cavalcanti-pestana/avatar_hufeccfd6f9380df9b18ea9dcb1ceea097_79518_270x270_fill_q75_lanczos_center.jpg" alt="Mateus Cavalcanti Pestana"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://mateuspestana.github.io">Mateus Cavalcanti Pestana</a></h5>
+      <h6 class="card-subtitle">Doutorando e Mestre em Ciência Política</h6>
+      <p class="card-text">Interessado em ciência de dados, ciência política, política russa, impressão 3D, redes neurais e aprendizado de máquina.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:matheus.pestana@iesp.uerj.br" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/0027872463024148" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.br/citations?user=jpRDWpgAAAAJ&amp;hl=pt-BR" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0002-5388-8950" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/mateuspestana" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionados</h3>
+    <ul>
+      
+      <li><a href="/portfolio/2021-03-02-inclusao-uerj/">Inclusão UERJ</a></li>
+      
+      <li><a href="/post/quem-voa/quem-voa-analise-dos-voos-da-fab-com-autoridades-do-estado/">Quem Voa - Análise dos vôos da FAB com autoridades do Estado</a></li>
+      
+      <li><a href="/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/">Textmining: análise dos discursos de Getúlio Vargas</a></li>
+      
+      <li><a href="/portfolio/2021-03-02-votaai/">VotaAí</a></li>
+      
+      <li><a href="/portfolio/2021-03-02-candidaturas-religiosas/">Candidaturas Religiosas</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2021 Matheus C. Pestana
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.f81d0a1705048649befc8b595e455a94.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/pt/js/wowchemy.min.e74a71a7cfab89f71b427a2bd20b61f8.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

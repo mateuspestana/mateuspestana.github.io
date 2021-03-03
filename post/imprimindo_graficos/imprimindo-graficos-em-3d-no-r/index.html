@@ -1,0 +1,1412 @@
+<!DOCTYPE html><html lang="pt" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Mateus Cavalcanti Pestana" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Hadley Wickham, um dos mantenedores do RStudio e criador do pacote tidyverse (que engloba outros, como dplyr, ggplot, forcats, purrr, etc), escreveu um excelente livro com Garret Grolemund chamado “R for Data Science”, que pode ser encontrado gratuitamente aqui." />
+
+  
+  <link rel="alternate" hreflang="pt" href="https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.003d2be57501b5669ca58ef75468ece2.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150193464-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-150193464-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Mateus C. Pestana" />
+  <meta property="og:url" content="https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/" />
+  <meta property="og:title" content="Imprimindo gráficos em 3D no R | Mateus C. Pestana" />
+  <meta property="og:description" content="Hadley Wickham, um dos mantenedores do RStudio e criador do pacote tidyverse (que engloba outros, como dplyr, ggplot, forcats, purrr, etc), escreveu um excelente livro com Garret Grolemund chamado “R for Data Science”, que pode ser encontrado gratuitamente aqui." /><meta property="og:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="pt" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-11-15T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-11-15T21:49:15-03:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/"
+  },
+  "headline": "Imprimindo gráficos em 3D no R",
+  
+  "datePublished": "2019-11-15T00:00:00Z",
+  "dateModified": "2019-11-15T21:49:15-03:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Mateus Cavalcanti Pestana"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mateus C. Pestana",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Hadley Wickham, um dos mantenedores do RStudio e criador do pacote tidyverse (que engloba outros, como dplyr, ggplot, forcats, purrr, etc), escreveu um excelente livro com Garret Grolemund chamado “R for Data Science”, que pode ser encontrado gratuitamente aqui."
+}
+</script>
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://gist.githubusercontent.com/jeremyyeo/03930a03108330d5579fe88b79604c41/raw/2aa8e8a614dbc47c9af81156d0663d3e2e4bdfc6/htmlwidgets.js"></script>
+
+  <title>Imprimindo gráficos em 3D no R | Mateus C. Pestana</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="095b13e6675e09d56376f0a66d64cd0b" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.9f8405b7756f5e178a738a09c302f8b3.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Pesquisar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Pesquisar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Pesquisar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Alterar navegação">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Biografia</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#portfolio"><span>Portfolio</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publicações</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cursos"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/media/resume.pdf"><span>Currículo</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Pesquisar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Imprimindo gráficos em 3D no R</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      <a href="/author/mateus-cavalcanti-pestana/">Mateus Cavalcanti Pestana</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Última atualização em
+      
+    
+    15 de Nov, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 minutos de leitura
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/ciencia-de-dados/">ciência de dados</a>, <a href="/category/ciencia-politica/">ciência política</a>, <a href="/category/pacote/">pacote</a>, <a href="/category/programacao/">programação</a>, <a href="/category/r/">r</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="2019-11-15-imprimindo-gráficos-em-3d-no-r_files/header-attrs/header-attrs.js"></script>
+
+
+<p><a href="http://hadley.nz/">Hadley Wickham</a>, um dos mantenedores do RStudio e criador do pacote <code>tidyverse</code> (que engloba outros, como <code>dplyr</code>, <code>ggplot</code>, <code>forcats</code>, <code>purrr</code>, etc), escreveu um excelente livro com <a href="https://twitter.com/statgarrett?lang=pt">Garret Grolemund</a> chamado “R for Data Science”, que pode ser encontrado gratuitamente <a href="https://r4ds.had.co.nz/">aqui</a>. Recomendo fortemente, pois a didática é excelente, os exemplos são claros e os exercícios são desafiadores. Um fato curioso sobr o livro é que o mesmo ensina a fazer gráficos (com o <code>ggplot</code>) <strong>antes</strong> de ensinar todas as outras coisas, como funções, objetos, tratamento de bancos, análise exploratória e modelos.</p>
+<p>O motivo para isso é simples: gráficos são importantíssimos pois é através deles que transmitimos informações aos que nos lêem e nos assistem. No livro, o capítulo de gráficos começa com a seguinte frase:</p>
+<blockquote>
+<p>“O gráfico simples trouxe mais informação para a mente do analista de dados do que qualquer outro dispositivo” <br>
+— John Tukey</p>
+</blockquote>
+<p>Quanto mais claro o gráfico, mais fácil é de sermos entendidos, e isso é um princípio da ciência: se construímos algo de difícil compreensão, ninguém entende; se ninguém entende, ninguém dialoga; se ninguém dialoga, não há ciência.</p>
+<p>Entretanto, gráficos são apelos visuais. Gráficos são dados exibidos em um plano, com diversas informações numéricas representadas, que possibilitam comparações dentro daquele plano. Cada eixo de um gráfico é uma dimensão, ou seja, guardam uma escala ou informação. Outras dimensões podem existir em um mesmo gráfico. Em um gráfico de dispersão, por exemplo, o tamanho de cada ponto pode significar um terceiro dado, assim como a cor, podendo representar grupos ou casos similares.</p>
+<p>Um claro exemplo é o abaixo: um gráfico de hexágonos, feito a partir dos dados das 96.871 seções eleitorais da Rússia, nas eleições para o legislativo em 2016. No eixo X, temos o comparecimento, em porcentagem; no eixo Y, a porcentagem de votos no partido Rússia Unida, que possui maioria absoluta na <em>Duma</em> (o parlamento russo), e a cor representa o número de seções naquele caso, indo de de um roxo escuro, que indica poucas seções, a um amarelo claro, indicando muitas.</p>
+<pre class="r"><code>pacman::p_load(tidyverse, rayshader, hrbrthemes, viridis, hexbin)
+
+duma2016 %&gt;%
+  mutate(pct_edinayarossiya = p_edinayarossiya/(ncedval + ncedinval),
+         compa = (ncedval+ncedinval)/nelelist) %&gt;%
+  ggplot(aes(x = compa, y = pct_edinayarossiya))+
+  geom_hex(bins = 40, color = &quot;black&quot;, size = 0.5)+
+  scale_y_percent()+
+  scale_x_percent()+
+  labs(x = &quot;Comparecimento&quot;, y = &quot;% de votos no RU&quot;)+
+  scale_fill_viridis_c()+
+  theme_ipsum_tw()+
+  labs(title  = &quot;Comparecimento x voto no Rússia Unida&quot;,
+       fill = &quot;Nº de seções&quot;)</code></pre>
+<p><img src="/post/imprimindo_graficos/2019-11-15-imprimindo-gra%CC%81ficos-em-3d-no-r_files/figure-html/grafico_2d-1.png" width="672" /></p>
+<p>No gráfico acima, temos duas regiões esverdeadas-amareladas: entre 25% e 50% dos ambos os eixos, e próximo de 100% nos dois eixos. O que isso significa? Significa que existiram muitas seções cujo comparecimento (ou seja, a proporção de pessoas que foram votar) ficou entre 25%-50% e que os votos para o partido Rússia Unida ficaram também entre 25%-50%, e também muitas seções cujo comparecimento foi próximo à 100% e o voto no partido também, ou seja, alta mobilização para que seções inteiras votassem no RU. Percebemos também a oposição, já que temos algumas seções com 100% de comparecimento mas pouco voto no Rússia Unida. Todavia, essas seções são poucas e continuam na cor mais escura da escala.</p>
+<p>Definitivamente, esse não é o mais fácil dos gráficos, e mesmo explicando, é preciso dedicar alguns segundos ou minutos observando-o para compreendê-lo por completo. Mas e se a pessoa para quem queremos transmitir essa informação não for capaz de enxergar, como pessoas com deficiência visual? É justo que elas fiquem excluídas do processo de construção da ciência, ou mesmo de uma exposição simples e descomprometida de dados, como um relatório de uma empresa ou um gráfico de um jornal?</p>
+<p>Pensei sobre isso ao perceber que, cada vez mais, museus oferecem experiências táteis para que pessoas com deficiência visual possam se entreter e aproveitar as exposições. Em uma recente exposição que fui, chamada <a href="http://culturabancodobrasil.com.br/portal/egito-antigo-do-cotidiano-a-eternidade/">“Antigo Egito: do cotidiano à eternidade”</a>, exibida no <a href="http://culturabancodobrasil.com.br/portal/rio-de-janeiro/">Centro Cultural do Banco do Brasil no Rio de Janeiro</a>, diversas peças exibidas possuíam uma variante que permitia o toque: a mesma peça, em um tamanho reduzido, presa na parede, o que possibilitava a inclusão e tornava a exposição mais democrática.</p>
+<p>Olhando para aquilo, pensei: e se construíssemos gráficos em três dimensões, imprimindo em uma impressora 3D, para que eles pudessem ser tocados e compreendidos por aqueles que não podem enxergá-lo?</p>
+<p>Depois de uma extensa pesquisa, descobri um pacote para o R chamado <a href="https://github.com/tylermorganwall/rayshader/"><em>rayshader</em></a>, que foi criado inicialmente com o intuito de criar mapas topográficos em 3D, com luz e sombra, além da possibilidade de rotação. O mesmo gráfico acima é exibido da seguinte forma, usando af função <code>plot_gg()</code> e os ajustes de câmera com a função <code>render_camera()</code>:</p>
+<pre class="r"><code>grafico &lt;- duma2016 %&gt;%
+  mutate(pct_edinayarossiya = p_edinayarossiya/(ncedval + ncedinval),
+         compa = (ncedval+ncedinval)/nelelist) %&gt;%
+  ggplot(aes(x = compa, 
+             y = pct_edinayarossiya))+
+  geom_hex(bins = 40, 
+           color = &quot;black&quot;, 
+           size = 0.5)+
+  scale_y_percent()+
+  scale_x_percent()+
+  labs(x = &quot;Comparecimento&quot;, 
+       y = &quot;% de votos no RU&quot;)+
+  scale_fill_viridis_c()+
+  labs(fill = &quot;Seções&quot;)
+
+plot_gg(grafico)
+render_camera(fov = 70, zoom = 0.5, theta = 30, phi = 32)
+render_snapshot(clear = TRUE)</code></pre>
+<p><img src="/post/imprimindo_graficos/2019-11-15-imprimindo-gra%CC%81ficos-em-3d-no-r_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>O passo que falta, agora, para torná-lo definitivamente mais acessível, é transformá-lo em um modelo 3D. O <code>rayshader</code> possui a função <code>save_3dprint()</code>, que permite exportar o modelo para um arquivo <strong><em>.stl</em></strong> , de <em>stereolithography</em>, que também pode ser processado por uma fatiadora e direcionado para uma impressora 3D, sendo esse o objetivo: imprimir os gráficos em 3D. Para isso, utilizamos o comando abaixo para gerar o <strong><em>.stl</em></strong>:</p>
+<pre class="r"><code>save_3dprint(filename = &quot;graf_russia.stl&quot;, remove_extras = T, clear = T)</code></pre>
+<p>E após isso, processamos o arquivo em uma fatiadora. No caso, eu utilizo o software Flashprint, que dialoga com as impressoras Flashforge. O arquivo gerado, ao ser processado pela fatiadora, fica da seguinte forma:</p>
+<p><img src="/img/graf_russia_fatiadora.png" /></p>
+<p>Depois de impresso (levou em torno de 47 minutos, como podem ver na imagem acima, e gastou cerca de 2,63m de filamento PLA – ácido polilático, um polímero), temos o seguinte resultado:</p>
+<p><img src="/img/graf_russia_print.jpeg" /></p>
+<p>É possível perceber que no modelo redimensionado, alguns detalhes se perderam, mas ainda assim, facilita para as pessoas que possuem alguma deficiência visual de entenderem o tipo de informação que queremos passar.</p>
+<p>Impressoras 3D estão cada vez mais baratas, assim como o material usado para a impressão. De qualquer forma, para quem precisar fazer um uso pontual, é possível imprimir modelos em <strong><em>.stl</em></strong> em diversas lojas e fornecedores, de maneira rápida e fácil.</p>
+<p>Certamente, não haverá uma rápida popularização do método, porém, provar que é possível (e pelo R) já é um grande avanço em direção à acessibilidade e à inclusão, tão necessários não só na ciência, como em todos os campos da sociedade. É importante também colocar tais modelos impressos para consulta de deficientes visuais para que sejam testados por eles, adequando-os às necessidades percebidas, seja em tamanho, precisão ou organização da impressão.</p>
+<p>Bom, por hoje é só. Agradeço principalmente ao criador do pacote <code>rayshader</code>, <a href="https://twitter.com/tylermorganwall">Tyler Morgan-Wall</a>, PhD em Física na Universidade John Hopkins. Qualquer dúvida, correção ou sugestão pode ser enviada para o meu email <a href="mailto:matheus.pestana@iesp.uerj.br" class="email">matheus.pestana@iesp.uerj.br</a></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/visualizacao-de-dados/">visualização de dados</a>
+  
+  <a class="badge badge-light" href="/tag/eleicoes/">eleições</a>
+  
+  <a class="badge badge-light" href="/tag/governo/">governo</a>
+  
+  <a class="badge badge-light" href="/tag/partidos/">partidos</a>
+  
+  <a class="badge badge-light" href="/tag/r/">r</a>
+  
+  <a class="badge badge-light" href="/tag/russia/">rússia</a>
+  
+  <a class="badge badge-light" href="/tag/graficos/">gráficos</a>
+  
+  <a class="badge badge-light" href="/tag/impressao-3d/">impressão 3d</a>
+  
+  <a class="badge badge-light" href="/tag/3d/">3d</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/&amp;text=Imprimindo%20gr%c3%a1ficos%20em%203D%20no%20R" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/&amp;t=Imprimindo%20gr%c3%a1ficos%20em%203D%20no%20R" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Imprimindo%20gr%c3%a1ficos%20em%203D%20no%20R&amp;body=https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/&amp;title=Imprimindo%20gr%c3%a1ficos%20em%203D%20no%20R" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Imprimindo%20gr%c3%a1ficos%20em%203D%20no%20R%20https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/&amp;title=Imprimindo%20gr%c3%a1ficos%20em%203D%20no%20R" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://mateuspestana.github.io"><img class="avatar mr-3 avatar-circle" src="/author/mateus-cavalcanti-pestana/avatar_hufeccfd6f9380df9b18ea9dcb1ceea097_79518_270x270_fill_q75_lanczos_center.jpg" alt="Mateus Cavalcanti Pestana"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://mateuspestana.github.io">Mateus Cavalcanti Pestana</a></h5>
+      <h6 class="card-subtitle">Doutorando e Mestre em Ciência Política</h6>
+      <p class="card-text">Interessado em ciência de dados, ciência política, política russa, impressão 3D, redes neurais e aprendizado de máquina.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:matheus.pestana@iesp.uerj.br" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/0027872463024148" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.br/citations?user=jpRDWpgAAAAJ&amp;hl=pt-BR" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0002-5388-8950" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/mateuspestana" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionados</h3>
+    <ul>
+      
+      <li><a href="/portfolio/2021-03-02-votaai/">VotaAí</a></li>
+      
+      <li><a href="/portfolio/2021-03-02-candidaturas-religiosas/">Candidaturas Religiosas</a></li>
+      
+      <li><a href="/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/">Textmining: análise dos discursos de Getúlio Vargas</a></li>
+      
+      <li><a href="/publication/impacto-de-reformas-rleitorais-na-representacao-analise-do-caso-da-federacao-russa/">Impacto de reformas eleitorais na representação: análise do caso da Federação Russa</a></li>
+      
+      <li><a href="/publication/comparecimento-eleitoral-na-federacao-russa-analise-da-eleicao-presidencial-de-2018/">Comparecimento eleitoral na Federação Russa: análise da eleição presidencial de 2018</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2021 Matheus C. Pestana
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.f81d0a1705048649befc8b595e455a94.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/pt/js/wowchemy.min.e74a71a7cfab89f71b427a2bd20b61f8.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

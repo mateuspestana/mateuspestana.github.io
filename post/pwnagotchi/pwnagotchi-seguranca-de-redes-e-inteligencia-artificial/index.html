@@ -1,0 +1,1398 @@
+<!DOCTYPE html><html lang="pt" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Mateus Cavalcanti Pestana" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Além da área de ciência de dados, um tema que eu gosto muito é o de pentesting, abreviação de penetration test, teste de penetração/intrusão, onde (legalmente) testamos sistemas para explorar suas falhas, comprovar fraquezas e então consertá-las." />
+
+  
+  <link rel="alternate" hreflang="pt" href="https://mateuspestana.github.io/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.003d2be57501b5669ca58ef75468ece2.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150193464-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-150193464-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://mateuspestana.github.io/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Mateus C. Pestana" />
+  <meta property="og:url" content="https://mateuspestana.github.io/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/" />
+  <meta property="og:title" content="Pwnagotchi: segurança de redes e inteligência artificial | Mateus C. Pestana" />
+  <meta property="og:description" content="Além da área de ciência de dados, um tema que eu gosto muito é o de pentesting, abreviação de penetration test, teste de penetração/intrusão, onde (legalmente) testamos sistemas para explorar suas falhas, comprovar fraquezas e então consertá-las." /><meta property="og:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="pt" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-12-01T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-12-01T09:00:38-03:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mateuspestana.github.io/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/"
+  },
+  "headline": "Pwnagotchi: segurança de redes e inteligência artificial",
+  
+  "datePublished": "2019-12-01T00:00:00Z",
+  "dateModified": "2019-12-01T09:00:38-03:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Mateus Cavalcanti Pestana"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mateus C. Pestana",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Além da área de ciência de dados, um tema que eu gosto muito é o de pentesting, abreviação de penetration test, teste de penetração/intrusão, onde (legalmente) testamos sistemas para explorar suas falhas, comprovar fraquezas e então consertá-las."
+}
+</script>
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://gist.githubusercontent.com/jeremyyeo/03930a03108330d5579fe88b79604c41/raw/2aa8e8a614dbc47c9af81156d0663d3e2e4bdfc6/htmlwidgets.js"></script>
+
+  <title>Pwnagotchi: segurança de redes e inteligência artificial | Mateus C. Pestana</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="8186f74ce0d07c1aad20bac246ca9174" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.9f8405b7756f5e178a738a09c302f8b3.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Pesquisar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Pesquisar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Pesquisar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Alterar navegação">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Biografia</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#portfolio"><span>Portfolio</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publicações</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cursos"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/media/resume.pdf"><span>Currículo</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Pesquisar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Pwnagotchi: segurança de redes e inteligência artificial</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      <a href="/author/mateus-cavalcanti-pestana/">Mateus Cavalcanti Pestana</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Última atualização em
+      
+    
+    1 de Dec, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 minutos de leitura
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/artigo/">artigo</a>, <a href="/category/estatistica/">estatística</a>, <a href="/category/pentesting/">pentesting</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="2019-12-01-pwnagotchi-segurança-de-redes-e-inteligência-artificial_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Além da área de ciência de dados, um tema que eu gosto muito é o de <em>pentesting</em>, abreviação de <em>penetration test</em>, teste de penetração/intrusão, onde (legalmente) testamos sistemas para explorar suas falhas, comprovar fraquezas e então consertá-las. Em um mundo que é direcionado aos dados, a segurança dos mesmos é fundamental. Acompanho a área há alguns anos, mas por conta do mestrado, fiquei um pouco por fora.</p>
+<p>Felizmente, agora eu posso dizer que <em>pentesting</em> não é mais tão fora dos meus estudos assim :)</p>
+<p>Conheci um projeto muito interessante chamado <a href="https://pwnagotchi.ai/"><strong>Pwnagotchi</strong></a> que utiliza <em>reinforcement learning</em>, um algoritmo de <em>machine learning</em> (e que, de certa forma, podemos chamar de inteligência artificial) para capturar dados wifi e testar a segurança dessas redes, tudo isso utilizando um simples Raspberry Pi Zero W, como o da foto abaixo, que apesar de medir somente 6,5cm x 3 cm, é equipado com módulo Wifi, mini-HDMI, 512mb de RAM, bluetooth, 1 Ghz de CPU e conector de câmera, tudo isso funcionando com um cartão SD!
+<img src="https://www.raspberrypi.org/homepage-9df4b/static/9c6a7cd9c5f442d4279bd6862bef1657/bc3a8/72a529ca180136e5ab43dcf1547253238e273b8b_pi-zero-w-tilt-1-1620x1080.jpg" alt="Fonte: raspberrypi.org" />
+Para um computador pessoal, o Raspberry PI Zero W pode deixar a desejar, mas para tarefas mais simples, como a que veremos hoje, ele funciona muito bem e possui um baixo preço (entre R$ 120,00 e R$ 200,00 ), rodando linux em versões próprias do kernel, que permitem a máxima potência disponível no produto.</p>
+<div id="redes-wi-fi" class="section level3">
+<h3>Redes Wi-Fi</h3>
+<p>Mas antes de falarmos do <strong>Pwnagotchi</strong>, vamos falar sobre redes Wi-fi e entender qual o problema por trás delas. Redes sem-fio apresentam um sem número de falhas, que não são verdadeiros problemas das redes em si, mas que são descobertos dado o seu uso disseminado em praticamente todas as coisas atualmente (de routers pessoais à geladeiras e lâmpadas - IoT - <em>internet of things</em>). Essa é quase um mandamento da informática: quanto mais fechado é um sistema e mais usado ele é, mais falhas serão descobertas nele. Com o Wi-Fi não é diferente.</p>
+<p>Alguns podem perguntar: <em>qual o problema de uma pessoa invadir a minha rede e utilizar a minha internet?</em> Bom, quando sujeitamos nossas redes à outros, essas pessoas podem efetuar ataques à estabilidade da mesma, inserir grampos e filtrar dados (descobrindo senhas, sites visitados, etc), desviar o tráfego (te direcionando para um site malicioso com o intuito de roubar seus dados), dentre outras coisas. Por isso a força em uma senha é fundamental, ou seja, conter mais de 8 dígitos, misturar letras (maiúsculas e minúsculas), números e símbolos, não utilizar palavras prontas, mas uma mistura delas, são coisas fundamentais. Seres humanos não conseguem adivinhar senhas por tentativa-e-erro, mas computadores sim, e podem fazê-lo numa velocidade impressionante (com mais de 100 mil tentativas por segundo!).</p>
+<p><em>OK, mas como eles invadem meu Wi-Fi?</em> Bom, a grosso modo, o Wi-Fi, por ser transmitido pelo ar, mesmo que tenha senha, alguns dados ficam abertos. Esses dados se referem à autenticação, ou seja, quando conectamos ao modem/router. Para conectarmos, ocorre um processo entre o computador e o router chamado <em>4-way handshake</em> (no caso de redes que utilizam a chave WPA), um <em>“aperto de mão”</em> entre as máquinas, que gera pacotes no ar, e esses pacotes, quando <em>sniffados</em> (capturados), permitem que uma pessoa mal intencionada possa fazer testes de tentativa-e-erro para encontrar a senha. No caso de redes WEP, mais antigas, é mais fácil e rápido.</p>
+<p>Aí entra o papel da senha forte: para encontrar a senha, o hacker precisa de <em>wordlists</em>, que são listas de palavras com possibilidades de senha. Ao tentar uma por uma, ao chegar na certa, a criptografia é quebrada e a senha se torna visível. Todavia, se a senha não estiver na <em>wordlist</em>, isso nunca acontecerá, ou se for grande demais, pode até ser previsível, mas levaria anos para testar combinação por combinação.</p>
+<p>Para capturar os <em>handshakes</em> (mais detalhes do funcionamento <a href="https://www.wifi-professionals.com/2019/01/4-way-handshake">aqui</a>) e testar a vulnerabilidade da rede, um conjunto de ferramentas é utilizado, como o aircrack-ng, wireshark, bettercap, dentre outros, cuja utilização foge ao escopo do post (quem sabe um dia…). E essas ferramentas possuem um grande número de configurações que precisam ser testadas, iteradas e alteradas para que consigamos esses pacotes, como os canais monitorados (que precisam variar todo instante), o sinal do Wi-fi, o tempo de reconhecimento em cada canal, o tempo para saltar de um canal para outro, o número de associações que podemos fazer, quantas vezes podemos tentar reconectar com a rede antes de tentar uma outra, etc. Para quem fazia manualmente (como eu), era um trabalho hercúleo que exigia paciência e técnica, e às vezes simplesmente não funcionava (quando um dos dois faltavam, geralmente paciência). E é aí que entra o <strong>Pwnagotchi</strong>.</p>
+<div class="figure">
+<img src="https://www.wifi-professionals.com/wp-content/uploads/2019/01/4-WAY-handshake.png" alt="" />
+<p class="caption">Fonte: Wifi-Professionals.com</p>
+</div>
+</div>
+<div id="pwnagotchi" class="section level3">
+<h3>Pwnagotchi</h3>
+<p>O Pwnagotchi utiliza um algoritmo chamado A2C (<em>Advantage-Actor-Critic</em>), que é uma espécie de algoritmos de <em>reinforcement learning</em>, fazendo parte do que é comumente (e muitas vezes, erroneamente) chamado de Inteligência Artificial. O que o A2C faz? De modo simples, ele (o ator) executa ações em busca de recompensas, tendo um valor esperado de recompensas, então a outra parte (o crítico) mensura, dentre aquelas ações, quais geraram mais recompensas, e essas passarão a ser mais utilizadas (ou utilizadas primeiro) para que a recompensa seja maximizada. Em um famoso exemplo, o algoritmo programado aprende a jogar <em>Sonic the Hedgehog</em> e consegue passar todas as fases : <a href="https://www.youtube.com/watch?v=GCfUdkCL7FQ" class="uri">https://www.youtube.com/watch?v=GCfUdkCL7FQ</a></p>
+<p>O que está acontecendo? Ao algoritmo, é dado o jogo (com suas fases, obstáculos, argolas, etc) e os comandos possíveis: avançar, voltar, pular, rolar. É ensinado também que existem argolas, que representam a recompensa para o algoritmo: quanto mais, melhor. Inicialmente, ele jogará de maneira quase que aleatória. Ao longo do tempo, ele vai percebendo que, em certos momentos, pular foi mais vantajoso que avançar, ou que rolar em determinada parte garantiu mais argolas, e guarda essas informações. Aos poucos, ele vai executando essas ações nos momentos certos para que sempre consiga o maior número possível de recompensas. Em algumas milhares de execuções (feitas em segundos/minutos pelo computador), o algoritmo já consegue jogar <em>Sonic</em> com destreza.</p>
+<p>Para entender melhor o algoritmo A2C, recomendo o site <a href="https://hackernoon.com/intuitive-rl-intro-to-advantage-actor-critic-a2c-4ff545978752">hackernoon.com</a>, que, com os quadrinhos (muito fofos, aliás!) do @<a href="https://twitter.com/embermarke">embermarke</a>, permite uma compreensão melhor dos fundamentos do algoritmo.</p>
+<p>A mesma coisa é feita pelo Pwnagotchi: as configurações que citei anteriormente são as ações possíveis, e os handshakes são as recompensas. Com o uso, o aparelho executa um cálculo pra determinar o valor da recompensa em determinadas configurações, e busca sempre maximizá-lo, em tempo real. Ou seja, quanto mais você utiliza o Pwnagotchi, mais ele aprende e melhor consegue capturar os <em>handshakes</em>, já que ele, de forma inteligente, consegue alterar as próprias configurações para aquele cenário.</p>
+<p>Para utilizá-lo, basta gravar a imagem, disponível <a href="https://github.com/evilsocket/pwnagotchi/releases">aqui</a> em um cartão SD, alterar as configurações iniciais (como o nome do seu <strong>pwnagotchi</strong>), inserí-lo no RaspberryPi Zero W, ligar em uma bateria (aqueles carregadores portáteis de celular são ótimos para isso!) e sair por aí, enquanto ele tenta capturar <strong>handshakes</strong>. Algumas pessoas inserem telas e-ink (como a do Kindle ou do Lev) para que possam observar o trabalho do sistema em tempo real. A graça disso é que o desenvolvedor inseriu uma interface ultra amigável que aparece nessa tela, com pequenos rostinhos que indicam a atividade realizada, além de alguns outros dados. Esses rostinhoslembram muito um Tamagotchi, daí o nome: Pwnagotchi.</p>
+<div class="figure">
+<img src="https://media.giphy.com/media/f9GsXyfgEQbY65fnhu/source.gif" alt="" />
+<p class="caption">Parece mesmo um Tamagotchi!</p>
+</div>
+<p>Para aqueles que, como eu, não desejam soldar uma tela e-ink no Pi, é possível acessar pela Web e ter uma ideia do que está acontecendo naquele momento. Além disso, o sistema também é acessado por SSH, permitindo alteração das configurações, download dos handshakes, atualizações, etc.</p>
+<div class="figure">
+<img src="/img/tela_pwnagotchi.jpeg" alt="" />
+<p class="caption">Meu pwnagotchi, sendo exibido na tela do computador quando conectado no USB</p>
+</div>
+<p>O sistema suporta scripts que aprimoram a utilização do pwnagotchi, como por exemplo, registrar a localização GPS, fazer upload dos handshakes para plataformas de quebra de senhas, inserir temperatura, CPU e uso da memória na tela, fazer tethering pelo bluetooth, além de muitos outros.</p>
+<p><img src="/img/aberto_pwnagotchi.jpeg" />
+<img src="/img/fechado_pwnagotchi.jpeg" /></p>
+<p>Acima, minha montagem do Pwnagotchi, com o raspberry inserido em uma <em>case</em> que imprimi em 3D, para proteger de poeira e contatos. Lembram que afirmei disse que era preciso escolher um nome para o seu pwnagotchi? O motivo por trás disso se chama PwnGrid, a rede de todos os Pwnagotchi (que você pode optar participar ou não). Nela, existe um rank de pwnagotchis, mostrando quantas redes você já “capturou”, por quanto tempo rodou e por quanto tempo seu algoritmo treinou! É como um <em>PokemonGo</em> para redes wi-fi. O mapa da PwnGrid pode ser visto aqui <a href="https://pwnagotchi.ai/map/">https://pwnagotchi.ai/map/</a>,</p>
+<p>A PwnGrid também é equipada com o PwnMail, um serviço de mensagens criptogradas e seguras pela internet, utilizando o dispositivo. Cada pwnagotchi tem sua própria chave pública, que permite o envio e recebimento de mensagens.</p>
+<p>Se alguém quiser me contatar por lá, minha chave é:</p>
+<p><code>873471cc5a10aa546947327da150bf0407a4d21fb091183cf3be2b2a19d7720c</code></p>
+<p>Aguardo mensagens de vocês :)</p>
+<p>Para mais informações, acessem o site do pwnagotchi, que é <a href="https://pwnagotchi.ai/" class="uri">https://pwnagotchi.ai/</a>, onde você consegue aprender sobre a instalação, configuração, e uso. Para dúvidas, é possível acessar a <a href="https://community.pwnagotchi.ai/">comunidade</a> e o <a href="https://www.reddit.com/r/pwnagotchi/">sub-reddit</a>. No próximo post, aprenderemos a mexer em APIs no R utilizando a API da PwnGrid!</p>
+<p>Bom, por hoje é só! Vimos um interessante exemplo de inteligência artificial aplicada à segurança de redes, mostrando todo o potencial que a ciência de dados pode exercer no mundo, em todas as áreas. Qualquer dúvida, correção ou sugestão pode ser enviada para o meu email <a href="mailto:matheus.pestana@iesp.uerj.br" class="email">matheus.pestana@iesp.uerj.br</a></p>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/pwnagotchi/">pwnagotchi</a>
+  
+  <a class="badge badge-light" href="/tag/wifi/">wifi</a>
+  
+  <a class="badge badge-light" href="/tag/wpa/">wpa</a>
+  
+  <a class="badge badge-light" href="/tag/cracking/">cracking</a>
+  
+  <a class="badge badge-light" href="/tag/auditoria/">auditoria</a>
+  
+  <a class="badge badge-light" href="/tag/pentesting/">pentesting</a>
+  
+  <a class="badge badge-light" href="/tag/ia/">ia</a>
+  
+  <a class="badge badge-light" href="/tag/inteligencia-artificial/">inteligencia artificial</a>
+  
+  <a class="badge badge-light" href="/tag/deep-learning/">deep learning</a>
+  
+  <a class="badge badge-light" href="/tag/reinforcement-learning/">reinforcement learning</a>
+  
+  <a class="badge badge-light" href="/tag/a2c/">a2c</a>
+  
+  <a class="badge badge-light" href="/tag/linux/">linux</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://mateuspestana.github.io/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/&amp;text=Pwnagotchi:%20seguran%c3%a7a%20de%20redes%20e%20intelig%c3%aancia%20artificial" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://mateuspestana.github.io/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/&amp;t=Pwnagotchi:%20seguran%c3%a7a%20de%20redes%20e%20intelig%c3%aancia%20artificial" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Pwnagotchi:%20seguran%c3%a7a%20de%20redes%20e%20intelig%c3%aancia%20artificial&amp;body=https://mateuspestana.github.io/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://mateuspestana.github.io/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/&amp;title=Pwnagotchi:%20seguran%c3%a7a%20de%20redes%20e%20intelig%c3%aancia%20artificial" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Pwnagotchi:%20seguran%c3%a7a%20de%20redes%20e%20intelig%c3%aancia%20artificial%20https://mateuspestana.github.io/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://mateuspestana.github.io/post/pwnagotchi/pwnagotchi-seguranca-de-redes-e-inteligencia-artificial/&amp;title=Pwnagotchi:%20seguran%c3%a7a%20de%20redes%20e%20intelig%c3%aancia%20artificial" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://mateuspestana.github.io"><img class="avatar mr-3 avatar-circle" src="/author/mateus-cavalcanti-pestana/avatar_hufeccfd6f9380df9b18ea9dcb1ceea097_79518_270x270_fill_q75_lanczos_center.jpg" alt="Mateus Cavalcanti Pestana"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://mateuspestana.github.io">Mateus Cavalcanti Pestana</a></h5>
+      <h6 class="card-subtitle">Doutorando e Mestre em Ciência Política</h6>
+      <p class="card-text">Interessado em ciência de dados, ciência política, política russa, impressão 3D, redes neurais e aprendizado de máquina.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:matheus.pestana@iesp.uerj.br" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/0027872463024148" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.br/citations?user=jpRDWpgAAAAJ&amp;hl=pt-BR" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0002-5388-8950" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/mateuspestana" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionados</h3>
+    <ul>
+      
+      <li><a href="/post/req-apis/requisicoes-em-apis-no-r/">Requisições em APIs no R</a></li>
+      
+      <li><a href="/projects/internal-project/">Internal Project</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2021 Matheus C. Pestana
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.f81d0a1705048649befc8b595e455a94.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/pt/js/wowchemy.min.e74a71a7cfab89f71b427a2bd20b61f8.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

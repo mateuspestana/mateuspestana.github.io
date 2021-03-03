@@ -1,0 +1,4079 @@
+<!DOCTYPE html><html lang="pt" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Mateus Cavalcanti Pestana" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Getúlio Vargas chega ao poder, como Chefe do Governo Provisório, em 1930, marcando o fim da República Velha, e fica no poder até 1945, elegendo-se novamente em 1951 como Presidente da República, cargo que ocupou até 1954." />
+
+  
+  <link rel="alternate" hreflang="pt" href="https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.003d2be57501b5669ca58ef75468ece2.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150193464-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-150193464-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Mateus C. Pestana" />
+  <meta property="og:url" content="https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/" />
+  <meta property="og:title" content="Textmining: análise dos discursos de Getúlio Vargas | Mateus C. Pestana" />
+  <meta property="og:description" content="Getúlio Vargas chega ao poder, como Chefe do Governo Provisório, em 1930, marcando o fim da República Velha, e fica no poder até 1945, elegendo-se novamente em 1951 como Presidente da República, cargo que ocupou até 1954." /><meta property="og:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="pt" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-11-10T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-11-10T13:25:44-03:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/"
+  },
+  "headline": "Textmining: análise dos discursos de Getúlio Vargas",
+  
+  "datePublished": "2019-11-10T00:00:00Z",
+  "dateModified": "2019-11-10T13:25:44-03:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Mateus Cavalcanti Pestana"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mateus C. Pestana",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Getúlio Vargas chega ao poder, como Chefe do Governo Provisório, em 1930, marcando o fim da República Velha, e fica no poder até 1945, elegendo-se novamente em 1951 como Presidente da República, cargo que ocupou até 1954."
+}
+</script>
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://gist.githubusercontent.com/jeremyyeo/03930a03108330d5579fe88b79604c41/raw/2aa8e8a614dbc47c9af81156d0663d3e2e4bdfc6/htmlwidgets.js"></script>
+
+  <title>Textmining: análise dos discursos de Getúlio Vargas | Mateus C. Pestana</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="23d82a59000b390d4e26808eba64e21d" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.9f8405b7756f5e178a738a09c302f8b3.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Pesquisar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Pesquisar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Pesquisar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Alterar navegação">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Biografia</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#portfolio"><span>Portfolio</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publicações</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cursos"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/media/resume.pdf"><span>Currículo</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Pesquisar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Textmining: análise dos discursos de Getúlio Vargas</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      <a href="/author/mateus-cavalcanti-pestana/">Mateus Cavalcanti Pestana</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Última atualização em
+      
+    
+    10 de Nov, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    17 minutos de leitura
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/analise-exploratoria/">análise exploratória</a>, <a href="/category/ciencia-de-dados/">ciência de dados</a>, <a href="/category/ciencia-politica/">ciência política</a>, <a href="/category/r/">r</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="2019-11-10-textmining-análise-dos-discursos-de-getúlio-vargas_files/header-attrs/header-attrs.js"></script>
+<script src="2019-11-10-textmining-análise-dos-discursos-de-getúlio-vargas_files/kePrint/kePrint.js"></script>
+<link href="2019-11-10-textmining-análise-dos-discursos-de-getúlio-vargas_files/lightable/lightable.css" rel="stylesheet" />
+
+
+<p>Getúlio Vargas chega ao poder, como Chefe do Governo Provisório, em 1930, marcando o fim da República Velha, e fica no poder até 1945, elegendo-se novamente em 1951 como Presidente da República, cargo que ocupou até 1954. Implantando uma ditadura em 1930, Vargas modernizou o Brasil, que se tornou um estado autoritário e centralizado na figura do presidente. O “Pai dos Pobres”, como também é conhecido, é responsável pela Consolidação das Leis Trabalhistas (CLT), pela criação do BNDE (atual BNDES), a fundação e o desenvolvimento da Petrobrás, e também pela inserção do Brasil na Segunda Guerra Mundial. Vargas cometeu suicídio em 24 de agosto de 1954, no Palácio do Catete, no antigo Distrito Federal, no Rio de Janeiro. Vargas era conhecido pela sua eloquência e por seus discursos, considerados grandes ensinamentos políticos.Por isso, me proponho a analisar alguns discursos de Vargas na presidência, mais especificamente todos os discursos proferidos entre 1930 e 1937, 1939, 1941, 1944 e o discurso de posse de 1951. Para isso, utilizarei o pacote <code>quanteda</code> para o R, além do <code>tidyverse</code>. Os discursos podem ser obtidos <a href="http://www.biblioteca.presidencia.gov.br/presidencia/ex-presidentes/getulio-vargas">aqui</a>, no site da Biblioteca da Presidência.</p>
+<p>O primeiro passo é carregar os pacotes que serão de fato utilizados, com o <code>pacman</code>:</p>
+<pre class="r"><code>pacman::p_load(
+  tidyverse,
+  quanteda,
+  pdftools,
+  stopwords,
+  readtext,
+  topicmodels,
+  knitr,
+  kableExtra)</code></pre>
+<p>Em seguida, vamos abrir os discursos. A função <code>readtext</code> permite importar as mais diversas extensões de texto de uma só vez, permitindo a criação de um <em>corpus</em> rapidamente.</p>
+<pre class="r"><code>vargas &lt;- readtext(
+  &quot;Documents/vargas/*&quot;,
+  docvarsfrom = &quot;filenames&quot;,
+  dvsep = &quot;_&quot;,
+  docvarnames = c(&quot;ano&quot;, &quot;ordem&quot;)
+)</code></pre>
+<p>O argumento <code>docvarnames</code> utiliza o nome do arquivo para adicionar variáveis ao banco. Como estruturei os discursos da seguinte maneira: <strong>ANO_ORDEM.pdf</strong>, utilizando o separador <code>_</code>, crio as variáveis<code>ano</code> e <code>ordem</code>, representando o ano em que o discurso foi proferido e em qual posição ele está (naquele ano).</p>
+<p>Isso fica bem claro abaixo:</p>
+<pre class="r"><code>head(vargas, 6)</code></pre>
+<pre><code>## readtext object consisting of 6 documents and 2 docvars.
+## # Description: df[,4] [6 × 4]
+##   doc_id      text                  ano ordem
+##   &lt;chr&gt;       &lt;chr&gt;               &lt;int&gt; &lt;chr&gt;
+## 1 1930_01.pdf &quot;\&quot;Presidênci\&quot;...&quot;  1930 01   
+## 2 1930_02.pdf &quot;\&quot;Presidênci\&quot;...&quot;  1930 02   
+## 3 1930_03.pdf &quot;\&quot;Presidênci\&quot;...&quot;  1930 03   
+## 4 1931_01.pdf &quot;\&quot;Presidênci\&quot;...&quot;  1931 01   
+## 5 1931_02.pdf &quot;\&quot;Presidênci\&quot;...&quot;  1931 02   
+## 6 1931_03.pdf &quot;\&quot;Presidênci\&quot;...&quot;  1931 03</code></pre>
+<p>Assim, temos um banco com documentos em <em>pdf</em> que guardam o discurso, o ano e a ordem do mesmo. Todavia, ele ainda não está em um formato próprio para nossa análise, devendo estar dentro do formato <em>corpus</em>. Além do mais, nosso arquivo em PDF guarda um problema comum à todos os PDFs: a hifenização. Um PDF é um arquivo pronto para imprimir, então o texto que está nele, quando selecionado, pode vir com alguns erros. O erro mais comum e que já corregiremos prontamente é o da hifenização. Supondo que em nossos arquivos exista a palavra <strong>república</strong>. Todavia, em alguns momentos, ela se encontra no fim da linha e não cabe na mesma. Por conta disso, ela é hifenizada, continuando na linha seguinte. Quando transposta para nosso banco de dados, é possível que apareçam as variações <strong>re- pública, repú- blica, repúbli- ca</strong>. Tudo isso será entendido pelo software como palavras diferentes, quando no fundo, são a mesma. Logo, antes de transformar em <em>corpus</em>, que é o conjunto de textos que iremos analisar, vamos corrigir esse erro usando o <code>str_replace_all</code> com <em>regex</em>. Em seguida, transformamos em <em>corpus</em>:</p>
+<pre class="r"><code># Corrigindo hifenizações erradas, unindo palavras separadas
+vargas$text &lt;- str_replace_all(vargas$text, &quot;-[\\s]+&quot;, &quot;&quot;)
+
+# Criando corpus
+discursos_vargas &lt;- corpus(vargas)
+
+# Sumarizando os 10 primeiros documentos
+summary(discursos_vargas, 10)</code></pre>
+<pre><code>## Corpus consisting of 236 documents, showing 10 documents:
+## 
+##         Text Types Tokens Sentences  ano ordem
+##  1930_01.pdf   827   1795        46 1930    01
+##  1930_02.pdf   680   1433        44 1930    02
+##  1930_03.pdf   827   1795        46 1930    03
+##  1931_01.pdf  1061   2484        55 1931    01
+##  1931_02.pdf  1304   3247        81 1931    02
+##  1931_03.pdf  1949   5051       151 1931    03
+##  1931_04.pdf   567   1187        22 1931    04
+##  1931_05.pdf   970   2060        63 1931    05
+##  1931_06.pdf  6808  29272       748 1931    06
+##  1932_01.pdf  1802   4607       131 1932    01</code></pre>
+<p>A saída do comando <code>summary</code> em um objeto de corpus apresenta os textos, a quantidade de caracteres (types),a quantidade de tokens e o número de frases de cada documento, além das variáveis que escolhemos anteriormente.</p>
+<p>Agora, para fazermos uma análise de frequência de palavras, por exemplo, precisamos dividir nosso <em>corpus</em> em unidades, denominadas <em>tokens</em>, que podem ser caracteres, palavras, sentenças, parágrafos. No caso, o ideal para a análise que desejo fazer é dividir em palavras, ou n-gramas, pegando cada palavra individualmente. Retirarei pontos, números, separadores, símbolos e hífens. Depois disso, removerei palavras que nada representam e não auxiliam, denominadas <em>stopwords</em>, do pacote de mesmo nome: artigos, preposições, alguns verbos, etc. Além disso, removerei outras palavras, como <em>art</em> (de artigo, quando Vargas cita leis), <strong>à, às, é, assim, sobre, ainda</strong>, e algumas frases que pertencem ao cabeçalho do arquivo. Há também um problema, que às vezes a palavra <strong>república</strong> aparece como <em>repdblica</em>, um erro no OCR. Isso será corrigido.</p>
+<pre class="r"><code>palavras_vargas &lt;- tokens(discursos_vargas,
+    &quot;word&quot;,
+    remove_numbers = T,
+    remove_symbols = T,
+    remove_punct = T,
+    remove_separators = T,
+    remove_hyphens = F) %&gt;% 
+  tokens_remove(pattern = c(stopwords(language = &quot;pt&quot;), 
+                            &quot;á&quot;, &quot;ás&quot;,&quot;é&quot;,
+                            &quot;ser&quot;,&quot;art&quot;, &quot;assim&quot;,
+                            &quot;sobre&quot;, &quot;ainda&quot;, &quot;pêlo&quot;,
+                            phrase(c(&quot;NOVA POLÍTICA DO BRASIL&quot;,
+                                     &quot;Presidência da República&quot;,
+                                     &quot;Casa Civil Secretaria de Administração&quot;,
+                                     &quot;Diretoria de Gestão de Pessoas Coordenação Geral de Documentação e Informação&quot;,
+                                     &quot;Coordenação de Biblioteca&quot;,
+                                     &quot;GOVERNO PROVISÓRIO&quot;,
+                                     &quot;decreto n&quot;,
+                                     &quot;A ATUALIDADE BRASILEIRA&quot;,&quot;DISCURSO PRONUNCIADO&quot;,
+                                     &quot;EST UNIDOS&quot;, 
+                                     &quot;TRABALHO INDÚSTRIA&quot;,
+                                     &quot;NEGÓCIOS INTERIORES&quot;, 
+                                     &quot;v exa&quot;, 
+                                     &quot;parágrafo único&quot;))),
+                padding = F) %&gt;%
+  tokens_replace(pattern = &quot;darepdblica&quot;, &quot;república&quot;)</code></pre>
+<pre><code>## Warning: &#39;remove_hyphens&#39; is deprecated, use &#39;split_hyphens&#39; instead.</code></pre>
+<p>Com isso, já podemos fazer uma análise da frequência de palavras nos discursos de Getúlio Vargas, podendo descobrir assim as palavras mais utilizadas por ele, dando uma pista sobre temas, termos e o que realmente era relevante (pelo uso). Antes de fazer a frequência, precisamos converter os tokens em uma <em>document-feature matrix</em>, que nada mais é que uma matriz de frequência de termos em documentos:</p>
+<pre class="r"><code>vargas_dfm &lt;- dfm(palavras_vargas)
+
+# Fazendo a estatística de frequência de palavras: top 15
+textstat_frequency(vargas_dfm, n = 25) %&gt;% 
+  kable() %&gt;% 
+  kable_paper()</code></pre>
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+feature
+</th>
+<th style="text-align:right;">
+frequency
+</th>
+<th style="text-align:right;">
+rank
+</th>
+<th style="text-align:right;">
+docfreq
+</th>
+<th style="text-align:left;">
+group
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+1273
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+204
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+1135
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+215
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+1023
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+186
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+país
+</td>
+<td style="text-align:right;">
+975
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+194
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+todos
+</td>
+<td style="text-align:right;">
+838
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+203
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+estado
+</td>
+<td style="text-align:right;">
+759
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+162
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+grande
+</td>
+<td style="text-align:right;">
+726
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+179
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trabalho
+</td>
+<td style="text-align:right;">
+680
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+176
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+povo
+</td>
+<td style="text-align:right;">
+627
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+178
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vida
+</td>
+<td style="text-align:right;">
+556
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+178
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+política
+</td>
+<td style="text-align:right;">
+545
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+151
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rio
+</td>
+<td style="text-align:right;">
+468
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+97
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+produção
+</td>
+<td style="text-align:right;">
+445
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+109
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+estados
+</td>
+<td style="text-align:right;">
+438
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+88
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+federal
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+81
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+econômica
+</td>
+<td style="text-align:right;">
+382
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+138
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+maior
+</td>
+<td style="text-align:right;">
+380
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+145
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nação
+</td>
+<td style="text-align:right;">
+377
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+132
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sempre
+</td>
+<td style="text-align:right;">
+376
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+153
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+todas
+</td>
+<td style="text-align:right;">
+372
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+153
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+anos
+</td>
+<td style="text-align:right;">
+361
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+social
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasileiros
+</td>
+<td style="text-align:right;">
+345
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+126
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasileiro
+</td>
+<td style="text-align:right;">
+342
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+143
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+obra
+</td>
+<td style="text-align:right;">
+341
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+143
+</td>
+<td style="text-align:left;">
+all
+</td>
+</tr>
+</tbody>
+</table>
+<p>Percebemos que, no nosso <em>corpus</em>, a palavra <strong>Brasil</strong> aparece 622 vezes em 94 dos 100 discursos. Depois dela, <strong>Nacional</strong> é utilizada 586 vezes, aparecendo em 80 documentos. <strong>Povo</strong> aparece na 11ª posição, sendo utilizada 292 vezes, aparecendo em 82 discursos, o que faz todo o sentido, a partir do que se sabe sobre Vargas.</p>
+<p>Podemos fazer a mesma análise de frequência de palavras agrupando por ano, e pegando as 5 palavras mais usadas em cada ano:</p>
+<pre class="r"><code>textstat_frequency(vargas_dfm, group = &quot;ano&quot;, n = 5) %&gt;% 
+    kable() %&gt;% 
+  kable_paper()</code></pre>
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+feature
+</th>
+<th style="text-align:right;">
+frequency
+</th>
+<th style="text-align:right;">
+rank
+</th>
+<th style="text-align:right;">
+docfreq
+</th>
+<th style="text-align:left;">
+group
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+povo
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1930
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+eleitoral
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1930
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+todos
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1930
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1930
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasileiro
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1930
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+101
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1931
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+país
+</td>
+<td style="text-align:right;">
+92
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1931
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+todos
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1931
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1931
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+estado
+</td>
+<td style="text-align:right;">
+58
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1931
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+96
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1932
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+país
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1932
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+revolução
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1932
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1932
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+política
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1932
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+país
+</td>
+<td style="text-align:right;">
+142
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+1933
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trabalho
+</td>
+<td style="text-align:right;">
+127
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+1933
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+115
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+1933
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+112
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+1933
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+1933
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+113
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+1934
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+1934
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+creou
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+1934
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ministério
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+1934
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+regulou
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+1934
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+1935
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+todos
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+1935
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+povo
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+1935
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+argentina
+</td>
+<td style="text-align:right;">
+30
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1935
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+país
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+1935
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1936
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+todos
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1936
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+social
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1936
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1936
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vida
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1936
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+1937
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+estado
+</td>
+<td style="text-align:right;">
+118
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1937
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+federal
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+1937
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lei
+</td>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1937
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+presidente
+</td>
+<td style="text-align:right;">
+98
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+1937
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+estado
+</td>
+<td style="text-align:right;">
+101
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+1938
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+1938
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+país
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+1938
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+1938
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+novo
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:left;">
+1938
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+82
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+1939
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+país
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+1939
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+grande
+</td>
+<td style="text-align:right;">
+71
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+1939
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+estado
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:left;">
+1939
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+municípios
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1939
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+185
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:left;">
+1940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+172
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+1940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+146
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:left;">
+1940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+país
+</td>
+<td style="text-align:right;">
+139
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:left;">
+1940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+todos
+</td>
+<td style="text-align:right;">
+124
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:left;">
+1940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+69
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1941
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+presidente
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+1941
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+povo
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1941
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+américa
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+1941
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1941
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+103
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:left;">
+1943
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+guerra
+</td>
+<td style="text-align:right;">
+89
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+1943
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+1943
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+61
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+1943
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+todos
+</td>
+<td style="text-align:right;">
+59
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:left;">
+1943
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1944
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+guerra
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+1944
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+todos
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+1944
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+1944
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vossa
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+1944
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+povo
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+1951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+83
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+1951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vida
+</td>
+<td style="text-align:right;">
+54
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+1951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:left;">
+1951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+todos
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+1951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+117
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+1952
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+milhões
+</td>
+<td style="text-align:right;">
+81
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+1952
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+grande
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+1952
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+país
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:left;">
+1952
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+66
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+1952
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+governo
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+1953
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+brasil
+</td>
+<td style="text-align:right;">
+56
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:left;">
+1953
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+milhões
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:left;">
+1953
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nacional
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+1953
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cruzeiros
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:left;">
+1953
+</td>
+</tr>
+</tbody>
+</table>
+<p>Fazendo uma nuvem de palavras (<em>wordcloud</em>) dos 200 termos mais utilizados por Vargas, temos:</p>
+<pre class="r"><code>textplot_wordcloud(vargas_dfm,
+  random_order = FALSE,
+  rotation = 0.25,
+  max_words = 200,
+  color = RColorBrewer::brewer.pal(8, &quot;Dark2&quot;))</code></pre>
+<p><img src="/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>A nuvem de palavras é simplesmente um recurso gráfico da tabela de frequência de palavras: o tamanho da palavra indica a quantidade de vezes que ela é utilizada, e é proporcional às outras ali presentes.</p>
+<p>O Estado Novo inicia em 1937, com o fim do Governo Constitucionalista (1934-1937), e vai até 1945. Será que houve alguma mudança nas palavras utilizadas por Vargas no primeiro ano de cada período de governo, ou seja, em 1931, 1934 e 1937?</p>
+<pre class="r"><code>tokens_subset(palavras_vargas, ano %in% c(1931, 1934, 1937)) %&gt;% 
+  dfm(groups = &quot;ano&quot;) %&gt;% 
+  textplot_wordcloud(max_words = 400, comparison = T,
+                     color = RColorBrewer::brewer.pal(3, &quot;Dark2&quot;)) </code></pre>
+<p><img src="/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>O que percebemos acima é que Vargas varia um pouco nas palavras utilizadas nos primeiros anos de seus governos: em 1931, percebemos o uso de palavras como <strong>governo, toneladas, papel, ouro, despesa, econômica, classes, tesouro</strong>; já em 1934, com o início do Governo Constitucionalista e promulgação da Constituição de 1934, palavras como <strong>fazenda, ministério, comércio, marinha, brasil, obras, públicas, cinema, saúde, ferro, café, naval</strong> se fazem presentes; em 1937, durante o Estado Novo, Vargas utilizou mais as palavras <strong>presidente, federal, lei,c onstituição, república, estado, nacional, segurança, câmara, tribunal, poder</strong>.</p>
+<p>O <code>quanteda</code> é excelente pois traz consigo um conjunto de funções facilitadas, tornando muito mais fácil o cálculo de algumas estatísticas e a plotagem de alguns gráficos. Um outro exemplo é o gráfico de co-ocorrência, em rede, que indica quais palavras costumam ocorrer no mesmo documento, ou na mesma frase, a depender de como se configura. Ao analisarmos a co-ocorrência de palavras nos discursos de Vargas, temos, através da função <code>textplot_network</code>:</p>
+<pre class="r"><code>dfm_trim(vargas_dfm,
+           min_termfreq = 25,
+           termfreq_type = &quot;rank&quot;) %&gt;% 
+  textplot_network(edge_size = 0.6)+
+  labs(title = &quot;Co-ocorrência de termos:&quot;,
+       subtitle = &quot;Discursos de Getúlio Vargas&quot;,
+       x = &quot;&quot;,  y = &quot;&quot;)+
+  theme_minimal()</code></pre>
+<p><img src="/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>O gráfico acima nos permite perceber que, por exemplo, <strong>país, governo, nacional, brasil,e stado, federal, todos</strong> são palavras com um alto grau de co-ocorrência com todas as outras. Talvez seja mais interessante observar as palavras que não co-ocorrem entre si: <strong>povo e nação</strong>, por exemplo, ou <strong>poder, povo, ordem e obra</strong>.</p>
+<p>Um outro exemplo interessante de análise é a presença de determinado termo ou termos ao longo do documento, e em que posição aparecem. Isso é oferecido pela função <code>textplot_xray</code>. Observando em quais discursos a palavra democracia (ou democratas, democrata, democrático, democrática, etc) aparece, e em que posições do documento:</p>
+<pre class="r"><code>textplot_xray(kwic(discursos_vargas,  &quot;Democra*&quot;)) +
+  labs(
+    subtitle = &quot;Plot de dispersão lexical&quot;,
+    title = &quot;Discursos de Getúlio Vargas:&quot;,
+    x = &quot;Index de Token&quot;,
+    y = &quot;Documento&quot;
+  )</code></pre>
+<p><img src="/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+Democracia só aparece em 1 discurso em 1932, em 1 em 1933, em 2 em 1934, em 2 em 1935, em 4 em 1936, em 2 em 1937, em 1 em 1939, em 3 em 1941 e em 1 em 1944, de um total de 100 discursos existentes.</p>
+<p>Mas qual seria o contexto da palavra nos discursos?</p>
+<pre class="r"><code>kwic(discursos_vargas, &quot;Democra*&quot;, window = 3)</code></pre>
+<pre><code>##                                                                       
+##       [1932_01.pdf, 104]     falsos pregoeiros da |    democracia    |
+##      [1933_04.pdf, 1445]          a decadência da |    democracia    |
+##     [1934_05.pdf, 12733]  direito patrimonial das |   democracias    |
+##      [1934_14.pdf, 2900] estabeleceu a verdadeira |    democracia    |
+##       [1935_04.pdf, 204]               e da vossa |    democracia    |
+##        [1935_09.pdf, 40]                A base da |    democracia    |
+##       [1935_09.pdf, 167]                a base da |    democracia    |
+##       [1935_09.pdf, 208]     alicerces das nossas |   democracias    |
+##      [1936_02.pdf, 1677]             Na luta pela |    democracia    |
+##      [1936_04.pdf, 1453]            de defender a |    democracia    |
+##        [1936_05.pdf, 86]             econômico- A |    democracia    |
+##       [1936_05.pdf, 786]                  , que a |    democracia    |
+##       [1936_05.pdf, 809]                   Mas, a |    democracia    |
+##       [1936_05.pdf, 887]                . Ordem e |    democracia    |
+##       [1936_07.pdf, 604]        cidadãos da maior |    democracia    |
+##      [1937_01.pdf, 2298]            dos marcos da |    democracia    |
+##       [1937_04.pdf, 874]          atravessamos, a |    democracia    |
+##       [1938_05.pdf, 161]          Governo forte e |    democracia    |
+##      [1938_05.pdf, 7139]          Governo forte e |    democracia    |
+##       [1938_23.pdf, 464]     manipuladores de uma |    democracia    |
+##    [1939_05-02.pdf, 741]          passámos de uma |    democracia    |
+##    [1939_05-02.pdf, 751]               , para uma |    democracia    |
+##  [1939_05-02.pdf, 10761]              da forma de |    democracia    |
+##      [1940_21.pdf, 1076]              desordem. À |    democracia    |
+##      [1940_21.pdf, 1080]     política substitue a |    democracia    |
+##      [1940_41.pdf, 1748]              produção. A |    democracia    |
+##       [1941_02.pdf, 538] instituímos a verdadeira |    democracia    |
+##       [1941_04.pdf, 221]              regime, uma |    democracia    |
+##      [1941_04.pdf, 2290]              regime, uma |    democracia    |
+##      [1941_04.pdf, 2304]    convenções legais das |   democracias    |
+##      [1941_04.pdf, 2331]               É mais uma |    democracia    |
+##       [1941_05.pdf, 233]     - Característicos da |    democracia    |
+##      [1941_05.pdf, 1546]                 Novo e a |    democracia    |
+##      [1941_05.pdf, 1571]        conciliação com a |    democracia    |
+##      [1941_05.pdf, 1693]        , instituímos uma |    democracia    |
+##      [1941_05.pdf, 1771]                  , é uma |    democracia    |
+##      [1941_05.pdf, 2126]           forma comum da |    democracia    |
+##        [1943_21.pdf, 87]           Nações Unidas- |    Democracia    |
+##       [1943_21.pdf, 267]    Apenas entendemos que |    democracia    |
+##      [1944_04.pdf, 1977]           rep sentantes, | democraticamente |
+##       [1951_02.pdf, 211]                 do Povo. |    democracia    |
+##       [1951_03.pdf, 511]       presente os mesmos |    democracia    |
+##      [1951_07.pdf, 3791]         conhecem o deira |    democracia    |
+##      [1951_07.pdf, 3832]            riedade a uma |    democracia    |
+##      [1952_07.pdf, 1035]               livre. Nas |   democracias    |
+##      [1952_09.pdf, 2302]            Não somente a |    democracia    |
+##      [1952_09.pdf, 2594]             livre não há |    democracia    |
+##      [1952_09.pdf, 2792]   espírito verdadeiro da |    democracia    |
+##       [1952_11.pdf, 212]                a base da |    democracia    |
+##       [1953_03.pdf, 832]              a defesa da |    democracia    |
+##                                  
+##  e os reacionários               
+##  liberal e individualista        
+##  . Mas essa                      
+##  entre nós.                      
+##  , a cujo                        
+##  , agora como                    
+##  , agora como                    
+##  ; e vós                         
+##  , estacionamento significa      
+##  , entregam-na,                  
+##  é o regime                      
+##  é o regime                      
+##  , no sentido                    
+##  que significam disciplina       
+##  do mundo,                       
+##  ativa, em                       
+##  de partidos,                    
+##  - O Estado                      
+##  Há quem afirme                  
+##  de ficção.                      
+##  aparente, de                    
+##  real, isto                      
+##  renovada em que                 
+##  política substitue a            
+##  econômica, em                   
+##  política- vemos                 
+##  - do povo                       
+##  - As assembléias                
+##  , mesmo porque                  
+##  parlamentares, esse             
+##  econômica que política          
+##  brasileira- A                   
+##  Peço, em                        
+##  , tal como                      
+##  realista e funcional            
+##  , distanciada dos               
+##  parlamentar: perde-se           
+##  não é demagogia                 
+##  não é demaia                    
+##  , dentro da                     
+##  . Ordenastes e                  
+##  de conteúdo humano              
+##  social e econô                  
+##  meradem falar em                
+##  , o governo                     
+##  está definitivamente consolidada
+##  . Não pretendo                  
+##  , abdiquem de                   
+##  , pois é                        
+##  , como pretexto</code></pre>
+<p>Percebe-se que a palavra <strong>democracia</strong>, em muitos dos casos acima, é utilizada em um contexto negativo.</p>
+<p>Uma ferramenta muito útil é a de <em>topic modeling</em>, que permite o cálculo de termos relacionados que possam indicar um assunto em comum, ou tópicos. Será que é possível identificar tópicos recorrentes nos discursos de Getúlio Vargas?</p>
+<pre class="r"><code>LDA(convert(vargas_dfm, to = &quot;topicmodels&quot;), k = 5) %&gt;% 
+  get_terms(10)</code></pre>
+<pre><code>##       Topic 1    Topic 2      Topic 3    Topic 4     Topic 5     
+##  [1,] &quot;brasil&quot;   &quot;governo&quot;    &quot;governo&quot;  &quot;brasil&quot;    &quot;governo&quot;   
+##  [2,] &quot;todos&quot;    &quot;estado&quot;     &quot;nacional&quot; &quot;governo&quot;   &quot;país&quot;      
+##  [3,] &quot;nacional&quot; &quot;brasil&quot;     &quot;grande&quot;   &quot;povo&quot;      &quot;brasil&quot;    
+##  [4,] &quot;povo&quot;     &quot;trabalho&quot;   &quot;país&quot;     &quot;país&quot;      &quot;nacional&quot;  
+##  [5,] &quot;trabalho&quot; &quot;presidente&quot; &quot;produção&quot; &quot;política&quot;  &quot;serviços&quot;  
+##  [6,] &quot;país&quot;     &quot;federal&quot;    &quot;estado&quot;   &quot;todos&quot;     &quot;ministério&quot;
+##  [7,] &quot;governo&quot;  &quot;lei&quot;        &quot;milhões&quot;  &quot;nacional&quot;  &quot;obras&quot;     
+##  [8,] &quot;pátria&quot;   &quot;nacional&quot;   &quot;brasil&quot;   &quot;vida&quot;      &quot;estados&quot;   
+##  [9,] &quot;vida&quot;     &quot;grande&quot;     &quot;rio&quot;      &quot;revolução&quot; &quot;ano&quot;       
+## [10,] &quot;guerra&quot;   &quot;país&quot;       &quot;todos&quot;    &quot;estado&quot;    &quot;serviço&quot;</code></pre>
+<p>Calculei 5 tópicos possíveis nos discursos de Vargas e, de cada um, selecionei as 10 palavras que pudessem representar cada tópico. Por conta de todos os discursos versarem, na maioria das vezes, sobre as mesmas coisas, com uma grande quantidade de palavras repetidas, fica difícil identificar tópicos diferentes. Todavia, se ignorarmos as palavras repetidas e focarmos nas únicas, podemos perceber alguns temas: <strong>estado e social</strong>, <strong>lei e presidente</strong>, <strong>nação e revolução</strong>, <strong>obras e serviços</strong>, <strong>povo e trabalho</strong>.</p>
+<p>Por fim, o <code>quanteda</code> também apresenta a ferramenta de <em>collocations</em>, que é o cálculo de palavras que sempre andam juntas, em bi-gramas (ou seja, pares). Quais serão os termos correlacionados nos discursos de Getúlio? Para essa análise, precisamos fazer novamente os <em>tokens</em> adicionando a opção de <code>padding  = TRUE</code>, para que os espaços vazios (de palavras removidas, como <em>stopwords</em>) não sejam ocupados pelas palavras seguintes.</p>
+<pre class="r"><code>tokens(discursos_vargas,
+    &quot;word&quot;,
+    remove_numbers = T,
+    remove_symbols = T,
+    remove_punct = T,
+    remove_separators = T) %&gt;% 
+  tokens_remove(padding = TRUE, pattern = c(stopwords(language = &quot;pt&quot;),
+    &quot;á&quot;,&quot;ás&quot;,&quot;é&quot;,
+    &quot;ser&quot;,&quot;art&quot;, &quot;assim&quot;, &quot;sobre&quot;, &quot;ainda&quot;, &quot;pêlo&quot;, phrase(c(&quot;NOVA POLÍTICA DO BRASIL&quot;,
+        &quot;Presidência da República&quot;,
+        &quot;Casa Civil Secretaria de Administração&quot;,
+        &quot;Diretoria de Gestão de Pessoas Coordenação Geral de Documentação e Informação&quot;,
+        &quot;Coordenação de Biblioteca&quot;,
+        &quot;GOVERNO PROVISÓRIO&quot;,
+        &quot;decreto n&quot;, &quot;A ATUALIDADE BRASILEIRA&quot;, &quot;DISCURSO PRONUNCIADO&quot;, &quot;EST UNIDOS&quot;, &quot;TRABALHO INDÚSTRIA&quot;,&quot;NEGÓCIOS INTERIORES&quot;, &quot;v exa&quot;, &quot;parágrafo único&quot;)))) %&gt;%
+  tokens_replace(pattern = &quot;darepdblica&quot;, &quot;república&quot;) %&gt;% 
+  textstat_collocations(size = 2) %&gt;%
+  as.data.frame() %&gt;% 
+  arrange(-count) %&gt;% 
+  head(30) %&gt;% 
+  select(-count_nested, -length) %&gt;% 
+    kable(col.names = c(&quot;Collocation&quot;, &quot;Contagem&quot;, &quot;Lambda&quot;, &quot;Z&quot;)) %&gt;% 
+  kable_paper()</code></pre>
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Collocation
+</th>
+<th style="text-align:right;">
+Contagem
+</th>
+<th style="text-align:right;">
+Lambda
+</th>
+<th style="text-align:right;">
+Z
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+rio grande
+</td>
+<td style="text-align:right;">
+256
+</td>
+<td style="text-align:right;">
+7.12160
+</td>
+<td style="text-align:right;">
+65.7777
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+povo brasileiro
+</td>
+<td style="text-align:right;">
+124
+</td>
+<td style="text-align:right;">
+6.21525
+</td>
+<td style="text-align:right;">
+50.4035
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+governo federal
+</td>
+<td style="text-align:right;">
+123
+</td>
+<td style="text-align:right;">
+5.07670
+</td>
+<td style="text-align:right;">
+44.9262
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+forças armadas
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+8.78112
+</td>
+<td style="text-align:right;">
+40.0075
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+cada vez
+</td>
+<td style="text-align:right;">
+81
+</td>
+<td style="text-align:right;">
+7.06180
+</td>
+<td style="text-align:right;">
+45.1112
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+estado novo
+</td>
+<td style="text-align:right;">
+80
+</td>
+<td style="text-align:right;">
+5.38173
+</td>
+<td style="text-align:right;">
+39.5181
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+85
+</td>
+<td style="text-align:left;">
+distrito federal
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+9.72641
+</td>
+<td style="text-align:right;">
+21.8444
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+território nacional
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+5.43573
+</td>
+<td style="text-align:right;">
+33.0938
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+poder público
+</td>
+<td style="text-align:right;">
+56
+</td>
+<td style="text-align:right;">
+6.61593
+</td>
+<td style="text-align:right;">
+38.2622
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+minas gerais
+</td>
+<td style="text-align:right;">
+55
+</td>
+<td style="text-align:right;">
+8.90081
+</td>
+<td style="text-align:right;">
+37.8444
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22
+</td>
+<td style="text-align:left;">
+economia nacional
+</td>
+<td style="text-align:right;">
+55
+</td>
+<td style="text-align:right;">
+4.45704
+</td>
+<td style="text-align:right;">
+29.4265
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+corrente ano
+</td>
+<td style="text-align:right;">
+54
+</td>
+<td style="text-align:right;">
+7.44906
+</td>
+<td style="text-align:right;">
+37.1227
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3049
+</td>
+<td style="text-align:left;">
+matérias primas
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+14.51998
+</td>
+<td style="text-align:right;">
+10.0904
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+outro lado
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+7.83564
+</td>
+<td style="text-align:right;">
+37.4627
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+neste momento
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+6.54853
+</td>
+<td style="text-align:right;">
+35.5539
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+62
+</td>
+<td style="text-align:left;">
+vida nacional
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+3.61973
+</td>
+<td style="text-align:right;">
+23.3299
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+conselho federal
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+6.36355
+</td>
+<td style="text-align:right;">
+33.7263
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+67
+</td>
+<td style="text-align:left;">
+porto alegre
+</td>
+<td style="text-align:right;">
+46
+</td>
+<td style="text-align:right;">
+10.73462
+</td>
+<td style="text-align:right;">
+23.0169
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+42
+</td>
+<td style="text-align:left;">
+vossa excelência
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+8.59701
+</td>
+<td style="text-align:right;">
+26.9050
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19
+</td>
+<td style="text-align:left;">
+estados unidos
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+7.09005
+</td>
+<td style="text-align:right;">
+30.0436
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+supremo tribunal
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+9.28012
+</td>
+<td style="text-align:right;">
+33.2420
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+últimos anos
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+6.78565
+</td>
+<td style="text-align:right;">
+31.8574
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+administração pública
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+6.19113
+</td>
+<td style="text-align:right;">
+31.9367
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44
+</td>
+<td style="text-align:left;">
+departamento nacional
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+5.70706
+</td>
+<td style="text-align:right;">
+26.3775
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+431
+</td>
+<td style="text-align:left;">
+governo nacional
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+2.54223
+</td>
+<td style="text-align:right;">
+15.2339
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+desenvolvimento econômico
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+5.90210
+</td>
+<td style="text-align:right;">
+30.6431
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+27
+</td>
+<td style="text-align:left;">
+novo regime
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+5.36720
+</td>
+<td style="text-align:right;">
+28.2388
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+mil contos
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+7.80931
+</td>
+<td style="text-align:right;">
+32.4016
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:left;">
+dois países
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+6.03132
+</td>
+<td style="text-align:right;">
+29.6839
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+68
+</td>
+<td style="text-align:left;">
+vida econômica
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+4.26817
+</td>
+<td style="text-align:right;">
+22.9202
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rio Grande, Povo Brasileiro, Governo Federal e Forças Armadas</strong> são os bigramas mais utilizados por Getúlio Vargas. O primeiro é óbvio: se refere ao Rio Grande do Sul, terra de Getúlio Vargas; <strong>Povo Brasileiro</strong> era como ele iniciava os discursos, se dirigindo à nação; <strong>Governo Federal</strong> se refere ao governo; <strong>Forças Armadas</strong> mostra as relações de Getúlio com os militares, fruto da própria Revolução de 30.</p>
+<p>Bom, por hoje é só! Quero agradecer aos insights dos amigos Helio Cannone e Weslley Dias, que possuem relevantes pesquisas sobre Vargas e entendem profundamente do assunto.</p>
+<p>Qualquer dúvida, correção ou sugestão pode ser encaminhada para <a href="mailto:matheus.pestana@iesp.uerj.br" class="email">matheus.pestana@iesp.uerj.br</a></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/brasil/">brasil</a>
+  
+  <a class="badge badge-light" href="/tag/eleicoes/">eleições</a>
+  
+  <a class="badge badge-light" href="/tag/governo/">governo</a>
+  
+  <a class="badge badge-light" href="/tag/r/">r</a>
+  
+  <a class="badge badge-light" href="/tag/getulio-vargas/">getúlio vargas</a>
+  
+  <a class="badge badge-light" href="/tag/textmining/">textmining</a>
+  
+  <a class="badge badge-light" href="/tag/quanteda/">quanteda</a>
+  
+  <a class="badge badge-light" href="/tag/discurso/">discurso</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/&amp;text=Textmining:%20an%c3%a1lise%20dos%20discursos%20de%20Get%c3%balio%20Vargas" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/&amp;t=Textmining:%20an%c3%a1lise%20dos%20discursos%20de%20Get%c3%balio%20Vargas" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Textmining:%20an%c3%a1lise%20dos%20discursos%20de%20Get%c3%balio%20Vargas&amp;body=https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/&amp;title=Textmining:%20an%c3%a1lise%20dos%20discursos%20de%20Get%c3%balio%20Vargas" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Textmining:%20an%c3%a1lise%20dos%20discursos%20de%20Get%c3%balio%20Vargas%20https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/&amp;title=Textmining:%20an%c3%a1lise%20dos%20discursos%20de%20Get%c3%balio%20Vargas" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://mateuspestana.github.io"><img class="avatar mr-3 avatar-circle" src="/author/mateus-cavalcanti-pestana/avatar_hufeccfd6f9380df9b18ea9dcb1ceea097_79518_270x270_fill_q75_lanczos_center.jpg" alt="Mateus Cavalcanti Pestana"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://mateuspestana.github.io">Mateus Cavalcanti Pestana</a></h5>
+      <h6 class="card-subtitle">Doutorando e Mestre em Ciência Política</h6>
+      <p class="card-text">Interessado em ciência de dados, ciência política, política russa, impressão 3D, redes neurais e aprendizado de máquina.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:matheus.pestana@iesp.uerj.br" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/0027872463024148" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.br/citations?user=jpRDWpgAAAAJ&amp;hl=pt-BR" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0002-5388-8950" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/mateuspestana" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionados</h3>
+    <ul>
+      
+      <li><a href="/portfolio/2021-03-02-votaai/">VotaAí</a></li>
+      
+      <li><a href="/portfolio/2021-03-02-candidaturas-religiosas/">Candidaturas Religiosas</a></li>
+      
+      <li><a href="/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/">Imprimindo gráficos em 3D no R</a></li>
+      
+      <li><a href="/post/quem-voa/quem-voa-analise-dos-voos-da-fab-com-autoridades-do-estado/">Quem Voa - Análise dos vôos da FAB com autoridades do Estado</a></li>
+      
+      <li><a href="/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/">Decision Trees no R: Análise do ENEM 2018</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2021 Matheus C. Pestana
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.f81d0a1705048649befc8b595e455a94.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/pt/js/wowchemy.min.e74a71a7cfab89f71b427a2bd20b61f8.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

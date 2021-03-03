@@ -1,0 +1,3952 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>brasil | Mateus C. Pestana</title>
+    <link>https://mateuspestana.github.io/tag/brasil/</link>
+      <atom:link href="https://mateuspestana.github.io/tag/brasil/index.xml" rel="self" type="application/rss+xml" />
+    <description>brasil</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 Matheus C. Pestana</copyright><lastBuildDate>Tue, 02 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>brasil</title>
+      <link>https://mateuspestana.github.io/tag/brasil/</link>
+    </image>
+    
+    <item>
+      <title>Candidaturas Religiosas</title>
+      <link>https://mateuspestana.github.io/portfolio/2021-03-02-candidaturas-religiosas/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/portfolio/2021-03-02-candidaturas-religiosas/</guid>
+      <description>
+&lt;script src=&#34;https://mateuspestana.github.io/portfolio/2021-03-02-candidaturas-religiosas/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Candidaturas Religiosas é uma base de dados disponível para visualização, originada na pesquisa de Religião e Política do Instituto de Estudos da Religião (ISER). Tanto os dados, obtidos do TSE e filtrados, quanto a dashboard, foram desenvolvidos por mim, em Shiny.&lt;/p&gt;
+&lt;p&gt;O site pode ser acessado &lt;a href=&#34;http://192.241.143.217:8090/&#34;&gt;aqui&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VotaAí</title>
+      <link>https://mateuspestana.github.io/portfolio/2021-03-02-votaai/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/portfolio/2021-03-02-votaai/</guid>
+      <description>
+&lt;script src=&#34;https://mateuspestana.github.io/portfolio/2021-03-02-votaai/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;img src=&#34;featured.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;O VotaAí é uma plataforma onde programas partidários municipais podem ser analisados, visualizados e comparados. Idealizado por Dra. Nara Salles (IESP-UERJ), foi desenvolvido por mim em Shiny, utilizando pacotes como o quanteda e o ggplot2 para os gráficos.&lt;/p&gt;
+&lt;p&gt;Pode ser encontrado &lt;a href=&#34;http://64.225.91.205:8080/&#34;&gt;aqui&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Inclusão UERJ</title>
+      <link>https://mateuspestana.github.io/portfolio/2021-03-02-inclusao-uerj/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/portfolio/2021-03-02-inclusao-uerj/</guid>
+      <description>
+&lt;script src=&#34;https://mateuspestana.github.io/portfolio/2021-03-02-inclusao-uerj/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;O Portal de Inclusão da UERJ serviu para levantar os dados sobre acesso digital da comunidade da UERJ, formada por professores, técnicos e alunos.&lt;/p&gt;
+&lt;p&gt;A dashboard foi desenvolvida por mim, usando os pacotes &lt;code&gt;flexdashboard&lt;/code&gt; e &lt;code&gt;highcharter&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Pode ser encontrada &lt;a href=&#34;http://www.inclusaodigital.uerj.br/resultados-preliminares/&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Decision Trees no R: Análise do ENEM 2018</title>
+      <link>https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/decision-trees/decision-trees-no-r-analise-do-enem-2018/</guid>
+      <description>
+&lt;script src=&#34;https://mateuspestana.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Olá! No post de hoje, utilizarei uma ferramenta fascinante para predição e explicação em modelos tanto de regressão quanto de classificação: as árvores de decisão, ou &lt;strong&gt;decision trees&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;As árvores de decisão, como no exemplo abaixo, são traçadas a partir de uma combinação de nós e folhas, sendo cada nó uma variável com um determinado valor ou categoria dividida e cada folha com um valor ou categoria predita. Tal recurso é interessante pois a interpretação é facilitada pelo apelo gráfico, e nos permite entender quais variáveis são importantes e determinantes na predição/explicação de um modelo.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://miro.medium.com/max/2000/1*WerHJ14JQAd3j8ASaVjAhw.jpeg&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Exemplo de Decision Tree&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Há algum tempo, vi pela internet diversos posts utilizando os dados do ENEM, que são livres e abertos, disponibilizados no site do &lt;a href=&#34;http://inep.gov.br/web/guest/microdados&#34;&gt;INEP&lt;/a&gt;. O arquivo é um pouco pesado e, por conta disso, limitarei a minha análise. O que busco aqui é entender quais variáveis e como tais variáveis afetam no desempenho em Matemática dos alunos do município do Rio de Janeiro e de São Gonçalo. As justificativas para tal escolha se dão por&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ao utilizar o Brasil inteiro, um enorme poder computacional é exigido;&lt;/li&gt;
+&lt;li&gt;utilizando todo o país, estaríamos homogeneizando realidades distantes e assim atribuindo viés à análise. O Estado de São Paulo tem a maioria dos alunos no ENEM, e portanto enviesaria e obfuscaria aspectos que são importantes, talvez, para alunos do interior do Rio Grande do Sul;&lt;/li&gt;
+&lt;li&gt;A cidade do Rio, além de capital, tem o segundo melhor IDH do Estado, enquanto São Gonçalo tem um dos piores, sendo duas análises distintas interessantes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mas como uma árvore de decisão funciona e calcula as divisões? Bom, o algoritmo calcula a média de cada preditor agrupando suas possibilidades de maneira ótima, gerando cada divisão e testando qual o melhor preditor para uma árvore, avançando na mesma em profundidade (&lt;em&gt;depth&lt;/em&gt;), sendo que ao final do processo, valores ou categorias são apontados em cada região ou “folha”. A ideia é um pouco complexa, mas uma vez na prática, fica mais fácil de entender. Vamos para o R:&lt;/p&gt;
+&lt;p&gt;O primeiro passo é carregar os pacotes que iremos utilizar, abrir o banco e determinar uma &lt;em&gt;seed&lt;/em&gt;, que nada mais é que um número que permite a reproducibilidade dos valores randômicos obtidos em uma pesquisa. Com a mesma seed, os mesmo valores devem ser obtidos em todos os computadores e sistemas.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Setando seed como 93
+set.seed(93)
+
+# Carregando os pacotes
+pacman::p_load(
+  tidyverse,
+  randomForest,
+  gbm,
+  tree,
+  fst,
+  ranger,
+  rpart,
+  rpart.plot,
+  rattle
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## The downloaded binary packages are in
+##  /var/folders/qy/4rvcxmfj4bz5vqk9hv_q9pmh0000gn/T//Rtmp1MmSXY/downloaded_packages&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## gbm installed&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## The downloaded binary packages are in
+##  /var/folders/qy/4rvcxmfj4bz5vqk9hv_q9pmh0000gn/T//Rtmp1MmSXY/downloaded_packages&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## tree installed&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Abrindo o banco
+enem2018 &amp;lt;- read.fst(&amp;quot;enem2018_full.fst&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Como sempre, utilizarei o tidyverse para pequenas manipulações no banco. o RandomForest, o GBM, o Tree, o Ranger, o Rpart, o Rpart.Plot e o Rattle são pacotes que utilizarei para a análise em si e lidam com árvores de decisão, florestas randômicas, bagging, boosting, e plotagem das mesmas. Já FST é um pacote que se refere ao formato &lt;em&gt;.fst&lt;/em&gt;, que permite uma maior compressão dos dados. O banco do ENEM, completo, pesa em torno de 1.8gb em CSV, mas apenas ~800mb em FST com 100% de compressão. Em tempos de SSDs limitados, todo espaço que pode ser salvo é importante.&lt;/p&gt;
+&lt;p&gt;No arquivo baixado pelo site do INEP, temos o &lt;a href=&#34;https://mateuspestana.github.io/files/dicionario_enem_2018.xlsx&#34;&gt;dicionário&lt;/a&gt; das variáveis, que indica o que cada variável significa. Essas devem ser trabalhadas, filtradas, alteradas. Como quero utilizar a nota de matemática, todas as outras notas devem ser removidas, e irei remover todos os casos de alunos treineiros, que ainda não tem idade/formação para entrar na faculdade e fazem a prova como um teste. Alterarei algumas variáveis também, para facilitar a leitura das mesmas.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;enem2018 &amp;lt;- enem2018 %&amp;gt;%
+  # Filtrando só quem não é treineiro e que participou da prova de matemática
+  filter(IN_TREINEIRO == 0,
+         TP_PRESENCA_MT == 1) %&amp;gt;%
+  # Removendo as variáveis que não utilizarei, mantendo somente as que podem se relacionar com a nota, como as variáveis do questionário socioeconômico, representadas pela inicial &amp;quot;Q&amp;quot;.
+  dplyr::select(
+    -c(
+      starts_with(&amp;quot;TX&amp;quot;),
+      starts_with(&amp;quot;CO&amp;quot;),
+      starts_with(&amp;quot;IN&amp;quot;),
+      starts_with(&amp;quot;NU_NOTA_COMP&amp;quot;),
+      starts_with(&amp;quot;TP_P&amp;quot;),
+      NU_ANO,
+      NU_INSCRICAO,
+      starts_with(&amp;quot;SG_UF_R&amp;quot;),
+      TP_NACIONALIDADE,
+      TP_ESTADO_CIVIL,
+      TP_ST_CONCLUSAO,
+      TP_ANO_CONCLUIU,
+      TP_ENSINO,
+      TP_SIT_FUNC_ESC,
+      NU_NOTA_CN,
+      NU_NOTA_CH,
+      NU_NOTA_LC,
+      TP_LINGUA,
+      TP_STATUS_REDACAO,
+      NU_NOTA_REDACAO,
+      SG_UF_NASCIMENTO
+    )
+  ) %&amp;gt;%
+  # Como acredito que o  tipo de escola possa vir a influenciar na variável dependente da nota, 
+  # vou alterar para aparecer cada caso,assim como com a raça e a localização. 
+  mutate(
+    TP_ESCOLA = case_when(
+      TP_ESCOLA == 1 ~ &amp;quot;NR&amp;quot;,
+      TP_ESCOLA == 2 ~ &amp;quot;Pública&amp;quot;,
+      TP_ESCOLA == 3 ~ &amp;quot;Privada&amp;quot;,
+      TP_ESCOLA == 4 ~ &amp;quot;Exterior&amp;quot;
+    ),
+    TP_DEPENDENCIA_ADM_ESC = case_when(
+      TP_DEPENDENCIA_ADM_ESC == 1 ~ &amp;quot;Federal&amp;quot;,
+      TP_DEPENDENCIA_ADM_ESC == 2 ~ &amp;quot;Estadual&amp;quot;,
+      TP_DEPENDENCIA_ADM_ESC == 3 ~ &amp;quot;Municipal&amp;quot;,
+      TP_DEPENDENCIA_ADM_ESC == 4 ~ &amp;quot;Privada&amp;quot;
+    ),
+    TP_LOCALIZACAO_ESC = case_when(
+      TP_LOCALIZACAO_ESC == 1 ~ &amp;quot;Urbana&amp;quot;,
+      TP_LOCALIZACAO_ESC == 2 ~ &amp;quot;Rural&amp;quot;
+    ),
+    TP_COR_RACA = case_when(
+      TP_COR_RACA == 0 ~ &amp;quot;Não declarado&amp;quot;,
+      TP_COR_RACA == 1 ~ &amp;quot;Branca&amp;quot;,
+      TP_COR_RACA == 2 ~ &amp;quot;Preta&amp;quot;,
+      TP_COR_RACA == 3 ~ &amp;quot;Parda&amp;quot;,
+      TP_COR_RACA == 4 ~ &amp;quot;Amarela&amp;quot;,
+      TP_COR_RACA == 5 ~ &amp;quot;Indígena&amp;quot;
+    )
+  ) %&amp;gt;%
+  mutate_if(is.character, as.factor) %&amp;gt;%
+  mutate_at(vars(starts_with(&amp;quot;TP&amp;quot;)), as.factor) %&amp;gt;%
+  mutate(Q005 = as.factor(Q005))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O próximo passo seria filtrar os alunos cuja escola é no município do Rio e em São Gonçalo, criando dois objetos para tais. Excluirei também os alunos que afirmam terem estudado no Exterior e os que não responderam.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;enem2018rio &amp;lt;- enem2018 %&amp;gt;%
+  filter(
+    SG_UF_ESC == &amp;quot;RJ&amp;quot;,
+    NO_MUNICIPIO_ESC == &amp;quot;Rio de Janeiro&amp;quot;,
+    TP_ESCOLA != &amp;quot;Exterior&amp;quot;,
+    TP_ESCOLA != &amp;quot;NR&amp;quot;
+  ) %&amp;gt;%
+  select(-c(starts_with(&amp;quot;NO_MUN&amp;quot;),
+            starts_with(&amp;quot;SG_UF&amp;quot;)))
+
+enem2018sg &amp;lt;- enem2018 %&amp;gt;%
+  filter(
+    SG_UF_ESC == &amp;quot;RJ&amp;quot;,
+    NO_MUNICIPIO_ESC == &amp;quot;São Gonçalo&amp;quot;,
+    TP_ESCOLA != &amp;quot;Exterior&amp;quot;,
+    TP_ESCOLA != &amp;quot;NR&amp;quot;
+  ) %&amp;gt;%
+  select(-c(starts_with(&amp;quot;NO_MUN&amp;quot;),
+            starts_with(&amp;quot;SG_UF&amp;quot;)))&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;usando-o-tree&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Usando o Tree&lt;/h3&gt;
+&lt;p&gt;Pronto, a partir de agora podemos criar as nossas primeiras árvores de decisão para comparar o Rio e São Gonçalo. As árvores são criadas pelo comando &lt;code&gt;tree()&lt;/code&gt;, que obedecem à mesma sintaxe de um &lt;code&gt;lm()&lt;/code&gt;, com “variável dependente ~ preditores, data”.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tree.enemrio &amp;lt;- tree(NU_NOTA_MT ~., data = enem2018rio)
+tree.enemsg &amp;lt;- tree(NU_NOTA_MT~., data = enem2018sg)
+
+summary(tree.enemrio)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Regression tree:
+## tree(formula = NU_NOTA_MT ~ ., data = enem2018rio)
+## Variables actually used in tree construction:
+## [1] &amp;quot;TP_SEXO&amp;quot; &amp;quot;Q006&amp;quot;   
+## Number of terminal nodes:  4 
+## Residual mean deviance:  6680 = 102000000 / 15200 
+## Distribution of residuals:
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## -573.00  -61.00   -8.69    0.00   53.10  374.00&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(tree.enemsg)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Regression tree:
+## tree(formula = NU_NOTA_MT ~ ., data = enem2018sg)
+## Variables actually used in tree construction:
+## [1] &amp;quot;TP_SEXO&amp;quot;  &amp;quot;NU_IDADE&amp;quot;
+## Number of terminal nodes:  3 
+## Residual mean deviance:  5660 = 14600000 / 2580 
+## Distribution of residuals:
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## -149.00  -58.20   -9.07    0.00   49.00  263.00&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Com o comando &lt;code&gt;summary()&lt;/code&gt; dado nas árvores acima, temos os preditores utilizados pelo algoritmo para dividir os casos: &lt;code&gt;TP_SEXO&lt;/code&gt; e &lt;code&gt;Q006&lt;/code&gt;, no Rio, e &lt;code&gt;TP_SEXO&lt;/code&gt; e &lt;code&gt;NU_IDADE&lt;/code&gt; em São Gonçalo. A primeira variável se refere ao gênero do aluno, enquanto a Q006 se refere à renda famíliar do aluno. A variável &lt;code&gt;NU_IDADE&lt;/code&gt; é, como se pressupõe, a idade do aluno. O &lt;code&gt;summary()&lt;/code&gt; nos dá outras informações interessantes, e a principal delas por agora é o número de nós terminais: 4 e 3, respectivamente. Podemos plotar essas árvores para compreendê-las melhor:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mfrow=c(1,2))
+plot(tree.enemrio)
+text(tree.enemrio)
+title(main = &amp;quot;Rio de Janeiro&amp;quot;)
+plot(tree.enemsg)
+text(tree.enemsg)
+title(main = &amp;quot;São Gonçalo&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/plot_trees-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Como podemos interpretar esses dois gráficos?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;No caso do Rio, se o aluno for do sexo feminino e estiver em uma família cuja renda mensal vai de zero até R$ 1908,00, a nota em matemática gira em torno da média de 493.8. Se for mulher mas tiver renda superior a R$1908,01 , ou seja, mais abastada em comparação ao outro grupo, a nota de matemática tende a aumentar, ficando em torno da média de 525. Agora, quando se é homem, o que é representado pelo lado direito do primeiro plot, mas com renda até R$ 2385,00, a nota ainda se posiciona perto de 532.8, enquanto as rendas superiores a tal valor recebem a nota de 572.6.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Em São Gonçalo, a renda não influencia a ponto de aparecer no gráfico, mas sim o sexo e a idade. Mulheres com menos de 18,5 anos recebem a nota, em média, de 500,1, enquanto as mais velhas giram em torno de 471,9. Todavia, a idade não influencia na nota dos homens, que se localiza ao redor de 522,9.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tivemos sorte que as nossas duas árvores são simples. Algumas árvores podem ser absurdamente complexas, com alta profundidade, utilizando vários preditores e tendo vários nós terminais, o que dificulta a interpretação. Para isso, podemos utilizar o &lt;em&gt;prune&lt;/em&gt;, que nada mais é que reduzir ou “podar” nossas árvores para o ponto com o menor &lt;em&gt;deviance&lt;/em&gt;. Para fazer isso, fazemos uma validação cruzada da ávore, buscando identificar o número de nodes que leva ao menor desvio. Vamos verificar isso com o comando &lt;code&gt;cv.tree()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cv.rio &amp;lt;- cv.tree(tree.enemrio, K = 100)
+cv.sg &amp;lt;- cv.tree(tree.enemsg, K = 100)
+
+par(mfrow=c(1,2))
+plot(cv.rio$size, cv.rio$dev, type = &amp;quot;b&amp;quot;)
+title(main = &amp;quot;Rio de Janeiro&amp;quot;)
+plot(cv.sg$size, cv.sg$dev, type = &amp;quot;b&amp;quot;)
+title(main = &amp;quot;São Gonçalo&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/crossvalidation_trees-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Como podemos ver, o menor valor é encontrado quando a árvore possui respectivamente 4 e 3 nós terminais, ou seja, já temos a árvore com o menor &lt;em&gt;deviance&lt;/em&gt;. Mas se quiséssemos fazer o &lt;em&gt;prune&lt;/em&gt;, utilizaríamos o seguinte comando:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;prune.enem &amp;lt;- prune.tree(tree.enemrio, best = 4)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;No argumento &lt;code&gt;best&lt;/code&gt;, colocamos o número de nós terminais que desejamos, de acordo com a validação cruzada feita anteriormente.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;usando-o-rpart&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Usando o rPart&lt;/h3&gt;
+&lt;p&gt;Podemos também fazer as mesmas árvores usando o pacote rPart, que em conjunto com o rpart.plot e o rattle, nos permite a plotagem de árvores com melhor apelo visual. A sintaxe é basicamente a mesma:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rpart.rio &amp;lt;- rpart(NU_NOTA_MT ~ ., data = enem2018rio)
+rpart.sg &amp;lt;- rpart(NU_NOTA_MT ~ ., data = enem2018sg)
+
+# No Rio
+summary(rpart.rio)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Call:
+## rpart(formula = NU_NOTA_MT ~ ., data = enem2018rio)
+##   n= 15233 
+## 
+##          CP nsplit rel error   xerror      xstd
+## 1 0.0518975      0  1.000000 1.000092 0.0117093
+## 2 0.0158478      1  0.948103 0.948297 0.0110942
+## 3 0.0152261      2  0.932255 0.936489 0.0109793
+## 4 0.0100000      3  0.917029 0.918746 0.0106895
+## 
+## Variable importance
+## TP_SEXO    Q006    Q024    Q002    Q003    Q001    Q010 
+##      58      35       2       2       1       1       1 
+## 
+## Node number 1: 15233 observations,    complexity param=0.0518975
+##   mean=517.931, MSE=7287.81 
+##   left son=2 (9198 obs) right son=3 (6035 obs)
+##   Primary splits:
+##       TP_SEXO  splits as  LR, improve=0.0518975, (0 missing)
+##       Q006     splits as  LLLLLRRRRRRRRRRRR, improve=0.0378755, (0 missing)
+##       Q024     splits as  LRRRR, improve=0.0196952, (0 missing)
+##       NU_IDADE &amp;lt; 18.5 to the right, improve=0.0193174, (0 missing)
+##       Q003     splits as  LLLRRL, improve=0.0192026, (0 missing)
+##   Surrogate splits:
+##       Q006 splits as  LLLLLLLRLLRRLRRRR, agree=0.607, adj=0.007, (0 split)
+##       Q024 splits as  LLRRR, agree=0.606, adj=0.005, (0 split)
+##       Q014 splits as  LLRLR, agree=0.605, adj=0.003, (0 split)
+##       Q005 splits as  RLLLLLLLLLLLRL-LRL-L, agree=0.605, adj=0.002, (0 split)
+##       Q016 splits as  LLR-R, agree=0.605, adj=0.002, (0 split)
+## 
+## Node number 2: 9198 observations,    complexity param=0.0158478
+##   mean=502.178, MSE=5880.98 
+##   left son=4 (6729 obs) right son=5 (2469 obs)
+##   Primary splits:
+##       Q006     splits as  LLLLRRRRRRRRRRRRR, improve=0.0325244, (0 missing)
+##       NU_IDADE &amp;lt; 18.5 to the right, improve=0.0225858, (0 missing)
+##       Q001     splits as  LLLLRRRL, improve=0.0179838, (0 missing)
+##       Q002     splits as  LLLLRRRL, improve=0.0168509, (0 missing)
+##       Q003     splits as  LLLRRL, improve=0.0162138, (0 missing)
+##   Surrogate splits:
+##       Q002 splits as  LLLLLRRL, agree=0.748, adj=0.061, (0 split)
+##       Q024 splits as  LLRRR,    agree=0.745, adj=0.050, (0 split)
+##       Q001 splits as  LLLLLRRL, agree=0.741, adj=0.036, (0 split)
+##       Q003 splits as  LLLRRL,   agree=0.739, adj=0.029, (0 split)
+##       Q010 splits as  LLRRR,    agree=0.737, adj=0.019, (0 split)
+## 
+## Node number 3: 6035 observations,    complexity param=0.0152261
+##   mean=541.941, MSE=8477.31 
+##   left son=6 (4647 obs) right son=7 (1388 obs)
+##   Primary splits:
+##       Q006     splits as  LLLLLRRRRRRRRRRRR, improve=0.0330397, (0 missing)
+##       NU_IDADE &amp;lt; 18.5 to the right, improve=0.0260023, (0 missing)
+##       Q003     splits as  LLLRRL, improve=0.0191681, (0 missing)
+##       Q002     splits as  LLLLRRRL, improve=0.0188350, (0 missing)
+##       Q001     splits as  LLLLRRRL, improve=0.0180970, (0 missing)
+##   Surrogate splits:
+##       Q002 splits as  LLLLLLRL, agree=0.780, adj=0.043, (0 split)
+##       Q024 splits as  LLLRR,    agree=0.779, adj=0.038, (0 split)
+##       Q010 splits as  LLRRL,    agree=0.777, adj=0.031, (0 split)
+##       Q003 splits as  LLLLRL,   agree=0.777, adj=0.030, (0 split)
+##       Q001 splits as  LLLLLLRL, agree=0.775, adj=0.021, (0 split)
+## 
+## Node number 4: 6729 observations
+##   mean=493.801, MSE=5212.72 
+## 
+## Node number 5: 2469 observations
+##   mean=525.01, MSE=6989.69 
+## 
+## Node number 6: 4647 observations
+##   mean=532.794, MSE=7611.91 
+## 
+## Node number 7: 1388 observations
+##   mean=572.563, MSE=10156.9&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Em São Gonçalo
+summary(rpart.sg)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Call:
+## rpart(formula = NU_NOTA_MT ~ ., data = enem2018sg)
+##   n= 2583 
+## 
+##          CP nsplit rel error   xerror      xstd
+## 1 0.0354531      0  1.000000 1.000863 0.0277142
+## 2 0.0158005      1  0.964547 0.966190 0.0264783
+## 3 0.0100000      2  0.948746 0.950902 0.0259432
+## 
+## Variable importance
+##  TP_SEXO NU_IDADE     Q005     Q024     Q002 
+##       67       30        1        1        1 
+## 
+## Node number 1: 2583 observations,    complexity param=0.0354531
+##   mean=504.133, MSE=5955.64 
+##   left son=2 (1613 obs) right son=3 (970 obs)
+##   Primary splits:
+##       TP_SEXO  splits as  LR, improve=0.0354531, (0 missing)
+##       NU_IDADE &amp;lt; 18.5 to the right, improve=0.0207137, (0 missing)
+##       Q001     splits as  LLLLRRLL, improve=0.0159758, (0 missing)
+##       Q006     splits as  LLLRRRLRRLRRLLR-L, improve=0.0153501, (0 missing)
+##       Q002     splits as  LLLRRRRL, improve=0.0128527, (0 missing)
+##   Surrogate splits:
+##       Q024 splits as  LLRRL, agree=0.630, adj=0.013, (0 split)
+##       Q002 splits as  LLLLLLRL, agree=0.627, adj=0.006, (0 split)
+##       Q006 splits as  LLLLLLLLLRLRLLL-L, agree=0.626, adj=0.003, (0 split)
+##       Q005 splits as  LLLLLLLRLL----------, agree=0.625, adj=0.002, (0 split)
+##       Q010 splits as  LLLRR, agree=0.625, adj=0.002, (0 split)
+## 
+## Node number 2: 1613 observations,    complexity param=0.0158005
+##   mean=492.864, MSE=5310.8 
+##   left son=4 (412 obs) right son=5 (1201 obs)
+##   Primary splits:
+##       NU_IDADE &amp;lt; 18.5 to the right, improve=0.02837470, (0 missing)
+##       Q001     splits as  LLLLRRLL, improve=0.02151170, (0 missing)
+##       Q006     splits as  LLRRRRRRRLRRLLR-R, improve=0.01664760, (0 missing)
+##       Q002     splits as  LLLRRRRL, improve=0.01389590, (0 missing)
+##       Q013     splits as  LRRRL, improve=0.00986575, (0 missing)
+##   Surrogate splits:
+##       Q005 splits as  LRRRRRRLRR----------, agree=0.751, adj=0.027, (0 split)
+##       Q002 splits as  LRRRRRRR, agree=0.746, adj=0.005, (0 split)
+##       Q006 splits as  RRRRRRRRRRRRRLL-R, agree=0.746, adj=0.005, (0 split)
+##       Q027 splits as  RRRLR-, agree=0.745, adj=0.002, (0 split)
+## 
+## Node number 3: 970 observations
+##   mean=522.871, MSE=6465.7 
+## 
+## Node number 4: 412 observations
+##   mean=471.906, MSE=3658.29 
+## 
+## Node number 5: 1201 observations
+##   mean=500.054, MSE=5675.3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O &lt;code&gt;summary()&lt;/code&gt; acima nos mostra uma informação importantíssima: a importância de cada variável dentro do conjunto utilizado. No caso do Rio, percebemos que &lt;code&gt;TP_SEXO&lt;/code&gt; e &lt;code&gt;Q006&lt;/code&gt;, as duas primeiras, estão muito acima das outras variáveis, como a &lt;code&gt;Q024&lt;/code&gt;, referente a existência de computador na residência. Isso justifica a utilização das duas primeiras mas não do resto. No caso de São Gonçalo, é possível perceber que &lt;code&gt;TP_SEXO&lt;/code&gt; é mais de duas vezes mais importante que &lt;code&gt;NU_IDADE&lt;/code&gt;, que por sua vez é bem distante de &lt;code&gt;Q005&lt;/code&gt;, que versa sobre a quantidade de pessoas na residência. Como são pouco importantes no cálculo final, não foram utilizadas na árvore.&lt;/p&gt;
+&lt;p&gt;Para ver as regras da árvore, temos o comando &lt;code&gt;rpart.rules()&lt;/code&gt;, que é usado da seguinte forma:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rpart.rules(rpart.rio)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  NU_NOTA_MT                                                                                          
+##         494 when TP_SEXO is F &amp;amp; Q006 is                                              A or B or C or D
+##         525 when TP_SEXO is F &amp;amp; Q006 is E or F or G or H or I or J or K or L or M or N or O or P or Q
+##         533 when TP_SEXO is M &amp;amp; Q006 is                                         A or B or C or D or E
+##         573 when TP_SEXO is M &amp;amp; Q006 is      F or G or H or I or J or K or L or M or N or O or P or Q&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rpart.rules(rpart.sg)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  NU_NOTA_MT                                   
+##         472 when TP_SEXO is F &amp;amp; NU_IDADE &amp;gt;= 19
+##         500 when TP_SEXO is F &amp;amp; NU_IDADE &amp;lt;  19
+##         523 when TP_SEXO is M&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E para a plotagem das árvores, utilizo o &lt;code&gt;fancyRpartPlot()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Para o Rio
+rattle::fancyRpartPlot(rpart.rio, sub = NULL)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/fancy-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Para São Gonçalo
+rattle::fancyRpartPlot(rpart.sg, sub = NULL)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/fancy-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Uma vantagem do rPart é que alguns aspectos no cálculo podem ser alterados. Poderíamos tornar a árvore mais complexa alterando o &lt;strong&gt;complexity parameter&lt;/strong&gt;, o que poderia aumentar o número de nós, preditores e nós terminais. Para isso, bastaria aperfeiçoar o comando da seguinte maneira:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rpart.rio2 &amp;lt;- rpart(NU_NOTA_MT ~ ., enem2018rio, control = rpart.control(cp = .003))
+rpart.sg2 &amp;lt;- rpart(NU_NOTA_MT ~ ., enem2018sg, control = rpart.control(cp = .005))
+
+fancyRpartPlot(rpart.rio2, sub = NULL)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/rpartcp2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fancyRpartPlot(rpart.sg2, sub = NULL)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/rpartcp2-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Se compararmos o erro relativo nas duas árvores em cada cidade, percebemos que o mesmo se altera quando a complexidade é maior. Todavia, isso também dificulta a interpretação da mesma e adiciona viés.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mfrow=c(2,2))
+plotcp(rpart.rio)
+plotcp(rpart.rio2)
+plotcp(rpart.sg)
+plotcp(rpart.sg)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;No caso do Rio, o erro relativo diminui, enquanto o menor erro em São Gonçalo é quando a árvore tem apenas 3 nós finais, aumentando suavemente depois.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bagging-randomforest-e-boosting&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Bagging, RandomForest e Boosting&lt;/h3&gt;
+&lt;p&gt;Entretanto, quando fazemos essa árvore, que garantia temos de que essa é a melhor árvore possível? Testando com técnicas de bootstrapping, repetindo a criação de árvores centenas ou milhares de vezes, buscando a média dos resultados para ver como a árvore se adapta e quais os melhores preditores usados, é claro!&lt;/p&gt;
+&lt;div id=&#34;bagging&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Bagging&lt;/h4&gt;
+&lt;p&gt;A primeira técnica que podemos utilizar é de bagging, que faz uma amostragem de casos usando todos os preditores. Para fazer o bagging, o pacote &lt;code&gt;randomForest&lt;/code&gt; é fundamental. Todavia, quando lidamos com bancos muito grandes, é mais interessante usar o &lt;code&gt;ranger&lt;/code&gt;, que permite a utilização de todos os núcleos do processador presentes na máquina.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bag.enemrio &amp;lt;- ranger(
+  NU_NOTA_MT ~ .,
+  data = enem2018rio,
+  mtry = 33,
+  importance = &amp;quot;impurity&amp;quot;,
+  num.threads = 12,
+  num.trees = 1000
+)
+
+
+bag.enemsg &amp;lt;- ranger(
+  NU_NOTA_MT ~ .,
+  data = enem2018sg,
+  mtry = 33,
+  importance = &amp;quot;impurity&amp;quot;,
+  num.threads = 12,
+  num.trees = 1000
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Acima, criamos 1000 árvores utilizando os 33 preditores presentes no banco (o 34º é NU_NOTA_MT, claro)&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bag.enemrio&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Ranger result
+## 
+## Call:
+##  ranger(NU_NOTA_MT ~ ., data = enem2018rio, mtry = 33, importance = &amp;quot;impurity&amp;quot;,      num.threads = 12, num.trees = 1000) 
+## 
+## Type:                             Regression 
+## Number of trees:                  1000 
+## Sample size:                      15233 
+## Number of independent variables:  33 
+## Mtry:                             33 
+## Target node size:                 5 
+## Variable importance mode:         impurity 
+## Splitrule:                        variance 
+## OOB prediction error (MSE):       6471.47 
+## R squared (OOB):                  0.112074&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bag.enemsg&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Ranger result
+## 
+## Call:
+##  ranger(NU_NOTA_MT ~ ., data = enem2018sg, mtry = 33, importance = &amp;quot;impurity&amp;quot;,      num.threads = 12, num.trees = 1000) 
+## 
+## Type:                             Regression 
+## Number of trees:                  1000 
+## Sample size:                      2583 
+## Number of independent variables:  33 
+## Mtry:                             33 
+## Target node size:                 5 
+## Variable importance mode:         impurity 
+## Splitrule:                        variance 
+## OOB prediction error (MSE):       5802.14 
+## R squared (OOB):                  0.0261514&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O &lt;span class=&#34;math inline&#34;&gt;\(R^{2}_{OOB}\)&lt;/span&gt; presente ao final de cada um dos comandos é a capacidade explicativa daquela árvore para aquele conjunto de dados. Uma informação interessante e importante que, de certa forma, aprimora as nossas primeiras árvores, é a importância das variáveis, que pode ser buscada em:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bag.enemrio$variable.importance&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##               NU_IDADE                TP_SEXO            TP_COR_RACA 
+##             6378165.60             5754041.08             4714652.67 
+##              TP_ESCOLA TP_DEPENDENCIA_ADM_ESC     TP_LOCALIZACAO_ESC 
+##              100129.80              107150.24                   0.00 
+##                   Q001                   Q002                   Q003 
+##             6943347.67             6794857.41             5580028.69 
+##                   Q004                   Q005                   Q006 
+##             4725148.02             7188983.55             9422883.20 
+##                   Q007                   Q008                   Q009 
+##             1042060.45             2357135.74             3892465.06 
+##                   Q010                   Q011                   Q012 
+##             2519658.59             1019978.23             1048116.99 
+##                   Q013                   Q014                   Q015 
+##             2878266.93             1934756.28             1353276.84 
+##                   Q016                   Q017                   Q018 
+##             2277991.45              355740.36             1770814.11 
+##                   Q019                   Q020                   Q021 
+##             3687053.88             2318066.98             2251439.30 
+##                   Q022                   Q023                   Q024 
+##             5108939.28             2361920.88             3689504.05 
+##                   Q025                   Q026                   Q027 
+##             1478319.86                5746.98             2740928.04&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;bag.enemsg$variable.importance&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##               NU_IDADE                TP_SEXO            TP_COR_RACA 
+##             965826.102             552091.844             755000.653 
+##              TP_ESCOLA TP_DEPENDENCIA_ADM_ESC     TP_LOCALIZACAO_ESC 
+##                355.724              16998.611              16013.748 
+##                   Q001                   Q002                   Q003 
+##             967023.439             995490.596             790064.877 
+##                   Q004                   Q005                   Q006 
+##             668391.870             943918.888            1144531.549 
+##                   Q007                   Q008                   Q009 
+##             104452.466             305429.915             567387.939 
+##                   Q010                   Q011                   Q012 
+##             345626.179             125020.846             145582.724 
+##                   Q013                   Q014                   Q015 
+##             373738.937             351303.316             206192.739 
+##                   Q016                   Q017                   Q018 
+##             330894.741              66615.938             185943.435 
+##                   Q019                   Q020                   Q021 
+##             509809.443             334796.907             287964.339 
+##                   Q022                   Q023                   Q024 
+##             794836.643             328621.680             498336.834 
+##                   Q025                   Q026                   Q027 
+##             225205.884              15175.975             409283.488&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Para vermos as 6 variáveis mais importantes de cada banco, basta utilizarmos os seguintes comandos:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Para o Rio
+bag.enemrio$variable.importance %&amp;gt;%
+  as.data.frame() %&amp;gt;% 
+  rename(&amp;quot;imp&amp;quot; = 1) %&amp;gt;% 
+  rownames_to_column() %&amp;gt;% 
+  arrange(-imp) %&amp;gt;% 
+  head(6)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    rowname     imp
+## 1     Q006 9422883
+## 2     Q005 7188984
+## 3     Q001 6943348
+## 4     Q002 6794857
+## 5 NU_IDADE 6378166
+## 6  TP_SEXO 5754041&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Para São Gonçalo
+bag.enemsg$variable.importance %&amp;gt;%
+  as.data.frame() %&amp;gt;% 
+  rename(&amp;quot;imp&amp;quot; = 1) %&amp;gt;% 
+  rownames_to_column() %&amp;gt;% 
+  arrange(-imp) %&amp;gt;% 
+  head(6)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    rowname     imp
+## 1     Q006 1144532
+## 2     Q002  995491
+## 3     Q001  967023
+## 4 NU_IDADE  965826
+## 5     Q005  943919
+## 6     Q022  794837&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As variáveis novas que ali surgiram e não foram citadas anteriormente são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Q005 - número de pessoas que moram com o aluno;&lt;/li&gt;
+&lt;li&gt;Q001 - até que série o pai estudou;&lt;/li&gt;
+&lt;li&gt;Q002 - até que série a mãe estudou&lt;/li&gt;
+&lt;li&gt;Q003 - a ocupação do pai&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;randomforests&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;RandomForests&lt;/h4&gt;
+&lt;p&gt;O RandomForests nada mais é que o sampling criado pelo bagging, porém utilizando apenas um determinado número de preditores, e não o máximo. Quando colocamos todos os preditores, todos eles estarão em todas as árvores. É possível que algum seja obfuscado por outro, pouco mais forte, o que impede que o mesmo seja visível. Com apenas um subsetting dos preditores, podemos fazer um “rodízio” das variáveis, não colocando todas ao mesmo tempo e analisando como elas, então, se comportam. O comando é o mesmo, mudando apenas o argumento &lt;code&gt;mtry&lt;/code&gt;, que indica o número de preditores usados.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rf.enemrio &amp;lt;- ranger(
+  NU_NOTA_MT ~ .,
+  data = enem2018rio,
+  mtry = 11,
+  importance = &amp;quot;impurity&amp;quot;,
+  num.threads = 12,
+  verbose = T,
+  num.trees = 1000,
+)
+
+rf.enemsg &amp;lt;- ranger(
+  NU_NOTA_MT ~ .,
+  data = enem2018sg,
+  mtry = 11,
+  importance = &amp;quot;impurity&amp;quot;,
+  num.threads = 12,
+  verbose = T,
+  num.trees = 1000,
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Coloquei 11 preditores para que &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{3}\)&lt;/span&gt; do total seja utilizado e possamos diminuir o viés descorrelacionando as árvores, o que não acontece no &lt;em&gt;bagging.&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rf.enemrio&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Ranger result
+## 
+## Call:
+##  ranger(NU_NOTA_MT ~ ., data = enem2018rio, mtry = 11, importance = &amp;quot;impurity&amp;quot;,      num.threads = 12, verbose = T, num.trees = 1000, ) 
+## 
+## Type:                             Regression 
+## Number of trees:                  1000 
+## Sample size:                      15233 
+## Number of independent variables:  33 
+## Mtry:                             11 
+## Target node size:                 5 
+## Variable importance mode:         impurity 
+## Splitrule:                        variance 
+## OOB prediction error (MSE):       6354.81 
+## R squared (OOB):                  0.128079&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rf.enemsg&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Ranger result
+## 
+## Call:
+##  ranger(NU_NOTA_MT ~ ., data = enem2018sg, mtry = 11, importance = &amp;quot;impurity&amp;quot;,      num.threads = 12, verbose = T, num.trees = 1000, ) 
+## 
+## Type:                             Regression 
+## Number of trees:                  1000 
+## Sample size:                      2583 
+## Number of independent variables:  33 
+## Mtry:                             11 
+## Target node size:                 5 
+## Variable importance mode:         impurity 
+## Splitrule:                        variance 
+## OOB prediction error (MSE):       5685.47 
+## R squared (OOB):                  0.0457337&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notamos um aumento no &lt;span class=&#34;math inline&#34;&gt;\(R^{2}_{OOB}\)&lt;/span&gt; em ambos, ou seja, aprimoramos o modelo. E a importância das variáveis?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Para o Rio
+rf.enemrio$variable.importance %&amp;gt;%
+  as.data.frame() %&amp;gt;% 
+  rename(&amp;quot;imp&amp;quot; = 1) %&amp;gt;% 
+  rownames_to_column() %&amp;gt;% 
+  arrange(-imp) %&amp;gt;% 
+  head(6)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    rowname     imp
+## 1     Q006 9193883
+## 2     Q005 6647643
+## 3     Q001 6344146
+## 4 NU_IDADE 6269901
+## 5     Q002 6124216
+## 6  TP_SEXO 5355912&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Para São Gonçalo
+rf.enemsg$variable.importance %&amp;gt;%
+  as.data.frame() %&amp;gt;% 
+  rename(&amp;quot;imp&amp;quot; = 1) %&amp;gt;% 
+  rownames_to_column() %&amp;gt;% 
+  arrange(-imp) %&amp;gt;% 
+  head(6)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    rowname     imp
+## 1     Q006 1039199
+## 2     Q002  918182
+## 3 NU_IDADE  914388
+## 4     Q001  909747
+## 5     Q005  863187
+## 6     Q022  752462&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Comparando com os resultados anteriores, percebemos apenas uma mudança da ordem de importância no Rio,e a troca da variável Q003 para Q022 em São Gonçalo. Essa variável questiona sobre a existência de telefone celular na residência.&lt;/p&gt;
+&lt;p&gt;Percebemos uma melhora no RandomForests em relação ao bagging! Mas ainda há uma abordagem para vermos, o &lt;strong&gt;boosting&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;boosting&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Boosting&lt;/h4&gt;
+&lt;p&gt;Enquanto o bagging e o randomforest fazem bootstrapping, ou seja, calculam centenas ou milhares de árvores e depois unem esse resultado para uma média, o boosting cria várias árvores baseadas no resíduo da árvore anterior, ou seja, a árvore cresce sequencialmente, sendo aprimorada nas partes com maior erro no modelo anterior. O pacote que permite o boosting é o GBM, onde conseguimos limitar o máximo da profundidade possível:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;boost.enemrio &amp;lt;-
+  gbm(NU_NOTA_MT ~ ., data = enem2018rio, distribution  = &amp;quot;gaussian&amp;quot;,
+      n.trees = 5000, interaction.depth = 6, n.cores = 12)
+boost.enemsg &amp;lt;-
+  gbm(NU_NOTA_MT ~ ., data = enem2018sg, distribution  = &amp;quot;gaussian&amp;quot;,
+      n.trees = 5000, interaction.depth = 6, n.cores =  12)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ao fazermos o sumário dos dados, temos a importância de cada variável, em ordem. Observando as 9 primeiras de cada um:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(boost.enemrio) %&amp;gt;% 
+  head(9)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/boosting.varimp-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;##                     var  rel.inf
+## Q006               Q006 19.21134
+## Q001               Q001 10.31323
+## Q005               Q005  9.79820
+## Q002               Q002  9.24116
+## Q003               Q003  5.52420
+## Q004               Q004  4.71671
+## Q022               Q022  4.61842
+## NU_IDADE       NU_IDADE  4.41251
+## TP_COR_RACA TP_COR_RACA  4.31856&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(boost.enemsg) %&amp;gt;% 
+  head(9)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/boosting.varimp-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;##                     var  rel.inf
+## Q006               Q006 14.13277
+## Q001               Q001 11.36461
+## Q002               Q002 10.45213
+## Q005               Q005  9.09167
+## Q003               Q003  6.21679
+## Q022               Q022  6.00759
+## TP_COR_RACA TP_COR_RACA  5.96695
+## Q004               Q004  4.99026
+## NU_IDADE       NU_IDADE  4.01448&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Em nenhuma das duas, &lt;code&gt;TP_SEXO&lt;/code&gt;, nossa variável que indica o gênero, aparece. Todavia, agora a raça (&lt;code&gt;TP_COR_RACA&lt;/code&gt;) surge, ainda que em posições baixas. Podemos plotar o efeito isolado de cada um desses preditores na nota de matemática. Vamos tentar plotar a renda no Rio e em São Gonçalo para ver como essa variável influencia no resultado final:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(boost.enemrio, i =&amp;quot;Q006&amp;quot;, main = &amp;quot;Rio de Janeiro - Renda&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(boost.enemsg, i = &amp;quot;Q006&amp;quot;, main = &amp;quot;São Gonçalo&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/unnamed-chunk-4-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(boost.enemrio, i =&amp;quot;TP_COR_RACA&amp;quot;, main = &amp;quot;Rio de Janeiro - Cor/Raça&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/unnamed-chunk-4-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(boost.enemsg, i =&amp;quot;TP_COR_RACA&amp;quot;, main = &amp;quot;São Gonçalo - Cor/Raça&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/decision-trees/2020-05-18-decision-trees-no-r-analise-do-enem-2018_files/figure-html/unnamed-chunk-4-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Percebe-se que em ambos quanto maior a renda, maior a nota, no Rio. Já em São Gonçalo, o mesmo se verifica com alguns degraus e, na última faixa de renda, “Q”, para rendas maiores de 19 mil reais, a nota cai, em comparação com “O”, que representa a renda famíliar entre R$ 11448,00 e R$ 14.310,00.&lt;/p&gt;
+&lt;p&gt;No que tange à cor/raça, percebemos que a população parda e preta tem um desempenho mais baixo em comparação à população branca, dada as opressões estruturais que atingem esses grupos, afetando o ensino e aumentando a desigualdade social.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;algumas-conclusões&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Algumas conclusões&lt;/h3&gt;
+&lt;p&gt;Algumas conclusões podem ser feitas a partir dos dados preliminares utilizados:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a renda é sim um fator importantíssimo, junto com a escolaridade do pai e da mãe, na definição da nota de matemática do ENEM. Pais com maior formação tendem a criar filhos melhor instruídos, seja pela criação, seja pela escola;&lt;/li&gt;
+&lt;li&gt;o tipo de escola e o fato de pertencer à rede estadual, municipal, federal ou privada não é tão relevante como se pensava, no âmbito do município do Rio e de São Gonçalo;&lt;/li&gt;
+&lt;li&gt;a idade, dada por &lt;code&gt;NU_IDADE&lt;/code&gt;, parece ser relevante, o que pode ser explicado pelo seguinte pensamento: pessoas mais velhas já passaram pela formação escolar há mais tempo ou apresentam um déficit na mesma, mostrando maior dificuldade devido a isso;&lt;/li&gt;
+&lt;li&gt;o sexo não é relevante nas análises, mas uma possível justificativa (e que pode e deve ser investigada posteriormente) é que há uma diminuição na nota de mulheres pois em um considerável número de famílias, o trabalho doméstico não é igualmente dividido entre homense mulheres, restando às mulheres que dividam suas funções, como trabalho e estudo, com tais afazares. Isso diminui consideravelmente o rendimento escolar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Quem quiser olhar o dicionário do banco, pode conferir &lt;a href=&#34;https://mateuspestana.github.io/files/dicionario_enem_2018.xlsx&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Bom pessoal, por hoje é só. Vimos como uma abordagem de árvores de decisão, somada a métodos como bagging, randomforests e boosting podem nos auxiliar no desenho de políticas públicas direcionadas para educação. Que critérios devem ser priorizados? Como poderíamos avaliar o impacto de uma política de renda, por exemplo, em um município? Que grupos devem ser alvo de políticas distributivas primeiro? Todas essas questões podem ser respondidas ou pelo menos iniciadas com os métodos vistos no post de hoje. Além disso, percebemos como a desigualdade afeta alunos de municípios próximos, e nos deixa refletindo como a situação em todo o país é distinta, exigindo cuidados específicos. Porém, um ponto é claro: é preciso democratizar cada vez mais o ensino público e o acesso à universidade, e não é tratando todos os casos como o mesmo (como no caso do atual governo, que propõe a adoção progressiva do ENEM Digital) que a desigualdade será solucionada.&lt;/p&gt;
+&lt;p&gt;Qualquer dúvida, correção ou sugestão pode ser encaminhada para &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt; .&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Textmining: análise dos discursos de Getúlio Vargas</title>
+      <link>https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/</link>
+      <pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/</guid>
+      <description>
+&lt;script src=&#34;2019-11-10-textmining-análise-dos-discursos-de-getúlio-vargas_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;2019-11-10-textmining-análise-dos-discursos-de-getúlio-vargas_files/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;2019-11-10-textmining-análise-dos-discursos-de-getúlio-vargas_files/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;p&gt;Getúlio Vargas chega ao poder, como Chefe do Governo Provisório, em 1930, marcando o fim da República Velha, e fica no poder até 1945, elegendo-se novamente em 1951 como Presidente da República, cargo que ocupou até 1954. Implantando uma ditadura em 1930, Vargas modernizou o Brasil, que se tornou um estado autoritário e centralizado na figura do presidente. O “Pai dos Pobres”, como também é conhecido, é responsável pela Consolidação das Leis Trabalhistas (CLT), pela criação do BNDE (atual BNDES), a fundação e o desenvolvimento da Petrobrás, e também pela inserção do Brasil na Segunda Guerra Mundial. Vargas cometeu suicídio em 24 de agosto de 1954, no Palácio do Catete, no antigo Distrito Federal, no Rio de Janeiro. Vargas era conhecido pela sua eloquência e por seus discursos, considerados grandes ensinamentos políticos.Por isso, me proponho a analisar alguns discursos de Vargas na presidência, mais especificamente todos os discursos proferidos entre 1930 e 1937, 1939, 1941, 1944 e o discurso de posse de 1951. Para isso, utilizarei o pacote &lt;code&gt;quanteda&lt;/code&gt; para o R, além do &lt;code&gt;tidyverse&lt;/code&gt;. Os discursos podem ser obtidos &lt;a href=&#34;http://www.biblioteca.presidencia.gov.br/presidencia/ex-presidentes/getulio-vargas&#34;&gt;aqui&lt;/a&gt;, no site da Biblioteca da Presidência.&lt;/p&gt;
+&lt;p&gt;O primeiro passo é carregar os pacotes que serão de fato utilizados, com o &lt;code&gt;pacman&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pacman::p_load(
+  tidyverse,
+  quanteda,
+  pdftools,
+  stopwords,
+  readtext,
+  topicmodels,
+  knitr,
+  kableExtra)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Em seguida, vamos abrir os discursos. A função &lt;code&gt;readtext&lt;/code&gt; permite importar as mais diversas extensões de texto de uma só vez, permitindo a criação de um &lt;em&gt;corpus&lt;/em&gt; rapidamente.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;vargas &amp;lt;- readtext(
+  &amp;quot;Documents/vargas/*&amp;quot;,
+  docvarsfrom = &amp;quot;filenames&amp;quot;,
+  dvsep = &amp;quot;_&amp;quot;,
+  docvarnames = c(&amp;quot;ano&amp;quot;, &amp;quot;ordem&amp;quot;)
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O argumento &lt;code&gt;docvarnames&lt;/code&gt; utiliza o nome do arquivo para adicionar variáveis ao banco. Como estruturei os discursos da seguinte maneira: &lt;strong&gt;ANO_ORDEM.pdf&lt;/strong&gt;, utilizando o separador &lt;code&gt;_&lt;/code&gt;, crio as variáveis&lt;code&gt;ano&lt;/code&gt; e &lt;code&gt;ordem&lt;/code&gt;, representando o ano em que o discurso foi proferido e em qual posição ele está (naquele ano).&lt;/p&gt;
+&lt;p&gt;Isso fica bem claro abaixo:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(vargas, 6)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## readtext object consisting of 6 documents and 2 docvars.
+## # Description: df[,4] [6 × 4]
+##   doc_id      text                  ano ordem
+##   &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;               &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;
+## 1 1930_01.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1930 01   
+## 2 1930_02.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1930 02   
+## 3 1930_03.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1930 03   
+## 4 1931_01.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1931 01   
+## 5 1931_02.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1931 02   
+## 6 1931_03.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1931 03&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Assim, temos um banco com documentos em &lt;em&gt;pdf&lt;/em&gt; que guardam o discurso, o ano e a ordem do mesmo. Todavia, ele ainda não está em um formato próprio para nossa análise, devendo estar dentro do formato &lt;em&gt;corpus&lt;/em&gt;. Além do mais, nosso arquivo em PDF guarda um problema comum à todos os PDFs: a hifenização. Um PDF é um arquivo pronto para imprimir, então o texto que está nele, quando selecionado, pode vir com alguns erros. O erro mais comum e que já corregiremos prontamente é o da hifenização. Supondo que em nossos arquivos exista a palavra &lt;strong&gt;república&lt;/strong&gt;. Todavia, em alguns momentos, ela se encontra no fim da linha e não cabe na mesma. Por conta disso, ela é hifenizada, continuando na linha seguinte. Quando transposta para nosso banco de dados, é possível que apareçam as variações &lt;strong&gt;re- pública, repú- blica, repúbli- ca&lt;/strong&gt;. Tudo isso será entendido pelo software como palavras diferentes, quando no fundo, são a mesma. Logo, antes de transformar em &lt;em&gt;corpus&lt;/em&gt;, que é o conjunto de textos que iremos analisar, vamos corrigir esse erro usando o &lt;code&gt;str_replace_all&lt;/code&gt; com &lt;em&gt;regex&lt;/em&gt;. Em seguida, transformamos em &lt;em&gt;corpus&lt;/em&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Corrigindo hifenizações erradas, unindo palavras separadas
+vargas$text &amp;lt;- str_replace_all(vargas$text, &amp;quot;-[\\s]+&amp;quot;, &amp;quot;&amp;quot;)
+
+# Criando corpus
+discursos_vargas &amp;lt;- corpus(vargas)
+
+# Sumarizando os 10 primeiros documentos
+summary(discursos_vargas, 10)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Corpus consisting of 236 documents, showing 10 documents:
+## 
+##         Text Types Tokens Sentences  ano ordem
+##  1930_01.pdf   827   1795        46 1930    01
+##  1930_02.pdf   680   1433        44 1930    02
+##  1930_03.pdf   827   1795        46 1930    03
+##  1931_01.pdf  1061   2484        55 1931    01
+##  1931_02.pdf  1304   3247        81 1931    02
+##  1931_03.pdf  1949   5051       151 1931    03
+##  1931_04.pdf   567   1187        22 1931    04
+##  1931_05.pdf   970   2060        63 1931    05
+##  1931_06.pdf  6808  29272       748 1931    06
+##  1932_01.pdf  1802   4607       131 1932    01&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A saída do comando &lt;code&gt;summary&lt;/code&gt; em um objeto de corpus apresenta os textos, a quantidade de caracteres (types),a quantidade de tokens e o número de frases de cada documento, além das variáveis que escolhemos anteriormente.&lt;/p&gt;
+&lt;p&gt;Agora, para fazermos uma análise de frequência de palavras, por exemplo, precisamos dividir nosso &lt;em&gt;corpus&lt;/em&gt; em unidades, denominadas &lt;em&gt;tokens&lt;/em&gt;, que podem ser caracteres, palavras, sentenças, parágrafos. No caso, o ideal para a análise que desejo fazer é dividir em palavras, ou n-gramas, pegando cada palavra individualmente. Retirarei pontos, números, separadores, símbolos e hífens. Depois disso, removerei palavras que nada representam e não auxiliam, denominadas &lt;em&gt;stopwords&lt;/em&gt;, do pacote de mesmo nome: artigos, preposições, alguns verbos, etc. Além disso, removerei outras palavras, como &lt;em&gt;art&lt;/em&gt; (de artigo, quando Vargas cita leis), &lt;strong&gt;à, às, é, assim, sobre, ainda&lt;/strong&gt;, e algumas frases que pertencem ao cabeçalho do arquivo. Há também um problema, que às vezes a palavra &lt;strong&gt;república&lt;/strong&gt; aparece como &lt;em&gt;repdblica&lt;/em&gt;, um erro no OCR. Isso será corrigido.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;palavras_vargas &amp;lt;- tokens(discursos_vargas,
+    &amp;quot;word&amp;quot;,
+    remove_numbers = T,
+    remove_symbols = T,
+    remove_punct = T,
+    remove_separators = T,
+    remove_hyphens = F) %&amp;gt;% 
+  tokens_remove(pattern = c(stopwords(language = &amp;quot;pt&amp;quot;), 
+                            &amp;quot;á&amp;quot;, &amp;quot;ás&amp;quot;,&amp;quot;é&amp;quot;,
+                            &amp;quot;ser&amp;quot;,&amp;quot;art&amp;quot;, &amp;quot;assim&amp;quot;,
+                            &amp;quot;sobre&amp;quot;, &amp;quot;ainda&amp;quot;, &amp;quot;pêlo&amp;quot;,
+                            phrase(c(&amp;quot;NOVA POLÍTICA DO BRASIL&amp;quot;,
+                                     &amp;quot;Presidência da República&amp;quot;,
+                                     &amp;quot;Casa Civil Secretaria de Administração&amp;quot;,
+                                     &amp;quot;Diretoria de Gestão de Pessoas Coordenação Geral de Documentação e Informação&amp;quot;,
+                                     &amp;quot;Coordenação de Biblioteca&amp;quot;,
+                                     &amp;quot;GOVERNO PROVISÓRIO&amp;quot;,
+                                     &amp;quot;decreto n&amp;quot;,
+                                     &amp;quot;A ATUALIDADE BRASILEIRA&amp;quot;,&amp;quot;DISCURSO PRONUNCIADO&amp;quot;,
+                                     &amp;quot;EST UNIDOS&amp;quot;, 
+                                     &amp;quot;TRABALHO INDÚSTRIA&amp;quot;,
+                                     &amp;quot;NEGÓCIOS INTERIORES&amp;quot;, 
+                                     &amp;quot;v exa&amp;quot;, 
+                                     &amp;quot;parágrafo único&amp;quot;))),
+                padding = F) %&amp;gt;%
+  tokens_replace(pattern = &amp;quot;darepdblica&amp;quot;, &amp;quot;república&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: &amp;#39;remove_hyphens&amp;#39; is deprecated, use &amp;#39;split_hyphens&amp;#39; instead.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Com isso, já podemos fazer uma análise da frequência de palavras nos discursos de Getúlio Vargas, podendo descobrir assim as palavras mais utilizadas por ele, dando uma pista sobre temas, termos e o que realmente era relevante (pelo uso). Antes de fazer a frequência, precisamos converter os tokens em uma &lt;em&gt;document-feature matrix&lt;/em&gt;, que nada mais é que uma matriz de frequência de termos em documentos:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;vargas_dfm &amp;lt;- dfm(palavras_vargas)
+
+# Fazendo a estatística de frequência de palavras: top 15
+textstat_frequency(vargas_dfm, n = 25) %&amp;gt;% 
+  kable() %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+feature
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+frequency
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+rank
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+docfreq
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+group
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1273
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+204
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1135
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+215
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1023
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+186
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+194
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+838
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+203
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+759
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+162
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+grande
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+726
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+179
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+trabalho
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+680
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+176
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+627
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+178
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vida
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+556
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+178
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+política
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+545
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+151
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+rio
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+468
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+97
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+produção
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+445
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+109
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estados
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+438
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+88
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+federal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+400
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+81
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+econômica
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+382
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+138
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+maior
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+380
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+145
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nação
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+377
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+132
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+sempre
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+376
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+153
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+372
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+153
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+anos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+361
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+107
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+social
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+360
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+129
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasileiros
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+345
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+126
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasileiro
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+342
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+143
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+obra
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+341
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+25
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+143
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Percebemos que, no nosso &lt;em&gt;corpus&lt;/em&gt;, a palavra &lt;strong&gt;Brasil&lt;/strong&gt; aparece 622 vezes em 94 dos 100 discursos. Depois dela, &lt;strong&gt;Nacional&lt;/strong&gt; é utilizada 586 vezes, aparecendo em 80 documentos. &lt;strong&gt;Povo&lt;/strong&gt; aparece na 11ª posição, sendo utilizada 292 vezes, aparecendo em 82 discursos, o que faz todo o sentido, a partir do que se sabe sobre Vargas.&lt;/p&gt;
+&lt;p&gt;Podemos fazer a mesma análise de frequência de palavras agrupando por ano, e pegando as 5 palavras mais usadas em cada ano:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;textstat_frequency(vargas_dfm, group = &amp;quot;ano&amp;quot;, n = 5) %&amp;gt;% 
+    kable() %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+feature
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+frequency
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+rank
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+docfreq
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+group
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1930
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+eleitoral
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1930
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1930
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1930
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasileiro
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1930
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+101
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1931
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+92
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1931
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1931
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1931
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+58
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1931
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+96
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1932
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+67
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1932
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+revolução
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+63
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1932
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+43
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1932
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+política
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1932
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+142
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1933
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+trabalho
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+127
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1933
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+115
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1933
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+112
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1933
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+102
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1933
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+113
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1934
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+110
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1934
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+creou
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+85
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1934
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ministério
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+66
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1934
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+regulou
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+63
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1934
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+51
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1935
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+36
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1935
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+32
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1935
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+argentina
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+30
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1935
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1935
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1936
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+29
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1936
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+social
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+27
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1936
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1936
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vida
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1936
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+129
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1937
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+118
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1937
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+federal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+114
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1937
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+lei
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+102
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1937
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+presidente
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+98
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1937
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+101
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+99
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+novo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+70
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+82
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1939
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1939
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+grande
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+71
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1939
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+70
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1939
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+municípios
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+66
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1939
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+185
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+43
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1940
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+172
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1940
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+146
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+35
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1940
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+139
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1940
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+124
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1940
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+69
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1941
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+presidente
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+41
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1941
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1941
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+américa
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+31
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1941
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+28
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1941
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+103
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1943
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+guerra
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+89
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1943
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+84
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1943
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+61
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1943
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+59
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1943
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+32
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1944
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+guerra
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+28
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1944
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1944
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1944
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vossa
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1944
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+84
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1951
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+83
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1951
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vida
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+54
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1951
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+44
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1951
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+41
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1951
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+117
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1952
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+milhões
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+81
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1952
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+grande
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+80
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1952
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+66
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1952
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+66
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1952
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+114
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1953
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+56
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1953
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+milhões
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+53
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1953
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+47
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1953
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+cruzeiros
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+45
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1953
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Fazendo uma nuvem de palavras (&lt;em&gt;wordcloud&lt;/em&gt;) dos 200 termos mais utilizados por Vargas, temos:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;textplot_wordcloud(vargas_dfm,
+  random_order = FALSE,
+  rotation = 0.25,
+  max_words = 200,
+  color = RColorBrewer::brewer.pal(8, &amp;quot;Dark2&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;A nuvem de palavras é simplesmente um recurso gráfico da tabela de frequência de palavras: o tamanho da palavra indica a quantidade de vezes que ela é utilizada, e é proporcional às outras ali presentes.&lt;/p&gt;
+&lt;p&gt;O Estado Novo inicia em 1937, com o fim do Governo Constitucionalista (1934-1937), e vai até 1945. Será que houve alguma mudança nas palavras utilizadas por Vargas no primeiro ano de cada período de governo, ou seja, em 1931, 1934 e 1937?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tokens_subset(palavras_vargas, ano %in% c(1931, 1934, 1937)) %&amp;gt;% 
+  dfm(groups = &amp;quot;ano&amp;quot;) %&amp;gt;% 
+  textplot_wordcloud(max_words = 400, comparison = T,
+                     color = RColorBrewer::brewer.pal(3, &amp;quot;Dark2&amp;quot;)) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;O que percebemos acima é que Vargas varia um pouco nas palavras utilizadas nos primeiros anos de seus governos: em 1931, percebemos o uso de palavras como &lt;strong&gt;governo, toneladas, papel, ouro, despesa, econômica, classes, tesouro&lt;/strong&gt;; já em 1934, com o início do Governo Constitucionalista e promulgação da Constituição de 1934, palavras como &lt;strong&gt;fazenda, ministério, comércio, marinha, brasil, obras, públicas, cinema, saúde, ferro, café, naval&lt;/strong&gt; se fazem presentes; em 1937, durante o Estado Novo, Vargas utilizou mais as palavras &lt;strong&gt;presidente, federal, lei,c onstituição, república, estado, nacional, segurança, câmara, tribunal, poder&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;O &lt;code&gt;quanteda&lt;/code&gt; é excelente pois traz consigo um conjunto de funções facilitadas, tornando muito mais fácil o cálculo de algumas estatísticas e a plotagem de alguns gráficos. Um outro exemplo é o gráfico de co-ocorrência, em rede, que indica quais palavras costumam ocorrer no mesmo documento, ou na mesma frase, a depender de como se configura. Ao analisarmos a co-ocorrência de palavras nos discursos de Vargas, temos, através da função &lt;code&gt;textplot_network&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dfm_trim(vargas_dfm,
+           min_termfreq = 25,
+           termfreq_type = &amp;quot;rank&amp;quot;) %&amp;gt;% 
+  textplot_network(edge_size = 0.6)+
+  labs(title = &amp;quot;Co-ocorrência de termos:&amp;quot;,
+       subtitle = &amp;quot;Discursos de Getúlio Vargas&amp;quot;,
+       x = &amp;quot;&amp;quot;,  y = &amp;quot;&amp;quot;)+
+  theme_minimal()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;O gráfico acima nos permite perceber que, por exemplo, &lt;strong&gt;país, governo, nacional, brasil,e stado, federal, todos&lt;/strong&gt; são palavras com um alto grau de co-ocorrência com todas as outras. Talvez seja mais interessante observar as palavras que não co-ocorrem entre si: &lt;strong&gt;povo e nação&lt;/strong&gt;, por exemplo, ou &lt;strong&gt;poder, povo, ordem e obra&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Um outro exemplo interessante de análise é a presença de determinado termo ou termos ao longo do documento, e em que posição aparecem. Isso é oferecido pela função &lt;code&gt;textplot_xray&lt;/code&gt;. Observando em quais discursos a palavra democracia (ou democratas, democrata, democrático, democrática, etc) aparece, e em que posições do documento:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;textplot_xray(kwic(discursos_vargas,  &amp;quot;Democra*&amp;quot;)) +
+  labs(
+    subtitle = &amp;quot;Plot de dispersão lexical&amp;quot;,
+    title = &amp;quot;Discursos de Getúlio Vargas:&amp;quot;,
+    x = &amp;quot;Index de Token&amp;quot;,
+    y = &amp;quot;Documento&amp;quot;
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;
+Democracia só aparece em 1 discurso em 1932, em 1 em 1933, em 2 em 1934, em 2 em 1935, em 4 em 1936, em 2 em 1937, em 1 em 1939, em 3 em 1941 e em 1 em 1944, de um total de 100 discursos existentes.&lt;/p&gt;
+&lt;p&gt;Mas qual seria o contexto da palavra nos discursos?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kwic(discursos_vargas, &amp;quot;Democra*&amp;quot;, window = 3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                                                                       
+##       [1932_01.pdf, 104]     falsos pregoeiros da |    democracia    |
+##      [1933_04.pdf, 1445]          a decadência da |    democracia    |
+##     [1934_05.pdf, 12733]  direito patrimonial das |   democracias    |
+##      [1934_14.pdf, 2900] estabeleceu a verdadeira |    democracia    |
+##       [1935_04.pdf, 204]               e da vossa |    democracia    |
+##        [1935_09.pdf, 40]                A base da |    democracia    |
+##       [1935_09.pdf, 167]                a base da |    democracia    |
+##       [1935_09.pdf, 208]     alicerces das nossas |   democracias    |
+##      [1936_02.pdf, 1677]             Na luta pela |    democracia    |
+##      [1936_04.pdf, 1453]            de defender a |    democracia    |
+##        [1936_05.pdf, 86]             econômico- A |    democracia    |
+##       [1936_05.pdf, 786]                  , que a |    democracia    |
+##       [1936_05.pdf, 809]                   Mas, a |    democracia    |
+##       [1936_05.pdf, 887]                . Ordem e |    democracia    |
+##       [1936_07.pdf, 604]        cidadãos da maior |    democracia    |
+##      [1937_01.pdf, 2298]            dos marcos da |    democracia    |
+##       [1937_04.pdf, 874]          atravessamos, a |    democracia    |
+##       [1938_05.pdf, 161]          Governo forte e |    democracia    |
+##      [1938_05.pdf, 7139]          Governo forte e |    democracia    |
+##       [1938_23.pdf, 464]     manipuladores de uma |    democracia    |
+##    [1939_05-02.pdf, 741]          passámos de uma |    democracia    |
+##    [1939_05-02.pdf, 751]               , para uma |    democracia    |
+##  [1939_05-02.pdf, 10761]              da forma de |    democracia    |
+##      [1940_21.pdf, 1076]              desordem. À |    democracia    |
+##      [1940_21.pdf, 1080]     política substitue a |    democracia    |
+##      [1940_41.pdf, 1748]              produção. A |    democracia    |
+##       [1941_02.pdf, 538] instituímos a verdadeira |    democracia    |
+##       [1941_04.pdf, 221]              regime, uma |    democracia    |
+##      [1941_04.pdf, 2290]              regime, uma |    democracia    |
+##      [1941_04.pdf, 2304]    convenções legais das |   democracias    |
+##      [1941_04.pdf, 2331]               É mais uma |    democracia    |
+##       [1941_05.pdf, 233]     - Característicos da |    democracia    |
+##      [1941_05.pdf, 1546]                 Novo e a |    democracia    |
+##      [1941_05.pdf, 1571]        conciliação com a |    democracia    |
+##      [1941_05.pdf, 1693]        , instituímos uma |    democracia    |
+##      [1941_05.pdf, 1771]                  , é uma |    democracia    |
+##      [1941_05.pdf, 2126]           forma comum da |    democracia    |
+##        [1943_21.pdf, 87]           Nações Unidas- |    Democracia    |
+##       [1943_21.pdf, 267]    Apenas entendemos que |    democracia    |
+##      [1944_04.pdf, 1977]           rep sentantes, | democraticamente |
+##       [1951_02.pdf, 211]                 do Povo. |    democracia    |
+##       [1951_03.pdf, 511]       presente os mesmos |    democracia    |
+##      [1951_07.pdf, 3791]         conhecem o deira |    democracia    |
+##      [1951_07.pdf, 3832]            riedade a uma |    democracia    |
+##      [1952_07.pdf, 1035]               livre. Nas |   democracias    |
+##      [1952_09.pdf, 2302]            Não somente a |    democracia    |
+##      [1952_09.pdf, 2594]             livre não há |    democracia    |
+##      [1952_09.pdf, 2792]   espírito verdadeiro da |    democracia    |
+##       [1952_11.pdf, 212]                a base da |    democracia    |
+##       [1953_03.pdf, 832]              a defesa da |    democracia    |
+##                                  
+##  e os reacionários               
+##  liberal e individualista        
+##  . Mas essa                      
+##  entre nós.                      
+##  , a cujo                        
+##  , agora como                    
+##  , agora como                    
+##  ; e vós                         
+##  , estacionamento significa      
+##  , entregam-na,                  
+##  é o regime                      
+##  é o regime                      
+##  , no sentido                    
+##  que significam disciplina       
+##  do mundo,                       
+##  ativa, em                       
+##  de partidos,                    
+##  - O Estado                      
+##  Há quem afirme                  
+##  de ficção.                      
+##  aparente, de                    
+##  real, isto                      
+##  renovada em que                 
+##  política substitue a            
+##  econômica, em                   
+##  política- vemos                 
+##  - do povo                       
+##  - As assembléias                
+##  , mesmo porque                  
+##  parlamentares, esse             
+##  econômica que política          
+##  brasileira- A                   
+##  Peço, em                        
+##  , tal como                      
+##  realista e funcional            
+##  , distanciada dos               
+##  parlamentar: perde-se           
+##  não é demagogia                 
+##  não é demaia                    
+##  , dentro da                     
+##  . Ordenastes e                  
+##  de conteúdo humano              
+##  social e econô                  
+##  meradem falar em                
+##  , o governo                     
+##  está definitivamente consolidada
+##  . Não pretendo                  
+##  , abdiquem de                   
+##  , pois é                        
+##  , como pretexto&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Percebe-se que a palavra &lt;strong&gt;democracia&lt;/strong&gt;, em muitos dos casos acima, é utilizada em um contexto negativo.&lt;/p&gt;
+&lt;p&gt;Uma ferramenta muito útil é a de &lt;em&gt;topic modeling&lt;/em&gt;, que permite o cálculo de termos relacionados que possam indicar um assunto em comum, ou tópicos. Será que é possível identificar tópicos recorrentes nos discursos de Getúlio Vargas?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;LDA(convert(vargas_dfm, to = &amp;quot;topicmodels&amp;quot;), k = 5) %&amp;gt;% 
+  get_terms(10)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       Topic 1    Topic 2      Topic 3    Topic 4     Topic 5     
+##  [1,] &amp;quot;brasil&amp;quot;   &amp;quot;governo&amp;quot;    &amp;quot;governo&amp;quot;  &amp;quot;brasil&amp;quot;    &amp;quot;governo&amp;quot;   
+##  [2,] &amp;quot;todos&amp;quot;    &amp;quot;estado&amp;quot;     &amp;quot;nacional&amp;quot; &amp;quot;governo&amp;quot;   &amp;quot;país&amp;quot;      
+##  [3,] &amp;quot;nacional&amp;quot; &amp;quot;brasil&amp;quot;     &amp;quot;grande&amp;quot;   &amp;quot;povo&amp;quot;      &amp;quot;brasil&amp;quot;    
+##  [4,] &amp;quot;povo&amp;quot;     &amp;quot;trabalho&amp;quot;   &amp;quot;país&amp;quot;     &amp;quot;país&amp;quot;      &amp;quot;nacional&amp;quot;  
+##  [5,] &amp;quot;trabalho&amp;quot; &amp;quot;presidente&amp;quot; &amp;quot;produção&amp;quot; &amp;quot;política&amp;quot;  &amp;quot;serviços&amp;quot;  
+##  [6,] &amp;quot;país&amp;quot;     &amp;quot;federal&amp;quot;    &amp;quot;estado&amp;quot;   &amp;quot;todos&amp;quot;     &amp;quot;ministério&amp;quot;
+##  [7,] &amp;quot;governo&amp;quot;  &amp;quot;lei&amp;quot;        &amp;quot;milhões&amp;quot;  &amp;quot;nacional&amp;quot;  &amp;quot;obras&amp;quot;     
+##  [8,] &amp;quot;pátria&amp;quot;   &amp;quot;nacional&amp;quot;   &amp;quot;brasil&amp;quot;   &amp;quot;vida&amp;quot;      &amp;quot;estados&amp;quot;   
+##  [9,] &amp;quot;vida&amp;quot;     &amp;quot;grande&amp;quot;     &amp;quot;rio&amp;quot;      &amp;quot;revolução&amp;quot; &amp;quot;ano&amp;quot;       
+## [10,] &amp;quot;guerra&amp;quot;   &amp;quot;país&amp;quot;       &amp;quot;todos&amp;quot;    &amp;quot;estado&amp;quot;    &amp;quot;serviço&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Calculei 5 tópicos possíveis nos discursos de Vargas e, de cada um, selecionei as 10 palavras que pudessem representar cada tópico. Por conta de todos os discursos versarem, na maioria das vezes, sobre as mesmas coisas, com uma grande quantidade de palavras repetidas, fica difícil identificar tópicos diferentes. Todavia, se ignorarmos as palavras repetidas e focarmos nas únicas, podemos perceber alguns temas: &lt;strong&gt;estado e social&lt;/strong&gt;, &lt;strong&gt;lei e presidente&lt;/strong&gt;, &lt;strong&gt;nação e revolução&lt;/strong&gt;, &lt;strong&gt;obras e serviços&lt;/strong&gt;, &lt;strong&gt;povo e trabalho&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Por fim, o &lt;code&gt;quanteda&lt;/code&gt; também apresenta a ferramenta de &lt;em&gt;collocations&lt;/em&gt;, que é o cálculo de palavras que sempre andam juntas, em bi-gramas (ou seja, pares). Quais serão os termos correlacionados nos discursos de Getúlio? Para essa análise, precisamos fazer novamente os &lt;em&gt;tokens&lt;/em&gt; adicionando a opção de &lt;code&gt;padding  = TRUE&lt;/code&gt;, para que os espaços vazios (de palavras removidas, como &lt;em&gt;stopwords&lt;/em&gt;) não sejam ocupados pelas palavras seguintes.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tokens(discursos_vargas,
+    &amp;quot;word&amp;quot;,
+    remove_numbers = T,
+    remove_symbols = T,
+    remove_punct = T,
+    remove_separators = T) %&amp;gt;% 
+  tokens_remove(padding = TRUE, pattern = c(stopwords(language = &amp;quot;pt&amp;quot;),
+    &amp;quot;á&amp;quot;,&amp;quot;ás&amp;quot;,&amp;quot;é&amp;quot;,
+    &amp;quot;ser&amp;quot;,&amp;quot;art&amp;quot;, &amp;quot;assim&amp;quot;, &amp;quot;sobre&amp;quot;, &amp;quot;ainda&amp;quot;, &amp;quot;pêlo&amp;quot;, phrase(c(&amp;quot;NOVA POLÍTICA DO BRASIL&amp;quot;,
+        &amp;quot;Presidência da República&amp;quot;,
+        &amp;quot;Casa Civil Secretaria de Administração&amp;quot;,
+        &amp;quot;Diretoria de Gestão de Pessoas Coordenação Geral de Documentação e Informação&amp;quot;,
+        &amp;quot;Coordenação de Biblioteca&amp;quot;,
+        &amp;quot;GOVERNO PROVISÓRIO&amp;quot;,
+        &amp;quot;decreto n&amp;quot;, &amp;quot;A ATUALIDADE BRASILEIRA&amp;quot;, &amp;quot;DISCURSO PRONUNCIADO&amp;quot;, &amp;quot;EST UNIDOS&amp;quot;, &amp;quot;TRABALHO INDÚSTRIA&amp;quot;,&amp;quot;NEGÓCIOS INTERIORES&amp;quot;, &amp;quot;v exa&amp;quot;, &amp;quot;parágrafo único&amp;quot;)))) %&amp;gt;%
+  tokens_replace(pattern = &amp;quot;darepdblica&amp;quot;, &amp;quot;república&amp;quot;) %&amp;gt;% 
+  textstat_collocations(size = 2) %&amp;gt;%
+  as.data.frame() %&amp;gt;% 
+  arrange(-count) %&amp;gt;% 
+  head(30) %&amp;gt;% 
+  select(-count_nested, -length) %&amp;gt;% 
+    kable(col.names = c(&amp;quot;Collocation&amp;quot;, &amp;quot;Contagem&amp;quot;, &amp;quot;Lambda&amp;quot;, &amp;quot;Z&amp;quot;)) %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Collocation
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Contagem
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Lambda
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Z
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+rio grande
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+256
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.12160
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+65.7777
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo brasileiro
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+124
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.21525
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+50.4035
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo federal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+123
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.07670
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+44.9262
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+forças armadas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+93
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8.78112
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40.0075
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+cada vez
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+81
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.06180
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+45.1112
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado novo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+80
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.38173
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+39.5181
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+85
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+distrito federal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+75
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.72641
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+21.8444
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+território nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+60
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.43573
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33.0938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+poder público
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+56
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.61593
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38.2622
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+minas gerais
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8.90081
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37.8444
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+economia nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4.45704
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+29.4265
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+corrente ano
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+54
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.44906
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37.1227
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+3049
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+matérias primas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+51
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14.51998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10.0904
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+outro lado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+50
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.83564
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37.4627
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+neste momento
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+47
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.54853
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+35.5539
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+62
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vida nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+47
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3.61973
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23.3299
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+conselho federal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+46
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.36355
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33.7263
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+67
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+porto alegre
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+46
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10.73462
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23.0169
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+42
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vossa excelência
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+42
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8.59701
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+26.9050
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estados unidos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+41
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.09005
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+30.0436
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+supremo tribunal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.28012
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33.2420
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+últimos anos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.78565
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+31.8574
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+administração pública
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.19113
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+31.9367
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+44
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+departamento nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.70706
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+26.3775
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+431
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2.54223
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+15.2339
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+desenvolvimento econômico
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.90210
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+30.6431
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+27
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+novo regime
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+35
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.36720
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+28.2388
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+mil contos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.80931
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+32.4016
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+dois países
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.03132
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+29.6839
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+68
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vida econômica
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4.26817
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22.9202
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Rio Grande, Povo Brasileiro, Governo Federal e Forças Armadas&lt;/strong&gt; são os bigramas mais utilizados por Getúlio Vargas. O primeiro é óbvio: se refere ao Rio Grande do Sul, terra de Getúlio Vargas; &lt;strong&gt;Povo Brasileiro&lt;/strong&gt; era como ele iniciava os discursos, se dirigindo à nação; &lt;strong&gt;Governo Federal&lt;/strong&gt; se refere ao governo; &lt;strong&gt;Forças Armadas&lt;/strong&gt; mostra as relações de Getúlio com os militares, fruto da própria Revolução de 30.&lt;/p&gt;
+&lt;p&gt;Bom, por hoje é só! Quero agradecer aos insights dos amigos Helio Cannone e Weslley Dias, que possuem relevantes pesquisas sobre Vargas e entendem profundamente do assunto.&lt;/p&gt;
+&lt;p&gt;Qualquer dúvida, correção ou sugestão pode ser encaminhada para &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Quem Voa - Análise dos vôos da FAB com autoridades do Estado</title>
+      <link>https://mateuspestana.github.io/post/quem-voa/quem-voa-analise-dos-voos-da-fab-com-autoridades-do-estado/</link>
+      <pubDate>Wed, 16 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/quem-voa/quem-voa-analise-dos-voos-da-fab-com-autoridades-do-estado/</guid>
+      <description>
+&lt;script src=&#34;2019-10-15-quem-voa-análise-dos-vôos-da-fab-com-autoridades-do-estado_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;2019-10-15-quem-voa-análise-dos-vôos-da-fab-com-autoridades-do-estado_files/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;2019-10-15-quem-voa-análise-dos-vôos-da-fab-com-autoridades-do-estado_files/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;p&gt;De Ícaro ao &lt;a href=&#34;https://pt.wikipedia.org/wiki/Tesla_Roadster_de_Elon_Musk&#34;&gt;Tesla Roadster&lt;/a&gt;, voar sempre foi a vontade de muitos. Há quem diga que tem medo, e não duvido, embora acredite que o medo está não na altura ou no voar, mas nos possíveis acidentes que podem decorrer disso. De uma forma ou de outra, o céu brasileiro está cada vez mais povoado com a democratização do preço dos vôos, da quantidade de trechos disponíveis e da necessidade de chegar mais rápido em algum lugar.&lt;/p&gt;
+&lt;p&gt;Pensando nisso, e pesquisando os &lt;a href=&#34;http://dados.gov.br/&#34;&gt;dados abertos do governo brasileiro&lt;/a&gt;, descobri um &lt;a href=&#34;https://github.com/FABdadosabertos/GABAER&#34;&gt;repositório da Força Aéreea Brasileira&lt;/a&gt; com bancos de dados de todas as autoridades que voaram de abril de 2019 até setembro desse ano. A primeira vez que vi esses arquivos, no mês passado, eles iam somente até agosto, e hoje já temos o banco com os dados de setembro. Logo, espero que continuem fazendo a manutenção dos mesmos e continuem disponibilizando dados de interesse do cidadão.&lt;/p&gt;
+&lt;p&gt;Antigamente, os vôos da FAB ficavam disponíveis somente no site da mesma, &lt;a href=&#34;http://www.fab.mil.br/voos&#34;&gt;aqui&lt;/a&gt;, e os dados não podiam ser exportados, pois vinham em formato PDF, separados por dia. Era possível raspar os PDFs, mas o trabalho seria um pouco custoso. De toda forma, agora, todos os vôos estão disponíveis em formato &lt;strong&gt;.csv&lt;/strong&gt; e são de fácil acesso e processamento.&lt;/p&gt;
+&lt;p&gt;Como exercício, farei uma breve análise exploratória desses bancos, e me proponho a manter a análise atualizada conforme os próximos meses forem consolidados no arquivo.&lt;/p&gt;
+&lt;p&gt;Clonando o repositório em nossa máquina, é preciso listar todos os arquivos em .csv, para então formar o banco. Para acelerar esse processo, depois de carregar os pacotes que utilizarei, vou juntar todos os arquivos de uma vez e já direcionar ao banco, para não ter que importar um a um dentro do R.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pacman::p_load(tidyverse, hrbrthemes, knitr, kableExtra, janitor, ggalt)
+
+files &amp;lt;- list.files(&amp;quot;~/Documents/Datasets/QuemVoa/&amp;quot;, pattern = &amp;quot;.csv$&amp;quot;, full.names = T)
+
+names_vars &amp;lt;- c(&amp;quot;autoridade&amp;quot;, &amp;quot;origem&amp;quot;, &amp;quot;orig_data_hora&amp;quot;,
+                &amp;quot;destino&amp;quot;, &amp;quot;dest_data_hora&amp;quot;, &amp;quot;motivo&amp;quot;,
+                &amp;quot;n_pass&amp;quot;, &amp;quot;compartilhado&amp;quot; )
+
+fab &amp;lt;- bind_rows(lapply(files, read.csv2, 
+                        header = F, encoding = &amp;quot;latin1&amp;quot;, 
+                        col.names = names_vars))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Explicando o código acima: criei um objeto chamado &lt;code&gt;files&lt;/code&gt; que listava todos os arquivos em &lt;strong&gt;.csv&lt;/strong&gt; da pasta. O uso de &lt;code&gt;$&lt;/code&gt;, em &lt;code&gt;regex&lt;/code&gt;, significa “termina com”. No caso, tudo que termina com &lt;strong&gt;.csv&lt;/strong&gt;, a extensão dos arquivos utilizados.&lt;/p&gt;
+&lt;p&gt;Em seguida, criei um vetor chamado &lt;code&gt;names_vars&lt;/code&gt;. A explicação é que os arquivos da FAB não vem com os nomes da variáveis, logo, para facilitar nosso trabalho, criei um vetor nomes identificáveis que permitirão uma melhor compreensão e execução.&lt;/p&gt;
+&lt;p&gt;Já o objeto de nome &lt;code&gt;fab&lt;/code&gt; é o banco em si, que, a partir da função &lt;code&gt;bind_rows&lt;/code&gt; e um &lt;code&gt;lapply&lt;/code&gt;, abre todos os arquivos da lista e direciona para o objeto, consolidando todos de uma só vez, na codificação correta (latin1) e com os nomes de variáveis anteriormente especificados.&lt;/p&gt;
+&lt;p&gt;Agora, vamos dar uma olhada no banco:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;glimpse(fab)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 849
+## Columns: 8
+## $ autoridade     &amp;lt;chr&amp;gt; &amp;quot;Presidente da Câmara dos Deputados&amp;quot;, &amp;quot;Presidente da Câ…
+## $ origem         &amp;lt;chr&amp;gt; &amp;quot;Brasília&amp;quot;, &amp;quot;Rio de Janeiro (Santos Dumont)&amp;quot;, &amp;quot;São Paul…
+## $ orig_data_hora &amp;lt;chr&amp;gt; &amp;quot;01/04/2019 - 07:10&amp;quot;, &amp;quot;01/04/2019 - 11:05&amp;quot;, &amp;quot;01/04/2019…
+## $ destino        &amp;lt;chr&amp;gt; &amp;quot;Rio de Janeiro (Santos Dumont)&amp;quot;, &amp;quot;São Paulo (Congonhas…
+## $ dest_data_hora &amp;lt;chr&amp;gt; &amp;quot;01/04/2019 - 08:40&amp;quot;, &amp;quot;01/04/2019 - 11:55&amp;quot;, &amp;quot;01/04/2019…
+## $ motivo         &amp;lt;chr&amp;gt; &amp;quot;Residência&amp;quot;, &amp;quot;Serviço&amp;quot;, &amp;quot;Residência&amp;quot;, &amp;quot;Serviço&amp;quot;, &amp;quot;Serv…
+## $ n_pass         &amp;lt;int&amp;gt; 9, 9, 9, 9, 25, 12, 14, 14, 14, 14, 12, 5, 4, 14, 12, 1…
+## $ compartilhado  &amp;lt;chr&amp;gt; &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;,…&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Temos 849 observações, ou vôos, com 8 variáveis, que vão desde a autoridade que utilizou a aeronave, passando pela origem e destino, o motivo, o número previsto de passageiros e se o vôo foi compartilhado ou não com outra autoridade. Como pode ser visto, esse banco não nos facilita muito em nossa análise, principalmente pelo fato do dia e da hora estarem em uma mesma variável. É importante separá-los ao máximo para que possamos tornar esse banco o mais &lt;a href=&#34;https://garrettgman.github.io/tidying/&#34;&gt;&lt;code&gt;tidy&lt;/code&gt;&lt;/a&gt; possível.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab &amp;lt;- fab %&amp;gt;% 
+  separate(orig_data_hora, c(&amp;quot;orig_dia&amp;quot;, &amp;quot;orig_mes&amp;quot;, &amp;quot;orig_ano&amp;quot;), sep = &amp;quot;/&amp;quot;) %&amp;gt;% # Separando uma coluna em 3
+  separate(dest_data_hora, c(&amp;quot;dest_dia&amp;quot;, &amp;quot;dest_mes&amp;quot;, &amp;quot;dest_ano&amp;quot;), sep = &amp;quot;/&amp;quot;) %&amp;gt;% # Separando uma coluna em 3
+  mutate(dest_ano = str_replace(dest_ano, &amp;quot; - &amp;quot;, &amp;quot; &amp;quot;), # Tirando o &amp;quot; - &amp;quot; que ficou na coluna
+         orig_ano = str_replace(orig_ano, &amp;quot; - &amp;quot;, &amp;quot; &amp;quot;), # Tirando o &amp;quot; - &amp;quot; que ficou na coluna
+         dest_ano = str_replace(dest_ano, &amp;quot;: &amp;quot;, &amp;quot;:&amp;quot;)) %&amp;gt;% # Uma linha tinha um erro (um espaço depois de :)
+  separate(dest_ano, c(&amp;quot;dest_ano&amp;quot;, &amp;quot;dest_hora&amp;quot;), sep = &amp;quot; &amp;quot;) %&amp;gt;% # Separando em 2
+  separate(orig_ano, c(&amp;quot;orig_ano&amp;quot;, &amp;quot;orig_hora&amp;quot;), sep = &amp;quot; &amp;quot;) %&amp;gt;% # Separando em 2
+  mutate_if(is.character, as.factor) # Strings como fatores
+
+meses &amp;lt;- c(&amp;quot;Abril&amp;quot;, &amp;quot;Maio&amp;quot;, &amp;quot;Junho&amp;quot;, &amp;quot;Julho&amp;quot;, &amp;quot;Agosto&amp;quot;, &amp;quot;Setembro&amp;quot;) # Salvando um vetor com os nomes dos meses
+
+
+glimpse(fab)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 849
+## Columns: 14
+## $ autoridade    &amp;lt;fct&amp;gt; &amp;quot;Presidente da Câmara dos Deputados&amp;quot;, &amp;quot;Presidente da Câm…
+## $ origem        &amp;lt;fct&amp;gt; Brasília, Rio de Janeiro (Santos Dumont), São Paulo (Con…
+## $ orig_dia      &amp;lt;fct&amp;gt; 01, 01, 01, 01, 01, 02, 02, 02, 02, 02, 03, 03, 03, 04, …
+## $ orig_mes      &amp;lt;fct&amp;gt; 04, 04, 04, 04, 04, 04, 04, 04, 04, 04, 04, 04, 04, 04, …
+## $ orig_ano      &amp;lt;fct&amp;gt; 2019, 2019, 2019, 2019, 2019, 2019, 2019, 2019, 2019, 20…
+## $ orig_hora     &amp;lt;fct&amp;gt; 07:10, 11:05, 17:25, 19:05, 14:35, 10:15, 08:10, 16:55, …
+## $ destino       &amp;lt;fct&amp;gt; Rio de Janeiro (Santos Dumont), São Paulo (Congonhas), R…
+## $ dest_dia      &amp;lt;fct&amp;gt; 01, 01, 01, 01, 01, 02, 02, 02, 02, 02, 03, 03, 03, 04, …
+## $ dest_mes      &amp;lt;fct&amp;gt; 04, 04, 04, 04, 04, 04, 04, 04, 04, 04, 04, 04, 04, 04, …
+## $ dest_ano      &amp;lt;fct&amp;gt; 2019, 2019, 2019, 2019, 2019, 2019, 2019, 2019, 2019, 20…
+## $ dest_hora     &amp;lt;fct&amp;gt; 08:40, 11:55, 18:10, 20:35, 16:00, 11:35, 10:20, 19:20, …
+## $ motivo        &amp;lt;fct&amp;gt; Residência, Serviço, Residência, Serviço, Serviço, Servi…
+## $ n_pass        &amp;lt;int&amp;gt; 9, 9, 9, 9, 25, 12, 14, 14, 14, 14, 12, 5, 4, 14, 12, 14…
+## $ compartilhado &amp;lt;fct&amp;gt; &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;&amp;quot;, …&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pronto! Agora podemos iniciar a nossa análise.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Quais as principais origens dos vôos?
+fab %&amp;gt;% 
+  tabyl(origem) %&amp;gt;% 
+  top_n(n = 10) %&amp;gt;% 
+  ggplot()+
+  geom_col(aes(x = reorder(origem, n), y = n),
+           fill = &amp;quot;#2d543d&amp;quot;)+
+  coord_flip()+
+  labs(title = &amp;quot;Top 10 origens de vôos da FAB&amp;quot;,
+       subtitle = &amp;quot;Com autoridades do Estado&amp;quot;,
+       x = &amp;quot;Cidade de Origem&amp;quot;,
+       y = &amp;quot;Nº de Vôos&amp;quot;,
+       caption = &amp;quot;Fonte: GABAER/FAB&amp;quot;)+
+  theme_ipsum_tw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/quem-voa/2019-10-15-quem-voa-ana%CC%81lise-dos-vo%CC%82os-da-fab-com-autoridades-do-estado_files/figure-html/origens-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Qual o principal destino dos vôos?
+fab %&amp;gt;% 
+  tabyl(destino) %&amp;gt;% 
+  top_n(n = 10) %&amp;gt;% 
+  ggplot()+
+  geom_col(aes(x = reorder(destino, n), y = n),
+           fill = &amp;quot;#d175b8&amp;quot;)+
+  coord_flip()+
+  labs(title = &amp;quot;Top 10 destinos de vôos da FAB&amp;quot;,
+       subtitle = &amp;quot;Com autoridades do Estado&amp;quot;,
+       x = &amp;quot;Cidade de Destino&amp;quot;,
+       y = &amp;quot;Nº de Vôos&amp;quot;,
+       caption = &amp;quot;Fonte: GABAER/FAB&amp;quot;)+
+  theme_ipsum_tw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/quem-voa/2019-10-15-quem-voa-ana%CC%81lise-dos-vo%CC%82os-da-fab-com-autoridades-do-estado_files/figure-html/origens-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Ok, faz sentido que Brasília esteja no topo: as autoridades que podem utilizar os vôos da FAB trabalham majoritariamente lá. Vamos remove Brasília, então, para ver como as outras cidades se comportam.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Principais origens (sem contar com BSB)
+fab %&amp;gt;% 
+  filter(origem != &amp;quot;Brasília&amp;quot;) %&amp;gt;% 
+  tabyl(origem) %&amp;gt;% 
+  top_n(n = 10) %&amp;gt;% 
+  ggplot()+
+  geom_col(aes(x = reorder(origem, n), y = n),
+           fill = &amp;quot;#2d543d&amp;quot;)+
+  coord_flip()+
+  labs(title = &amp;quot;Top 10 origem de vôos da FAB&amp;quot;,
+       subtitle = &amp;quot;Com autoridades do Estado, sem vôos de Brasília&amp;quot;,
+       x = &amp;quot;Cidade de Destino&amp;quot;,
+       y = &amp;quot;Nº de Vôos&amp;quot;,
+       caption = &amp;quot;Fonte: GABAER/FAB&amp;quot;) +
+  theme_ipsum_tw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/quem-voa/2019-10-15-quem-voa-ana%CC%81lise-dos-vo%CC%82os-da-fab-com-autoridades-do-estado_files/figure-html/origens_nobsb-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Principais destinos (sem contar com BSB)
+fab %&amp;gt;% 
+  filter(destino != &amp;quot;Brasília&amp;quot;) %&amp;gt;% 
+  tabyl(destino) %&amp;gt;% 
+  top_n(n = 10) %&amp;gt;% 
+  ggplot()+
+  geom_col(aes(x = reorder(destino, n), y = n),
+           fill = &amp;quot;#d175b8&amp;quot;)+
+  coord_flip()+
+  labs(title = &amp;quot;Top 10 destinos de vôos da FAB&amp;quot;,
+       subtitle = &amp;quot;Com autoridades do Estado, sem vôos para Brasília&amp;quot;,
+       x = &amp;quot;Cidade de Destino&amp;quot;,
+       y = &amp;quot;Nº de Vôos&amp;quot;,
+       caption = &amp;quot;Fonte: GABAER/FAB&amp;quot;) +
+  theme_ipsum_tw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/quem-voa/2019-10-15-quem-voa-ana%CC%81lise-dos-vo%CC%82os-da-fab-com-autoridades-do-estado_files/figure-html/origens_nobsb-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Os aeroportos de Congonhas, em São Paulo, e o Santos Dumont, no Rio de Janeiro, lideram a lista de origens e destinos. Sabendo os lugares, podemos analisar agora o mês. Em qual mês houve uma quantidade superior de vôos?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab %&amp;gt;% 
+  tabyl(orig_mes) %&amp;gt;% 
+  ggplot()+
+  geom_col(aes(x = orig_mes, y  = n, fill = orig_mes),
+           show.legend = F)+
+  labs(title = &amp;quot;Nº de vôos por mês&amp;quot;,
+       subtitle = &amp;quot;Com autoridades em aviões da FAB&amp;quot;, 
+       y = &amp;quot;Qtde. de vôos&amp;quot;,
+       x = &amp;quot;Mês&amp;quot;,
+       caption = &amp;quot;Fonte: GABAER/FAB&amp;quot;)+
+  scale_x_discrete(labels = meses)+
+  scale_fill_ipsum()+
+  theme_ipsum_tw()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/quem-voa/2019-10-15-quem-voa-ana%CC%81lise-dos-vo%CC%82os-da-fab-com-autoridades-do-estado_files/figure-html/meses-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab %&amp;gt;% 
+  tabyl(orig_mes) %&amp;gt;% 
+  select(orig_mes, n) %&amp;gt;% 
+  kable(col.names = c(&amp;quot;Mês&amp;quot;, &amp;quot;Nº de vôos&amp;quot;)) %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Mês
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Nº de vôos
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+04
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+134
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+05
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+139
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+06
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+127
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+07
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+118
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+08
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+177
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+09
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+154
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;O mês de agosto aparentemente foi atípico por algum motivo que desconhecemos: 177 vôos foram realizados. Como será que os vôos foram distribuídos ao longo do mês de agosto?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab %&amp;gt;% 
+  filter(orig_mes == &amp;quot;08&amp;quot;) %&amp;gt;% 
+  ggplot(aes(x = as.numeric(orig_dia)))+
+  geom_density(fill = &amp;quot;#2d543d&amp;quot;, alpha = 0.75)+
+  theme_ipsum_tw()+
+  labs(title = &amp;quot;Vôos de Agosto&amp;quot;,
+       subtitlee = &amp;quot;Densidade da Distribuição&amp;quot;,
+       y = &amp;quot;Densidade&amp;quot;, 
+       x = &amp;quot;Dia do mês de Agosto&amp;quot;,
+       caption = &amp;quot;Fonte: GABAER/FAB&amp;quot;)+
+  scale_x_continuous(breaks =  seq(1, 31, 3))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/quem-voa/2019-10-15-quem-voa-ana%CC%81lise-dos-vo%CC%82os-da-fab-com-autoridades-do-estado_files/figure-html/voos_agosto-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;É possível perceber que os vôos da FAB foram mais utilizados a partir do dia 20, dado que a curva da densidade é maior em tal recorte temporal. É preciso saber o que houve no final de agosto para entender o aumento no fluxo de vôos.&lt;/p&gt;
+&lt;p&gt;Continuando, agora é importante saber qual autoridade mais viajou. Como a lista é enorme, vamos verificar só os 9 maiores cargos, pela quantidade de vôos realizados e procurar algum padrão nesses dados:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab %&amp;gt;% 
+  tabyl(autoridade) %&amp;gt;% 
+  top_n(9) %&amp;gt;% 
+  ggplot()+
+  geom_lollipop(aes(x = reorder(autoridade, n), y = n),
+           show.legend = F, size = 1.2, color = &amp;quot;#8fd175&amp;quot;)+
+  coord_flip()+
+  scale_color_ipsum()+
+  labs(title = &amp;quot;Quem viaja mais?&amp;quot;,
+       x = &amp;quot;&amp;quot;,
+       y = &amp;quot;Qtde. de vôos&amp;quot;,
+       caption = &amp;quot;Fonte: GABAER/FAB&amp;quot;)+
+  theme_ipsum_tw()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Selecting by percent&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/quem-voa/2019-10-15-quem-voa-ana%CC%81lise-dos-vo%CC%82os-da-fab-com-autoridades-do-estado_files/figure-html/voos_auths-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;A partir do gráfico acima, podemos perceber que Rodrigo Maia (DEM) é a autoridade que mais viaja em vôos da FAB, na figura de Presidente da Câmara dos Deputados do Brasil.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab %&amp;gt;% 
+  filter(autoridade == &amp;quot;Presidente da Câmara dos Deputados&amp;quot;) %&amp;gt;% 
+  tabyl(origem) %&amp;gt;% 
+  filter(n &amp;gt;= 1) %&amp;gt;% 
+  arrange(-n) %&amp;gt;% 
+  head(15) %&amp;gt;% 
+  ggplot(aes(x = reorder(origem, n), y  = n))+
+  geom_lollipop(size = 1.3, color = &amp;quot;steelblue&amp;quot;)+
+  coord_flip()+
+  theme_ipsum_tw()+
+  labs(title  = &amp;quot;Vôos de Rodrigo Maia&amp;quot;,
+       x = &amp;quot;&amp;quot;,
+       y = &amp;quot;Qtde. de Vôos&amp;quot;,
+       caption  = &amp;quot;Fonte: GABAER/FAB&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/quem-voa/2019-10-15-quem-voa-ana%CC%81lise-dos-vo%CC%82os-da-fab-com-autoridades-do-estado_files/figure-html/voos_rodmaia-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Acima, é notável que Brasília é o principal destino de Rodrigo Maia entre abril e setembro de 2019, e o aeroporto de Congonhas é o segundo destino. Isso seria de se estranhar, dado o fato de que Rodrigo Maia mora no Rio de Janeiro, estado pelo qual é deputado. Entretanto, se somarmos os dois aeroportos do Rio (Santos Dumont e Galeão), percebemos que o número de saídas do Rio é superior ao número de saídas de São Paulo: enquanto 27 vôos são originados em São Paulo (Congonhas + Guarulhos), do Rio, se somarmos os dois aeroportos, teremos 28 vôos.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab %&amp;gt;% 
+  filter(autoridade == &amp;quot;Presidente da Câmara dos Deputados&amp;quot;) %&amp;gt;% 
+  tabyl(origem) %&amp;gt;% 
+  arrange(-n) %&amp;gt;% 
+  head(5) %&amp;gt;% 
+  select(origem, n) %&amp;gt;% 
+  kable(col.names = c(&amp;quot;Origem&amp;quot;,  &amp;quot;Nº de vôos&amp;quot;)) %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Origem
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Nº de vôos
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Brasília
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+50
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+São Paulo (Congonhas)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Rio de Janeiro (Santos Dumont)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Rio de Janeiro (Galeão)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Guarulhos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Uma outra variável oferecida no banco da FAB é a variável denominada &lt;code&gt;motivo&lt;/code&gt;, onde estão listados o que as autoridades que voaram alegaram como motivação para tal.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab %&amp;gt;% 
+   mutate(motivo = ifelse(motivo == &amp;quot;Segurança/Serviço&amp;quot;, &amp;quot;Serviço/Segurança&amp;quot;, 
+                          as.character(motivo)),
+          motivo = ifelse(motivo == &amp;quot;Serviço/Serviço&amp;quot;, &amp;quot;Serviço&amp;quot;, as.character(motivo)),
+          motivo = ifelse(motivo == &amp;quot;Serviço/ Segurança&amp;quot;, &amp;quot;Serviço/Segurança&amp;quot;, as.character(motivo))) %&amp;gt;% 
+  tabyl(motivo) %&amp;gt;% 
+  ggplot(aes(x = reorder(motivo, -n), y  = n))+
+  geom_col(fill = &amp;quot;#c9d175&amp;quot;)+
+  #coord_flip()+
+  geom_label(aes(label  = n), vjust = -0.1, size = 3.5)+
+  theme_ipsum_tw()+
+  labs(title  = &amp;quot;Motivos de viagem&amp;quot;,
+       subtitle  = &amp;quot;Segundo autoridades em vôos da FAB&amp;quot;,
+       x = &amp;quot;Motivo&amp;quot;,
+       y = &amp;quot;Nº de vôos&amp;quot;,
+       caption = &amp;quot;Fonte: GABAER/FAB&amp;quot;)+
+  ylim(0, 800)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/quem-voa/2019-10-15-quem-voa-ana%CC%81lise-dos-vo%CC%82os-da-fab-com-autoridades-do-estado_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Como podemos ver, poucos vôos são efetivamente para a residência da autoridade, e a maioria é em serviço, cerca de 740 vôos até então. Percebemos que existiu uma emergência médica, uma de segurança e 26 casos de residência. Vamos analisar:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab %&amp;gt;% 
+  filter(motivo == &amp;quot;Emergência Médica&amp;quot; | motivo == &amp;quot;Segurança&amp;quot;) %&amp;gt;% 
+  select(autoridade, orig_dia, orig_mes, origem, destino, motivo) %&amp;gt;% 
+  kable(col.names = c(&amp;quot;Autoridade&amp;quot;, &amp;quot;Dia&amp;quot;, &amp;quot;Mês&amp;quot;, &amp;quot;Origem&amp;quot;, &amp;quot;Destino&amp;quot;, &amp;quot;Motivo&amp;quot;)) %&amp;gt;% kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Autoridade
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Dia
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Mês
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Origem
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Destino
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Motivo
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Ministro do Meio Ambiente
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+28
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+08
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Brasília
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+São Paulo (Congonhas)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Emergência Médica
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Ministro da Economia
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+09
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+09
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Rio de Janeiro (Santos Dumont)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Brasília
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Segurança
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Ou seja, Ricardo Salles sofreu uma emergência médica (e ficou hospitalizado), enquanto Paulo Guedes, por motivos de segurança, no dia 09/09/2019, foi do Rio até Brasília.&lt;/p&gt;
+&lt;p&gt;E quem usa os vôos da FAB para ir para casa? O presidente da Câmara dos Deputados, Rodrigo Maia:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab %&amp;gt;% 
+  mutate(autoridade = as.character(autoridade)) %&amp;gt;% 
+  filter(motivo == &amp;quot;Residência&amp;quot;) %&amp;gt;% 
+  tabyl(autoridade) %&amp;gt;% 
+  select(autoridade, n) %&amp;gt;% 
+  kable(col.names = c(&amp;quot;Autoridade&amp;quot;, &amp;quot;Nº de vôos para casa&amp;quot;)) %&amp;gt;% 
+  kable_styling(bootstrap_options = c(&amp;quot;hover&amp;quot;, &amp;quot;condensed&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table table-hover table-condensed&#34; style=&#34;margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Autoridade
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Nº de vôos para casa
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Presidente da Câmara dos Deputados
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+26
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fab %&amp;gt;% 
+  filter(autoridade == &amp;quot;Presidente da Câmara dos Deputados&amp;quot;,
+         motivo == &amp;quot;Residência&amp;quot;) %&amp;gt;% 
+  ggplot(aes(x = orig_mes, y = orig_dia, color = origem))+
+  geom_point(size = 2)+
+  theme_ipsum_tw()+
+  theme(legend.position = &amp;quot;bottom&amp;quot;)+
+  labs(title = &amp;quot;Quando Rodrigo Maia foi pra casa&amp;quot;,
+       subtitle  = &amp;quot;Dia e mês de cada vôo do deputado com motivo residencial&amp;quot;,
+       x = &amp;quot;Mês&amp;quot;,
+       y  = &amp;quot;Dia&amp;quot;, 
+       color = &amp;quot;Origem&amp;quot;,
+       caption = &amp;quot;Fonte: GABAER/FAB&amp;quot;)+
+  scale_color_ipsum()+
+  scale_x_discrete(labels = meses)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/quem-voa/2019-10-15-quem-voa-ana%CC%81lise-dos-vo%CC%82os-da-fab-com-autoridades-do-estado_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Bom, por hoje é só! Enquanto o banco de dados da FAB for disponibilizado e atualizado, manterei esse arquivo em dia. A principal dica é: acessem o portal de &lt;a href=&#34;dados.gov.br&#34;&gt;Dados Abertos do Brasil&lt;/a&gt; e analisem as informações lá disponibilizadas.&lt;/p&gt;
+&lt;p&gt;Qualquer dúvida, correção ou sugestão pode ser encaminhada para &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Legislativo versus Judiciário? O caso da cláusula de desempenho</title>
+      <link>https://mateuspestana.github.io/publication/legislativo-versus-judiciario-o-caso-da-clausula-de-desempenho/</link>
+      <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/publication/legislativo-versus-judiciario-o-caso-da-clausula-de-desempenho/</guid>
+      <description>
+&lt;script src=&#34;2019-10-24-legislativo-versus-judiciário-o-caso-da-cláusula-de-desempenho_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Artigo publicado na Revista Debates, da UFRGS, v. 8, n. 3 (2014), Dossiê “Instituições Judiciais e Política na América Latina”.&lt;/p&gt;
+&lt;div id=&#34;resumo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Resumo&lt;/h3&gt;
+&lt;p&gt;As relações entre os poderes tendem a ser conflituosas. Os arranjos institucionais foram construídos para que os poderes se controlassem mutuamente. Desde 1988, o Judiciário vem interferindo e tomando decisões em casos que impactam nas regras eleitorais e partidárias no Brasil, causando desconforto aos políticos. Um caso foi a Declaração de Inconstitucionalidade da cláusula de desempenho, definida no artigo 13 da Lei 9096/95. O objetivo do artigo é investigar as relações entre o Judiciário e o Legislativo no Brasil pós-1988, especialmente a tramitação do PL 1670/1989 que se tornou a Lei 9096/1995, e de que maneira ocorreu a interferência do Judiciário na matéria. Realizamos uma pesquisa bibliográfica sobre o tema e um levantamento de informações sobre a tramitação da lei e do julgamento das Ações Diretas de Inconstitucionalidade (ADIs) nos sites da Câmara, do Senado e do Supremo Tribunal Federal. Nossas conclusões indicam que não existe grave conflito entre os poderes, apenas um diálogo institucional importante para a consolidação da democracia.&lt;/p&gt;
+&lt;div id=&#34;palavras-chave&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Palavras-chave&lt;/h4&gt;
+&lt;p&gt;Legislativo; Judiciário; Relações; Poderes; Conflito; Cooperação.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;texto-completo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Texto completo&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://mateuspestana.github.io/files/debates_martins_munhoz_pestana.pdf&#34;&gt;PDF&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;disponível-em&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Disponível em&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.seer.ufrgs.br/debates/article/viewFile/49636/32323&#34; class=&#34;uri&#34;&gt;https://www.seer.ufrgs.br/debates/article/viewFile/49636/32323&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

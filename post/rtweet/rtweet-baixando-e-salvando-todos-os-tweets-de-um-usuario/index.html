@@ -1,0 +1,1484 @@
+<!DOCTYPE html><html lang="pt" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Mateus Cavalcanti Pestana" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Vivemos em um mundo onde, desde sempre, informação significa poder. Possuir determinados livros, dominar certos conhecimentos, frequentar cursos ou universidades específica, tudo isso leva a um certo status na sociedade." />
+
+  
+  <link rel="alternate" hreflang="pt" href="https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.003d2be57501b5669ca58ef75468ece2.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150193464-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-150193464-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Mateus C. Pestana" />
+  <meta property="og:url" content="https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/" />
+  <meta property="og:title" content="Rtweet: baixando e  salvando todos os tweets de um usuário | Mateus C. Pestana" />
+  <meta property="og:description" content="Vivemos em um mundo onde, desde sempre, informação significa poder. Possuir determinados livros, dominar certos conhecimentos, frequentar cursos ou universidades específica, tudo isso leva a um certo status na sociedade." /><meta property="og:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="pt" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-11-12T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-11-12T20:04:51-03:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/"
+  },
+  "headline": "Rtweet: baixando e  salvando todos os tweets de um usuário",
+  
+  "datePublished": "2019-11-12T00:00:00Z",
+  "dateModified": "2019-11-12T20:04:51-03:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Mateus Cavalcanti Pestana"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mateus C. Pestana",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Vivemos em um mundo onde, desde sempre, informação significa poder. Possuir determinados livros, dominar certos conhecimentos, frequentar cursos ou universidades específica, tudo isso leva a um certo status na sociedade."
+}
+</script>
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://gist.githubusercontent.com/jeremyyeo/03930a03108330d5579fe88b79604c41/raw/2aa8e8a614dbc47c9af81156d0663d3e2e4bdfc6/htmlwidgets.js"></script>
+
+  <title>Rtweet: baixando e  salvando todos os tweets de um usuário | Mateus C. Pestana</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="b90763fd91f1f93b2ab2ecaaac33a0b2" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.9f8405b7756f5e178a738a09c302f8b3.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Pesquisar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Pesquisar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Pesquisar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Alterar navegação">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Mateus C. Pestana</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Biografia</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#portfolio"><span>Portfolio</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publicações</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cursos"><span>Cursos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contato</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/media/resume.pdf"><span>Currículo</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Pesquisar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Rtweet: baixando e  salvando todos os tweets de um usuário</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      <a href="/author/mateus-cavalcanti-pestana/">Mateus Cavalcanti Pestana</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Última atualização em
+      
+    
+    12 de Nov, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 minutos de leitura
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/ciencia-de-dados/">ciência de dados</a>, <a href="/category/r/">r</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="2019-11-12-rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuário_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Vivemos em um mundo onde, desde sempre, informação significa poder. Possuir determinados livros, dominar certos conhecimentos, frequentar cursos ou universidades específica, tudo isso leva a um certo status na sociedade. Na obra <strong>1984</strong>, de George Orwell, temos o clássico exemplo do que isso representa: o partido <em>IngSoc</em>, a partir do Ministério da Verdade, controla informações e altera a história, ao apagar notícias, livros e acontecimentos do passado.</p>
+<p>Uma outro exemplo, agora na vida real, foi o da Biblioteca de Alexandria, no Egito Ptolemaico. Fundada no século III a.C., possuía as grandes obras da humanidade em cerca de 700 mil papiros. Com o tempo, foi sendo alvo de ataques diretos e de descuido do poder público, com diversos saques e incêndios, sobrevivendo até 390 d.C., quando o Patriarca Teófilo I de Alexandria ordenou a sua destruição, junto com diversos outros templos pagãos. É possível, em parte, relacionar a entrada da Europa na Idade das Trevas à destruição da biblioteca: sem o conhecimento, não haverá questionamento ou críticas por parte de opositores ao regime dominante.</p>
+<p>O mesmot ambém aconteceu no Renascimento, quando Girolamo Savonarola, padre florentino, criou as chamadas “fogueiras das vaidades”, onde queimava de obras de arte a livros, afirmando serem vaidades humanas. Adolf Hitler fez o mesmo, com o <em>“Bücherverbrennung”</em>, ou “queima de livros”, em alemão. Toda obra que foi considerada um conteúdo em desacordo com a ideologia nazifascista, foi queimada em 1933 em praça pública. Cerca de 20 mil livros foram perdidos.</p>
+<p>Atualmente, parece fácil apagar informações: deletar perfis de Instagram, Facebook e Twitter é fácil como (literalmente) apertar um botão. Assim, parece que provas provas podem ser completamente deletadas com pouco esforço. Todavia, não é bem assim: no caso de crimes cometidos, por exemplo, as empresas podem ser solicitadas pela justiça a entregarem os dados que, mesmo deletados pelo usuário, devem permanecer nos bancos de dados da rede responsável. É possível também utilizar o próprio cache do Google (que é temporário).</p>
+<p>Uma outra forma de manter esses dados é fazendo o download dos mesmos com certa frequência, e salvando em um arquivo no computador, sendo esse o foco do artigo de hoje, que será dedicado ao Twitter. Assim, será possível acompanhar seu político favorito, por exemplo, e salvar absolutamente tudo que ele posta. Dessa forma, caso ele delete suas redes sociais, você possui um <em>backup</em> dos dados.</p>
+<p>Para fins de testes, vamos utilizar a conta do twitter de <a href="https://twitter.com/hadleywickham">Hadley Wickham</a>, criador do RStudio. Utilizaremos também os pacotes <em>tidyverse</em>, como sempre, <em>rio</em>, que serve para importar/exportar dados em todos os formatos possíveis, e o <em>rtweet</em>, que nos permite baixar dados do Twitter através da API.</p>
+<p>O <a href="https://rtweet.info/index.html">rtweet</a> pode ser baixado usando a função <code>install.packages("rtweet")</code> ou então carregado pelo <code>pacman::p_load()</code>, como costumo fazer. Lembrando, quando o pacote não estiver instalado, o pacman instala automaticamente e o carrega, possibilitando o uso na hora.</p>
+<p>O primeiro passo, então, é carregar os pacotes que usaremos:</p>
+<pre class="r"><code>pacman::p_load(tidyverse, rtweet, rio)</code></pre>
+<p>O <code>rtweet</code> possui, dentre suas muitas funções, a <code>get_timeline()</code>, que baixa os tweets de uma determinada conta. Contudo, existe uma limitação: o <code>get_timeline()</code> só consegue baixar no máximo os 3200 tweets mais recentes. Todos os outros não podem ser baixados. Por isso, é necessário que haja um acompanhamento da conta, de tempos em tempos, para que todos os tweets passem a ser salvos. É fácil entender isso como um backup do próprio computador: não é possível salvar muito para trás, mas é possível fazer backups constantemente para sempre ter uma versão atualizada.</p>
+<p>Para baixar os <em>tweets</em> da conta do <a href="https://twitter.com/hadleywickham">Hadley Wickham</a>, fazemos o seguinte:</p>
+<pre class="r"><code>wickham &lt;- get_timeline(&quot;hadleywickham&quot;, n = 3200)</code></pre>
+<p>Explicando o código acima, a função baixou os <em>tweets</em> da conta do Hadley (para identificar, basta o usuário, sem a @!), e <code>n = 3200</code> significa: <em>baixe todos os últimos 3200 tweets</em>. Números acima disso não funcionarão.</p>
+<p>Obs: é importante dizer que, se é a primeira vez que você usa o rtweet, uma página se abrirá, pedindo para fazer login e autorizar a aplicação no seu Twitter. Esse passo é necessário para que os dados possam ser acessados e baixados. A autorização funcionará somente em sua conta no seu computador, mantendo seus dados do twitter em segurança.</p>
+<p>Vamos dar uma olhada no banco:</p>
+<pre class="r"><code>glimpse(wickham)</code></pre>
+<pre><code>## Rows: 3,196
+## Columns: 90
+## $ user_id                 &lt;chr&gt; &quot;69133574&quot;, &quot;69133574&quot;, &quot;69133574&quot;, &quot;69133574&quot;…
+## $ status_id               &lt;chr&gt; &quot;1366844045029486595&quot;, &quot;1366843610516369409&quot;, …
+## $ created_at              &lt;dttm&gt; 2021-03-02 20:13:09, 2021-03-02 20:11:26, 202…
+## $ screen_name             &lt;chr&gt; &quot;hadleywickham&quot;, &quot;hadleywickham&quot;, &quot;hadleywickh…
+## $ text                    &lt;chr&gt; &quot;Watch Sharla&#39;s 💯 talk about reproducible exam…
+## $ source                  &lt;chr&gt; &quot;Twitter Web App&quot;, &quot;Twitter Web App&quot;, &quot;Twitter…
+## $ display_text_width      &lt;dbl&gt; 116, 35, 3, 140, 57, 143, 17, 84, 121, 140, 14…
+## $ reply_to_status_id      &lt;chr&gt; NA, &quot;1366835687593508875&quot;, &quot;136684052474168934…
+## $ reply_to_user_id        &lt;chr&gt; NA, &quot;43186378&quot;, &quot;2440258777&quot;, NA, &quot;45565875&quot;, …
+## $ reply_to_screen_name    &lt;chr&gt; NA, &quot;CMastication&quot;, &quot;kierisi&quot;, NA, &quot;emilmalta&quot;…
+## $ is_quote                &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
+## $ is_retweet              &lt;lgl&gt; TRUE, FALSE, FALSE, TRUE, FALSE, TRUE, FALSE, …
+## $ favorite_count          &lt;int&gt; 0, 2, 5, 0, 2, 0, 19, 234, 0, 0, 0, 0, 0, 0, 1…
+## $ retweet_count           &lt;int&gt; 6, 0, 0, 19, 0, 23, 0, 5, 653, 30, 59, 23, 65,…
+## $ quote_count             &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ reply_count             &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ hashtags                &lt;list&gt; [NA, NA, NA, NA, NA, &quot;rstats&quot;, NA, &quot;rstats&quot;, …
+## $ symbols                 &lt;list&gt; [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ urls_url                &lt;list&gt; [&quot;twitter.com/sharlagelfand/…&quot;, NA, NA, NA, N…
+## $ urls_t.co               &lt;list&gt; [&quot;https://t.co/D1iUlXKyTX&quot;, NA, NA, NA, NA, N…
+## $ urls_expanded_url       &lt;list&gt; [&quot;https://twitter.com/sharlagelfand/status/13…
+## $ media_url               &lt;list&gt; [&quot;http://pbs.twimg.com/media/EvcWmixU4AEgX3v.…
+## $ media_t.co              &lt;list&gt; [&quot;https://t.co/XLeHCJ0kIV&quot;, NA, NA, NA, NA, N…
+## $ media_expanded_url      &lt;list&gt; [&quot;https://twitter.com/juliasilge/status/13665…
+## $ media_type              &lt;list&gt; [&quot;photo&quot;, NA, NA, NA, NA, NA, &quot;photo&quot;, &quot;photo…
+## $ ext_media_url           &lt;list&gt; [&quot;http://pbs.twimg.com/media/EvcWmixU4AEgX3v.…
+## $ ext_media_t.co          &lt;list&gt; [&quot;https://t.co/XLeHCJ0kIV&quot;, NA, NA, NA, NA, N…
+## $ ext_media_expanded_url  &lt;list&gt; [&quot;https://twitter.com/juliasilge/status/13665…
+## $ ext_media_type          &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ mentions_user_id        &lt;list&gt; [&quot;13074042&quot;, &quot;43186378&quot;, &quot;2440258777&quot;, &quot;97395…
+## $ mentions_screen_name    &lt;list&gt; [&quot;juliasilge&quot;, &quot;CMastication&quot;, &quot;kierisi&quot;, &quot;al…
+## $ lang                    &lt;chr&gt; &quot;en&quot;, &quot;en&quot;, &quot;und&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en&quot;, &quot;en…
+## $ quoted_status_id        &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_text             &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_created_at       &lt;dttm&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ quoted_source           &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_favorite_count   &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_retweet_count    &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_user_id          &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_screen_name      &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_name             &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_followers_count  &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_friends_count    &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_statuses_count   &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_location         &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_description      &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_verified         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ retweet_status_id       &lt;chr&gt; &quot;1366586155387342849&quot;, NA, NA, &quot;13668152182616…
+## $ retweet_text            &lt;chr&gt; &quot;Watch Sharla&#39;s 💯 talk about reproducible exam…
+## $ retweet_created_at      &lt;dttm&gt; 2021-03-02 03:08:24, NA, NA, 2021-03-02 18:18…
+## $ retweet_source          &lt;chr&gt; &quot;Twitter Web App&quot;, NA, NA, &quot;Twitter Web App&quot;, …
+## $ retweet_favorite_count  &lt;int&gt; 66, NA, NA, 99, NA, 96, NA, NA, 4680, 113, 148…
+## $ retweet_retweet_count   &lt;int&gt; 6, NA, NA, 19, NA, 23, NA, NA, 653, 30, 59, 23…
+## $ retweet_user_id         &lt;chr&gt; &quot;13074042&quot;, NA, NA, &quot;973955318987210752&quot;, NA, …
+## $ retweet_screen_name     &lt;chr&gt; &quot;juliasilge&quot;, NA, NA, &quot;allison_horst&quot;, NA, &quot;ju…
+## $ retweet_name            &lt;chr&gt; &quot;Julia Silge&quot;, NA, NA, &quot;Allison Horst&quot;, NA, &quot;J…
+## $ retweet_followers_count &lt;int&gt; 37825, NA, NA, 18580, NA, 991, NA, NA, 2841, 2…
+## $ retweet_friends_count   &lt;int&gt; 705, NA, NA, 2773, NA, 430, NA, NA, 745, 1275,…
+## $ retweet_statuses_count  &lt;int&gt; 22380, NA, NA, 3026, NA, 1546, NA, NA, 27524, …
+## $ retweet_location        &lt;chr&gt; &quot;Salt Lake City, UT&quot;, NA, NA, &quot;Chumash &amp; Paiut…
+## $ retweet_description     &lt;chr&gt; &quot;Data science and modeling at @rstudio, #rstat…
+## $ retweet_verified        &lt;lgl&gt; FALSE, NA, NA, FALSE, NA, FALSE, NA, NA, FALSE…
+## $ place_url               &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ place_name              &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ place_full_name         &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ place_type              &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ country                 &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ country_code            &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ geo_coords              &lt;list&gt; [&lt;NA, NA&gt;, &lt;NA, NA&gt;, &lt;NA, NA&gt;, &lt;NA, NA&gt;, &lt;NA,…
+## $ coords_coords           &lt;list&gt; [&lt;NA, NA&gt;, &lt;NA, NA&gt;, &lt;NA, NA&gt;, &lt;NA, NA&gt;, &lt;NA,…
+## $ bbox_coords             &lt;list&gt; [&lt;NA, NA, NA, NA, NA, NA, NA, NA&gt;, &lt;NA, NA, N…
+## $ status_url              &lt;chr&gt; &quot;https://twitter.com/hadleywickham/status/1366…
+## $ name                    &lt;chr&gt; &quot;Hadley Wickham&quot;, &quot;Hadley Wickham&quot;, &quot;Hadley Wi…
+## $ location                &lt;chr&gt; &quot;Houston, TX&quot;, &quot;Houston, TX&quot;, &quot;Houston, TX&quot;, &quot;…
+## $ description             &lt;chr&gt; &quot;R, data, visualisation, 🐕, 🍸, 🌈. He/him&quot;, &quot;R,…
+## $ url                     &lt;chr&gt; &quot;https://t.co/DWqWlxbOKK&quot;, &quot;https://t.co/DWqWl…
+## $ protected               &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
+## $ followers_count         &lt;int&gt; 118051, 118051, 118051, 118051, 118051, 118051…
+## $ friends_count           &lt;int&gt; 269, 269, 269, 269, 269, 269, 269, 269, 269, 2…
+## $ listed_count            &lt;int&gt; 2969, 2969, 2969, 2969, 2969, 2969, 2969, 2969…
+## $ statuses_count          &lt;int&gt; 40635, 40635, 40635, 40635, 40635, 40635, 4063…
+## $ favourites_count        &lt;int&gt; 24169, 24169, 24169, 24169, 24169, 24169, 2416…
+## $ account_created_at      &lt;dttm&gt; 2009-08-26 23:34:46, 2009-08-26 23:34:46, 200…
+## $ verified                &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE…
+## $ profile_url             &lt;chr&gt; &quot;https://t.co/DWqWlxbOKK&quot;, &quot;https://t.co/DWqWl…
+## $ profile_expanded_url    &lt;chr&gt; &quot;http://hadley.nz&quot;, &quot;http://hadley.nz&quot;, &quot;http:…
+## $ account_lang            &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ profile_banner_url      &lt;chr&gt; &quot;https://pbs.twimg.com/profile_banners/6913357…
+## $ profile_background_url  &lt;chr&gt; &quot;http://abs.twimg.com/images/themes/theme15/bg…
+## $ profile_image_url       &lt;chr&gt; &quot;http://pbs.twimg.com/profile_images/905186381…</code></pre>
+<p>Temos 90 variáveis e 3198 variáveis. Às vezes, o <code>rtweet</code> não baixa completamente os 3200, por erros de internet, erros do próprio Twitter ou então pelo fato de não existirem. No caso do Hadley, ele possui bem mais de 3200, logo, ou foi a internet ou foi a API. De qualquer forma, apenas 4 <em>tweets</em> não foram baixados, o que representa apenas <strong>0,125%</strong> do total.</p>
+<p>Para salvar esse arquivo em outros formatos, basta executar:</p>
+<pre class="r"><code>export(wickham, &quot;wickham.xlsx&quot;) # Para salvar em Excel
+export(wickham, &quot;wickham.csv&quot;) # Para  salvar em CSV
+export(wickham, &quot;wickham.sav&quot;) # Para salvar no formato do SPSS
+export(wickham, &quot;wickham.dta&quot;) # Para salvar no formato do Stata
+export(wickham, &quot;wickham.json&quot;) # Para salvar em JSON
+# Dentre outros formatos...
+
+# E para salvar em .RData, o formato padrão do R
+save(wickham, &quot;wickham.RData&quot;)</code></pre>
+<p>Ok, mas e agora? Se a conta que acompanho posta <em>tweets</em> constantemente, como juntar esses ao banco?</p>
+<p>É preciso executar a função <code>get_timelines()</code>, de tempos em tempos (a depender da frequência de <em>tweets</em>), e depois somar ao banco original usando a função <code>bind_rows()</code> do * dplyr*. Lembre-se: salve em um objeto com um nome <strong>diferente</strong> do original, para que os dados não sejam sobreescritos. É importante também lembrar que a função só funciona se todas as colunas (variáveis) forem as mesmas, ou seja, não é interessante remover variáveis</p>
+<pre class="r"><code>wickham_update &lt;- get_timeline(&quot;hadleywickham&quot;, n = 3200)
+
+wickham &lt;- bind_rows(wickham, wickham_update)</code></pre>
+<p>Entretanto, se a conta tem uma frequência irregular e, por isso, é importante baixar em um intervalo pequeno, muitos <em>tweets</em> virão repetidos, pois já foram baixados antes. Para evitar isso, utilizamos a função <code>distinct()</code>, também do <em>dplyr</em>, que filtra apenas pelos valores únicos, removendo o que for repetido. A variável que representa valores únicos de <em>tweets</em> no banco é a <strong>status_id</strong>, que é o número único de todo tweet. Logo, se existirem dois números iguais no <strong>status_id</strong>, se referem à <em>tweets</em> iguais. Adicionando, com o pipe <code>%&gt;%</code> a função <code>distinct()</code>, conseguimos manter somente os <em>tweets</em> únicos:</p>
+<pre class="r"><code>wickham &lt;- bind_rows(wickham, wickham_update) %&gt;% 
+  distinct(status_id, .keep_all = T) </code></pre>
+<p>O argumento <code>.keep_all = T</code> é <strong>essencial</strong> na função: ela mantém todas as variáveis do banco. Sem ela, todas as variáveis seriam removidas, menos <strong>status_id</strong>.</p>
+<p>No final, o código completo que deve ser executado fica bem simples, da seguinte forma:</p>
+<pre class="r"><code># Para baixar os tweets pela primeira vez
+wickham &lt;- get_timeline(&quot;hadleywickham&quot;, n = 3200)
+
+# Para atualizar esse banco
+wickham_update &lt;- get_timeline(&quot;hadleywickham&quot;, n = 3200)
+
+# Juntando o novo e o antigo, selecionando os tweets únicos e exportando para Excel
+wickham &lt;- bind_rows(wickham, wickham_update) %&gt;% 
+  distinct(status_id, .keep_all = T) 
+
+# Salvando em Excel (ou qualquer outro formato)
+export(wickham, &quot;wickham.xlsx&quot;)</code></pre>
+<p>Bom, por hoje é só! Assim, você pode salvar os <em>tweets</em> de uma determinada conta. Mesmo que deletada, os <em>tweets</em> continuarão acessíveis do seu computador, e podem (e devem) ser compartilhados, no caso de pessoas públicas com responsabilidade política e social. Futuramente, utilizarei o <code>rtweet</code> para explorar mais os dados do Twitter, como <em>hashtags</em>, usuários e frequência de <em>tweets.</em> Qualquer dúvida, correção ou sugestão pode ser encaminhada para <a href="mailto:matheus.pestana@iesp.uerj.br" class="email">matheus.pestana@iesp.uerj.br</a></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/twitter/">twitter</a>
+  
+  <a class="badge badge-light" href="/tag/rtweet/">rtweet</a>
+  
+  <a class="badge badge-light" href="/tag/r/">r</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/&amp;text=Rtweet:%20baixando%20e%20%20salvando%20todos%20os%20tweets%20de%20um%20usu%c3%a1rio" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/&amp;t=Rtweet:%20baixando%20e%20%20salvando%20todos%20os%20tweets%20de%20um%20usu%c3%a1rio" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Rtweet:%20baixando%20e%20%20salvando%20todos%20os%20tweets%20de%20um%20usu%c3%a1rio&amp;body=https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/&amp;title=Rtweet:%20baixando%20e%20%20salvando%20todos%20os%20tweets%20de%20um%20usu%c3%a1rio" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Rtweet:%20baixando%20e%20%20salvando%20todos%20os%20tweets%20de%20um%20usu%c3%a1rio%20https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/&amp;title=Rtweet:%20baixando%20e%20%20salvando%20todos%20os%20tweets%20de%20um%20usu%c3%a1rio" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://mateuspestana.github.io"><img class="avatar mr-3 avatar-circle" src="/author/mateus-cavalcanti-pestana/avatar_hufeccfd6f9380df9b18ea9dcb1ceea097_79518_270x270_fill_q75_lanczos_center.jpg" alt="Mateus Cavalcanti Pestana"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://mateuspestana.github.io">Mateus Cavalcanti Pestana</a></h5>
+      <h6 class="card-subtitle">Doutorando e Mestre em Ciência Política</h6>
+      <p class="card-text">Interessado em ciência de dados, ciência política, política russa, impressão 3D, redes neurais e aprendizado de máquina.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:matheus.pestana@iesp.uerj.br" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/0027872463024148" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.br/citations?user=jpRDWpgAAAAJ&amp;hl=pt-BR" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0002-5388-8950" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/mateuspestana" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/resume.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionados</h3>
+    <ul>
+      
+      <li><a href="/portfolio/2021-03-02-candidaturas-religiosas/">Candidaturas Religiosas</a></li>
+      
+      <li><a href="/post/req-apis/requisicoes-em-apis-no-r/">Requisições em APIs no R</a></li>
+      
+      <li><a href="/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/">Imprimindo gráficos em 3D no R</a></li>
+      
+      <li><a href="/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/">Textmining: análise dos discursos de Getúlio Vargas</a></li>
+      
+      <li><a href="/post/mapas-moscou/mapas-no-r-parte-1-explorando-moscou/">Mapas no R parte I: explorando Moscou</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2021 Matheus C. Pestana
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.f81d0a1705048649befc8b595e455a94.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/pt/js/wowchemy.min.e74a71a7cfab89f71b427a2bd20b61f8.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

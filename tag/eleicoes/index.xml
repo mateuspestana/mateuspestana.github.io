@@ -1,0 +1,2966 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eleições | Mateus C. Pestana</title>
+    <link>https://mateuspestana.github.io/tag/eleicoes/</link>
+      <atom:link href="https://mateuspestana.github.io/tag/eleicoes/index.xml" rel="self" type="application/rss+xml" />
+    <description>eleições</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 Matheus C. Pestana</copyright><lastBuildDate>Tue, 02 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>eleições</title>
+      <link>https://mateuspestana.github.io/tag/eleicoes/</link>
+    </image>
+    
+    <item>
+      <title>Candidaturas Religiosas</title>
+      <link>https://mateuspestana.github.io/portfolio/2021-03-02-candidaturas-religiosas/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/portfolio/2021-03-02-candidaturas-religiosas/</guid>
+      <description>
+&lt;script src=&#34;https://mateuspestana.github.io/portfolio/2021-03-02-candidaturas-religiosas/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Candidaturas Religiosas é uma base de dados disponível para visualização, originada na pesquisa de Religião e Política do Instituto de Estudos da Religião (ISER). Tanto os dados, obtidos do TSE e filtrados, quanto a dashboard, foram desenvolvidos por mim, em Shiny.&lt;/p&gt;
+&lt;p&gt;O site pode ser acessado &lt;a href=&#34;http://192.241.143.217:8090/&#34;&gt;aqui&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VotaAí</title>
+      <link>https://mateuspestana.github.io/portfolio/2021-03-02-votaai/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/portfolio/2021-03-02-votaai/</guid>
+      <description>
+&lt;script src=&#34;https://mateuspestana.github.io/portfolio/2021-03-02-votaai/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;img src=&#34;featured.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;O VotaAí é uma plataforma onde programas partidários municipais podem ser analisados, visualizados e comparados. Idealizado por Dra. Nara Salles (IESP-UERJ), foi desenvolvido por mim em Shiny, utilizando pacotes como o quanteda e o ggplot2 para os gráficos.&lt;/p&gt;
+&lt;p&gt;Pode ser encontrado &lt;a href=&#34;http://64.225.91.205:8080/&#34;&gt;aqui&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Imprimindo gráficos em 3D no R</title>
+      <link>https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/</link>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/imprimindo_graficos/imprimindo-graficos-em-3d-no-r/</guid>
+      <description>
+&lt;script src=&#34;2019-11-15-imprimindo-gráficos-em-3d-no-r_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;http://hadley.nz/&#34;&gt;Hadley Wickham&lt;/a&gt;, um dos mantenedores do RStudio e criador do pacote &lt;code&gt;tidyverse&lt;/code&gt; (que engloba outros, como &lt;code&gt;dplyr&lt;/code&gt;, &lt;code&gt;ggplot&lt;/code&gt;, &lt;code&gt;forcats&lt;/code&gt;, &lt;code&gt;purrr&lt;/code&gt;, etc), escreveu um excelente livro com &lt;a href=&#34;https://twitter.com/statgarrett?lang=pt&#34;&gt;Garret Grolemund&lt;/a&gt; chamado “R for Data Science”, que pode ser encontrado gratuitamente &lt;a href=&#34;https://r4ds.had.co.nz/&#34;&gt;aqui&lt;/a&gt;. Recomendo fortemente, pois a didática é excelente, os exemplos são claros e os exercícios são desafiadores. Um fato curioso sobr o livro é que o mesmo ensina a fazer gráficos (com o &lt;code&gt;ggplot&lt;/code&gt;) &lt;strong&gt;antes&lt;/strong&gt; de ensinar todas as outras coisas, como funções, objetos, tratamento de bancos, análise exploratória e modelos.&lt;/p&gt;
+&lt;p&gt;O motivo para isso é simples: gráficos são importantíssimos pois é através deles que transmitimos informações aos que nos lêem e nos assistem. No livro, o capítulo de gráficos começa com a seguinte frase:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“O gráfico simples trouxe mais informação para a mente do analista de dados do que qualquer outro dispositivo” &lt;br&gt;
+— John Tukey&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Quanto mais claro o gráfico, mais fácil é de sermos entendidos, e isso é um princípio da ciência: se construímos algo de difícil compreensão, ninguém entende; se ninguém entende, ninguém dialoga; se ninguém dialoga, não há ciência.&lt;/p&gt;
+&lt;p&gt;Entretanto, gráficos são apelos visuais. Gráficos são dados exibidos em um plano, com diversas informações numéricas representadas, que possibilitam comparações dentro daquele plano. Cada eixo de um gráfico é uma dimensão, ou seja, guardam uma escala ou informação. Outras dimensões podem existir em um mesmo gráfico. Em um gráfico de dispersão, por exemplo, o tamanho de cada ponto pode significar um terceiro dado, assim como a cor, podendo representar grupos ou casos similares.&lt;/p&gt;
+&lt;p&gt;Um claro exemplo é o abaixo: um gráfico de hexágonos, feito a partir dos dados das 96.871 seções eleitorais da Rússia, nas eleições para o legislativo em 2016. No eixo X, temos o comparecimento, em porcentagem; no eixo Y, a porcentagem de votos no partido Rússia Unida, que possui maioria absoluta na &lt;em&gt;Duma&lt;/em&gt; (o parlamento russo), e a cor representa o número de seções naquele caso, indo de de um roxo escuro, que indica poucas seções, a um amarelo claro, indicando muitas.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pacman::p_load(tidyverse, rayshader, hrbrthemes, viridis, hexbin)
+
+duma2016 %&amp;gt;%
+  mutate(pct_edinayarossiya = p_edinayarossiya/(ncedval + ncedinval),
+         compa = (ncedval+ncedinval)/nelelist) %&amp;gt;%
+  ggplot(aes(x = compa, y = pct_edinayarossiya))+
+  geom_hex(bins = 40, color = &amp;quot;black&amp;quot;, size = 0.5)+
+  scale_y_percent()+
+  scale_x_percent()+
+  labs(x = &amp;quot;Comparecimento&amp;quot;, y = &amp;quot;% de votos no RU&amp;quot;)+
+  scale_fill_viridis_c()+
+  theme_ipsum_tw()+
+  labs(title  = &amp;quot;Comparecimento x voto no Rússia Unida&amp;quot;,
+       fill = &amp;quot;Nº de seções&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/imprimindo_graficos/2019-11-15-imprimindo-gra%CC%81ficos-em-3d-no-r_files/figure-html/grafico_2d-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;No gráfico acima, temos duas regiões esverdeadas-amareladas: entre 25% e 50% dos ambos os eixos, e próximo de 100% nos dois eixos. O que isso significa? Significa que existiram muitas seções cujo comparecimento (ou seja, a proporção de pessoas que foram votar) ficou entre 25%-50% e que os votos para o partido Rússia Unida ficaram também entre 25%-50%, e também muitas seções cujo comparecimento foi próximo à 100% e o voto no partido também, ou seja, alta mobilização para que seções inteiras votassem no RU. Percebemos também a oposição, já que temos algumas seções com 100% de comparecimento mas pouco voto no Rússia Unida. Todavia, essas seções são poucas e continuam na cor mais escura da escala.&lt;/p&gt;
+&lt;p&gt;Definitivamente, esse não é o mais fácil dos gráficos, e mesmo explicando, é preciso dedicar alguns segundos ou minutos observando-o para compreendê-lo por completo. Mas e se a pessoa para quem queremos transmitir essa informação não for capaz de enxergar, como pessoas com deficiência visual? É justo que elas fiquem excluídas do processo de construção da ciência, ou mesmo de uma exposição simples e descomprometida de dados, como um relatório de uma empresa ou um gráfico de um jornal?&lt;/p&gt;
+&lt;p&gt;Pensei sobre isso ao perceber que, cada vez mais, museus oferecem experiências táteis para que pessoas com deficiência visual possam se entreter e aproveitar as exposições. Em uma recente exposição que fui, chamada &lt;a href=&#34;http://culturabancodobrasil.com.br/portal/egito-antigo-do-cotidiano-a-eternidade/&#34;&gt;“Antigo Egito: do cotidiano à eternidade”&lt;/a&gt;, exibida no &lt;a href=&#34;http://culturabancodobrasil.com.br/portal/rio-de-janeiro/&#34;&gt;Centro Cultural do Banco do Brasil no Rio de Janeiro&lt;/a&gt;, diversas peças exibidas possuíam uma variante que permitia o toque: a mesma peça, em um tamanho reduzido, presa na parede, o que possibilitava a inclusão e tornava a exposição mais democrática.&lt;/p&gt;
+&lt;p&gt;Olhando para aquilo, pensei: e se construíssemos gráficos em três dimensões, imprimindo em uma impressora 3D, para que eles pudessem ser tocados e compreendidos por aqueles que não podem enxergá-lo?&lt;/p&gt;
+&lt;p&gt;Depois de uma extensa pesquisa, descobri um pacote para o R chamado &lt;a href=&#34;https://github.com/tylermorganwall/rayshader/&#34;&gt;&lt;em&gt;rayshader&lt;/em&gt;&lt;/a&gt;, que foi criado inicialmente com o intuito de criar mapas topográficos em 3D, com luz e sombra, além da possibilidade de rotação. O mesmo gráfico acima é exibido da seguinte forma, usando af função &lt;code&gt;plot_gg()&lt;/code&gt; e os ajustes de câmera com a função &lt;code&gt;render_camera()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;grafico &amp;lt;- duma2016 %&amp;gt;%
+  mutate(pct_edinayarossiya = p_edinayarossiya/(ncedval + ncedinval),
+         compa = (ncedval+ncedinval)/nelelist) %&amp;gt;%
+  ggplot(aes(x = compa, 
+             y = pct_edinayarossiya))+
+  geom_hex(bins = 40, 
+           color = &amp;quot;black&amp;quot;, 
+           size = 0.5)+
+  scale_y_percent()+
+  scale_x_percent()+
+  labs(x = &amp;quot;Comparecimento&amp;quot;, 
+       y = &amp;quot;% de votos no RU&amp;quot;)+
+  scale_fill_viridis_c()+
+  labs(fill = &amp;quot;Seções&amp;quot;)
+
+plot_gg(grafico)
+render_camera(fov = 70, zoom = 0.5, theta = 30, phi = 32)
+render_snapshot(clear = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/imprimindo_graficos/2019-11-15-imprimindo-gra%CC%81ficos-em-3d-no-r_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;O passo que falta, agora, para torná-lo definitivamente mais acessível, é transformá-lo em um modelo 3D. O &lt;code&gt;rayshader&lt;/code&gt; possui a função &lt;code&gt;save_3dprint()&lt;/code&gt;, que permite exportar o modelo para um arquivo &lt;strong&gt;&lt;em&gt;.stl&lt;/em&gt;&lt;/strong&gt; , de &lt;em&gt;stereolithography&lt;/em&gt;, que também pode ser processado por uma fatiadora e direcionado para uma impressora 3D, sendo esse o objetivo: imprimir os gráficos em 3D. Para isso, utilizamos o comando abaixo para gerar o &lt;strong&gt;&lt;em&gt;.stl&lt;/em&gt;&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;save_3dprint(filename = &amp;quot;graf_russia.stl&amp;quot;, remove_extras = T, clear = T)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;E após isso, processamos o arquivo em uma fatiadora. No caso, eu utilizo o software Flashprint, que dialoga com as impressoras Flashforge. O arquivo gerado, ao ser processado pela fatiadora, fica da seguinte forma:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/img/graf_russia_fatiadora.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Depois de impresso (levou em torno de 47 minutos, como podem ver na imagem acima, e gastou cerca de 2,63m de filamento PLA – ácido polilático, um polímero), temos o seguinte resultado:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/img/graf_russia_print.jpeg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;É possível perceber que no modelo redimensionado, alguns detalhes se perderam, mas ainda assim, facilita para as pessoas que possuem alguma deficiência visual de entenderem o tipo de informação que queremos passar.&lt;/p&gt;
+&lt;p&gt;Impressoras 3D estão cada vez mais baratas, assim como o material usado para a impressão. De qualquer forma, para quem precisar fazer um uso pontual, é possível imprimir modelos em &lt;strong&gt;&lt;em&gt;.stl&lt;/em&gt;&lt;/strong&gt; em diversas lojas e fornecedores, de maneira rápida e fácil.&lt;/p&gt;
+&lt;p&gt;Certamente, não haverá uma rápida popularização do método, porém, provar que é possível (e pelo R) já é um grande avanço em direção à acessibilidade e à inclusão, tão necessários não só na ciência, como em todos os campos da sociedade. É importante também colocar tais modelos impressos para consulta de deficientes visuais para que sejam testados por eles, adequando-os às necessidades percebidas, seja em tamanho, precisão ou organização da impressão.&lt;/p&gt;
+&lt;p&gt;Bom, por hoje é só. Agradeço principalmente ao criador do pacote &lt;code&gt;rayshader&lt;/code&gt;, &lt;a href=&#34;https://twitter.com/tylermorganwall&#34;&gt;Tyler Morgan-Wall&lt;/a&gt;, PhD em Física na Universidade John Hopkins. Qualquer dúvida, correção ou sugestão pode ser enviada para o meu email &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sobre a suposta fraude eleitoral nas eleições bolivianas</title>
+      <link>https://mateuspestana.github.io/post/fraude_bolivia/sobre-a-suposta-fraude-eleitoral-nas-eleicoes-bolivianas/</link>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/fraude_bolivia/sobre-a-suposta-fraude-eleitoral-nas-eleicoes-bolivianas/</guid>
+      <description>
+&lt;script src=&#34;2019-11-14-sobre-a-suposta-fraude-eleitoral-nas-eleições-bolivianas_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Antes do término da apuração das eleições na Bolívia, a OEA declarou em seu relatório (disponível aqui: &lt;a href=&#34;https://www.oas.org/en/media_center/press_release.asp?sCodigo=E-099/19&#34; class=&#34;uri&#34;&gt;https://www.oas.org/en/media_center/press_release.asp?sCodigo=E-099/19&lt;/a&gt;) que haveriam indícios de que “algo errado havia acontecido e que não poderiam assegurar a integridade do resultado”, devido às irregularidades encontradas pelos auditores da organização. Evo Morales prontamente afirmou que convocaria novamente as eleições, mas ainda assim as Forças Armadas do país obrigaram a sua renúncia, sendo esse um claro golpe para tomar o poder.&lt;/p&gt;
+&lt;p&gt;Nas redes sociais, principalmente no Twitter, muitos estavam condenando o golpe contra Evo, mas poucos falaram sobre o relatório da OEA, que versa sobre as irregularidades encontradas no processo. A auditoria se debruça sobre as diversas partes do processo, da contagem até a transmissão dos dados ao TSE, o Tribunal Supremo Eleitoral da Bolívia. Houveram problemas nos servidores, nos bancos de dados e na transmissão, e a OEA afirmou que não podiam garantir a integridade dos votos nessas dimensões.&lt;/p&gt;
+&lt;p&gt;Todavia, os problemas encontrados (como por exemplo, instabilidade nos servidores), não afetavam os resultados em si, somente a transmissão dos resultados preliminares. Ainda assim, os auditores ao observarem o processo de contagem de votos, identificaram tendências de crescimento de votos a favor do MAS (Movimento para o Socialismo, partido de Evo Morales) e consideraram tais tendências anômalas, apontando que aí residia a comprovação da fraude.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://mateuspestana.github.io/files/bolivia_oea/fig1.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figura 1&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://mateuspestana.github.io/files/bolivia_oea/fig2.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figura 2&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;As figuras acima mostram a densidade, ou seja, a distribuição da quantidade de votos computados (eixo Y) pelo momento em que os dados foram computados (eixo X), na figura 1, e pelo &lt;em&gt;timestamp&lt;/em&gt;, ou seja, um marcador temporal do processamento dos votos (eixo X), na figura 2. O que podemos perceber na primeira figura é que a distribuição tem uma concentração maior mais ou menos no meio entre as 12h do dia 20 de outubro e as 00h do dia 21. Na segunda figura, percebemos uma distribuição bimodal, e um pico a partir de 12h do dia 21 de outubro. Isso por si só não atesta fraude eleitoral, mas se refere a problemas com os servidores e problemas na transmissão, que não foram contínuas.&lt;/p&gt;
+&lt;p&gt;O segundo ponto utilizado pela OEA para declarar que as eleições foram fraudadas foi a contagem dos votos. Eles afirmam isso a partir da análise de dois momentos na contagem: quando houve a apuração de 81% e 95% dos votos apurados. A OEA afirmou que tendências fora do padrão ocorreram nesses marcadores temporais, que podem ser vistos abaixo:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://mateuspestana.github.io/files/bolivia_oea/fig3.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figura 3&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://mateuspestana.github.io/files/bolivia_oea/fig4.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figura 4&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;As imagens são bastante convincentes em um primeiro momento, onde percebemos uma clara mudança da reta de tendência em 81%, na Figura 3, e em 95%, na Figura 4, mostrando um crescimento vertiginoso a favor do MAS, o que por si só poderia significar a inserção de votos no sistema, indicando a fraude, sendo essa a narrativa adotada. Contudo, essas imagens apresentam um mesmo problema: as linhas de tendência, em azul, não são as mesmas, pois possuem dois pontos iniciais, marcados arbitrariamente. Não há justificativas metodológicas que expliquem essa diferenciação ao criar duas linhas de tendência em dois momentos para um mesmo dado, que foi coletado de forma quase contínua. Em qualquer ponto onde essa linha de tendência se iniciasse, ela teria um comportamento diferente do resto.&lt;/p&gt;
+&lt;p&gt;Um exemplo: se pegássemos e fizéssemos um separador entre 0.2 (20%) e o resto, à direita, cada lado com uma linha própria, teríamos uma linha que começa alta e termina, aos 20%, baixa, enquanto toda a linha do lado direito teria um crescimento. Logo, não se pode dizer que isso representa fraude, pois não há nada de anormal nesses dados. A linha de tendência precisa ser uma só.&lt;/p&gt;
+&lt;p&gt;Uma acusação feita ao MAS é que os dados cresceram, ao final, em uma velocidade muito alta, aumentando consideravelmente o voto no partido. Isso também, por si só, não comprova fraude. Como apontado pelo relatório da CEPR (&lt;em&gt;Center For Economic and Policy Research&lt;/em&gt;, disponível em: &lt;a href=&#34;http://cepr.net/publications/reports/bolivia-elections-2019-11&#34; class=&#34;uri&#34;&gt;http://cepr.net/publications/reports/bolivia-elections-2019-11&lt;/a&gt;), a justificativa é puramente geográfica: as regiões rurais, mais distantes do centro, são majoritariamente apoiadoras de Evo e do MAS, e pela própria distância e tamanho populacional, os votos demoram mais para serem computados. Quando os votos foram recebidos, a maioria era a favor de Evo Morales e, por isso, o crescimento ocorreu em uma grande velocidade.&lt;/p&gt;
+&lt;p&gt;Isso ocorreu no Brasil em 2014, no segundo turno das eleições. Às 17h01, no início da contagem, Aécio Neves detinha 67,7% dos votos, e Dilma Roussef, 32,3%. Às 19h32, ambos se encontravam empatados, e após isso, Dilma superou Aécio. Nesse momento, os votos da região norte e nordeste começaram a ser contados. Sendo tais regiões fortes apoiadoras do PT, faz sentido o crescimento e a superação nos votos. Nesse sentido, é importante lembrar que o voto no brasil é eletrônico, e a apuração é acelerada, enquanto na Bolívia o voto é em papel, o que torna a contagem mais difícil. O PSDB, à época, chegou a pedir recontagem, mas sua auditoria percebeu que não houve fraude: o crescimento de Dilma se deu por um critério &lt;strong&gt;geográfico&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A última crítica da OEA a ser rebatida no processo eleitoral boliviano é o número de seções eleitorais com um alto comparecimento e um número elevado de votos no MAS. Como mostrado pelo usuário Rodrigo Quiroga no Twitter (&lt;span class=&#34;citation&#34;&gt;@rquiroga777&lt;/span&gt;, no post: &lt;a href=&#34;https://twitter.com/rquiroga777/status/1193973844752707585&#34; class=&#34;uri&#34;&gt;https://twitter.com/rquiroga777/status/1193973844752707585&lt;/a&gt;), isso não é indicativo de fraude. Só demonstra a existência de uma polarização regional, o que já ficou claro anteriormente: existem lugares, como zonas rurais e distantes de Santa Cruz (onde o CC teve a maioria dos votos), que a mobilização é enorme e o apoio ao MAS é majoritário, logo, a maioria vota no partido. Quiroga também estima que somente 588 seções apresentam esse “desvio de comportamento”, que não comprova fraude, é apenas um reflexo de um contexto político. Sem elas, o MAS continuaria ganhando.&lt;/p&gt;
+&lt;p&gt;Esperava-se uma análise mais sofisticada por parte da OEA, o que não se verificou. Pode-se dizer, dessa forma, que o papel da OEA na auditoria das eleições na Bolívia foi meramente político, indo contrário aos interesses nacionais do país e da população que manifestou suas preferências pelo voto. O relatório foi claramente enviesado, fazendo com que um país democrático chegasse à beira de uma guerra civil, exilando um presidente democraticamente eleito e instaurando na presidência alguém que não é seguido pela maioria da população.&lt;/p&gt;
+&lt;p&gt;Agradecimentos à &lt;a href=&#34;https://twitter.com/mariliacloss&#34;&gt;Marília Closs&lt;/a&gt; que acompanhou e esclareceu em tempo real a conjuntura boliviana no contexto do recente golpe. Qualquer dúvida, correção ou sugestão pode ser encaminhada para &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Textmining: análise dos discursos de Getúlio Vargas</title>
+      <link>https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/</link>
+      <pubDate>Sun, 10 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/textmining-getulio-vargas/textmining-analise-dos-discursos-de-getulio-vargas/</guid>
+      <description>
+&lt;script src=&#34;2019-11-10-textmining-análise-dos-discursos-de-getúlio-vargas_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;2019-11-10-textmining-análise-dos-discursos-de-getúlio-vargas_files/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;2019-11-10-textmining-análise-dos-discursos-de-getúlio-vargas_files/lightable/lightable.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;p&gt;Getúlio Vargas chega ao poder, como Chefe do Governo Provisório, em 1930, marcando o fim da República Velha, e fica no poder até 1945, elegendo-se novamente em 1951 como Presidente da República, cargo que ocupou até 1954. Implantando uma ditadura em 1930, Vargas modernizou o Brasil, que se tornou um estado autoritário e centralizado na figura do presidente. O “Pai dos Pobres”, como também é conhecido, é responsável pela Consolidação das Leis Trabalhistas (CLT), pela criação do BNDE (atual BNDES), a fundação e o desenvolvimento da Petrobrás, e também pela inserção do Brasil na Segunda Guerra Mundial. Vargas cometeu suicídio em 24 de agosto de 1954, no Palácio do Catete, no antigo Distrito Federal, no Rio de Janeiro. Vargas era conhecido pela sua eloquência e por seus discursos, considerados grandes ensinamentos políticos.Por isso, me proponho a analisar alguns discursos de Vargas na presidência, mais especificamente todos os discursos proferidos entre 1930 e 1937, 1939, 1941, 1944 e o discurso de posse de 1951. Para isso, utilizarei o pacote &lt;code&gt;quanteda&lt;/code&gt; para o R, além do &lt;code&gt;tidyverse&lt;/code&gt;. Os discursos podem ser obtidos &lt;a href=&#34;http://www.biblioteca.presidencia.gov.br/presidencia/ex-presidentes/getulio-vargas&#34;&gt;aqui&lt;/a&gt;, no site da Biblioteca da Presidência.&lt;/p&gt;
+&lt;p&gt;O primeiro passo é carregar os pacotes que serão de fato utilizados, com o &lt;code&gt;pacman&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pacman::p_load(
+  tidyverse,
+  quanteda,
+  pdftools,
+  stopwords,
+  readtext,
+  topicmodels,
+  knitr,
+  kableExtra)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Em seguida, vamos abrir os discursos. A função &lt;code&gt;readtext&lt;/code&gt; permite importar as mais diversas extensões de texto de uma só vez, permitindo a criação de um &lt;em&gt;corpus&lt;/em&gt; rapidamente.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;vargas &amp;lt;- readtext(
+  &amp;quot;Documents/vargas/*&amp;quot;,
+  docvarsfrom = &amp;quot;filenames&amp;quot;,
+  dvsep = &amp;quot;_&amp;quot;,
+  docvarnames = c(&amp;quot;ano&amp;quot;, &amp;quot;ordem&amp;quot;)
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O argumento &lt;code&gt;docvarnames&lt;/code&gt; utiliza o nome do arquivo para adicionar variáveis ao banco. Como estruturei os discursos da seguinte maneira: &lt;strong&gt;ANO_ORDEM.pdf&lt;/strong&gt;, utilizando o separador &lt;code&gt;_&lt;/code&gt;, crio as variáveis&lt;code&gt;ano&lt;/code&gt; e &lt;code&gt;ordem&lt;/code&gt;, representando o ano em que o discurso foi proferido e em qual posição ele está (naquele ano).&lt;/p&gt;
+&lt;p&gt;Isso fica bem claro abaixo:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(vargas, 6)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## readtext object consisting of 6 documents and 2 docvars.
+## # Description: df[,4] [6 × 4]
+##   doc_id      text                  ano ordem
+##   &amp;lt;chr&amp;gt;       &amp;lt;chr&amp;gt;               &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;
+## 1 1930_01.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1930 01   
+## 2 1930_02.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1930 02   
+## 3 1930_03.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1930 03   
+## 4 1931_01.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1931 01   
+## 5 1931_02.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1931 02   
+## 6 1931_03.pdf &amp;quot;\&amp;quot;Presidênci\&amp;quot;...&amp;quot;  1931 03&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Assim, temos um banco com documentos em &lt;em&gt;pdf&lt;/em&gt; que guardam o discurso, o ano e a ordem do mesmo. Todavia, ele ainda não está em um formato próprio para nossa análise, devendo estar dentro do formato &lt;em&gt;corpus&lt;/em&gt;. Além do mais, nosso arquivo em PDF guarda um problema comum à todos os PDFs: a hifenização. Um PDF é um arquivo pronto para imprimir, então o texto que está nele, quando selecionado, pode vir com alguns erros. O erro mais comum e que já corregiremos prontamente é o da hifenização. Supondo que em nossos arquivos exista a palavra &lt;strong&gt;república&lt;/strong&gt;. Todavia, em alguns momentos, ela se encontra no fim da linha e não cabe na mesma. Por conta disso, ela é hifenizada, continuando na linha seguinte. Quando transposta para nosso banco de dados, é possível que apareçam as variações &lt;strong&gt;re- pública, repú- blica, repúbli- ca&lt;/strong&gt;. Tudo isso será entendido pelo software como palavras diferentes, quando no fundo, são a mesma. Logo, antes de transformar em &lt;em&gt;corpus&lt;/em&gt;, que é o conjunto de textos que iremos analisar, vamos corrigir esse erro usando o &lt;code&gt;str_replace_all&lt;/code&gt; com &lt;em&gt;regex&lt;/em&gt;. Em seguida, transformamos em &lt;em&gt;corpus&lt;/em&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Corrigindo hifenizações erradas, unindo palavras separadas
+vargas$text &amp;lt;- str_replace_all(vargas$text, &amp;quot;-[\\s]+&amp;quot;, &amp;quot;&amp;quot;)
+
+# Criando corpus
+discursos_vargas &amp;lt;- corpus(vargas)
+
+# Sumarizando os 10 primeiros documentos
+summary(discursos_vargas, 10)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Corpus consisting of 236 documents, showing 10 documents:
+## 
+##         Text Types Tokens Sentences  ano ordem
+##  1930_01.pdf   827   1795        46 1930    01
+##  1930_02.pdf   680   1433        44 1930    02
+##  1930_03.pdf   827   1795        46 1930    03
+##  1931_01.pdf  1061   2484        55 1931    01
+##  1931_02.pdf  1304   3247        81 1931    02
+##  1931_03.pdf  1949   5051       151 1931    03
+##  1931_04.pdf   567   1187        22 1931    04
+##  1931_05.pdf   970   2060        63 1931    05
+##  1931_06.pdf  6808  29272       748 1931    06
+##  1932_01.pdf  1802   4607       131 1932    01&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A saída do comando &lt;code&gt;summary&lt;/code&gt; em um objeto de corpus apresenta os textos, a quantidade de caracteres (types),a quantidade de tokens e o número de frases de cada documento, além das variáveis que escolhemos anteriormente.&lt;/p&gt;
+&lt;p&gt;Agora, para fazermos uma análise de frequência de palavras, por exemplo, precisamos dividir nosso &lt;em&gt;corpus&lt;/em&gt; em unidades, denominadas &lt;em&gt;tokens&lt;/em&gt;, que podem ser caracteres, palavras, sentenças, parágrafos. No caso, o ideal para a análise que desejo fazer é dividir em palavras, ou n-gramas, pegando cada palavra individualmente. Retirarei pontos, números, separadores, símbolos e hífens. Depois disso, removerei palavras que nada representam e não auxiliam, denominadas &lt;em&gt;stopwords&lt;/em&gt;, do pacote de mesmo nome: artigos, preposições, alguns verbos, etc. Além disso, removerei outras palavras, como &lt;em&gt;art&lt;/em&gt; (de artigo, quando Vargas cita leis), &lt;strong&gt;à, às, é, assim, sobre, ainda&lt;/strong&gt;, e algumas frases que pertencem ao cabeçalho do arquivo. Há também um problema, que às vezes a palavra &lt;strong&gt;república&lt;/strong&gt; aparece como &lt;em&gt;repdblica&lt;/em&gt;, um erro no OCR. Isso será corrigido.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;palavras_vargas &amp;lt;- tokens(discursos_vargas,
+    &amp;quot;word&amp;quot;,
+    remove_numbers = T,
+    remove_symbols = T,
+    remove_punct = T,
+    remove_separators = T,
+    remove_hyphens = F) %&amp;gt;% 
+  tokens_remove(pattern = c(stopwords(language = &amp;quot;pt&amp;quot;), 
+                            &amp;quot;á&amp;quot;, &amp;quot;ás&amp;quot;,&amp;quot;é&amp;quot;,
+                            &amp;quot;ser&amp;quot;,&amp;quot;art&amp;quot;, &amp;quot;assim&amp;quot;,
+                            &amp;quot;sobre&amp;quot;, &amp;quot;ainda&amp;quot;, &amp;quot;pêlo&amp;quot;,
+                            phrase(c(&amp;quot;NOVA POLÍTICA DO BRASIL&amp;quot;,
+                                     &amp;quot;Presidência da República&amp;quot;,
+                                     &amp;quot;Casa Civil Secretaria de Administração&amp;quot;,
+                                     &amp;quot;Diretoria de Gestão de Pessoas Coordenação Geral de Documentação e Informação&amp;quot;,
+                                     &amp;quot;Coordenação de Biblioteca&amp;quot;,
+                                     &amp;quot;GOVERNO PROVISÓRIO&amp;quot;,
+                                     &amp;quot;decreto n&amp;quot;,
+                                     &amp;quot;A ATUALIDADE BRASILEIRA&amp;quot;,&amp;quot;DISCURSO PRONUNCIADO&amp;quot;,
+                                     &amp;quot;EST UNIDOS&amp;quot;, 
+                                     &amp;quot;TRABALHO INDÚSTRIA&amp;quot;,
+                                     &amp;quot;NEGÓCIOS INTERIORES&amp;quot;, 
+                                     &amp;quot;v exa&amp;quot;, 
+                                     &amp;quot;parágrafo único&amp;quot;))),
+                padding = F) %&amp;gt;%
+  tokens_replace(pattern = &amp;quot;darepdblica&amp;quot;, &amp;quot;república&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: &amp;#39;remove_hyphens&amp;#39; is deprecated, use &amp;#39;split_hyphens&amp;#39; instead.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Com isso, já podemos fazer uma análise da frequência de palavras nos discursos de Getúlio Vargas, podendo descobrir assim as palavras mais utilizadas por ele, dando uma pista sobre temas, termos e o que realmente era relevante (pelo uso). Antes de fazer a frequência, precisamos converter os tokens em uma &lt;em&gt;document-feature matrix&lt;/em&gt;, que nada mais é que uma matriz de frequência de termos em documentos:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;vargas_dfm &amp;lt;- dfm(palavras_vargas)
+
+# Fazendo a estatística de frequência de palavras: top 15
+textstat_frequency(vargas_dfm, n = 25) %&amp;gt;% 
+  kable() %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+feature
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+frequency
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+rank
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+docfreq
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+group
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1273
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+204
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1135
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+215
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1023
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+186
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+975
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+194
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+838
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+203
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+759
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+162
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+grande
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+726
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+179
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+trabalho
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+680
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+176
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+627
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+178
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vida
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+556
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+178
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+política
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+545
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+151
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+rio
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+468
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+97
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+produção
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+445
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+109
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estados
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+438
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+88
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+federal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+400
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+81
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+econômica
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+382
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+138
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+maior
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+380
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+145
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nação
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+377
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+132
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+sempre
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+376
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+153
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+372
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+153
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+anos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+361
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+21
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+107
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+social
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+360
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+129
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasileiros
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+345
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+126
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasileiro
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+342
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+143
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+obra
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+341
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+25
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+143
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+all
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Percebemos que, no nosso &lt;em&gt;corpus&lt;/em&gt;, a palavra &lt;strong&gt;Brasil&lt;/strong&gt; aparece 622 vezes em 94 dos 100 discursos. Depois dela, &lt;strong&gt;Nacional&lt;/strong&gt; é utilizada 586 vezes, aparecendo em 80 documentos. &lt;strong&gt;Povo&lt;/strong&gt; aparece na 11ª posição, sendo utilizada 292 vezes, aparecendo em 82 discursos, o que faz todo o sentido, a partir do que se sabe sobre Vargas.&lt;/p&gt;
+&lt;p&gt;Podemos fazer a mesma análise de frequência de palavras agrupando por ano, e pegando as 5 palavras mais usadas em cada ano:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;textstat_frequency(vargas_dfm, group = &amp;quot;ano&amp;quot;, n = 5) %&amp;gt;% 
+    kable() %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+feature
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+frequency
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+rank
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+docfreq
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+group
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1930
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+eleitoral
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1930
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1930
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1930
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasileiro
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1930
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+101
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1931
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+92
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1931
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1931
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1931
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+58
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1931
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+96
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1932
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+67
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1932
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+revolução
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+63
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1932
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+43
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1932
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+política
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1932
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+142
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1933
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+trabalho
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+127
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1933
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+115
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1933
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+112
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1933
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+102
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1933
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+113
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1934
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+110
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1934
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+creou
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+85
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1934
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+ministério
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+66
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1934
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+regulou
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+63
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1934
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+51
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1935
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+36
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1935
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+32
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1935
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+argentina
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+30
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1935
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1935
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1936
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+29
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1936
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+social
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+27
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1936
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1936
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vida
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1936
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+129
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1937
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+118
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1937
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+federal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+114
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1937
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+lei
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+102
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1937
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+presidente
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+98
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1937
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+101
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+99
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+novo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+70
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+82
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1939
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+76
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1939
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+grande
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+71
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1939
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+70
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1939
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+municípios
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+66
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1939
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+185
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+43
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1940
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+172
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1940
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+146
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+35
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1940
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+139
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1940
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+124
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1940
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+69
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1941
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+presidente
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+41
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1941
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1941
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+américa
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+31
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1941
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+28
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1941
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+103
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1943
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+guerra
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+89
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1943
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+84
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1943
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+61
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1943
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+59
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1943
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+32
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1944
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+guerra
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+28
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1944
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+24
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1944
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1944
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vossa
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1944
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+84
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1951
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+83
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1951
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vida
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+54
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1951
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+44
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1951
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+todos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+41
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1951
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+117
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1952
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+milhões
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+81
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1952
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+grande
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+80
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1952
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+país
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+66
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1952
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+66
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1952
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+114
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1953
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+brasil
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+56
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1953
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+milhões
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+53
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1953
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+47
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1953
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+cruzeiros
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+45
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1953
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Fazendo uma nuvem de palavras (&lt;em&gt;wordcloud&lt;/em&gt;) dos 200 termos mais utilizados por Vargas, temos:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;textplot_wordcloud(vargas_dfm,
+  random_order = FALSE,
+  rotation = 0.25,
+  max_words = 200,
+  color = RColorBrewer::brewer.pal(8, &amp;quot;Dark2&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;A nuvem de palavras é simplesmente um recurso gráfico da tabela de frequência de palavras: o tamanho da palavra indica a quantidade de vezes que ela é utilizada, e é proporcional às outras ali presentes.&lt;/p&gt;
+&lt;p&gt;O Estado Novo inicia em 1937, com o fim do Governo Constitucionalista (1934-1937), e vai até 1945. Será que houve alguma mudança nas palavras utilizadas por Vargas no primeiro ano de cada período de governo, ou seja, em 1931, 1934 e 1937?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tokens_subset(palavras_vargas, ano %in% c(1931, 1934, 1937)) %&amp;gt;% 
+  dfm(groups = &amp;quot;ano&amp;quot;) %&amp;gt;% 
+  textplot_wordcloud(max_words = 400, comparison = T,
+                     color = RColorBrewer::brewer.pal(3, &amp;quot;Dark2&amp;quot;)) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;O que percebemos acima é que Vargas varia um pouco nas palavras utilizadas nos primeiros anos de seus governos: em 1931, percebemos o uso de palavras como &lt;strong&gt;governo, toneladas, papel, ouro, despesa, econômica, classes, tesouro&lt;/strong&gt;; já em 1934, com o início do Governo Constitucionalista e promulgação da Constituição de 1934, palavras como &lt;strong&gt;fazenda, ministério, comércio, marinha, brasil, obras, públicas, cinema, saúde, ferro, café, naval&lt;/strong&gt; se fazem presentes; em 1937, durante o Estado Novo, Vargas utilizou mais as palavras &lt;strong&gt;presidente, federal, lei,c onstituição, república, estado, nacional, segurança, câmara, tribunal, poder&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;O &lt;code&gt;quanteda&lt;/code&gt; é excelente pois traz consigo um conjunto de funções facilitadas, tornando muito mais fácil o cálculo de algumas estatísticas e a plotagem de alguns gráficos. Um outro exemplo é o gráfico de co-ocorrência, em rede, que indica quais palavras costumam ocorrer no mesmo documento, ou na mesma frase, a depender de como se configura. Ao analisarmos a co-ocorrência de palavras nos discursos de Vargas, temos, através da função &lt;code&gt;textplot_network&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dfm_trim(vargas_dfm,
+           min_termfreq = 25,
+           termfreq_type = &amp;quot;rank&amp;quot;) %&amp;gt;% 
+  textplot_network(edge_size = 0.6)+
+  labs(title = &amp;quot;Co-ocorrência de termos:&amp;quot;,
+       subtitle = &amp;quot;Discursos de Getúlio Vargas&amp;quot;,
+       x = &amp;quot;&amp;quot;,  y = &amp;quot;&amp;quot;)+
+  theme_minimal()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;O gráfico acima nos permite perceber que, por exemplo, &lt;strong&gt;país, governo, nacional, brasil,e stado, federal, todos&lt;/strong&gt; são palavras com um alto grau de co-ocorrência com todas as outras. Talvez seja mais interessante observar as palavras que não co-ocorrem entre si: &lt;strong&gt;povo e nação&lt;/strong&gt;, por exemplo, ou &lt;strong&gt;poder, povo, ordem e obra&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Um outro exemplo interessante de análise é a presença de determinado termo ou termos ao longo do documento, e em que posição aparecem. Isso é oferecido pela função &lt;code&gt;textplot_xray&lt;/code&gt;. Observando em quais discursos a palavra democracia (ou democratas, democrata, democrático, democrática, etc) aparece, e em que posições do documento:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;textplot_xray(kwic(discursos_vargas,  &amp;quot;Democra*&amp;quot;)) +
+  labs(
+    subtitle = &amp;quot;Plot de dispersão lexical&amp;quot;,
+    title = &amp;quot;Discursos de Getúlio Vargas:&amp;quot;,
+    x = &amp;quot;Index de Token&amp;quot;,
+    y = &amp;quot;Documento&amp;quot;
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://mateuspestana.github.io/post/textmining-getulio-vargas/2019-11-10-textmining-ana%CC%81lise-dos-discursos-de-getu%CC%81lio-vargas_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;
+Democracia só aparece em 1 discurso em 1932, em 1 em 1933, em 2 em 1934, em 2 em 1935, em 4 em 1936, em 2 em 1937, em 1 em 1939, em 3 em 1941 e em 1 em 1944, de um total de 100 discursos existentes.&lt;/p&gt;
+&lt;p&gt;Mas qual seria o contexto da palavra nos discursos?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;kwic(discursos_vargas, &amp;quot;Democra*&amp;quot;, window = 3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                                                                       
+##       [1932_01.pdf, 104]     falsos pregoeiros da |    democracia    |
+##      [1933_04.pdf, 1445]          a decadência da |    democracia    |
+##     [1934_05.pdf, 12733]  direito patrimonial das |   democracias    |
+##      [1934_14.pdf, 2900] estabeleceu a verdadeira |    democracia    |
+##       [1935_04.pdf, 204]               e da vossa |    democracia    |
+##        [1935_09.pdf, 40]                A base da |    democracia    |
+##       [1935_09.pdf, 167]                a base da |    democracia    |
+##       [1935_09.pdf, 208]     alicerces das nossas |   democracias    |
+##      [1936_02.pdf, 1677]             Na luta pela |    democracia    |
+##      [1936_04.pdf, 1453]            de defender a |    democracia    |
+##        [1936_05.pdf, 86]             econômico- A |    democracia    |
+##       [1936_05.pdf, 786]                  , que a |    democracia    |
+##       [1936_05.pdf, 809]                   Mas, a |    democracia    |
+##       [1936_05.pdf, 887]                . Ordem e |    democracia    |
+##       [1936_07.pdf, 604]        cidadãos da maior |    democracia    |
+##      [1937_01.pdf, 2298]            dos marcos da |    democracia    |
+##       [1937_04.pdf, 874]          atravessamos, a |    democracia    |
+##       [1938_05.pdf, 161]          Governo forte e |    democracia    |
+##      [1938_05.pdf, 7139]          Governo forte e |    democracia    |
+##       [1938_23.pdf, 464]     manipuladores de uma |    democracia    |
+##    [1939_05-02.pdf, 741]          passámos de uma |    democracia    |
+##    [1939_05-02.pdf, 751]               , para uma |    democracia    |
+##  [1939_05-02.pdf, 10761]              da forma de |    democracia    |
+##      [1940_21.pdf, 1076]              desordem. À |    democracia    |
+##      [1940_21.pdf, 1080]     política substitue a |    democracia    |
+##      [1940_41.pdf, 1748]              produção. A |    democracia    |
+##       [1941_02.pdf, 538] instituímos a verdadeira |    democracia    |
+##       [1941_04.pdf, 221]              regime, uma |    democracia    |
+##      [1941_04.pdf, 2290]              regime, uma |    democracia    |
+##      [1941_04.pdf, 2304]    convenções legais das |   democracias    |
+##      [1941_04.pdf, 2331]               É mais uma |    democracia    |
+##       [1941_05.pdf, 233]     - Característicos da |    democracia    |
+##      [1941_05.pdf, 1546]                 Novo e a |    democracia    |
+##      [1941_05.pdf, 1571]        conciliação com a |    democracia    |
+##      [1941_05.pdf, 1693]        , instituímos uma |    democracia    |
+##      [1941_05.pdf, 1771]                  , é uma |    democracia    |
+##      [1941_05.pdf, 2126]           forma comum da |    democracia    |
+##        [1943_21.pdf, 87]           Nações Unidas- |    Democracia    |
+##       [1943_21.pdf, 267]    Apenas entendemos que |    democracia    |
+##      [1944_04.pdf, 1977]           rep sentantes, | democraticamente |
+##       [1951_02.pdf, 211]                 do Povo. |    democracia    |
+##       [1951_03.pdf, 511]       presente os mesmos |    democracia    |
+##      [1951_07.pdf, 3791]         conhecem o deira |    democracia    |
+##      [1951_07.pdf, 3832]            riedade a uma |    democracia    |
+##      [1952_07.pdf, 1035]               livre. Nas |   democracias    |
+##      [1952_09.pdf, 2302]            Não somente a |    democracia    |
+##      [1952_09.pdf, 2594]             livre não há |    democracia    |
+##      [1952_09.pdf, 2792]   espírito verdadeiro da |    democracia    |
+##       [1952_11.pdf, 212]                a base da |    democracia    |
+##       [1953_03.pdf, 832]              a defesa da |    democracia    |
+##                                  
+##  e os reacionários               
+##  liberal e individualista        
+##  . Mas essa                      
+##  entre nós.                      
+##  , a cujo                        
+##  , agora como                    
+##  , agora como                    
+##  ; e vós                         
+##  , estacionamento significa      
+##  , entregam-na,                  
+##  é o regime                      
+##  é o regime                      
+##  , no sentido                    
+##  que significam disciplina       
+##  do mundo,                       
+##  ativa, em                       
+##  de partidos,                    
+##  - O Estado                      
+##  Há quem afirme                  
+##  de ficção.                      
+##  aparente, de                    
+##  real, isto                      
+##  renovada em que                 
+##  política substitue a            
+##  econômica, em                   
+##  política- vemos                 
+##  - do povo                       
+##  - As assembléias                
+##  , mesmo porque                  
+##  parlamentares, esse             
+##  econômica que política          
+##  brasileira- A                   
+##  Peço, em                        
+##  , tal como                      
+##  realista e funcional            
+##  , distanciada dos               
+##  parlamentar: perde-se           
+##  não é demagogia                 
+##  não é demaia                    
+##  , dentro da                     
+##  . Ordenastes e                  
+##  de conteúdo humano              
+##  social e econô                  
+##  meradem falar em                
+##  , o governo                     
+##  está definitivamente consolidada
+##  . Não pretendo                  
+##  , abdiquem de                   
+##  , pois é                        
+##  , como pretexto&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Percebe-se que a palavra &lt;strong&gt;democracia&lt;/strong&gt;, em muitos dos casos acima, é utilizada em um contexto negativo.&lt;/p&gt;
+&lt;p&gt;Uma ferramenta muito útil é a de &lt;em&gt;topic modeling&lt;/em&gt;, que permite o cálculo de termos relacionados que possam indicar um assunto em comum, ou tópicos. Será que é possível identificar tópicos recorrentes nos discursos de Getúlio Vargas?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;LDA(convert(vargas_dfm, to = &amp;quot;topicmodels&amp;quot;), k = 5) %&amp;gt;% 
+  get_terms(10)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       Topic 1    Topic 2      Topic 3    Topic 4     Topic 5     
+##  [1,] &amp;quot;brasil&amp;quot;   &amp;quot;governo&amp;quot;    &amp;quot;governo&amp;quot;  &amp;quot;brasil&amp;quot;    &amp;quot;governo&amp;quot;   
+##  [2,] &amp;quot;todos&amp;quot;    &amp;quot;estado&amp;quot;     &amp;quot;nacional&amp;quot; &amp;quot;governo&amp;quot;   &amp;quot;país&amp;quot;      
+##  [3,] &amp;quot;nacional&amp;quot; &amp;quot;brasil&amp;quot;     &amp;quot;grande&amp;quot;   &amp;quot;povo&amp;quot;      &amp;quot;brasil&amp;quot;    
+##  [4,] &amp;quot;povo&amp;quot;     &amp;quot;trabalho&amp;quot;   &amp;quot;país&amp;quot;     &amp;quot;país&amp;quot;      &amp;quot;nacional&amp;quot;  
+##  [5,] &amp;quot;trabalho&amp;quot; &amp;quot;presidente&amp;quot; &amp;quot;produção&amp;quot; &amp;quot;política&amp;quot;  &amp;quot;serviços&amp;quot;  
+##  [6,] &amp;quot;país&amp;quot;     &amp;quot;federal&amp;quot;    &amp;quot;estado&amp;quot;   &amp;quot;todos&amp;quot;     &amp;quot;ministério&amp;quot;
+##  [7,] &amp;quot;governo&amp;quot;  &amp;quot;lei&amp;quot;        &amp;quot;milhões&amp;quot;  &amp;quot;nacional&amp;quot;  &amp;quot;obras&amp;quot;     
+##  [8,] &amp;quot;pátria&amp;quot;   &amp;quot;nacional&amp;quot;   &amp;quot;brasil&amp;quot;   &amp;quot;vida&amp;quot;      &amp;quot;estados&amp;quot;   
+##  [9,] &amp;quot;vida&amp;quot;     &amp;quot;grande&amp;quot;     &amp;quot;rio&amp;quot;      &amp;quot;revolução&amp;quot; &amp;quot;ano&amp;quot;       
+## [10,] &amp;quot;guerra&amp;quot;   &amp;quot;país&amp;quot;       &amp;quot;todos&amp;quot;    &amp;quot;estado&amp;quot;    &amp;quot;serviço&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Calculei 5 tópicos possíveis nos discursos de Vargas e, de cada um, selecionei as 10 palavras que pudessem representar cada tópico. Por conta de todos os discursos versarem, na maioria das vezes, sobre as mesmas coisas, com uma grande quantidade de palavras repetidas, fica difícil identificar tópicos diferentes. Todavia, se ignorarmos as palavras repetidas e focarmos nas únicas, podemos perceber alguns temas: &lt;strong&gt;estado e social&lt;/strong&gt;, &lt;strong&gt;lei e presidente&lt;/strong&gt;, &lt;strong&gt;nação e revolução&lt;/strong&gt;, &lt;strong&gt;obras e serviços&lt;/strong&gt;, &lt;strong&gt;povo e trabalho&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Por fim, o &lt;code&gt;quanteda&lt;/code&gt; também apresenta a ferramenta de &lt;em&gt;collocations&lt;/em&gt;, que é o cálculo de palavras que sempre andam juntas, em bi-gramas (ou seja, pares). Quais serão os termos correlacionados nos discursos de Getúlio? Para essa análise, precisamos fazer novamente os &lt;em&gt;tokens&lt;/em&gt; adicionando a opção de &lt;code&gt;padding  = TRUE&lt;/code&gt;, para que os espaços vazios (de palavras removidas, como &lt;em&gt;stopwords&lt;/em&gt;) não sejam ocupados pelas palavras seguintes.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tokens(discursos_vargas,
+    &amp;quot;word&amp;quot;,
+    remove_numbers = T,
+    remove_symbols = T,
+    remove_punct = T,
+    remove_separators = T) %&amp;gt;% 
+  tokens_remove(padding = TRUE, pattern = c(stopwords(language = &amp;quot;pt&amp;quot;),
+    &amp;quot;á&amp;quot;,&amp;quot;ás&amp;quot;,&amp;quot;é&amp;quot;,
+    &amp;quot;ser&amp;quot;,&amp;quot;art&amp;quot;, &amp;quot;assim&amp;quot;, &amp;quot;sobre&amp;quot;, &amp;quot;ainda&amp;quot;, &amp;quot;pêlo&amp;quot;, phrase(c(&amp;quot;NOVA POLÍTICA DO BRASIL&amp;quot;,
+        &amp;quot;Presidência da República&amp;quot;,
+        &amp;quot;Casa Civil Secretaria de Administração&amp;quot;,
+        &amp;quot;Diretoria de Gestão de Pessoas Coordenação Geral de Documentação e Informação&amp;quot;,
+        &amp;quot;Coordenação de Biblioteca&amp;quot;,
+        &amp;quot;GOVERNO PROVISÓRIO&amp;quot;,
+        &amp;quot;decreto n&amp;quot;, &amp;quot;A ATUALIDADE BRASILEIRA&amp;quot;, &amp;quot;DISCURSO PRONUNCIADO&amp;quot;, &amp;quot;EST UNIDOS&amp;quot;, &amp;quot;TRABALHO INDÚSTRIA&amp;quot;,&amp;quot;NEGÓCIOS INTERIORES&amp;quot;, &amp;quot;v exa&amp;quot;, &amp;quot;parágrafo único&amp;quot;)))) %&amp;gt;%
+  tokens_replace(pattern = &amp;quot;darepdblica&amp;quot;, &amp;quot;república&amp;quot;) %&amp;gt;% 
+  textstat_collocations(size = 2) %&amp;gt;%
+  as.data.frame() %&amp;gt;% 
+  arrange(-count) %&amp;gt;% 
+  head(30) %&amp;gt;% 
+  select(-count_nested, -length) %&amp;gt;% 
+    kable(col.names = c(&amp;quot;Collocation&amp;quot;, &amp;quot;Contagem&amp;quot;, &amp;quot;Lambda&amp;quot;, &amp;quot;Z&amp;quot;)) %&amp;gt;% 
+  kable_paper()&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34; lightable-paper&#34; style=&#34;font-family: &amp;quot;Arial Narrow&amp;quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Collocation
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Contagem
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Lambda
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Z
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+rio grande
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+256
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.12160
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+65.7777
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+povo brasileiro
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+124
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.21525
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+50.4035
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo federal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+123
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.07670
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+44.9262
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+forças armadas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+93
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8.78112
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40.0075
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+cada vez
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+81
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.06180
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+45.1112
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estado novo
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+80
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.38173
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+39.5181
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+85
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+distrito federal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+75
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.72641
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+21.8444
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+14
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+território nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+60
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.43573
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33.0938
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+poder público
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+56
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.61593
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38.2622
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+8
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+minas gerais
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8.90081
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37.8444
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+22
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+economia nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+55
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4.45704
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+29.4265
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+10
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+corrente ano
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+54
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.44906
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37.1227
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+3049
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+matérias primas
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+51
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+14.51998
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10.0904
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+9
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+outro lado
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+50
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.83564
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37.4627
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+11
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+neste momento
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+47
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.54853
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+35.5539
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+62
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vida nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+47
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+3.61973
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23.3299
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+12
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+conselho federal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+46
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.36355
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33.7263
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+67
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+porto alegre
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+46
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10.73462
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+23.0169
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+42
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vossa excelência
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+42
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+8.59701
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+26.9050
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+19
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+estados unidos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+41
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.09005
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+30.0436
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+13
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+supremo tribunal
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+9.28012
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33.2420
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+17
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+últimos anos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+40
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.78565
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+31.8574
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+16
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+administração pública
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.19113
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+31.9367
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+44
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+departamento nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.70706
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+26.3775
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+431
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+governo nacional
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+2.54223
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+15.2339
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+18
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+desenvolvimento econômico
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+37
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.90210
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+30.6431
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+27
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+novo regime
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+35
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+5.36720
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+28.2388
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+15
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+mil contos
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+7.80931
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+32.4016
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+20
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+dois países
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+6.03132
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+29.6839
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+68
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+vida econômica
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+33
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+4.26817
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+22.9202
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Rio Grande, Povo Brasileiro, Governo Federal e Forças Armadas&lt;/strong&gt; são os bigramas mais utilizados por Getúlio Vargas. O primeiro é óbvio: se refere ao Rio Grande do Sul, terra de Getúlio Vargas; &lt;strong&gt;Povo Brasileiro&lt;/strong&gt; era como ele iniciava os discursos, se dirigindo à nação; &lt;strong&gt;Governo Federal&lt;/strong&gt; se refere ao governo; &lt;strong&gt;Forças Armadas&lt;/strong&gt; mostra as relações de Getúlio com os militares, fruto da própria Revolução de 30.&lt;/p&gt;
+&lt;p&gt;Bom, por hoje é só! Quero agradecer aos insights dos amigos Helio Cannone e Weslley Dias, que possuem relevantes pesquisas sobre Vargas e entendem profundamente do assunto.&lt;/p&gt;
+&lt;p&gt;Qualquer dúvida, correção ou sugestão pode ser encaminhada para &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Impacto de reformas eleitorais na representação: análise do caso da Federação Russa</title>
+      <link>https://mateuspestana.github.io/publication/impacto-de-reformas-rleitorais-na-representacao-analise-do-caso-da-federacao-russa/</link>
+      <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/publication/impacto-de-reformas-rleitorais-na-representacao-analise-do-caso-da-federacao-russa/</guid>
+      <description>
+&lt;script src=&#34;2019-09-18-impacto-de-reformas-eleitorais-na-representação-análise-do-caso-da-federação-russa_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Artigo apresentado na V Semana Discente do IESP-UERJ, realizada em setembro de 2019.&lt;/p&gt;
+&lt;div id=&#34;resumo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Resumo&lt;/h3&gt;
+&lt;p&gt;O presente artigo tem como objetivo analisar o impacto de reformas eleitorais na
+representação parlamentar, observando o caso da Federação Russa pós-ascensão de
+Vladimir Putin e do partido Rússia Unida. O intenção principal é averiguar como
+cada reforma impactou na desproporcionalidade da Duma, o parlamento, pensando a
+partir das hipótese de que as reformas foram executadas em prol de um autoritarismo
+em benefício do partido Rússia Unida, que predomina no cenário político russo.&lt;/p&gt;
+&lt;div id=&#34;palavras-chave&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Palavras-chave&lt;/h4&gt;
+&lt;p&gt;Reforma eleitoral. Representação. Desproporcionalidade.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;texto-completo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Texto completo&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://mateuspestana.github.io/files/v_sd_iesp_impacto2019.pdf&#34;&gt;PDF&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;disponível-em&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Disponível em&lt;/h3&gt;
+&lt;p&gt;[EM BREVE]&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Comparecimento eleitoral na Federação Russa: análise da eleição presidencial de 2018</title>
+      <link>https://mateuspestana.github.io/publication/comparecimento-eleitoral-na-federacao-russa-analise-da-eleicao-presidencial-de-2018/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/publication/comparecimento-eleitoral-na-federacao-russa-analise-da-eleicao-presidencial-de-2018/</guid>
+      <description>
+&lt;script src=&#34;2018-06-12-comparecimento-eleitoral-na-federação-russa-análise-da-eleição-presidencial-de-2018_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Artigo publicado nos anais da IV Semana Discente do IESP-UERJ, realizada entre 12 e 14 de junho de 2018.&lt;/p&gt;
+&lt;div id=&#34;resumo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Resumo&lt;/h3&gt;
+&lt;p&gt;Com 76,69% dos votos, Vladimir Putin é reeleito na Rússia, iniciando seu quarto
+mandado como presidente do país até 2024. Com voto facultativo, o índice de comparecimento às urnas está acima de 60% desde os anos 2000, o que acompanha a
+média dos outros países da Europa. Em 2018, a média do comparecimento nacional foi de 67,5%. Entretanto, ao olharmos os dados de comparecimento por seção
+eleitoral, temos um considerável número de casos com comparecimentos acima de
+90% e tantos outros com 100% de presença. Em um país com voto facultativo e com
+menos de 30 anos de transição democrática, 100% de comparecimento às urnas é um
+número notável. O presente artigo, então, objetiva-se a analisar as razões desse alto
+nível de comparecimento em 2018, verificando hipóteses anteriormente consideradas
+por outros autores, como obrigação moral, fraude eleitoral, mobilização feita pelos
+governadores e pressão patronal.&lt;/p&gt;
+&lt;div id=&#34;palavras-chave&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Palavras-chave&lt;/h4&gt;
+&lt;p&gt;Comparecimento eleitoral, Comportamento eleitoral, Rússia, Eleições.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;texto-completo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Texto completo&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://mateuspestana.github.io/files/iv_sd_iesp_comparecimento2018.pdf&#34;&gt;PDF&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;disponível-em&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Disponível em&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://seminariointernoiesp.files.wordpress.com/2019/07/anais2018.pdf&#34; class=&#34;uri&#34;&gt;https://seminariointernoiesp.files.wordpress.com/2019/07/anais2018.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

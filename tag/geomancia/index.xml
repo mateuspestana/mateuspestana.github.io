@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>geomancia | Mateus C. Pestana</title>
+    <link>https://mateuspestana.github.io/tag/geomancia/</link>
+      <atom:link href="https://mateuspestana.github.io/tag/geomancia/index.xml" rel="self" type="application/rss+xml" />
+    <description>geomancia</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 Matheus C. Pestana</copyright><lastBuildDate>Wed, 23 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>geomancia</title>
+      <link>https://mateuspestana.github.io/tag/geomancia/</link>
+    </image>
+    
+    <item>
+      <title>geomantR - Pacote do R para geomancia</title>
+      <link>https://mateuspestana.github.io/post/geomantr/geomantr-pacote-do-r-para-geomancia/</link>
+      <pubDate>Wed, 23 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/geomantr/geomantr-pacote-do-r-para-geomancia/</guid>
+      <description>
+&lt;script src=&#34;https://mateuspestana.github.io/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;A geomancia é uma arte divinatória árabe que remonta os séculos, sendo descoberta pela Europa na Idade Média, onde foi amplamente utilizada. Consiste em uma técnica de, ao fazer pontos na areia, identificar padrões ativos (ímpares) ou passivos (pares), e traçar figuras a partir disso. Cada figura consiste de quatro linhas, que podem ter um (ativo) ou dois (passivo) pontos.&lt;/p&gt;
+&lt;p&gt;Existem 16 figuras, que possuem nomes em latim: &lt;em&gt;via, populus, puer, puella, fortuna major, fortuna minor, albus, rubeus, caput draconis, cauda draconis, acquisitio, amissio, conjuctio, carcer, laetitia&lt;/em&gt; e &lt;em&gt;tristitia&lt;/em&gt;. Cada uma das figuras possui uma ligação com um signo, uma casa astrológica, um planeta, um elemento, enfim, um significado. A partir da formação de 4 figuras, denominadas mães, é possível gerar toda uma tábua geomântica que responderá a uma questão feita pelo Querente, ou seja, aquele que pergunta.&lt;/p&gt;
+&lt;p&gt;Por motivos de diversão, desenvolvi um pacote para R que executa todo o cálculo e plota, no console, em Markdown, a tábua geomântica, com suas respectivas informações, prontas para serem interpretadas por aqueles que sabem.&lt;/p&gt;
+&lt;p&gt;O pacote está disponível em &lt;a href=&#34;https://github.com/mateuspestana/geomantR&#34; class=&#34;uri&#34;&gt;https://github.com/mateuspestana/geomantR&lt;/a&gt;, e pode ser instalado e utilizado no R pelo comando:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# install.packages(&amp;quot;devtools&amp;quot;) # instala o devtools
+devtools::install_github(&amp;quot;mateuspestana/geomantR&amp;quot;) # baixa e instala o pacote
+library(geomantR) # carrega a biblioteca
+geomantR() # função que gera a tábua geomância
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A seguir, um exemplo de saída, em markdown, dada pela função:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;center&#34;&gt;Filha 4&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Filha 3&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Filha 2&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Filha 1&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Mãe 4&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Mãe 3&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Mãe 2&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Mãe 1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;center&#34;&gt;Sobrinho 4&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Sobrinho 3&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Sobrinho 2&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Sobrinho 1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;center&#34;&gt;Test. Esq.&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Test. Dir.&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;center&#34;&gt;Juiz&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;center&#34;&gt;o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Bom, por hoje é só! Qualquer dúvida, sugestão ou correção pode ser enviada para &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

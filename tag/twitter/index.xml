@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>twitter | Mateus C. Pestana</title>
+    <link>https://mateuspestana.github.io/tag/twitter/</link>
+      <atom:link href="https://mateuspestana.github.io/tag/twitter/index.xml" rel="self" type="application/rss+xml" />
+    <description>twitter</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 Matheus C. Pestana</copyright><lastBuildDate>Tue, 12 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>twitter</title>
+      <link>https://mateuspestana.github.io/tag/twitter/</link>
+    </image>
+    
+    <item>
+      <title>Rtweet: baixando e  salvando todos os tweets de um usuário</title>
+      <link>https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/</link>
+      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/rtweet/rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuario/</guid>
+      <description>
+&lt;script src=&#34;2019-11-12-rtweet-baixando-e-salvando-todos-os-tweets-de-um-usuário_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Vivemos em um mundo onde, desde sempre, informação significa poder. Possuir determinados livros, dominar certos conhecimentos, frequentar cursos ou universidades específica, tudo isso leva a um certo status na sociedade. Na obra &lt;strong&gt;1984&lt;/strong&gt;, de George Orwell, temos o clássico exemplo do que isso representa: o partido &lt;em&gt;IngSoc&lt;/em&gt;, a partir do Ministério da Verdade, controla informações e altera a história, ao apagar notícias, livros e acontecimentos do passado.&lt;/p&gt;
+&lt;p&gt;Uma outro exemplo, agora na vida real, foi o da Biblioteca de Alexandria, no Egito Ptolemaico. Fundada no século III a.C., possuía as grandes obras da humanidade em cerca de 700 mil papiros. Com o tempo, foi sendo alvo de ataques diretos e de descuido do poder público, com diversos saques e incêndios, sobrevivendo até 390 d.C., quando o Patriarca Teófilo I de Alexandria ordenou a sua destruição, junto com diversos outros templos pagãos. É possível, em parte, relacionar a entrada da Europa na Idade das Trevas à destruição da biblioteca: sem o conhecimento, não haverá questionamento ou críticas por parte de opositores ao regime dominante.&lt;/p&gt;
+&lt;p&gt;O mesmot ambém aconteceu no Renascimento, quando Girolamo Savonarola, padre florentino, criou as chamadas “fogueiras das vaidades”, onde queimava de obras de arte a livros, afirmando serem vaidades humanas. Adolf Hitler fez o mesmo, com o &lt;em&gt;“Bücherverbrennung”&lt;/em&gt;, ou “queima de livros”, em alemão. Toda obra que foi considerada um conteúdo em desacordo com a ideologia nazifascista, foi queimada em 1933 em praça pública. Cerca de 20 mil livros foram perdidos.&lt;/p&gt;
+&lt;p&gt;Atualmente, parece fácil apagar informações: deletar perfis de Instagram, Facebook e Twitter é fácil como (literalmente) apertar um botão. Assim, parece que provas provas podem ser completamente deletadas com pouco esforço. Todavia, não é bem assim: no caso de crimes cometidos, por exemplo, as empresas podem ser solicitadas pela justiça a entregarem os dados que, mesmo deletados pelo usuário, devem permanecer nos bancos de dados da rede responsável. É possível também utilizar o próprio cache do Google (que é temporário).&lt;/p&gt;
+&lt;p&gt;Uma outra forma de manter esses dados é fazendo o download dos mesmos com certa frequência, e salvando em um arquivo no computador, sendo esse o foco do artigo de hoje, que será dedicado ao Twitter. Assim, será possível acompanhar seu político favorito, por exemplo, e salvar absolutamente tudo que ele posta. Dessa forma, caso ele delete suas redes sociais, você possui um &lt;em&gt;backup&lt;/em&gt; dos dados.&lt;/p&gt;
+&lt;p&gt;Para fins de testes, vamos utilizar a conta do twitter de &lt;a href=&#34;https://twitter.com/hadleywickham&#34;&gt;Hadley Wickham&lt;/a&gt;, criador do RStudio. Utilizaremos também os pacotes &lt;em&gt;tidyverse&lt;/em&gt;, como sempre, &lt;em&gt;rio&lt;/em&gt;, que serve para importar/exportar dados em todos os formatos possíveis, e o &lt;em&gt;rtweet&lt;/em&gt;, que nos permite baixar dados do Twitter através da API.&lt;/p&gt;
+&lt;p&gt;O &lt;a href=&#34;https://rtweet.info/index.html&#34;&gt;rtweet&lt;/a&gt; pode ser baixado usando a função &lt;code&gt;install.packages(&#34;rtweet&#34;)&lt;/code&gt; ou então carregado pelo &lt;code&gt;pacman::p_load()&lt;/code&gt;, como costumo fazer. Lembrando, quando o pacote não estiver instalado, o pacman instala automaticamente e o carrega, possibilitando o uso na hora.&lt;/p&gt;
+&lt;p&gt;O primeiro passo, então, é carregar os pacotes que usaremos:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pacman::p_load(tidyverse, rtweet, rio)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O &lt;code&gt;rtweet&lt;/code&gt; possui, dentre suas muitas funções, a &lt;code&gt;get_timeline()&lt;/code&gt;, que baixa os tweets de uma determinada conta. Contudo, existe uma limitação: o &lt;code&gt;get_timeline()&lt;/code&gt; só consegue baixar no máximo os 3200 tweets mais recentes. Todos os outros não podem ser baixados. Por isso, é necessário que haja um acompanhamento da conta, de tempos em tempos, para que todos os tweets passem a ser salvos. É fácil entender isso como um backup do próprio computador: não é possível salvar muito para trás, mas é possível fazer backups constantemente para sempre ter uma versão atualizada.&lt;/p&gt;
+&lt;p&gt;Para baixar os &lt;em&gt;tweets&lt;/em&gt; da conta do &lt;a href=&#34;https://twitter.com/hadleywickham&#34;&gt;Hadley Wickham&lt;/a&gt;, fazemos o seguinte:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wickham &amp;lt;- get_timeline(&amp;quot;hadleywickham&amp;quot;, n = 3200)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Explicando o código acima, a função baixou os &lt;em&gt;tweets&lt;/em&gt; da conta do Hadley (para identificar, basta o usuário, sem a @!), e &lt;code&gt;n = 3200&lt;/code&gt; significa: &lt;em&gt;baixe todos os últimos 3200 tweets&lt;/em&gt;. Números acima disso não funcionarão.&lt;/p&gt;
+&lt;p&gt;Obs: é importante dizer que, se é a primeira vez que você usa o rtweet, uma página se abrirá, pedindo para fazer login e autorizar a aplicação no seu Twitter. Esse passo é necessário para que os dados possam ser acessados e baixados. A autorização funcionará somente em sua conta no seu computador, mantendo seus dados do twitter em segurança.&lt;/p&gt;
+&lt;p&gt;Vamos dar uma olhada no banco:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;glimpse(wickham)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 3,196
+## Columns: 90
+## $ user_id                 &amp;lt;chr&amp;gt; &amp;quot;69133574&amp;quot;, &amp;quot;69133574&amp;quot;, &amp;quot;69133574&amp;quot;, &amp;quot;69133574&amp;quot;…
+## $ status_id               &amp;lt;chr&amp;gt; &amp;quot;1366844045029486595&amp;quot;, &amp;quot;1366843610516369409&amp;quot;, …
+## $ created_at              &amp;lt;dttm&amp;gt; 2021-03-02 20:13:09, 2021-03-02 20:11:26, 202…
+## $ screen_name             &amp;lt;chr&amp;gt; &amp;quot;hadleywickham&amp;quot;, &amp;quot;hadleywickham&amp;quot;, &amp;quot;hadleywickh…
+## $ text                    &amp;lt;chr&amp;gt; &amp;quot;Watch Sharla&amp;#39;s 💯 talk about reproducible exam…
+## $ source                  &amp;lt;chr&amp;gt; &amp;quot;Twitter Web App&amp;quot;, &amp;quot;Twitter Web App&amp;quot;, &amp;quot;Twitter…
+## $ display_text_width      &amp;lt;dbl&amp;gt; 116, 35, 3, 140, 57, 143, 17, 84, 121, 140, 14…
+## $ reply_to_status_id      &amp;lt;chr&amp;gt; NA, &amp;quot;1366835687593508875&amp;quot;, &amp;quot;136684052474168934…
+## $ reply_to_user_id        &amp;lt;chr&amp;gt; NA, &amp;quot;43186378&amp;quot;, &amp;quot;2440258777&amp;quot;, NA, &amp;quot;45565875&amp;quot;, …
+## $ reply_to_screen_name    &amp;lt;chr&amp;gt; NA, &amp;quot;CMastication&amp;quot;, &amp;quot;kierisi&amp;quot;, NA, &amp;quot;emilmalta&amp;quot;…
+## $ is_quote                &amp;lt;lgl&amp;gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
+## $ is_retweet              &amp;lt;lgl&amp;gt; TRUE, FALSE, FALSE, TRUE, FALSE, TRUE, FALSE, …
+## $ favorite_count          &amp;lt;int&amp;gt; 0, 2, 5, 0, 2, 0, 19, 234, 0, 0, 0, 0, 0, 0, 1…
+## $ retweet_count           &amp;lt;int&amp;gt; 6, 0, 0, 19, 0, 23, 0, 5, 653, 30, 59, 23, 65,…
+## $ quote_count             &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ reply_count             &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ hashtags                &amp;lt;list&amp;gt; [NA, NA, NA, NA, NA, &amp;quot;rstats&amp;quot;, NA, &amp;quot;rstats&amp;quot;, …
+## $ symbols                 &amp;lt;list&amp;gt; [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ urls_url                &amp;lt;list&amp;gt; [&amp;quot;twitter.com/sharlagelfand/…&amp;quot;, NA, NA, NA, N…
+## $ urls_t.co               &amp;lt;list&amp;gt; [&amp;quot;https://t.co/D1iUlXKyTX&amp;quot;, NA, NA, NA, NA, N…
+## $ urls_expanded_url       &amp;lt;list&amp;gt; [&amp;quot;https://twitter.com/sharlagelfand/status/13…
+## $ media_url               &amp;lt;list&amp;gt; [&amp;quot;http://pbs.twimg.com/media/EvcWmixU4AEgX3v.…
+## $ media_t.co              &amp;lt;list&amp;gt; [&amp;quot;https://t.co/XLeHCJ0kIV&amp;quot;, NA, NA, NA, NA, N…
+## $ media_expanded_url      &amp;lt;list&amp;gt; [&amp;quot;https://twitter.com/juliasilge/status/13665…
+## $ media_type              &amp;lt;list&amp;gt; [&amp;quot;photo&amp;quot;, NA, NA, NA, NA, NA, &amp;quot;photo&amp;quot;, &amp;quot;photo…
+## $ ext_media_url           &amp;lt;list&amp;gt; [&amp;quot;http://pbs.twimg.com/media/EvcWmixU4AEgX3v.…
+## $ ext_media_t.co          &amp;lt;list&amp;gt; [&amp;quot;https://t.co/XLeHCJ0kIV&amp;quot;, NA, NA, NA, NA, N…
+## $ ext_media_expanded_url  &amp;lt;list&amp;gt; [&amp;quot;https://twitter.com/juliasilge/status/13665…
+## $ ext_media_type          &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ mentions_user_id        &amp;lt;list&amp;gt; [&amp;quot;13074042&amp;quot;, &amp;quot;43186378&amp;quot;, &amp;quot;2440258777&amp;quot;, &amp;quot;97395…
+## $ mentions_screen_name    &amp;lt;list&amp;gt; [&amp;quot;juliasilge&amp;quot;, &amp;quot;CMastication&amp;quot;, &amp;quot;kierisi&amp;quot;, &amp;quot;al…
+## $ lang                    &amp;lt;chr&amp;gt; &amp;quot;en&amp;quot;, &amp;quot;en&amp;quot;, &amp;quot;und&amp;quot;, &amp;quot;en&amp;quot;, &amp;quot;en&amp;quot;, &amp;quot;en&amp;quot;, &amp;quot;en&amp;quot;, &amp;quot;en…
+## $ quoted_status_id        &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_text             &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_created_at       &amp;lt;dttm&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ quoted_source           &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_favorite_count   &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_retweet_count    &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_user_id          &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_screen_name      &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_name             &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_followers_count  &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_friends_count    &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_statuses_count   &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_location         &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_description      &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ quoted_verified         &amp;lt;lgl&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ retweet_status_id       &amp;lt;chr&amp;gt; &amp;quot;1366586155387342849&amp;quot;, NA, NA, &amp;quot;13668152182616…
+## $ retweet_text            &amp;lt;chr&amp;gt; &amp;quot;Watch Sharla&amp;#39;s 💯 talk about reproducible exam…
+## $ retweet_created_at      &amp;lt;dttm&amp;gt; 2021-03-02 03:08:24, NA, NA, 2021-03-02 18:18…
+## $ retweet_source          &amp;lt;chr&amp;gt; &amp;quot;Twitter Web App&amp;quot;, NA, NA, &amp;quot;Twitter Web App&amp;quot;, …
+## $ retweet_favorite_count  &amp;lt;int&amp;gt; 66, NA, NA, 99, NA, 96, NA, NA, 4680, 113, 148…
+## $ retweet_retweet_count   &amp;lt;int&amp;gt; 6, NA, NA, 19, NA, 23, NA, NA, 653, 30, 59, 23…
+## $ retweet_user_id         &amp;lt;chr&amp;gt; &amp;quot;13074042&amp;quot;, NA, NA, &amp;quot;973955318987210752&amp;quot;, NA, …
+## $ retweet_screen_name     &amp;lt;chr&amp;gt; &amp;quot;juliasilge&amp;quot;, NA, NA, &amp;quot;allison_horst&amp;quot;, NA, &amp;quot;ju…
+## $ retweet_name            &amp;lt;chr&amp;gt; &amp;quot;Julia Silge&amp;quot;, NA, NA, &amp;quot;Allison Horst&amp;quot;, NA, &amp;quot;J…
+## $ retweet_followers_count &amp;lt;int&amp;gt; 37825, NA, NA, 18580, NA, 991, NA, NA, 2841, 2…
+## $ retweet_friends_count   &amp;lt;int&amp;gt; 705, NA, NA, 2773, NA, 430, NA, NA, 745, 1275,…
+## $ retweet_statuses_count  &amp;lt;int&amp;gt; 22380, NA, NA, 3026, NA, 1546, NA, NA, 27524, …
+## $ retweet_location        &amp;lt;chr&amp;gt; &amp;quot;Salt Lake City, UT&amp;quot;, NA, NA, &amp;quot;Chumash &amp;amp; Paiut…
+## $ retweet_description     &amp;lt;chr&amp;gt; &amp;quot;Data science and modeling at @rstudio, #rstat…
+## $ retweet_verified        &amp;lt;lgl&amp;gt; FALSE, NA, NA, FALSE, NA, FALSE, NA, NA, FALSE…
+## $ place_url               &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ place_name              &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ place_full_name         &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ place_type              &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ country                 &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ country_code            &amp;lt;chr&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ geo_coords              &amp;lt;list&amp;gt; [&amp;lt;NA, NA&amp;gt;, &amp;lt;NA, NA&amp;gt;, &amp;lt;NA, NA&amp;gt;, &amp;lt;NA, NA&amp;gt;, &amp;lt;NA,…
+## $ coords_coords           &amp;lt;list&amp;gt; [&amp;lt;NA, NA&amp;gt;, &amp;lt;NA, NA&amp;gt;, &amp;lt;NA, NA&amp;gt;, &amp;lt;NA, NA&amp;gt;, &amp;lt;NA,…
+## $ bbox_coords             &amp;lt;list&amp;gt; [&amp;lt;NA, NA, NA, NA, NA, NA, NA, NA&amp;gt;, &amp;lt;NA, NA, N…
+## $ status_url              &amp;lt;chr&amp;gt; &amp;quot;https://twitter.com/hadleywickham/status/1366…
+## $ name                    &amp;lt;chr&amp;gt; &amp;quot;Hadley Wickham&amp;quot;, &amp;quot;Hadley Wickham&amp;quot;, &amp;quot;Hadley Wi…
+## $ location                &amp;lt;chr&amp;gt; &amp;quot;Houston, TX&amp;quot;, &amp;quot;Houston, TX&amp;quot;, &amp;quot;Houston, TX&amp;quot;, &amp;quot;…
+## $ description             &amp;lt;chr&amp;gt; &amp;quot;R, data, visualisation, 🐕, 🍸, 🌈. He/him&amp;quot;, &amp;quot;R,…
+## $ url                     &amp;lt;chr&amp;gt; &amp;quot;https://t.co/DWqWlxbOKK&amp;quot;, &amp;quot;https://t.co/DWqWl…
+## $ protected               &amp;lt;lgl&amp;gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
+## $ followers_count         &amp;lt;int&amp;gt; 118051, 118051, 118051, 118051, 118051, 118051…
+## $ friends_count           &amp;lt;int&amp;gt; 269, 269, 269, 269, 269, 269, 269, 269, 269, 2…
+## $ listed_count            &amp;lt;int&amp;gt; 2969, 2969, 2969, 2969, 2969, 2969, 2969, 2969…
+## $ statuses_count          &amp;lt;int&amp;gt; 40635, 40635, 40635, 40635, 40635, 40635, 4063…
+## $ favourites_count        &amp;lt;int&amp;gt; 24169, 24169, 24169, 24169, 24169, 24169, 2416…
+## $ account_created_at      &amp;lt;dttm&amp;gt; 2009-08-26 23:34:46, 2009-08-26 23:34:46, 200…
+## $ verified                &amp;lt;lgl&amp;gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE…
+## $ profile_url             &amp;lt;chr&amp;gt; &amp;quot;https://t.co/DWqWlxbOKK&amp;quot;, &amp;quot;https://t.co/DWqWl…
+## $ profile_expanded_url    &amp;lt;chr&amp;gt; &amp;quot;http://hadley.nz&amp;quot;, &amp;quot;http://hadley.nz&amp;quot;, &amp;quot;http:…
+## $ account_lang            &amp;lt;lgl&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ profile_banner_url      &amp;lt;chr&amp;gt; &amp;quot;https://pbs.twimg.com/profile_banners/6913357…
+## $ profile_background_url  &amp;lt;chr&amp;gt; &amp;quot;http://abs.twimg.com/images/themes/theme15/bg…
+## $ profile_image_url       &amp;lt;chr&amp;gt; &amp;quot;http://pbs.twimg.com/profile_images/905186381…&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Temos 90 variáveis e 3198 variáveis. Às vezes, o &lt;code&gt;rtweet&lt;/code&gt; não baixa completamente os 3200, por erros de internet, erros do próprio Twitter ou então pelo fato de não existirem. No caso do Hadley, ele possui bem mais de 3200, logo, ou foi a internet ou foi a API. De qualquer forma, apenas 4 &lt;em&gt;tweets&lt;/em&gt; não foram baixados, o que representa apenas &lt;strong&gt;0,125%&lt;/strong&gt; do total.&lt;/p&gt;
+&lt;p&gt;Para salvar esse arquivo em outros formatos, basta executar:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;export(wickham, &amp;quot;wickham.xlsx&amp;quot;) # Para salvar em Excel
+export(wickham, &amp;quot;wickham.csv&amp;quot;) # Para  salvar em CSV
+export(wickham, &amp;quot;wickham.sav&amp;quot;) # Para salvar no formato do SPSS
+export(wickham, &amp;quot;wickham.dta&amp;quot;) # Para salvar no formato do Stata
+export(wickham, &amp;quot;wickham.json&amp;quot;) # Para salvar em JSON
+# Dentre outros formatos...
+
+# E para salvar em .RData, o formato padrão do R
+save(wickham, &amp;quot;wickham.RData&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ok, mas e agora? Se a conta que acompanho posta &lt;em&gt;tweets&lt;/em&gt; constantemente, como juntar esses ao banco?&lt;/p&gt;
+&lt;p&gt;É preciso executar a função &lt;code&gt;get_timelines()&lt;/code&gt;, de tempos em tempos (a depender da frequência de &lt;em&gt;tweets&lt;/em&gt;), e depois somar ao banco original usando a função &lt;code&gt;bind_rows()&lt;/code&gt; do * dplyr*. Lembre-se: salve em um objeto com um nome &lt;strong&gt;diferente&lt;/strong&gt; do original, para que os dados não sejam sobreescritos. É importante também lembrar que a função só funciona se todas as colunas (variáveis) forem as mesmas, ou seja, não é interessante remover variáveis&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wickham_update &amp;lt;- get_timeline(&amp;quot;hadleywickham&amp;quot;, n = 3200)
+
+wickham &amp;lt;- bind_rows(wickham, wickham_update)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Entretanto, se a conta tem uma frequência irregular e, por isso, é importante baixar em um intervalo pequeno, muitos &lt;em&gt;tweets&lt;/em&gt; virão repetidos, pois já foram baixados antes. Para evitar isso, utilizamos a função &lt;code&gt;distinct()&lt;/code&gt;, também do &lt;em&gt;dplyr&lt;/em&gt;, que filtra apenas pelos valores únicos, removendo o que for repetido. A variável que representa valores únicos de &lt;em&gt;tweets&lt;/em&gt; no banco é a &lt;strong&gt;status_id&lt;/strong&gt;, que é o número único de todo tweet. Logo, se existirem dois números iguais no &lt;strong&gt;status_id&lt;/strong&gt;, se referem à &lt;em&gt;tweets&lt;/em&gt; iguais. Adicionando, com o pipe &lt;code&gt;%&amp;gt;%&lt;/code&gt; a função &lt;code&gt;distinct()&lt;/code&gt;, conseguimos manter somente os &lt;em&gt;tweets&lt;/em&gt; únicos:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;wickham &amp;lt;- bind_rows(wickham, wickham_update) %&amp;gt;% 
+  distinct(status_id, .keep_all = T) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;O argumento &lt;code&gt;.keep_all = T&lt;/code&gt; é &lt;strong&gt;essencial&lt;/strong&gt; na função: ela mantém todas as variáveis do banco. Sem ela, todas as variáveis seriam removidas, menos &lt;strong&gt;status_id&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;No final, o código completo que deve ser executado fica bem simples, da seguinte forma:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Para baixar os tweets pela primeira vez
+wickham &amp;lt;- get_timeline(&amp;quot;hadleywickham&amp;quot;, n = 3200)
+
+# Para atualizar esse banco
+wickham_update &amp;lt;- get_timeline(&amp;quot;hadleywickham&amp;quot;, n = 3200)
+
+# Juntando o novo e o antigo, selecionando os tweets únicos e exportando para Excel
+wickham &amp;lt;- bind_rows(wickham, wickham_update) %&amp;gt;% 
+  distinct(status_id, .keep_all = T) 
+
+# Salvando em Excel (ou qualquer outro formato)
+export(wickham, &amp;quot;wickham.xlsx&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bom, por hoje é só! Assim, você pode salvar os &lt;em&gt;tweets&lt;/em&gt; de uma determinada conta. Mesmo que deletada, os &lt;em&gt;tweets&lt;/em&gt; continuarão acessíveis do seu computador, e podem (e devem) ser compartilhados, no caso de pessoas públicas com responsabilidade política e social. Futuramente, utilizarei o &lt;code&gt;rtweet&lt;/code&gt; para explorar mais os dados do Twitter, como &lt;em&gt;hashtags&lt;/em&gt;, usuários e frequência de &lt;em&gt;tweets.&lt;/em&gt; Qualquer dúvida, correção ou sugestão pode ser encaminhada para &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

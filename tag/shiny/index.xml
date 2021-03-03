@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shiny | Mateus C. Pestana</title>
+    <link>https://mateuspestana.github.io/tag/shiny/</link>
+      <atom:link href="https://mateuspestana.github.io/tag/shiny/index.xml" rel="self" type="application/rss+xml" />
+    <description>shiny</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 Matheus C. Pestana</copyright><lastBuildDate>Tue, 02 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>shiny</title>
+      <link>https://mateuspestana.github.io/tag/shiny/</link>
+    </image>
+    
+    <item>
+      <title>Candidaturas Religiosas</title>
+      <link>https://mateuspestana.github.io/portfolio/2021-03-02-candidaturas-religiosas/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/portfolio/2021-03-02-candidaturas-religiosas/</guid>
+      <description>
+&lt;script src=&#34;https://mateuspestana.github.io/portfolio/2021-03-02-candidaturas-religiosas/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Candidaturas Religiosas é uma base de dados disponível para visualização, originada na pesquisa de Religião e Política do Instituto de Estudos da Religião (ISER). Tanto os dados, obtidos do TSE e filtrados, quanto a dashboard, foram desenvolvidos por mim, em Shiny.&lt;/p&gt;
+&lt;p&gt;O site pode ser acessado &lt;a href=&#34;http://192.241.143.217:8090/&#34;&gt;aqui&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VotaAí</title>
+      <link>https://mateuspestana.github.io/portfolio/2021-03-02-votaai/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/portfolio/2021-03-02-votaai/</guid>
+      <description>
+&lt;script src=&#34;https://mateuspestana.github.io/portfolio/2021-03-02-votaai/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;img src=&#34;featured.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;O VotaAí é uma plataforma onde programas partidários municipais podem ser analisados, visualizados e comparados. Idealizado por Dra. Nara Salles (IESP-UERJ), foi desenvolvido por mim em Shiny, utilizando pacotes como o quanteda e o ggplot2 para os gráficos.&lt;/p&gt;
+&lt;p&gt;Pode ser encontrado &lt;a href=&#34;http://64.225.91.205:8080/&#34;&gt;aqui&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

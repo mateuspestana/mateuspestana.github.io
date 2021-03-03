@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fraude eleitoral | Mateus C. Pestana</title>
+    <link>https://mateuspestana.github.io/tag/fraude-eleitoral/</link>
+      <atom:link href="https://mateuspestana.github.io/tag/fraude-eleitoral/index.xml" rel="self" type="application/rss+xml" />
+    <description>fraude eleitoral</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt</language><copyright>© 2021 Matheus C. Pestana</copyright><lastBuildDate>Thu, 14 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://mateuspestana.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png</url>
+      <title>fraude eleitoral</title>
+      <link>https://mateuspestana.github.io/tag/fraude-eleitoral/</link>
+    </image>
+    
+    <item>
+      <title>Sobre a suposta fraude eleitoral nas eleições bolivianas</title>
+      <link>https://mateuspestana.github.io/post/fraude_bolivia/sobre-a-suposta-fraude-eleitoral-nas-eleicoes-bolivianas/</link>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://mateuspestana.github.io/post/fraude_bolivia/sobre-a-suposta-fraude-eleitoral-nas-eleicoes-bolivianas/</guid>
+      <description>
+&lt;script src=&#34;2019-11-14-sobre-a-suposta-fraude-eleitoral-nas-eleições-bolivianas_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Antes do término da apuração das eleições na Bolívia, a OEA declarou em seu relatório (disponível aqui: &lt;a href=&#34;https://www.oas.org/en/media_center/press_release.asp?sCodigo=E-099/19&#34; class=&#34;uri&#34;&gt;https://www.oas.org/en/media_center/press_release.asp?sCodigo=E-099/19&lt;/a&gt;) que haveriam indícios de que “algo errado havia acontecido e que não poderiam assegurar a integridade do resultado”, devido às irregularidades encontradas pelos auditores da organização. Evo Morales prontamente afirmou que convocaria novamente as eleições, mas ainda assim as Forças Armadas do país obrigaram a sua renúncia, sendo esse um claro golpe para tomar o poder.&lt;/p&gt;
+&lt;p&gt;Nas redes sociais, principalmente no Twitter, muitos estavam condenando o golpe contra Evo, mas poucos falaram sobre o relatório da OEA, que versa sobre as irregularidades encontradas no processo. A auditoria se debruça sobre as diversas partes do processo, da contagem até a transmissão dos dados ao TSE, o Tribunal Supremo Eleitoral da Bolívia. Houveram problemas nos servidores, nos bancos de dados e na transmissão, e a OEA afirmou que não podiam garantir a integridade dos votos nessas dimensões.&lt;/p&gt;
+&lt;p&gt;Todavia, os problemas encontrados (como por exemplo, instabilidade nos servidores), não afetavam os resultados em si, somente a transmissão dos resultados preliminares. Ainda assim, os auditores ao observarem o processo de contagem de votos, identificaram tendências de crescimento de votos a favor do MAS (Movimento para o Socialismo, partido de Evo Morales) e consideraram tais tendências anômalas, apontando que aí residia a comprovação da fraude.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://mateuspestana.github.io/files/bolivia_oea/fig1.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figura 1&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://mateuspestana.github.io/files/bolivia_oea/fig2.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figura 2&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;As figuras acima mostram a densidade, ou seja, a distribuição da quantidade de votos computados (eixo Y) pelo momento em que os dados foram computados (eixo X), na figura 1, e pelo &lt;em&gt;timestamp&lt;/em&gt;, ou seja, um marcador temporal do processamento dos votos (eixo X), na figura 2. O que podemos perceber na primeira figura é que a distribuição tem uma concentração maior mais ou menos no meio entre as 12h do dia 20 de outubro e as 00h do dia 21. Na segunda figura, percebemos uma distribuição bimodal, e um pico a partir de 12h do dia 21 de outubro. Isso por si só não atesta fraude eleitoral, mas se refere a problemas com os servidores e problemas na transmissão, que não foram contínuas.&lt;/p&gt;
+&lt;p&gt;O segundo ponto utilizado pela OEA para declarar que as eleições foram fraudadas foi a contagem dos votos. Eles afirmam isso a partir da análise de dois momentos na contagem: quando houve a apuração de 81% e 95% dos votos apurados. A OEA afirmou que tendências fora do padrão ocorreram nesses marcadores temporais, que podem ser vistos abaixo:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://mateuspestana.github.io/files/bolivia_oea/fig3.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figura 3&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://mateuspestana.github.io/files/bolivia_oea/fig4.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Figura 4&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;As imagens são bastante convincentes em um primeiro momento, onde percebemos uma clara mudança da reta de tendência em 81%, na Figura 3, e em 95%, na Figura 4, mostrando um crescimento vertiginoso a favor do MAS, o que por si só poderia significar a inserção de votos no sistema, indicando a fraude, sendo essa a narrativa adotada. Contudo, essas imagens apresentam um mesmo problema: as linhas de tendência, em azul, não são as mesmas, pois possuem dois pontos iniciais, marcados arbitrariamente. Não há justificativas metodológicas que expliquem essa diferenciação ao criar duas linhas de tendência em dois momentos para um mesmo dado, que foi coletado de forma quase contínua. Em qualquer ponto onde essa linha de tendência se iniciasse, ela teria um comportamento diferente do resto.&lt;/p&gt;
+&lt;p&gt;Um exemplo: se pegássemos e fizéssemos um separador entre 0.2 (20%) e o resto, à direita, cada lado com uma linha própria, teríamos uma linha que começa alta e termina, aos 20%, baixa, enquanto toda a linha do lado direito teria um crescimento. Logo, não se pode dizer que isso representa fraude, pois não há nada de anormal nesses dados. A linha de tendência precisa ser uma só.&lt;/p&gt;
+&lt;p&gt;Uma acusação feita ao MAS é que os dados cresceram, ao final, em uma velocidade muito alta, aumentando consideravelmente o voto no partido. Isso também, por si só, não comprova fraude. Como apontado pelo relatório da CEPR (&lt;em&gt;Center For Economic and Policy Research&lt;/em&gt;, disponível em: &lt;a href=&#34;http://cepr.net/publications/reports/bolivia-elections-2019-11&#34; class=&#34;uri&#34;&gt;http://cepr.net/publications/reports/bolivia-elections-2019-11&lt;/a&gt;), a justificativa é puramente geográfica: as regiões rurais, mais distantes do centro, são majoritariamente apoiadoras de Evo e do MAS, e pela própria distância e tamanho populacional, os votos demoram mais para serem computados. Quando os votos foram recebidos, a maioria era a favor de Evo Morales e, por isso, o crescimento ocorreu em uma grande velocidade.&lt;/p&gt;
+&lt;p&gt;Isso ocorreu no Brasil em 2014, no segundo turno das eleições. Às 17h01, no início da contagem, Aécio Neves detinha 67,7% dos votos, e Dilma Roussef, 32,3%. Às 19h32, ambos se encontravam empatados, e após isso, Dilma superou Aécio. Nesse momento, os votos da região norte e nordeste começaram a ser contados. Sendo tais regiões fortes apoiadoras do PT, faz sentido o crescimento e a superação nos votos. Nesse sentido, é importante lembrar que o voto no brasil é eletrônico, e a apuração é acelerada, enquanto na Bolívia o voto é em papel, o que torna a contagem mais difícil. O PSDB, à época, chegou a pedir recontagem, mas sua auditoria percebeu que não houve fraude: o crescimento de Dilma se deu por um critério &lt;strong&gt;geográfico&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A última crítica da OEA a ser rebatida no processo eleitoral boliviano é o número de seções eleitorais com um alto comparecimento e um número elevado de votos no MAS. Como mostrado pelo usuário Rodrigo Quiroga no Twitter (&lt;span class=&#34;citation&#34;&gt;@rquiroga777&lt;/span&gt;, no post: &lt;a href=&#34;https://twitter.com/rquiroga777/status/1193973844752707585&#34; class=&#34;uri&#34;&gt;https://twitter.com/rquiroga777/status/1193973844752707585&lt;/a&gt;), isso não é indicativo de fraude. Só demonstra a existência de uma polarização regional, o que já ficou claro anteriormente: existem lugares, como zonas rurais e distantes de Santa Cruz (onde o CC teve a maioria dos votos), que a mobilização é enorme e o apoio ao MAS é majoritário, logo, a maioria vota no partido. Quiroga também estima que somente 588 seções apresentam esse “desvio de comportamento”, que não comprova fraude, é apenas um reflexo de um contexto político. Sem elas, o MAS continuaria ganhando.&lt;/p&gt;
+&lt;p&gt;Esperava-se uma análise mais sofisticada por parte da OEA, o que não se verificou. Pode-se dizer, dessa forma, que o papel da OEA na auditoria das eleições na Bolívia foi meramente político, indo contrário aos interesses nacionais do país e da população que manifestou suas preferências pelo voto. O relatório foi claramente enviesado, fazendo com que um país democrático chegasse à beira de uma guerra civil, exilando um presidente democraticamente eleito e instaurando na presidência alguém que não é seguido pela maioria da população.&lt;/p&gt;
+&lt;p&gt;Agradecimentos à &lt;a href=&#34;https://twitter.com/mariliacloss&#34;&gt;Marília Closs&lt;/a&gt; que acompanhou e esclareceu em tempo real a conjuntura boliviana no contexto do recente golpe. Qualquer dúvida, correção ou sugestão pode ser encaminhada para &lt;a href=&#34;mailto:matheus.pestana@iesp.uerj.br&#34; class=&#34;email&#34;&gt;matheus.pestana@iesp.uerj.br&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
