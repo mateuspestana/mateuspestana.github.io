@@ -95,10 +95,6 @@ Why Polars? Polars is a DataFrame library designed for high-performance data man
 </span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">lazy_df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">with_column</span><span class="p">((</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 </span></span></code></pre></div><h3 id="conclusion">Conclusion</h3>
 <p>Transitioning from Pandas to Polars can significantly boost your data processing performance. While the syntax and concepts are similar, Polars offers additional features like lazy evaluation and parallel execution that can handle larger datasets more efficiently. By understanding these differences and adapting your code accordingly, you can leverage the full power of Polars.</p>
-<p>Experiment with Polars, benchmark it against your existing Pandas workflows, and enjoy the performance benefits!</p>
-<hr>
-<p>Feel free to leave comments or questions below, and check out our other tutorials for more tips on data science and data engineering!</p>
-<hr>
 <p><strong>References:</strong></p>
 <ul>
 <li><a href="https://pola-rs.github.io/polars-book/">Polars Documentation</a></li>
