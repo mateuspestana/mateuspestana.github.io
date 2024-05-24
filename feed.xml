@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>matheus@localhost:~$</title>
+    <link>https://mateuspestana.github.io/</link>
+    <description>Recent content on matheus@localhost:~$</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 24 May 2024 12:04:53 -0300</lastBuildDate><atom:link href="https://mateuspestana.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From Pandas to Polars</title>
+      <link>https://mateuspestana.github.io/tutorials/pandas_to_polars/</link>
+      <pubDate>Fri, 24 May 2024 12:04:53 -0300</pubDate>
+      
+      <guid>https://mateuspestana.github.io/tutorials/pandas_to_polars/</guid>
+      <description>Migrating from Pandas to Polars: A Concise Tutorial If you&amp;rsquo;re a data scientist or analyst familiar with Pandas and are considering switching to Polars for its performance benefits, this guide will help you make the transition smoothly. I&amp;rsquo;ll cover the key differences and provide examples to get you up and running with Polars.
+Why Polars? Polars is a DataFrame library designed for high-performance data manipulation and analysis. It leverages Rust&amp;rsquo;s speed and efficiency, offering significant performance improvements over Pandas, especially with large datasets.</description>
+      <content:encoded><![CDATA[<h2 id="migrating-from-pandas-to-polars-a-concise-tutorial">Migrating from Pandas to Polars: A Concise Tutorial</h2>
+<p>If you&rsquo;re a data scientist or analyst familiar with Pandas and are considering switching to Polars for its performance benefits, this guide will help you make the transition smoothly. I&rsquo;ll cover the key differences and provide examples to get you up and running with Polars.</p>
+<h3 id="why-polars">Why Polars?</h3>
+<p>Polars is a DataFrame library designed for high-performance data manipulation and analysis. It leverages Rust&rsquo;s speed and efficiency, offering significant performance improvements over Pandas, especially with large datasets.</p>
+<h3 id="installation">Installation</h3>
+<p>First, install Polars using pip:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install polars
+</span></span></code></pre></div><h3 id="basic-dataframe-operations">Basic DataFrame Operations</h3>
+<h4 id="creating-dataframes">Creating DataFrames</h4>
+<p><strong>Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Polars:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">polars</span> <span class="k">as</span> <span class="nn">pl</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span></code></pre></div><h4 id="viewing-data">Viewing Data</h4>
+<p><strong>Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</span></span></code></pre></div><p><strong>Polars:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</span></span></code></pre></div><h4 id="selecting-columns">Selecting Columns</h4>
+<p><strong>Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+</span></span></code></pre></div><p><strong>Polars:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><h4 id="filtering-rows">Filtering Rows</h4>
+<p><strong>Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+</span></span></code></pre></div><p><strong>Polars:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></div><h4 id="adding-new-columns">Adding New Columns</h4>
+<p><strong>Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+</span></span></code></pre></div><p><strong>Polars:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">with_column</span><span class="p">((</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">))</span>
+</span></span></code></pre></div><h4 id="group-by-and-aggregation">Group By and Aggregation</h4>
+<p><strong>Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</span></span></code></pre></div><p><strong>Polars:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="advanced-operations">Advanced Operations</h3>
+<h4 id="joining-dataframes">Joining DataFrames</h4>
+<p><strong>Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;value1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]})</span>
+</span></span><span class="line"><span class="cl"><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s1">&#39;value2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]})</span>
+</span></span><span class="line"><span class="cl"><span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Polars:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df1</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;value1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]})</span>
+</span></span><span class="line"><span class="cl"><span class="n">df2</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="s1">&#39;value2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]})</span>
+</span></span><span class="line"><span class="cl"><span class="n">df_merged</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><h4 id="applying-functions">Applying Functions</h4>
+<p><strong>Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Polars:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>
+</span></span></code></pre></div><h4 id="pivot-tables">Pivot Tables</h4>
+<p><strong>Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Polars:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">aggregate_fn</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="performance-considerations">Performance Considerations</h3>
+<p>Polars is designed to be faster and more memory-efficient than Pandas, especially with larger datasets. It achieves this through:</p>
+<ol>
+<li><strong>Columnar Storage</strong>: Polars uses Arrow&rsquo;s columnar format, allowing efficient data access and manipulation.</li>
+<li><strong>Parallel Execution</strong>: Polars performs many operations in parallel, taking advantage of multi-core processors.</li>
+<li><strong>Lazy Evaluation</strong>: Polars supports lazy evaluation, meaning operations are optimized and executed only when needed.</li>
+</ol>
+<h4 id="example-of-lazy-evaluation">Example of Lazy Evaluation</h4>
+<p><strong>Pandas:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
+</span></span></code></pre></div><p><strong>Polars:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">lazy_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">lazy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">lazy_df</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">with_column</span><span class="p">((</span><span class="n">pl</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="conclusion">Conclusion</h3>
+<p>Transitioning from Pandas to Polars can significantly boost your data processing performance. While the syntax and concepts are similar, Polars offers additional features like lazy evaluation and parallel execution that can handle larger datasets more efficiently. By understanding these differences and adapting your code accordingly, you can leverage the full power of Polars.</p>
+<p>Experiment with Polars, benchmark it against your existing Pandas workflows, and enjoy the performance benefits!</p>
+<hr>
+<p>Feel free to leave comments or questions below, and check out our other tutorials for more tips on data science and data engineering!</p>
+<hr>
+<p><strong>References:</strong></p>
+<ul>
+<li><a href="https://pola-rs.github.io/polars-book/">Polars Documentation</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/">Pandas Documentation</a></li>
+</ul>
+<hr>
+<p>Happy coding! Feel free to reach me out at matheus.pestana at fgv.br</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>KANs - New Era of Data Science</title>
+      <link>https://mateuspestana.github.io/posts/kans/</link>
+      <pubDate>Fri, 24 May 2024 11:35:11 -0300</pubDate>
+      
+      <guid>https://mateuspestana.github.io/posts/kans/</guid>
+      <description>In this blog post, I will try to explain the fascinating (but not new) world of Kolmogorov-Arnold Networks (KANs). I will explore how they differ from the more commonly known Multi-Layer Perceptrons (MLPs), discuss their strengths and weaknesses, and provide examples to illustrate their applications.
+What are Kolmogorov-Arnold Networks? Kolmogorov-Arnold Networks are named after the Kolmogorov-Arnold representation theorem. This theorem states that any continuous function of several variables can be represented as a superposition of continuous functions of one variable and addition.</description>
+      <content:encoded><![CDATA[<p>In this blog post, I will try to explain the fascinating (but not new) world of Kolmogorov-Arnold Networks (KANs). I will explore how they differ from the more commonly known Multi-Layer Perceptrons (MLPs), discuss their strengths and weaknesses, and provide examples to illustrate their applications.</p>
+<h3 id="what-are-kolmogorov-arnold-networks">What are Kolmogorov-Arnold Networks?</h3>
+<p>Kolmogorov-Arnold Networks are named after the Kolmogorov-Arnold representation theorem. This theorem states that any continuous function of several variables can be represented as a superposition of continuous functions of one variable and addition. This powerful idea forms the basis of KANs, which aim to represent complex functions using simpler, univariate functions and summation operations.</p>
+<p><strong>Too difficult? Let&rsquo;s break it down!</strong></p>
+<h4 id="explanation-level-2">Explanation Level 2</h4>
+<p>Imagine you have a complex machine that takes several inputs (like a multi-variable function). The theorem tells us that we can break down this complex machine into simpler machines (each taking only one input) and then combine their outputs to get the same result as the original complex machine.</p>
+<h4 id="explanation-level-3">Explanation Level 3</h4>
+<p>Think of baking a cake. The final cake (the complex function) is a result of several ingredients mixed together. According to the theorem, you can imagine creating the cake by first processing each ingredient separately (simple functions) and then combining them in a certain way to get the final product.</p>
+<h3 id="differences-from-multi-layer-perceptrons-mlps">Differences from Multi-Layer Perceptrons (MLPs)</h3>
+<p>While both KANs and MLPs are types of neural networks, they have some key differences:</p>
+<p>
+  <img loading="lazy" src="https://blog.paperspace.com/content/images/size/w1600/2024/05/Screenshot-2024-05-14-at-8.02.06-PM.png" alt=""  /></p>
+<ol>
+<li>Representation Theorem: KANs are based on the Kolmogorov-Arnold representation theorem, focusing on decomposing multivariate functions into univariate functions. In contrast, MLPs are based on layers of neurons with nonlinear activation functions that aim to approximate complex functions through a hierarchical structure.</li>
+<li>Network Structure: KANs typically use fewer parameters because they leverage the decomposition of functions into simpler components. MLPs, on the other hand, often require more layers and neurons to achieve similar levels of function approximation, leading to a larger number of parameters.</li>
+<li>Training Complexity: Training KANs can be more challenging due to their unique structure and the need to optimize the decomposition of functions. MLPs, while also complex, benefit from well-established training algorithms like backpropagation and various optimizers that are widely researched and understood.</li>
+<li>While we have fixed activation functions on nodes and learnable weights on edges, KANs have learnable activation functions on edges and sum operation on nodes.</li>
+</ol>
+<h3 id="why-kolmogorov-arnold-networks-are-good">Why Kolmogorov-Arnold Networks are Good</h3>
+<h4 id="pros">Pros</h4>
+<ol>
+<li>Efficiency: KANs can achieve function approximation with fewer parameters, making them potentially more efficient than MLPs in terms of memory and computational requirements.</li>
+<li>Theoretical Foundation: The Kolmogorov-Arnold representation theorem provides a strong theoretical basis for KANs, ensuring that they can approximate any continuous function.</li>
+<li>Simpler Components: By breaking down multivariate functions into univariate components, KANs can leverage simpler functions, which may lead to better interpretability and understanding of the network’s behavior.</li>
+</ol>
+<h4 id="cons">Cons</h4>
+<ol>
+<li>Training Difficulty: The unique structure of KANs can make them more difficult to train compared to MLPs. Optimizing the decomposition of functions and tuning the network parameters can be challenging.</li>
+<li>Limited Popularity: KANs are not as widely used or researched as MLPs, meaning there are fewer resources, tools, and community support available for practitioners.</li>
+<li>Specialization: KANs may be more specialized and less versatile than MLPs, which can be applied to a wide range of tasks and problems due to their general-purpose design.</li>
+</ol>
+<h3 id="examples-and-applications">Examples and Applications</h3>
+<p>To illustrate the power and potential of Kolmogorov-Arnold Networks, let’s look at a few examples and applications:</p>
+<h4 id="example-1-function-approximation">Example 1: Function Approximation</h4>
+<p>Consider the problem of approximating a complex, multivariate function  f(x, y, z) . Using a KAN, we can decompose this function into univariate functions  g_i  and combine them using summation:</p>
+$$f(x, y, z) \approx \sum_{i=1}^n g_i(h_i(x) + k_i(y) + l_i(z))$$
+<p>This decomposition allows us to approximate the original function with fewer parameters and potentially more interpretability.</p>
+<h4 id="example-2-signal-processing">Example 2: Signal Processing</h4>
+<p>In signal processing, KANs can be used to decompose and reconstruct signals. By breaking down a complex signal into simpler components, KANs can help in noise reduction, feature extraction, and other signal processing tasks.</p>
+<h4 id="example-3-control-systems">Example 3: Control Systems</h4>
+<p>KANs can be applied in control systems where the goal is to model and control complex, nonlinear systems. The efficiency and theoretical foundation of KANs make them suitable for approximating the system’s behavior and designing appropriate control strategies.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Kolmogorov-Arnold Networks offer a unique (and astonishing!) and theoretically grounded approach to function approximation. While they present some challenges in terms of training and specialization, their efficiency and strong theoretical basis make them a valuable tool in specific applications.</p>
+<p>The path to mastering KANs may be less traveled than that of MLPs, but for those willing to explore this fascinating world, the rewards can be significant. Maybe we are at the dawn of a new era in data science, where Kolmogorov-Arnold Networks will play a crucial role in solving complex problems and unlocking new possibilities.</p>
+<p>If you have any questions or would like to see more examples, feel free to reach out at matheus.pestana at fgv.br :)!</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

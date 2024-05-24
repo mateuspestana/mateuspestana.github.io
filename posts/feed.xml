@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on matheus@localhost:~$</title>
+    <link>https://mateuspestana.github.io/posts/</link>
+    <description>Recent content in Posts on matheus@localhost:~$</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 24 May 2024 11:35:11 -0300</lastBuildDate><atom:link href="https://mateuspestana.github.io/posts/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KANs - New Era of Data Science</title>
+      <link>https://mateuspestana.github.io/posts/kans/</link>
+      <pubDate>Fri, 24 May 2024 11:35:11 -0300</pubDate>
+      
+      <guid>https://mateuspestana.github.io/posts/kans/</guid>
+      <description>In this blog post, I will try to explain the fascinating (but not new) world of Kolmogorov-Arnold Networks (KANs). I will explore how they differ from the more commonly known Multi-Layer Perceptrons (MLPs), discuss their strengths and weaknesses, and provide examples to illustrate their applications.
+What are Kolmogorov-Arnold Networks? Kolmogorov-Arnold Networks are named after the Kolmogorov-Arnold representation theorem. This theorem states that any continuous function of several variables can be represented as a superposition of continuous functions of one variable and addition.</description>
+      <content:encoded><![CDATA[<p>In this blog post, I will try to explain the fascinating (but not new) world of Kolmogorov-Arnold Networks (KANs). I will explore how they differ from the more commonly known Multi-Layer Perceptrons (MLPs), discuss their strengths and weaknesses, and provide examples to illustrate their applications.</p>
+<h3 id="what-are-kolmogorov-arnold-networks">What are Kolmogorov-Arnold Networks?</h3>
+<p>Kolmogorov-Arnold Networks are named after the Kolmogorov-Arnold representation theorem. This theorem states that any continuous function of several variables can be represented as a superposition of continuous functions of one variable and addition. This powerful idea forms the basis of KANs, which aim to represent complex functions using simpler, univariate functions and summation operations.</p>
+<p><strong>Too difficult? Let&rsquo;s break it down!</strong></p>
+<h4 id="explanation-level-2">Explanation Level 2</h4>
+<p>Imagine you have a complex machine that takes several inputs (like a multi-variable function). The theorem tells us that we can break down this complex machine into simpler machines (each taking only one input) and then combine their outputs to get the same result as the original complex machine.</p>
+<h4 id="explanation-level-3">Explanation Level 3</h4>
+<p>Think of baking a cake. The final cake (the complex function) is a result of several ingredients mixed together. According to the theorem, you can imagine creating the cake by first processing each ingredient separately (simple functions) and then combining them in a certain way to get the final product.</p>
+<h3 id="differences-from-multi-layer-perceptrons-mlps">Differences from Multi-Layer Perceptrons (MLPs)</h3>
+<p>While both KANs and MLPs are types of neural networks, they have some key differences:</p>
+<p>
+  <img loading="lazy" src="https://blog.paperspace.com/content/images/size/w1600/2024/05/Screenshot-2024-05-14-at-8.02.06-PM.png" alt=""  /></p>
+<ol>
+<li>Representation Theorem: KANs are based on the Kolmogorov-Arnold representation theorem, focusing on decomposing multivariate functions into univariate functions. In contrast, MLPs are based on layers of neurons with nonlinear activation functions that aim to approximate complex functions through a hierarchical structure.</li>
+<li>Network Structure: KANs typically use fewer parameters because they leverage the decomposition of functions into simpler components. MLPs, on the other hand, often require more layers and neurons to achieve similar levels of function approximation, leading to a larger number of parameters.</li>
+<li>Training Complexity: Training KANs can be more challenging due to their unique structure and the need to optimize the decomposition of functions. MLPs, while also complex, benefit from well-established training algorithms like backpropagation and various optimizers that are widely researched and understood.</li>
+<li>While we have fixed activation functions on nodes and learnable weights on edges, KANs have learnable activation functions on edges and sum operation on nodes.</li>
+</ol>
+<h3 id="why-kolmogorov-arnold-networks-are-good">Why Kolmogorov-Arnold Networks are Good</h3>
+<h4 id="pros">Pros</h4>
+<ol>
+<li>Efficiency: KANs can achieve function approximation with fewer parameters, making them potentially more efficient than MLPs in terms of memory and computational requirements.</li>
+<li>Theoretical Foundation: The Kolmogorov-Arnold representation theorem provides a strong theoretical basis for KANs, ensuring that they can approximate any continuous function.</li>
+<li>Simpler Components: By breaking down multivariate functions into univariate components, KANs can leverage simpler functions, which may lead to better interpretability and understanding of the network’s behavior.</li>
+</ol>
+<h4 id="cons">Cons</h4>
+<ol>
+<li>Training Difficulty: The unique structure of KANs can make them more difficult to train compared to MLPs. Optimizing the decomposition of functions and tuning the network parameters can be challenging.</li>
+<li>Limited Popularity: KANs are not as widely used or researched as MLPs, meaning there are fewer resources, tools, and community support available for practitioners.</li>
+<li>Specialization: KANs may be more specialized and less versatile than MLPs, which can be applied to a wide range of tasks and problems due to their general-purpose design.</li>
+</ol>
+<h3 id="examples-and-applications">Examples and Applications</h3>
+<p>To illustrate the power and potential of Kolmogorov-Arnold Networks, let’s look at a few examples and applications:</p>
+<h4 id="example-1-function-approximation">Example 1: Function Approximation</h4>
+<p>Consider the problem of approximating a complex, multivariate function  f(x, y, z) . Using a KAN, we can decompose this function into univariate functions  g_i  and combine them using summation:</p>
+$$f(x, y, z) \approx \sum_{i=1}^n g_i(h_i(x) + k_i(y) + l_i(z))$$
+<p>This decomposition allows us to approximate the original function with fewer parameters and potentially more interpretability.</p>
+<h4 id="example-2-signal-processing">Example 2: Signal Processing</h4>
+<p>In signal processing, KANs can be used to decompose and reconstruct signals. By breaking down a complex signal into simpler components, KANs can help in noise reduction, feature extraction, and other signal processing tasks.</p>
+<h4 id="example-3-control-systems">Example 3: Control Systems</h4>
+<p>KANs can be applied in control systems where the goal is to model and control complex, nonlinear systems. The efficiency and theoretical foundation of KANs make them suitable for approximating the system’s behavior and designing appropriate control strategies.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Kolmogorov-Arnold Networks offer a unique (and astonishing!) and theoretically grounded approach to function approximation. While they present some challenges in terms of training and specialization, their efficiency and strong theoretical basis make them a valuable tool in specific applications.</p>
+<p>The path to mastering KANs may be less traveled than that of MLPs, but for those willing to explore this fascinating world, the rewards can be significant. Maybe we are at the dawn of a new era in data science, where Kolmogorov-Arnold Networks will play a crucial role in solving complex problems and unlocking new possibilities.</p>
+<p>If you have any questions or would like to see more examples, feel free to reach out at matheus.pestana at fgv.br :)!</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
