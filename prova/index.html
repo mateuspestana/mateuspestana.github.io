@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR" data-prova-root="." data-theme="editorial">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Avaliação prática de Extração e Análise de Dados — FGV." />
+    <title>Avaliação prática · Extração e Análise de Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css?v=20260910-politica" />
+    <script>window.MathJax = { tex: { inlineMath: [["\\(", "\\)"], ["$", "$"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] }, options: { skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"] } };</script>
+    <script defer src="https://cdn.jsdelivr.net/pyodide/v0.28.3/full/pyodide.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script defer src="./app.js?v=20260910-politica"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">Ir para a prova</a>
+    <main class="page-shell">
+      <header class="masthead">
+        <div class="masthead-topline">
+          <p class="course-label">FGV · Extração e Análise de Dados</p>
+          <div class="masthead-controls">
+            <label class="theme-control" for="theme-select"><span>Tema visual</span>
+              <select id="theme-select" aria-label="Tema visual da prova">
+                <option value="editorial">Editorial</option>
+                <option value="cybersyn">CyberSyn · sala de operações</option>
+              </select>
+            </label>
+            <p class="professor">Prof. Matheus C. Pestana</p>
+          </div>
+        </div>
+        <div class="masthead-title">
+          <p class="assessment-label">Avaliação prática · A1</p>
+          <h1>Prova de análise<br />em <em>Python</em></h1>
+          <p class="lede">Um caderno de trabalho para ler, tratar, visualizar e interpretar dados, diretamente no navegador.</p>
+        </div>
+      </header>
+
+      <section id="identification" class="identification" aria-labelledby="identification-title">
+        <div class="identification-copy">
+          <p class="section-kicker">Antes de iniciar</p>
+          <h2 id="identification-title">Identificação do caderno</h2>
+          <p>Seu nome e sua matrícula entram automaticamente no arquivo de entrega ao final. Esta prova não envia nada sozinha.</p>
+          <p class="assessment-rule"><strong>Regra de consulta.</strong> É proibida a utilização de IA nesta prova. Se for utilizada, a prova será zerada. São permitidos exclusivamente o GitHub, o <a href="https://noai.duckduckgo.com" target="_blank" rel="noreferrer">noai.duckduckgo.com</a>, a documentação de <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noreferrer">pandas</a>, <a href="https://numpy.org/doc/" target="_blank" rel="noreferrer">NumPy</a> e <a href="https://scikit-learn.org/stable/" target="_blank" rel="noreferrer">scikit-learn</a>, Stack Overflow e YouTube. Google e qualquer outra fonte, ferramenta ou plataforma são proibidos.</p>
+          <p class="microcopy">Use o navegador em tela cheia e mantenha a conexão ativa enquanto o ambiente Python é preparado.</p>
+        </div>
+        <form id="student-form">
+          <label>Nome completo<input id="student-name" name="name" autocomplete="name" required /></label>
+          <label>Matrícula<input id="student-id" name="student-id" inputmode="numeric" autocomplete="off" required /></label>
+          <label class="full-width">Versão da prova
+            <select id="exam-select" name="exam">
+              <!-- <option value="case">Case Observatório Conexão Bairro</option> -->
+              <option value="festival">Missão Festival ViraBairro</option>
+              <!-- <option value="urbanos">Central de Serviços Urbanos</option> -->
+              <!-- <option value="cybersyn">Operação de abastecimento CyberSyn</option> -->
+            </select>
+          </label>
+          <button class="button primary" type="submit">Abrir caderno de prova <span aria-hidden="true">→</span></button>
+        </form>
+      </section>
+
+      <section id="workspace" hidden aria-live="polite">
+        <div class="workspace-bar">
+          <div class="workspace-identity"><p class="section-kicker">Caderno em andamento</p><p id="exam-label" class="exam-label">Prova</p><p id="student-label" class="student-label"></p></div>
+          <div class="actions" aria-label="Ações da prova"><button id="prepare-button" class="button primary" type="button">Preparar ambiente Python</button><button id="save-button" class="button text-button" type="button">Salvar rascunho</button><button id="export-button" class="button export-button" type="button">Baixar entrega .ipynb</button></div>
+        </div>
+        <div id="runtime-status" class="runtime-status" role="status">O ambiente ainda não foi iniciado. Ao preparar, o navegador carrega Python e as bibliotecas da disciplina.</div>
+        <div class="exam-tools">
+          <p><strong>Modo de trabalho.</strong> Use “Executar” em cada célula. Os arquivos da prova já estão disponíveis em <code>dados/</code>.</p>
+          <details id="dictionary-menu" class="dictionary-menu"><summary>Dicionário de dados <span aria-hidden="true">+</span></summary><div id="dictionary-content" class="dictionary-content">Abra para consultar os campos e os limites da base.</div></details>
+        </div>
+        <section id="notebook" class="notebook" aria-label="Caderno de prova"></section>
+      </section>
+      <footer class="footer-note">Avaliação prática · Prof. Matheus C. Pestana · FGV</footer>
+    </main>
+  </body>
+</html>

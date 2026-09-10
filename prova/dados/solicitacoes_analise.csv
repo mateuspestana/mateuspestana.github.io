@@ -1,0 +1,181 @@
+id_solicitacao,data_abertura,data_conclusao,servico,canal_entrada,regional,prioridade_informada,turno_abertura,hora_abertura,demanda_prevista,equipe_disponivel,distancia_km,anexos_enviados,tempo_estimado_horas,custo_estimado_reais,tempo_resolucao_horas,mes_abertura,dia_semana
+SU-0001,2026-02-06 09:15,2026-02-09 02:15,Reparo de calçada,Telefone 156,Norte,Média,manhã,9,53,9,15.4,3,34,724.84,65.0,2026-02,sexta
+SU-0002,2026-03-20 13:00,2026-03-24 00:06,Poda preventiva,Atendimento presencial,Leste,Baixa,tarde,13,85,7,11.9,1,30,703.3,83.1,2026-03,sexta
+SU-0003,2026-03-03 07:15,2026-03-06 17:15,Poda preventiva,Telefone 156,Norte,Média,manhã,7,61,4,10.1,1,25,663.57,82.0,2026-03,terça
+SU-0004,2026-02-24 10:30,2026-02-27 09:24,Poda preventiva,Aplicativo,Leste,Alta,manhã,10,24,6,7.6,2,25,623.94,70.9,2026-02,terça
+SU-0005,2026-03-14 13:30,2026-03-17 08:24,Poda preventiva,Telefone 156,Oeste,Média,tarde,13,19,2,6.5,2,33,576.3,66.9,2026-03,sábado
+SU-0006,2026-05-07 17:45,2026-05-10 13:51,Poda preventiva,Portal web,Oeste,Baixa,noite,17,82,9,11.3,0,28,593.49,68.1,2026-05,quinta
+SU-0007,2026-03-01 10:00,2026-03-04 09:54,Reparo de calçada,Aplicativo,Oeste,Baixa,manhã,10,34,5,5.3,1,28,528.32,71.9,2026-03,domingo
+SU-0008,2026-04-13 14:00,2026-04-15 11:54,Iluminação pública,Aplicativo,Sul,Alta,tarde,14,77,5,7.3,3,13,497.64,45.9,2026-04,segunda
+SU-0009,2026-04-27 15:00,2026-05-01 07:00,Poda preventiva,Atendimento presencial,Oeste,Média,tarde,15,78,3,11.3,1,25,732.51,88.0,2026-04,segunda
+SU-0010,2026-04-02 07:30,2026-04-03 01:30,Iluminação pública,Atendimento presencial,Sul,Média,manhã,7,39,11,1.0,1,16,225.35,18.0,2026-04,quinta
+SU-0011,2026-04-25 08:30,2026-04-27 09:36,Poda preventiva,Atendimento presencial,Oeste,Alta,manhã,8,46,7,8.7,1,30,520.91,49.1,2026-04,sábado
+SU-0012,2026-04-05 11:00,2026-04-07 18:36,Poda preventiva,Atendimento presencial,Leste,Baixa,manhã,11,19,8,1.9,2,33,451.78,55.6,2026-04,domingo
+SU-0013,2026-04-19 14:15,2026-04-21 19:27,Poda preventiva,Telefone 156,Oeste,Alta,tarde,14,20,3,5.7,3,33,473.82,53.2,2026-04,domingo
+SU-0014,2026-03-12 10:15,2026-03-15 04:03,Reparo de calçada,Portal web,Sul,Baixa,manhã,10,86,11,2.3,0,34,450.07,65.8,2026-03,quinta
+SU-0015,2026-02-10 10:15,2026-02-12 16:21,Poda preventiva,Portal web,Sul,Média,manhã,10,61,6,1.3,2,22,399.63,54.1,2026-02,terça
+SU-0016,2026-03-07 14:15,2026-03-11 01:51,Poda preventiva,Portal web,Norte,Baixa,tarde,14,56,6,11.2,1,28,693.92,83.6,2026-03,sábado
+SU-0017,2026-05-04 07:15,2026-05-06 10:27,Poda preventiva,Atendimento presencial,Leste,Alta,manhã,7,52,11,10.7,2,28,581.52,51.2,2026-05,segunda
+SU-0018,2026-03-10 09:15,2026-03-12 05:09,Iluminação pública,Portal web,Norte,Baixa,manhã,9,38,6,14.2,2,21,614.33,43.9,2026-03,terça
+SU-0019,2026-04-10 14:30,2026-04-12 19:18,Coleta programada,Atendimento presencial,Norte,Baixa,tarde,14,88,9,0.7,3,20,411.26,52.8,2026-04,sexta
+SU-0020,2026-02-05 10:15,2026-02-09 02:27,Reparo de calçada,Telefone 156,Oeste,Alta,manhã,10,26,5,11.5,1,36,762.89,88.2,2026-02,quinta
+SU-0021,2026-02-08 16:00,2026-02-11 03:48,Poda preventiva,Aplicativo,Sul,Média,tarde,16,60,9,5.0,1,25,473.14,59.8,2026-02,domingo
+SU-0022,2026-03-04 09:30,2026-03-07 00:24,Poda preventiva,Atendimento presencial,Leste,Média,manhã,9,38,10,8.7,1,33,565.55,62.9,2026-03,quarta
+SU-0023,2026-02-13 16:30,2026-02-14 19:18,Iluminação pública,Portal web,Sul,Média,tarde,16,77,11,4.9,1,19,332.23,26.8,2026-02,sexta
+SU-0024,2026-03-19 14:30,2026-03-20 22:54,Coleta programada,Telefone 156,Oeste,Alta,tarde,14,21,11,13.5,2,17,525.83,32.4,2026-03,quinta
+SU-0025,2026-02-06 07:15,2026-02-08 20:09,Coleta programada,Portal web,Oeste,Média,manhã,7,54,5,3.2,2,17,454.54,60.9,2026-02,sexta
+SU-0026,2026-03-17 10:15,2026-03-19 17:33,Poda preventiva,Atendimento presencial,Sul,Média,manhã,10,79,11,14.4,1,28,611.47,55.3,2026-03,terça
+SU-0027,2026-03-16 07:00,2026-03-18 01:48,Coleta programada,Portal web,Sul,Média,manhã,7,44,11,11.2,1,20,520.93,42.8,2026-03,segunda
+SU-0028,2026-03-17 07:45,2026-03-20 03:51,Iluminação pública,Atendimento presencial,Oeste,Baixa,manhã,7,77,10,15.3,1,16,711.79,68.1,2026-03,terça
+SU-0029,2026-05-11 14:00,2026-05-13 17:24,Coleta programada,Telefone 156,Sul,Média,tarde,14,73,5,7.6,1,17,499.0,51.4,2026-05,segunda
+SU-0030,2026-04-26 13:00,2026-04-28 06:54,Coleta programada,Portal web,Oeste,Baixa,tarde,13,43,7,4.7,2,28,400.38,41.9,2026-04,domingo
+SU-0031,2026-03-05 17:45,2026-03-08 06:51,Poda preventiva,Atendimento presencial,Sul,Média,noite,17,61,10,9.1,3,30,594.23,61.1,2026-03,quinta
+SU-0032,2026-04-21 15:30,2026-04-23 19:24,Coleta programada,Atendimento presencial,Sul,Baixa,tarde,15,26,5,13.6,3,17,660.09,51.9,2026-04,terça
+SU-0033,2026-03-09 15:30,2026-03-11 20:18,Iluminação pública,Telefone 156,Leste,Baixa,tarde,15,85,10,3.6,3,16,476.64,52.8,2026-03,segunda
+SU-0034,2026-03-26 11:30,2026-03-27 20:36,Iluminação pública,Portal web,Oeste,Baixa,manhã,11,37,9,7.1,1,19,379.99,33.1,2026-03,quinta
+SU-0035,2026-02-15 15:15,2026-02-17 17:39,Coleta programada,Aplicativo,Oeste,Alta,tarde,15,42,2,12.8,0,25,539.89,50.4,2026-02,domingo
+SU-0036,2026-02-24 14:30,2026-02-28 11:18,Reparo de calçada,Atendimento presencial,Leste,Média,tarde,14,24,2,12.3,3,28,804.99,92.8,2026-02,terça
+SU-0037,2026-05-21 07:00,2026-05-24 21:54,Reparo de calçada,Atendimento presencial,Leste,Alta,manhã,7,77,7,1.8,1,39,584.76,86.9,2026-05,quinta
+SU-0038,2026-02-13 15:45,2026-02-14 05:21,Iluminação pública,Telefone 156,Sul,Média,tarde,15,34,11,9.7,0,24,331.53,13.6,2026-02,sexta
+SU-0039,2026-02-01 07:30,2026-02-04 01:42,Reparo de calçada,Portal web,Leste,Média,manhã,7,46,5,4.0,3,39,547.67,66.2,2026-02,domingo
+SU-0040,2026-05-08 07:45,2026-05-11 06:45,Reparo de calçada,Portal web,Sul,Baixa,manhã,7,74,9,5.0,2,36,534.18,71.0,2026-05,sexta
+SU-0041,2026-03-26 10:15,2026-03-29 16:09,Reparo de calçada,Portal web,Norte,Média,manhã,10,92,2,4.6,1,28,553.74,77.9,2026-03,quinta
+SU-0042,2026-04-16 08:45,2026-04-17 23:33,Iluminação pública,Portal web,Leste,Média,manhã,8,21,10,13.8,1,24,561.1,38.8,2026-04,quinta
+SU-0043,2026-02-25 10:45,2026-02-27 08:27,Iluminação pública,Telefone 156,Norte,Baixa,manhã,10,35,11,15.3,2,16,638.02,45.7,2026-02,quarta
+SU-0044,2026-02-06 17:45,2026-02-10 09:03,Reparo de calçada,Portal web,Norte,Média,noite,17,61,3,8.5,2,31,686.22,87.3,2026-02,sexta
+SU-0045,2026-02-15 13:15,2026-02-18 04:57,Poda preventiva,Aplicativo,Leste,Baixa,tarde,13,63,6,13.5,0,28,663.61,63.7,2026-02,domingo
+SU-0046,2026-05-04 11:30,2026-05-07 21:48,Reparo de calçada,Portal web,Norte,Baixa,manhã,11,60,6,5.2,1,39,582.78,82.3,2026-05,segunda
+SU-0047,2026-04-19 07:45,2026-04-23 01:45,Reparo de calçada,Aplicativo,Norte,Média,manhã,7,84,8,12.1,1,36,733.16,90.0,2026-04,domingo
+SU-0048,2026-02-08 14:45,2026-02-09 15:33,Coleta programada,Atendimento presencial,Norte,Alta,tarde,14,19,9,9.0,0,25,344.43,24.8,2026-02,domingo
+SU-0049,2026-03-02 13:30,2026-03-05 21:30,Poda preventiva,Atendimento presencial,Sul,Baixa,tarde,13,86,5,13.8,0,22,705.27,80.0,2026-03,segunda
+SU-0050,2026-02-21 08:15,2026-02-24 04:57,Reparo de calçada,Atendimento presencial,Oeste,Média,manhã,8,40,8,4.2,1,31,487.06,68.7,2026-02,sábado
+SU-0051,2026-03-15 14:45,2026-03-18 17:39,Reparo de calçada,Aplicativo,Oeste,Baixa,tarde,14,28,4,14.2,3,31,776.74,74.9,2026-03,domingo
+SU-0052,2026-03-05 10:30,2026-03-08 18:48,Reparo de calçada,Telefone 156,Oeste,Baixa,manhã,10,37,8,9.8,1,31,692.25,80.3,2026-03,quinta
+SU-0053,2026-02-02 07:00,2026-02-05 02:24,Poda preventiva,Portal web,Leste,Média,manhã,7,62,9,4.5,3,30,525.57,67.4,2026-02,segunda
+SU-0054,2026-05-08 11:00,2026-05-12 11:54,Poda preventiva,Telefone 156,Norte,Média,manhã,11,92,3,6.6,3,33,749.36,96.9,2026-05,sexta
+SU-0055,2026-04-16 08:30,2026-04-19 03:48,Reparo de calçada,Aplicativo,Norte,Alta,manhã,8,72,8,8.4,2,36,589.14,67.3,2026-04,quinta
+SU-0056,2026-05-19 08:00,2026-05-23 01:48,Reparo de calçada,Telefone 156,Oeste,Baixa,manhã,8,78,6,5.5,0,28,614.85,89.8,2026-05,terça
+SU-0057,2026-05-01 14:30,2026-05-04 04:54,Coleta programada,Telefone 156,Oeste,Baixa,tarde,14,52,4,15.3,2,23,701.59,62.4,2026-05,sexta
+SU-0058,2026-05-23 08:45,2026-05-26 12:21,Reparo de calçada,Telefone 156,Norte,Média,manhã,8,71,7,2.6,0,39,493.06,75.6,2026-05,sábado
+SU-0059,2026-05-05 17:00,2026-05-07 01:30,Iluminação pública,Portal web,Oeste,Média,noite,17,55,6,0.4,2,19,311.29,32.5,2026-05,terça
+SU-0060,2026-04-16 16:45,2026-04-19 14:57,Poda preventiva,Portal web,Leste,Baixa,tarde,16,28,4,5.9,0,30,523.13,70.2,2026-04,quinta
+SU-0061,2026-04-19 07:15,2026-04-22 04:09,Poda preventiva,Atendimento presencial,Oeste,Baixa,manhã,7,82,11,7.8,0,22,576.63,68.9,2026-04,domingo
+SU-0062,2026-05-20 07:45,2026-05-22 05:27,Poda preventiva,Portal web,Oeste,Baixa,manhã,7,32,9,12.1,0,25,540.63,45.7,2026-05,quarta
+SU-0063,2026-02-18 10:15,2026-02-21 12:39,Poda preventiva,Atendimento presencial,Leste,Média,manhã,10,67,2,5.8,1,30,596.97,74.4,2026-02,quarta
+SU-0064,2026-03-21 13:45,2026-03-22 13:15,Iluminação pública,Atendimento presencial,Sul,Média,tarde,13,57,9,3.2,2,21,292.12,23.5,2026-03,sábado
+SU-0065,2026-03-04 10:00,2026-03-07 08:24,Poda preventiva,Portal web,Sul,Baixa,manhã,10,78,6,1.7,1,25,495.66,70.4,2026-03,quarta
+SU-0066,2026-05-04 14:00,2026-05-05 18:00,Iluminação pública,Aplicativo,Norte,Alta,tarde,14,43,4,0.6,1,19,261.93,28.0,2026-05,segunda
+SU-0067,2026-04-11 09:45,2026-04-12 19:09,Coleta programada,Aplicativo,Leste,Média,manhã,9,32,5,1.4,1,25,307.68,33.4,2026-04,sábado
+SU-0068,2026-04-15 10:45,2026-04-18 18:15,Coleta programada,Portal web,Oeste,Baixa,manhã,10,93,2,9.1,1,25,668.02,79.5,2026-04,quarta
+SU-0069,2026-05-14 16:30,2026-05-17 17:42,Reparo de calçada,Telefone 156,Norte,Média,tarde,16,36,3,8.6,1,34,624.03,73.2,2026-05,quinta
+SU-0070,2026-03-02 09:45,2026-03-05 18:21,Coleta programada,Portal web,Leste,Média,manhã,9,85,2,7.9,0,28,606.46,80.6,2026-03,segunda
+SU-0071,2026-04-25 08:30,2026-04-28 00:00,Reparo de calçada,Portal web,Sul,Alta,manhã,8,30,5,14.7,1,31,660.01,63.5,2026-04,sábado
+SU-0072,2026-02-23 17:00,2026-02-27 03:24,Reparo de calçada,Portal web,Oeste,Baixa,noite,17,33,3,1.2,0,31,494.15,82.4,2026-02,segunda
+SU-0073,2026-03-10 18:15,2026-03-13 13:21,Coleta programada,Telefone 156,Norte,Baixa,noite,18,87,7,10.7,1,20,609.17,67.1,2026-03,terça
+SU-0074,2026-04-13 11:30,2026-04-17 08:00,Reparo de calçada,Atendimento presencial,Sul,Média,manhã,11,45,5,0.8,1,34,545.59,92.5,2026-04,segunda
+SU-0075,2026-05-04 10:30,2026-05-07 20:36,Reparo de calçada,Telefone 156,Norte,Média,manhã,10,49,3,1.4,2,34,542.62,82.1,2026-05,segunda
+SU-0076,2026-04-03 17:15,2026-04-07 08:15,Reparo de calçada,Atendimento presencial,Norte,Baixa,noite,17,64,9,0.5,0,36,541.32,87.0,2026-04,sexta
+SU-0077,2026-04-01 08:15,2026-04-04 15:21,Poda preventiva,Telefone 156,Leste,Baixa,manhã,8,32,4,10.0,0,30,631.11,79.1,2026-04,quarta
+SU-0078,2026-04-20 13:45,2026-04-23 02:39,Iluminação pública,Telefone 156,Sul,Baixa,tarde,13,55,3,6.4,1,16,534.22,60.9,2026-04,segunda
+SU-0079,2026-02-19 07:15,2026-02-21 22:03,Poda preventiva,Aplicativo,Sul,Média,manhã,7,73,7,3.5,2,28,483.05,62.8,2026-02,quinta
+SU-0080,2026-03-19 14:00,2026-03-22 01:24,Poda preventiva,Portal web,Norte,Baixa,tarde,14,34,7,3.8,0,33,433.78,59.4,2026-03,quinta
+SU-0081,2026-04-07 09:15,2026-04-11 03:09,Poda preventiva,Telefone 156,Norte,Média,manhã,9,59,4,15.2,1,22,838.62,89.9,2026-04,terça
+SU-0082,2026-03-03 13:30,2026-03-06 16:42,Reparo de calçada,Atendimento presencial,Sul,Média,tarde,13,29,6,5.0,2,34,556.34,75.2,2026-03,terça
+SU-0083,2026-02-17 09:30,2026-02-20 09:30,Reparo de calçada,Atendimento presencial,Sul,Média,manhã,9,59,10,7.7,3,31,613.02,72.0,2026-02,terça
+SU-0084,2026-03-11 13:15,2026-03-13 01:39,Coleta programada,Atendimento presencial,Sul,Média,tarde,13,19,5,4.1,1,25,333.91,36.4,2026-03,quarta
+SU-0085,2026-04-23 13:30,2026-04-25 12:24,Iluminação pública,Telefone 156,Leste,Média,tarde,13,57,7,15.3,1,24,609.63,46.9,2026-04,quinta
+SU-0086,2026-04-14 07:15,2026-04-16 02:57,Iluminação pública,Aplicativo,Leste,Média,manhã,7,36,4,4.2,2,21,401.5,43.7,2026-04,terça
+SU-0087,2026-04-09 18:00,2026-04-13 07:42,Poda preventiva,Telefone 156,Oeste,Média,noite,18,66,2,4.6,0,22,572.81,85.7,2026-04,quinta
+SU-0088,2026-04-16 16:00,2026-04-20 10:06,Poda preventiva,Atendimento presencial,Leste,Baixa,tarde,16,84,2,9.6,2,28,753.04,90.1,2026-04,quinta
+SU-0089,2026-02-04 13:30,2026-02-06 08:24,Iluminação pública,Atendimento presencial,Leste,Alta,tarde,13,69,2,3.1,0,21,341.79,42.9,2026-02,quarta
+SU-0090,2026-05-26 13:45,2026-05-28 09:21,Coleta programada,Telefone 156,Oeste,Média,tarde,13,31,7,5.3,1,28,436.42,43.6,2026-05,terça
+SU-0091,2026-05-10 15:00,2026-05-15 05:48,Reparo de calçada,Portal web,Oeste,Média,tarde,15,93,3,11.1,0,39,839.25,110.8,2026-05,domingo
+SU-0092,2026-05-15 18:30,2026-05-18 20:24,Coleta programada,Aplicativo,Oeste,Baixa,noite,18,89,5,8.0,0,20,569.39,73.9,2026-05,sexta
+SU-0093,2026-04-16 16:15,2026-04-19 12:15,Coleta programada,Atendimento presencial,Leste,Baixa,tarde,16,90,11,2.7,0,28,461.27,68.0,2026-04,quinta
+SU-0094,2026-03-18 18:45,2026-03-20 18:45,Coleta programada,Atendimento presencial,Norte,Média,noite,18,71,8,4.1,0,17,405.52,48.0,2026-03,quarta
+SU-0095,2026-03-08 18:45,2026-03-13 01:57,Reparo de calçada,Telefone 156,Norte,Média,noite,18,92,4,7.9,1,39,728.77,103.2,2026-03,domingo
+SU-0096,2026-02-19 08:00,2026-02-23 13:12,Reparo de calçada,Portal web,Leste,Média,manhã,8,48,2,13.2,1,36,810.33,101.2,2026-02,quinta
+SU-0097,2026-03-24 09:15,2026-03-26 21:27,Poda preventiva,Telefone 156,Sul,Alta,manhã,9,88,4,6.7,1,25,491.06,60.2,2026-03,terça
+SU-0098,2026-04-15 07:00,2026-04-18 02:30,Poda preventiva,Atendimento presencial,Norte,Média,manhã,7,48,4,13.8,0,33,653.29,67.5,2026-04,quarta
+SU-0099,2026-02-23 10:00,2026-02-26 11:54,Poda preventiva,Telefone 156,Norte,Média,manhã,10,46,4,13.7,2,25,716.26,73.9,2026-02,segunda
+SU-0100,2026-04-18 15:00,2026-04-21 16:30,Poda preventiva,Aplicativo,Leste,Alta,tarde,15,87,4,12.1,1,33,658.47,73.5,2026-04,sábado
+SU-0101,2026-04-04 09:30,2026-04-06 21:48,Iluminação pública,Atendimento presencial,Norte,Baixa,manhã,9,79,4,7.0,2,13,569.43,60.3,2026-04,sábado
+SU-0102,2026-04-21 18:00,2026-04-22 16:00,Coleta programada,Telefone 156,Oeste,Alta,noite,18,22,7,4.2,0,25,287.59,22.0,2026-04,terça
+SU-0103,2026-02-21 15:15,2026-02-24 09:09,Coleta programada,Portal web,Sul,Baixa,tarde,15,91,9,15.1,1,25,682.22,65.9,2026-02,sábado
+SU-0104,2026-03-22 15:00,2026-03-24 14:54,Coleta programada,Portal web,Oeste,Média,tarde,15,46,3,13.5,1,17,592.47,47.9,2026-03,domingo
+SU-0105,2026-03-10 15:30,2026-03-12 12:12,Iluminação pública,Aplicativo,Oeste,Baixa,tarde,15,41,8,13.2,1,13,541.39,44.7,2026-03,terça
+SU-0106,2026-02-15 16:00,2026-02-17 16:06,Coleta programada,Portal web,Norte,Média,tarde,16,22,6,12.6,0,28,520.96,48.1,2026-02,domingo
+SU-0107,2026-02-24 09:30,2026-02-27 20:18,Poda preventiva,Telefone 156,Norte,Alta,manhã,9,88,2,7.3,2,30,663.86,82.8,2026-02,terça
+SU-0108,2026-02-17 10:15,2026-02-19 11:57,Coleta programada,Aplicativo,Leste,Alta,manhã,10,73,5,15.2,1,23,614.49,49.7,2026-02,terça
+SU-0109,2026-03-24 10:45,2026-03-27 04:03,Coleta programada,Portal web,Sul,Média,manhã,10,45,9,14.4,1,25,669.79,65.3,2026-03,terça
+SU-0110,2026-05-23 09:45,2026-05-25 19:33,Reparo de calçada,Aplicativo,Leste,Média,manhã,9,18,10,5.5,2,28,516.94,57.8,2026-05,sábado
+SU-0111,2026-03-24 17:45,2026-03-26 21:27,Iluminação pública,Atendimento presencial,Oeste,Baixa,noite,17,84,6,8.5,2,24,525.58,51.7,2026-03,terça
+SU-0112,2026-02-23 11:00,2026-02-25 22:48,Iluminação pública,Aplicativo,Norte,Baixa,manhã,11,55,3,2.6,1,19,423.09,59.8,2026-02,segunda
+SU-0113,2026-03-11 13:45,2026-03-14 01:21,Poda preventiva,Atendimento presencial,Norte,Baixa,tarde,13,28,2,1.7,0,28,398.62,59.6,2026-03,quarta
+SU-0114,2026-05-03 13:15,2026-05-06 00:51,Poda preventiva,Portal web,Sul,Média,tarde,13,93,11,11.5,3,22,659.5,59.6,2026-05,domingo
+SU-0115,2026-03-11 10:15,2026-03-12 13:51,Iluminação pública,Aplicativo,Leste,Média,manhã,10,41,9,4.6,1,13,300.06,27.6,2026-03,quarta
+SU-0116,2026-03-19 18:15,2026-03-22 07:51,Coleta programada,Atendimento presencial,Norte,Baixa,noite,18,59,6,1.7,1,28,435.04,61.6,2026-03,quinta
+SU-0117,2026-04-04 15:15,2026-04-08 01:09,Poda preventiva,Portal web,Norte,Média,tarde,15,33,3,15.0,1,28,787.72,81.9,2026-04,sábado
+SU-0118,2026-02-27 09:45,2026-03-02 14:21,Poda preventiva,Atendimento presencial,Norte,Média,manhã,9,33,2,0.6,2,28,480.67,76.6,2026-02,sexta
+SU-0119,2026-04-15 11:45,2026-04-18 18:21,Poda preventiva,Atendimento presencial,Norte,Baixa,manhã,11,81,6,5.1,2,22,618.09,78.6,2026-04,quarta
+SU-0120,2026-02-05 17:00,2026-02-08 12:30,Coleta programada,Telefone 156,Sul,Média,noite,17,80,4,3.4,0,25,449.27,67.5,2026-02,quinta
+SU-0121,2026-05-09 18:45,2026-05-11 09:51,Iluminação pública,Aplicativo,Leste,Baixa,noite,18,59,6,3.9,1,19,392.08,39.1,2026-05,sábado
+SU-0122,2026-05-05 11:30,2026-05-06 21:18,Coleta programada,Portal web,Norte,Baixa,manhã,11,42,11,3.8,3,25,399.12,33.8,2026-05,terça
+SU-0123,2026-03-27 11:15,2026-03-29 11:09,Coleta programada,Telefone 156,Sul,Média,manhã,11,35,10,12.9,1,23,581.21,47.9,2026-03,sexta
+SU-0124,2026-04-20 09:30,2026-04-23 13:00,Reparo de calçada,Atendimento presencial,Oeste,Média,manhã,9,76,11,8.8,2,34,645.93,75.5,2026-04,segunda
+SU-0125,2026-02-19 09:30,2026-02-21 17:54,Poda preventiva,Portal web,Leste,Média,manhã,9,52,10,2.0,1,25,390.32,56.4,2026-02,quinta
+SU-0126,2026-04-11 13:15,2026-04-13 07:45,Iluminação pública,Portal web,Oeste,Média,tarde,13,68,2,14.5,0,16,565.11,42.5,2026-04,sábado
+SU-0127,2026-03-20 07:45,2026-03-21 12:15,Iluminação pública,Portal web,Sul,Alta,manhã,7,43,7,7.6,3,13,437.39,28.5,2026-03,sexta
+SU-0128,2026-04-10 15:15,2026-04-12 01:09,Iluminação pública,Portal web,Sul,Média,tarde,15,49,7,0.5,3,19,316.32,33.9,2026-04,sexta
+SU-0129,2026-02-09 16:00,2026-02-12 10:36,Poda preventiva,Aplicativo,Sul,Média,tarde,16,61,8,6.9,0,30,518.34,66.6,2026-02,segunda
+SU-0130,2026-03-25 18:15,2026-03-29 16:33,Reparo de calçada,Portal web,Norte,Alta,noite,18,90,2,13.8,0,36,787.8,94.3,2026-03,quarta
+SU-0131,2026-05-17 09:45,2026-05-18 21:09,Coleta programada,Portal web,Leste,Média,manhã,9,86,9,3.2,1,28,311.7,35.4,2026-05,domingo
+SU-0132,2026-03-22 18:00,2026-03-26 22:18,Reparo de calçada,Aplicativo,Sul,Baixa,noite,18,84,3,8.7,2,36,770.79,100.3,2026-03,domingo
+SU-0133,2026-05-19 16:15,2026-05-24 00:03,Reparo de calçada,Atendimento presencial,Norte,Baixa,tarde,16,91,5,1.6,2,28,648.41,103.8,2026-05,terça
+SU-0134,2026-05-23 13:45,2026-05-25 14:57,Iluminação pública,Atendimento presencial,Oeste,Média,tarde,13,68,7,6.2,1,24,438.86,49.2,2026-05,sábado
+SU-0135,2026-04-27 11:00,2026-04-29 10:30,Iluminação pública,Aplicativo,Oeste,Baixa,manhã,11,63,8,5.7,0,16,417.34,47.5,2026-04,segunda
+SU-0136,2026-05-17 11:00,2026-05-21 02:54,Reparo de calçada,Aplicativo,Norte,Baixa,manhã,11,82,10,10.8,0,34,733.68,87.9,2026-05,domingo
+SU-0137,2026-05-17 13:15,2026-05-20 12:03,Poda preventiva,Portal web,Norte,Baixa,tarde,13,82,11,10.6,2,25,645.78,70.8,2026-05,domingo
+SU-0138,2026-02-14 16:15,2026-02-16 22:45,Reparo de calçada,Aplicativo,Leste,Baixa,tarde,16,23,9,13.2,2,39,596.38,54.5,2026-02,sábado
+SU-0139,2026-05-06 17:15,2026-05-08 15:27,Coleta programada,Portal web,Norte,Média,noite,17,35,3,3.4,1,28,415.19,46.2,2026-05,quarta
+SU-0140,2026-03-09 13:00,2026-03-11 20:00,Poda preventiva,Telefone 156,Leste,Média,tarde,13,66,10,3.7,1,22,459.98,55.0,2026-03,segunda
+SU-0141,2026-05-09 08:30,2026-05-11 14:24,Poda preventiva,Aplicativo,Sul,Média,manhã,8,69,9,14.7,1,22,630.26,53.9,2026-05,sábado
+SU-0142,2026-02-20 16:30,2026-02-23 05:42,Iluminação pública,Aplicativo,Leste,Baixa,tarde,16,75,3,9.1,3,13,612.67,61.2,2026-02,sexta
+SU-0143,2026-04-10 16:00,2026-04-12 21:42,Iluminação pública,Telefone 156,Oeste,Média,tarde,16,68,5,14.3,1,24,634.66,53.7,2026-04,sexta
+SU-0144,2026-04-17 11:45,2026-04-20 16:09,Reparo de calçada,Atendimento presencial,Oeste,Baixa,manhã,11,35,5,8.5,2,36,636.07,76.4,2026-04,sexta
+SU-0145,2026-04-14 11:45,2026-04-16 13:15,Coleta programada,Aplicativo,Leste,Baixa,manhã,11,82,10,14.3,1,20,608.58,49.5,2026-04,terça
+SU-0146,2026-05-05 18:30,2026-05-08 00:24,Coleta programada,Atendimento presencial,Norte,Baixa,noite,18,50,7,8.5,2,17,554.44,53.9,2026-05,terça
+SU-0147,2026-02-23 11:45,2026-02-27 07:21,Reparo de calçada,Atendimento presencial,Oeste,Média,manhã,11,36,5,7.1,1,34,670.23,91.6,2026-02,segunda
+SU-0148,2026-05-16 18:00,2026-05-19 22:18,Reparo de calçada,Telefone 156,Leste,Média,noite,18,83,9,9.6,1,28,665.32,76.3,2026-05,sábado
+SU-0149,2026-05-01 08:00,2026-05-02 16:36,Iluminação pública,Portal web,Norte,Baixa,manhã,8,45,8,3.2,1,19,342.19,32.6,2026-05,sexta
+SU-0150,2026-05-06 13:45,2026-05-07 21:15,Iluminação pública,Portal web,Leste,Média,tarde,13,49,9,0.7,0,13,278.56,31.5,2026-05,quarta
+SU-0151,2026-02-20 17:00,2026-02-22 03:12,Iluminação pública,Atendimento presencial,Leste,Baixa,noite,17,41,11,3.7,2,13,376.98,34.2,2026-02,sexta
+SU-0152,2026-03-20 07:45,2026-03-22 22:57,Poda preventiva,Aplicativo,Leste,Média,manhã,7,24,6,10.4,2,22,636.51,63.2,2026-03,sexta
+SU-0153,2026-02-10 17:45,2026-02-11 13:51,Iluminação pública,Aplicativo,Oeste,Média,noite,17,84,10,5.2,1,21,303.22,20.1,2026-02,terça
+SU-0154,2026-05-03 14:30,2026-05-05 03:12,Iluminação pública,Portal web,Oeste,Baixa,tarde,14,67,10,4.0,3,21,410.07,36.7,2026-05,domingo
+SU-0155,2026-03-24 09:00,2026-03-27 07:54,Poda preventiva,Telefone 156,Leste,Baixa,manhã,9,52,5,12.2,1,33,677.69,70.9,2026-03,terça
+SU-0156,2026-03-01 07:30,2026-03-03 03:12,Coleta programada,Telefone 156,Leste,Baixa,manhã,7,32,6,1.0,1,23,336.52,43.7,2026-03,domingo
+SU-0157,2026-02-15 16:45,2026-02-19 13:15,Reparo de calçada,Atendimento presencial,Leste,Baixa,tarde,16,21,5,4.5,0,39,594.04,92.5,2026-02,domingo
+SU-0158,2026-03-26 18:30,2026-03-29 12:18,Poda preventiva,Aplicativo,Oeste,Baixa,noite,18,55,6,3.8,1,22,477.6,65.8,2026-03,quinta
+SU-0159,2026-04-20 08:00,2026-04-22 08:06,Coleta programada,Aplicativo,Norte,Baixa,manhã,8,78,3,2.9,3,20,435.58,48.1,2026-04,segunda
+SU-0160,2026-02-24 17:45,2026-02-25 22:51,Iluminação pública,Aplicativo,Sul,Média,noite,17,66,5,4.1,2,16,358.35,29.1,2026-02,terça
+SU-0161,2026-03-20 16:45,2026-03-23 05:15,Reparo de calçada,Aplicativo,Sul,Alta,tarde,16,43,8,13.7,3,36,691.89,60.5,2026-03,sexta
+SU-0162,2026-04-22 11:15,2026-04-25 05:57,Poda preventiva,Atendimento presencial,Leste,Baixa,manhã,11,86,8,6.8,1,33,529.95,66.7,2026-04,quarta
+SU-0163,2026-03-15 11:45,2026-03-16 17:27,Iluminação pública,Telefone 156,Oeste,Alta,manhã,11,30,5,7.4,1,13,400.44,29.7,2026-03,domingo
+SU-0164,2026-03-10 07:45,2026-03-13 02:09,Iluminação pública,Telefone 156,Norte,Baixa,manhã,7,69,10,11.7,1,24,646.93,66.4,2026-03,terça
+SU-0165,2026-04-15 08:15,2026-04-17 19:51,Poda preventiva,Atendimento presencial,Leste,Média,manhã,8,32,6,5.3,2,25,480.89,59.6,2026-04,quarta
+SU-0166,2026-04-19 08:30,2026-04-21 09:00,Coleta programada,Telefone 156,Norte,Baixa,manhã,8,41,6,1.4,2,23,402.19,48.5,2026-04,domingo
+SU-0167,2026-02-17 17:45,2026-02-19 14:51,Iluminação pública,Telefone 156,Oeste,Média,noite,17,67,5,3.2,1,19,379.41,45.1,2026-02,terça
+SU-0168,2026-05-20 15:00,2026-05-21 14:18,Iluminação pública,Aplicativo,Leste,Média,tarde,15,27,8,12.6,3,16,452.77,23.3,2026-05,quarta
+SU-0169,2026-03-02 18:45,2026-03-05 17:15,Iluminação pública,Aplicativo,Leste,Baixa,noite,18,45,3,0.6,3,24,476.72,70.5,2026-03,segunda
+SU-0170,2026-04-05 15:00,2026-04-08 13:12,Poda preventiva,Atendimento presencial,Leste,Baixa,tarde,15,25,6,6.9,1,30,597.65,70.2,2026-04,domingo
+SU-0171,2026-02-03 07:45,2026-02-05 20:51,Iluminação pública,Portal web,Leste,Média,manhã,7,34,2,13.4,3,21,673.23,61.1,2026-02,terça
+SU-0172,2026-02-03 16:30,2026-02-05 16:06,Poda preventiva,Aplicativo,Norte,Média,tarde,16,24,7,1.2,1,28,374.63,47.6,2026-02,terça
+SU-0173,2026-04-26 16:00,2026-04-27 22:12,Iluminação pública,Aplicativo,Norte,Alta,tarde,16,26,4,14.0,1,24,529.62,30.2,2026-04,domingo
+SU-0174,2026-04-10 11:15,2026-04-12 20:15,Iluminação pública,Portal web,Oeste,Baixa,manhã,11,90,7,3.9,1,13,425.9,57.0,2026-04,sexta
+SU-0175,2026-05-03 17:00,2026-05-06 07:12,Coleta programada,Aplicativo,Norte,Baixa,noite,17,33,6,10.0,1,28,590.89,62.2,2026-05,domingo
+SU-0176,2026-03-05 16:15,2026-03-08 23:45,Reparo de calçada,Portal web,Oeste,Baixa,tarde,16,89,10,2.3,0,36,509.61,79.5,2026-03,quinta
+SU-0177,2026-05-14 07:45,2026-05-17 14:09,Poda preventiva,Portal web,Oeste,Alta,manhã,7,66,4,14.0,1,28,751.25,78.4,2026-05,quinta
+SU-0178,2026-05-13 08:00,2026-05-16 01:18,Poda preventiva,Aplicativo,Oeste,Média,manhã,8,29,3,3.8,0,25,501.45,65.3,2026-05,quarta
+SU-0179,2026-02-24 16:00,2026-02-27 23:42,Reparo de calçada,Telefone 156,Oeste,Média,tarde,16,50,8,7.3,1,28,629.27,79.7,2026-02,terça
+SU-0180,2026-04-15 11:30,2026-04-18 20:18,Poda preventiva,Atendimento presencial,Norte,Baixa,manhã,11,74,6,3.5,1,30,583.48,80.8,2026-04,quarta
