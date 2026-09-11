@@ -6,7 +6,7 @@ const EXAMS = {
   //   dataFiles: ["publicacoes_brutas.csv", "publicacoes_analise.csv"],
   // },
   festival: {
-    title: "A1 prática — Missão Festival ViraBairro",
+    title: "Simulado — Missão Festival ViraBairro",
     file: "prova-a1-festival-virabairro.ipynb",
     dictionary: "dados/dicionario-festival-virabairro.md",
     dataFiles: ["publicacoes_brutas.csv", "publicacoes_analise.csv"],
@@ -481,5 +481,8 @@ const identity = (() => { try { return JSON.parse(localStorage.getItem(STORAGE_K
 if (identity) {
   $("#student-name").value = identity.name || "";
   $("#student-id").value = identity.studentId || "";
-  $("#exam-select").value = identity.examKey || "case";
+  const examSelect = $("#exam-select");
+  if ([...examSelect.options].some((option) => option.value === identity.examKey)) {
+    examSelect.value = identity.examKey;
+  }
 }
