@@ -1,28 +1,28 @@
 const EXAMS = {
-  // case: {
-  //   title: "A1 prática — Case Observatório Conexão Bairro",
-  //   file: "prova-a1-case.ipynb",
-  //   dictionary: "dados/dicionario-de-dados.md",
-  //   dataFiles: ["publicacoes_brutas.csv", "publicacoes_analise.csv"],
-  // },
+  case: {
+    title: "A1 prática — Case Observatório Conexão Bairro",
+    file: "prova-a1-case.ipynb",
+    dictionary: "dados/dicionario-de-dados.md",
+    dataFiles: ["publicacoes_brutas.csv", "publicacoes_analise.csv"],
+  },
   festival: {
-    title: "A1 Simulada — Missão Festival ViraBairro",
+    title: "A1 prática — Missão Festival ViraBairro",
     file: "prova-a1-festival-virabairro.ipynb",
     dictionary: "dados/dicionario-festival-virabairro.md",
     dataFiles: ["publicacoes_brutas.csv", "publicacoes_analise.csv"],
   },
-  // urbanos: {
-  //   title: "A1 prática — Central de Serviços Urbanos",
-  //   file: "prova-a1-central-servicos-urbanos.ipynb",
-  //   dictionary: "dados/dicionario-solicitacoes-urbanas.md",
-  //   dataFiles: ["solicitacoes_brutas.csv", "solicitacoes_analise.csv"],
-  // },
-  // cybersyn: {
-  //   title: "A1 prática — Operação de abastecimento CyberSyn",
-  //   file: "prova-a1-cybersyn-abastecimento.ipynb",
-  //   dictionary: "dados/dicionario-cybersyn-abastecimento.md",
-  //   dataFiles: ["carregamentos_brutos.csv", "carregamentos_analise.csv"],
-  // },
+  urbanos: {
+    title: "A1 prática — Central de Serviços Urbanos",
+    file: "prova-a1-central-servicos-urbanos.ipynb",
+    dictionary: "dados/dicionario-solicitacoes-urbanas.md",
+    dataFiles: ["solicitacoes_brutas.csv", "solicitacoes_analise.csv"],
+  },
+  cybersyn: {
+    title: "A1 prática — Operação de abastecimento CyberSyn",
+    file: "prova-a1-cybersyn-abastecimento.ipynb",
+    dictionary: "dados/dicionario-cybersyn-abastecimento.md",
+    dataFiles: ["carregamentos_brutos.csv", "carregamentos_analise.csv"],
+  },
 };
 
 const STORAGE_KEY = "fgv-prova-browser-v1";

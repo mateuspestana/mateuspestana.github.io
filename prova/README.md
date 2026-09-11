@@ -1,16 +1,26 @@
-# A1 prática — Case Observatório Conexão Bairro
+# Ambiente de prova no navegador
 
-Esta pasta contém a prova prática de Extração e Análise de Dados.
+Protótipo estático para executar três versões da A1 diretamente no navegador com [Pyodide](https://pyodide.org/). Ele usa os notebooks e CSVs desta mesma pasta, sem instalar Python na máquina do aluno.
 
-Abra `prova-a1-case.ipynb` no ambiente de navegador e siga as orientações do primeiro bloco. A prova vale **6,0 pontos**, em quatro questões independentes:
+## Teste local
 
-- Questão 1: 0,5 ponto;
-- Questão 2: 1,5 ponto;
-- Questão 3: 1,5 ponto;
-- Questão 4: 2,5 pontos.
+Na raiz do repositório, sirva os arquivos por HTTP e abra o endereço indicado no navegador:
 
-O ambiente Python e as bibliotecas já são carregados pelo navegador. Ao final, baixe o `.ipynb` gerado automaticamente e abra-o no VS Code para conferir a entrega.
+```bash
+python3 -m http.server 8000
+```
 
-**IA é proibida nesta prova. Se for utilizada, a prova será zerada.** A consulta é permitida exclusivamente no GitHub, em [noai.duckduckgo.com](https://noai.duckduckgo.com), na documentação oficial de [pandas](https://pandas.pydata.org/docs/), [NumPy](https://numpy.org/doc/) e [scikit-learn](https://scikit-learn.org/stable/), no Stack Overflow e no YouTube. Google e qualquer outra fonte, ferramenta ou plataforma são proibidos.
+Depois, acesse `http://localhost:8000/prova/navegador/`.
 
-Os dados são sintéticos e foram criados apenas para esta avaliação. A unidade de análise é uma publicação do perfil fictício Observatório Conexão Bairro; eles não representam desempenho real de pessoas, organizações ou plataformas.
+Abrir `index.html` diretamente com `file://` não funciona: o navegador bloqueia o carregamento dos notebooks e CSVs locais nesse modo.
+
+## Entrega e privacidade
+
+- Nome, matrícula e rascunho são salvos apenas no armazenamento local do navegador.
+- Ao baixar a entrega, a identificação é incluída nos metadados do `.ipynb` e no nome do arquivo, que é formado automaticamente.
+- Antes de enviar, o estudante deve abrir o arquivo baixado no VS Code e confirmar suas respostas, código e resultados.
+- Não há servidor, login, envio automático ou painel do docente. Para receber entregas centralmente, publique a página e defina um canal de envio (por exemplo, atividade no Moodle/Google Classroom) ou acrescente um backend autenticado.
+
+## Limites do piloto
+
+Na primeira inicialização, o Pyodide e as bibliotecas científicas são baixados pelo navegador. É recomendável testar em computadores da sala, em rede estável e navegador atualizado, antes de aplicar a avaliação. A página roda os dados e o código no dispositivo do estudante; portanto, não é um ambiente de prova com bloqueio de consulta, fiscalização ou garantia de integridade.
