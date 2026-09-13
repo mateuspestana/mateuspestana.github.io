@@ -17,12 +17,12 @@ const EXAMS = {
   //   dictionary: "dados/dicionario-solicitacoes-urbanas.md",
   //   dataFiles: ["solicitacoes_brutas.csv", "solicitacoes_analise.csv"],
   // },
-  // cybersyn: {
-  //   title: "A1 prática — Operação de abastecimento CyberSyn",
-  //   file: "prova-a1-cybersyn-abastecimento.ipynb",
-  //   dictionary: "dados/dicionario-cybersyn-abastecimento.md",
-  //   dataFiles: ["carregamentos_brutos.csv", "carregamentos_analise.csv"],
-  // },
+// cybersyn: {
+//    title: "A1 prática — Operação de abastecimento CyberSyn",
+//    file: "prova-a1-cybersyn-abastecimento.ipynb",
+ //   dictionary: "dados/dicionario-cybersyn-abastecimento.md",
+ //   dataFiles: ["carregamentos_brutos.csv", "carregamentos_analise.csv"],
+  //},
 };
 
 const STORAGE_KEY = "fgv-prova-browser-v1";
@@ -46,7 +46,7 @@ function status(message, kind = "") {
 }
 
 function applyTheme(theme) {
-  const selectedTheme = theme === "cybersyn" ? "cybersyn" : "editorial";
+  const selectedTheme = ["editorial", "cybersyn", "pink", "hacker", "win98", "arcade", "caderno", "solarized", "gameboy", "bauhaus", "gugoucolabi"].includes(theme) ? theme : "editorial";
   document.documentElement.dataset.theme = selectedTheme;
   $("#theme-select").value = selectedTheme;
 }

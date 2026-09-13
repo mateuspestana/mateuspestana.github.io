@@ -9,14 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css?v=20260910-politica" />
+    <link rel="stylesheet" href="./style.css?v=20260913-temas-2" />
     <script>window.MathJax = { tex: { inlineMath: [["\\(", "\\)"], ["$", "$"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] }, options: { skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"] } };</script>
     <script defer src="https://cdn.jsdelivr.net/pyodide/v0.28.3/full/pyodide.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <script defer src="./app.js?v=20260910-politica"></script>
+    <script defer src="./app.js?v=20260913-temas-2"></script>
   </head>
   <body>
     <a class="skip-link" href="#workspace">Ir para a prova</a>
@@ -28,7 +28,16 @@
             <label class="theme-control" for="theme-select"><span>Tema visual</span>
               <select id="theme-select" aria-label="Tema visual da prova">
                 <option value="editorial">Editorial</option>
-                <option value="cybersyn">CyberSyn · sala de operações</option>
+                <option value="cybersyn">CyberSyn</option>
+                <option value="pink">Pink</option>
+                <option value="hacker">Hacker</option>
+                <option value="win98">Win98</option>
+                <option value="arcade">Arcade</option>
+                <option value="caderno">Caderno</option>
+                <option value="solarized">Solarized</option>
+                <option value="gameboy">Game Boy</option>
+                <option value="bauhaus">Bauhaus</option>
+                <option value="gugoucolabi">GugouColabi</option>
               </select>
             </label>
             <p class="professor">Prof. Matheus C. Pestana</p>
@@ -55,9 +64,9 @@
           <label class="full-width">Versão da prova
             <select id="exam-select" name="exam">
               <!-- <option value="case">Case Observatório Conexão Bairro</option> -->
-              <option value="festival">Missão Festival ViraBairro</option>
+              <option value="festival">SIMULADO: Missão Festival ViraBairro</option>
               <!-- <option value="urbanos">Central de Serviços Urbanos</option> -->
-              <!-- <option value="cybersyn">Operação de abastecimento CyberSyn</option> -->
+	      <!-- <option value="cybersyn">Operação de abastecimento CyberSyn</option> -->
             </select>
           </label>
           <button class="button primary" type="submit">Abrir caderno de prova <span aria-hidden="true">→</span></button>

@@ -93,7 +93,9 @@ form .button { justify-self: start; margin-top: 4px; }
 .dictionary-document table { width: 100%; border-collapse: collapse; font-size: .73rem; }
 .dictionary-document th, .dictionary-document td { padding: 6px; border: 1px solid #b7b5aa; text-align: left; vertical-align: top; }
 
-.notebook { display: grid; gap: 16px; }
+.notebook { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.notebook > * { min-width: 0; }
+.markdown-cell, .dictionary-content { overflow-wrap: anywhere; }
 .markdown-cell { position: relative; padding: 28px clamp(19px, 4vw, 42px) 30px; background: #f6f3eb; border-top: 1px solid #c8c5ba; border-bottom: 1px solid #c8c5ba; }
 .markdown-cell:first-child { padding-top: 43px; border-top: 4px solid var(--ink); }
 .markdown-cell h1 { max-width: 680px; margin: 0 0 16px; font-size: clamp(2rem, 4vw, 3.55rem); line-height: 1.02; }
@@ -185,6 +187,249 @@ form .button { justify-self: start; margin-top: 4px; }
 [data-theme="cybersyn"] .output { border-color: #36513a; }
 [data-theme="cybersyn"] .output-result { border-color: #36513a; background: #e8ede1; color: #172017; }
 [data-theme="cybersyn"] .footer-note { border-color: #536151; }
+
+/* Temas opcionais: papelaria rosa, terminal e inspiração no Windows 98.
+   Densidade preservada; sem movimento automático durante a prova. */
+[data-theme="pink"] {
+  --paper: #fff0f5; --ink: #50263b; --muted: #81556b; --line: #deb4c5;
+  --acid: #ffd1e3; --acid-deep: #a02c60; --night: #28131f; --night-2: #3b2030;
+  --terminal: #ffe0ee; --terminal-muted: #d9a9c0; --warning: #99334b;
+  --surface: #fffafd; --panel: #f9e2ec; --field: #fffafd;
+  --button-bg: #92234f; --button-fg: #fff5f9; --code-line: #795166;
+  --alert-bg: #fbe0e7; --alert-fg: #782b42; color-scheme: light;
+}
+[data-theme="hacker"] {
+  --paper: #050a07; --ink: #d0edda; --muted: #93bfa2; --line: #31543d;
+  --acid: #6df59b; --acid-deep: #6df59b; --night: #020604; --night-2: #09170f;
+  --terminal: #8bffb4; --terminal-muted: #89bd9b; --warning: #ffb895;
+  --surface: #09130d; --panel: #0c1c12; --field: #050e08;
+  --button-bg: #6df59b; --button-fg: #04210d; --code-line: #31543d;
+  --alert-bg: #291c13; --alert-fg: #ffcfaf; color-scheme: dark;
+  font-family: "DM Mono", ui-monospace, monospace;
+}
+[data-theme="win98"] {
+  --paper: #008080; --ink: #171717; --muted: #454545; --line: #808080;
+  --acid: #ffffff; --acid-deep: #000080; --night: #101010; --night-2: #000080;
+  --terminal: #eeeeee; --terminal-muted: #ffffff; --warning: #9b2020;
+  --surface: #ffffff; --panel: #c0c0c0; --field: #ffffff;
+  --button-bg: #c0c0c0; --button-fg: #171717; --code-line: #808080;
+  --alert-bg: #ffffdf; --alert-fg: #551515; color-scheme: light;
+  font-family: Tahoma, "MS Sans Serif", Arial, sans-serif;
+}
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .identification,
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .answer-cell,
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .dictionary-document {
+  background: var(--panel); border-color: var(--line); box-shadow: none;
+}
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) :is(.lede, form label, .dictionary-content) { color: var(--ink); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) :is(.assessment-label, .section-kicker, .exam-tools code) { color: var(--acid-deep); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) :is(input, select, .answer-cell textarea) {
+  background: var(--field); color: var(--ink); border-color: var(--line);
+}
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) :is(input, select, textarea):focus {
+  outline: 2px solid var(--acid-deep); outline-offset: 2px; box-shadow: none;
+}
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .markdown-cell { background: var(--surface); border-color: var(--line); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .markdown-cell code { background: var(--panel); color: var(--ink); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) :is(.markdown-cell, .dictionary-document) a { color: var(--acid-deep); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) :is(.button.primary, .export-button) {
+  background: var(--button-bg); color: var(--button-fg); border-color: var(--line);
+}
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) :is(.button.primary, .export-button):hover { filter: brightness(1.12); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .runtime-status { background: var(--panel); color: var(--ink); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .runtime-status.ready { border-color: var(--acid-deep); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) :is(.assessment-rule, .runtime-status.error) {
+  background: var(--alert-bg); color: var(--alert-fg); border-color: var(--warning);
+}
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) :is(.code-cell, .code-head, .output, .output-result) { border-color: var(--code-line); box-shadow: none; }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .code-input { background-image: none; }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .code-input::selection { background: var(--acid); color: var(--night); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .output { background: var(--night); color: var(--terminal); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .output.error-output { background: #331a16; color: #ffd9cc; }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) .output-result { background: var(--surface); color: var(--ink); }
+:is([data-theme="pink"], [data-theme="hacker"], [data-theme="win98"]) :is(.dictionary-document, .output-result) :is(th, td) { border-color: var(--line); }
+
+/* Pink: textura de papelaria e contorno de costura. */
+[data-theme="pink"] body { background-image: repeating-linear-gradient(90deg, transparent 0 23px, #f5dce7 23px 24px); background-size: auto; }
+[data-theme="pink"] .masthead { border-bottom: 3px double var(--line); }
+[data-theme="pink"] h1 em { color: #a02c60; }
+[data-theme="pink"] :is(.identification, .markdown-cell, .answer-cell) { border: 1px solid var(--line); border-radius: 14px; }
+[data-theme="pink"] .identification { outline: 1px dashed #d79cb4; outline-offset: -7px; }
+[data-theme="pink"] :is(.button, input, select, textarea, .code-cell) { border-radius: 7px; }
+[data-theme="pink"] .markdown-cell:first-child { border-top: 4px solid #cf81a1; }
+
+/* Hacker: o caderno inteiro assume a linguagem do terminal. */
+[data-theme="hacker"] body { background-image: none; }
+[data-theme="hacker"] :is(h1, h2, h3, .exam-label, .answer-cell label, input, select, .answer-cell textarea) { font-family: "DM Mono", ui-monospace, monospace; }
+[data-theme="hacker"] h1 { font-size: clamp(2rem, 5.6vw, 4rem); letter-spacing: -.045em; line-height: 1.16; }
+[data-theme="hacker"] h1 em { font-style: normal; }
+[data-theme="hacker"] .masthead { border-bottom: 2px solid var(--acid); }
+[data-theme="hacker"] .identification { border: 1px solid var(--line); }
+[data-theme="hacker"] .markdown-cell:first-child { border-top: 3px solid var(--acid); }
+[data-theme="hacker"] .code-cell { border-left: 3px solid var(--acid); }
+[data-theme="hacker"] .code-head span::before { content: "> "; }
+
+/* Win98: relevo de controles e barras de título, sem janelas falsas. */
+[data-theme="win98"] body { background-image: none; }
+[data-theme="win98"] .page-shell { padding-inline: 16px; background: #c0c0c0; border: 2px solid; border-color: #ffffff #404040 #404040 #ffffff; margin-top: 18px; }
+[data-theme="win98"] :is(h1, h2, h3, .exam-label, .answer-cell label, .button, input, select, .answer-cell textarea) { font-family: Tahoma, "MS Sans Serif", Arial, sans-serif; }
+[data-theme="win98"] h1 { font-size: clamp(2rem, 5vw, 3.6rem); letter-spacing: -.04em; line-height: 1.14; font-weight: 700; }
+[data-theme="win98"] h1 em { font-style: normal; }
+[data-theme="win98"] .masthead-topline { padding: 10px; margin-bottom: 24px; background: linear-gradient(90deg, #000080, #1084d0); color: #ffffff; }
+[data-theme="win98"] :is(.professor, .theme-control) { color: #ffffff; }
+[data-theme="win98"] .theme-control select { background: #ffffff; color: #171717; }
+[data-theme="win98"] :is(.identification, .answer-cell, .code-cell, .dictionary-document) { border: 2px solid; border-color: #ffffff #808080 #808080 #ffffff; }
+[data-theme="win98"] :is(.button, .button.primary, .export-button) { background: #c0c0c0; color: #171717; border: 2px solid; border-color: #ffffff #404040 #404040 #ffffff; box-shadow: inset -1px -1px #808080; }
+[data-theme="win98"] .button:hover { transform: none; filter: none; }
+[data-theme="win98"] .button:active { border-color: #404040 #ffffff #ffffff #404040; box-shadow: inset 1px 1px #808080; }
+[data-theme="win98"] :is(input, select, .answer-cell textarea, .markdown-cell) { border: 2px solid; border-color: #808080 #ffffff #ffffff #808080; }
+[data-theme="win98"] .code-head { background: #000080; }
+[data-theme="win98"] .code-head span::before { content: ""; }
+[data-theme="win98"] .code-input { font-family: "Courier New", monospace; }
+[data-theme="win98"] .footer-note { color: #333333; }
+
+/* Temas extras para o simulado: cada um preserva contraste e o espaço de escrita. */
+[data-theme="arcade"] {
+  --paper: #16102f; --ink: #f4efff; --muted: #c2b9db; --line: #584b88;
+  --acid: #f6c945; --acid-deep: #f6c945; --night: #090717; --night-2: #211a49;
+  --terminal: #e9e2ff; --terminal-muted: #b8abd9; --warning: #ff9b7a;
+  --surface: #211a49; --panel: #2a2159; --field: #171130;
+  --button-bg: #f6c945; --button-fg: #2a1743; --code-line: #7061aa;
+  --alert-bg: #48241e; --alert-fg: #ffd7c9; color-scheme: dark;
+}
+[data-theme="caderno"] {
+  --paper: #f7f4e8; --ink: #21395b; --muted: #526a87; --line: #bdcce0;
+  --acid: #e4efff; --acid-deep: #1e5fa8; --night: #14253c; --night-2: #1e3552;
+  --terminal: #dcecff; --terminal-muted: #a9c2e0; --warning: #ae3d44;
+  --surface: #fffefa; --panel: #edf3fa; --field: #fffefa;
+  --button-bg: #1e5fa8; --button-fg: #ffffff; --code-line: #4f739e;
+  --alert-bg: #fff0ed; --alert-fg: #7b2c34; color-scheme: light;
+}
+[data-theme="solarized"] {
+  --paper: #fdf6e3; --ink: #586e75; --muted: #839496; --line: #d6cfae;
+  --acid: #b58900; --acid-deep: #268bd2; --night: #002b36; --night-2: #073642;
+  --terminal: #eee8d5; --terminal-muted: #93a1a1; --warning: #dc322f;
+  --surface: #fef9e9; --panel: #eee8d5; --field: #fffdf5;
+  --button-bg: #268bd2; --button-fg: #fdf6e3; --code-line: #586e75;
+  --alert-bg: #f8e4dc; --alert-fg: #8b2927; color-scheme: light;
+}
+[data-theme="gameboy"] {
+  --paper: #b9ca7c; --ink: #173627; --muted: #456240; --line: #526f42;
+  --acid: #dce99f; --acid-deep: #274f35; --night: #102c25; --night-2: #1d4531;
+  --terminal: #d7e89b; --terminal-muted: #9eb674; --warning: #743635;
+  --surface: #d9e89d; --panel: #c8da8a; --field: #e8f1b5;
+  --button-bg: #274f35; --button-fg: #e8f1b5; --code-line: #55733f;
+  --alert-bg: #ead4aa; --alert-fg: #633331; color-scheme: light;
+  font-family: "DM Mono", ui-monospace, monospace;
+}
+[data-theme="bauhaus"] {
+  --paper: #f7f2e7; --ink: #171717; --muted: #5d5d5d; --line: #171717;
+  --acid: #f4c542; --acid-deep: #d93025; --night: #1b3268; --night-2: #24458a;
+  --terminal: #f7f2e7; --terminal-muted: #dce8ff; --warning: #d93025;
+  --surface: #fffdf7; --panel: #edf0ea; --field: #fffdf7;
+  --button-bg: #d93025; --button-fg: #ffffff; --code-line: #1b3268;
+  --alert-bg: #ffe8df; --alert-fg: #97241d; color-scheme: light;
+}
+[data-theme="gugoucolabi"] {
+  --paper: #f8f9fa; --ink: #202124; --muted: #5f6368; --line: #dadce0;
+  --acid: #f9ab00; --acid-deep: #1a73e8; --night: #202124; --night-2: #303134;
+  --terminal: #f1f3f4; --terminal-muted: #bdc1c6; --warning: #b3261e;
+  --surface: #ffffff; --panel: #f1f3f4; --field: #ffffff;
+  --button-bg: #1a73e8; --button-fg: #ffffff; --code-line: #dadce0;
+  --alert-bg: #fce8e6; --alert-fg: #a50e0e; color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+}
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .identification,
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .answer-cell,
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .dictionary-document {
+  background: var(--panel); border-color: var(--line); box-shadow: none;
+}
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) :is(.lede, form label, .dictionary-content) { color: var(--ink); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) :is(.assessment-label, .section-kicker, .exam-tools code) { color: var(--acid-deep); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) :is(input, select, .answer-cell textarea) {
+  background: var(--field); color: var(--ink); border-color: var(--line);
+}
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) :is(input, select, textarea):focus {
+  outline: 2px solid var(--acid-deep); outline-offset: 2px; box-shadow: none;
+}
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .markdown-cell { background: var(--surface); border-color: var(--line); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .markdown-cell code { background: var(--panel); color: var(--ink); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) :is(.markdown-cell, .dictionary-document) a { color: var(--acid-deep); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) :is(.button.primary, .export-button) {
+  background: var(--button-bg); color: var(--button-fg); border-color: var(--line);
+}
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) :is(.button.primary, .export-button):hover { filter: brightness(1.1); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .runtime-status { background: var(--panel); color: var(--ink); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .runtime-status.ready { border-color: var(--acid-deep); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) :is(.assessment-rule, .runtime-status.error) {
+  background: var(--alert-bg); color: var(--alert-fg); border-color: var(--warning);
+}
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) :is(.code-cell, .code-head, .output, .output-result) { border-color: var(--code-line); box-shadow: none; }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .code-input { background-image: none; }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .code-input::selection { background: var(--acid); color: var(--night); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .output { background: var(--night); color: var(--terminal); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .output.error-output { background: #331a16; color: #ffd9cc; }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) .output-result { background: var(--surface); color: var(--ink); }
+:is([data-theme="arcade"], [data-theme="caderno"], [data-theme="solarized"], [data-theme="gameboy"], [data-theme="bauhaus"], [data-theme="gugoucolabi"]) :is(.dictionary-document, .output-result) :is(th, td) { border-color: var(--line); }
+
+/* Arcade: contraste de fliperama com geometria de tela CRT. */
+[data-theme="arcade"] body { background-image: radial-gradient(rgba(246, 201, 69, .13) 1px, transparent 1px); background-size: 12px 12px; }
+[data-theme="arcade"] :is(h1, h2, h3, .exam-label, .answer-cell label) { font-family: "DM Mono", ui-monospace, monospace; }
+[data-theme="arcade"] h1 em { color: var(--acid); font-style: normal; }
+[data-theme="arcade"] .masthead { border-bottom: 3px solid var(--acid); }
+[data-theme="arcade"] .code-cell { border-left: 4px solid var(--acid); }
+[data-theme="arcade"] .code-head span::before { content: "◆  "; color: var(--acid); }
+
+/* Caderno: papel pautado, margem e tinta azul. */
+[data-theme="caderno"] body { background-image: repeating-linear-gradient(to bottom, transparent 0 27px, rgba(95, 139, 189, .25) 27px 28px); }
+[data-theme="caderno"] .page-shell { border-left: 2px solid rgba(189, 66, 66, .5); padding-left: 34px; }
+[data-theme="caderno"] h1 em { color: var(--acid-deep); }
+[data-theme="caderno"] :is(.identification, .markdown-cell, .answer-cell) { border-radius: 4px; }
+[data-theme="caderno"] .markdown-cell:first-child { border-top: 4px solid #b5cce7; }
+
+/* Solarized: paleta clássica e baixa fadiga visual. */
+[data-theme="solarized"] body { background-image: none; }
+[data-theme="solarized"] h1 em { color: var(--acid); }
+[data-theme="solarized"] .masthead { border-bottom-color: var(--acid-deep); }
+[data-theme="solarized"] .code-cell { border-left: 3px solid var(--acid); }
+
+/* Game Boy: monocromático, com controles quadrados e texto de tela portátil. */
+[data-theme="gameboy"] body { background-image: none; }
+[data-theme="gameboy"] :is(h1, h2, h3, .exam-label, .answer-cell label, input, select, textarea, .button) { font-family: "DM Mono", ui-monospace, monospace; }
+[data-theme="gameboy"] h1 { font-size: clamp(2rem, 5vw, 3.8rem); letter-spacing: -.05em; line-height: 1.16; }
+[data-theme="gameboy"] h1 em { font-style: normal; color: var(--acid-deep); }
+[data-theme="gameboy"] :is(.button, input, select, textarea, .code-cell, .markdown-cell, .answer-cell) { border-radius: 0; }
+[data-theme="gameboy"] .masthead { border-bottom: 4px solid var(--ink); }
+[data-theme="gameboy"] .code-head span::before { content: "▸  "; color: var(--ink); }
+
+/* Bauhaus: composição geométrica, cores primárias e tipografia firme. */
+[data-theme="bauhaus"] body { background-image: linear-gradient(90deg, transparent 0 72%, rgba(27, 50, 104, .12) 72% 73%, transparent 73%), linear-gradient(0deg, transparent 0 86%, rgba(217, 48, 37, .14) 86% 87%, transparent 87%); background-size: 100% 100%, 100% 100%; }
+[data-theme="bauhaus"] :is(h1, h2, h3, .exam-label) { font-family: Arial, Helvetica, sans-serif; font-weight: 800; letter-spacing: -.05em; }
+[data-theme="bauhaus"] h1 em { color: var(--acid-deep); font-style: normal; }
+[data-theme="bauhaus"] .masthead { border-bottom: 5px solid var(--ink); }
+[data-theme="bauhaus"] .markdown-cell:first-child { border-top: 9px solid var(--acid); }
+[data-theme="bauhaus"] .code-cell { border-left: 8px solid var(--acid-deep); }
+[data-theme="bauhaus"] .export-button { background: var(--acid); color: var(--ink); }
+
+/* GugouColabi: inspirado em cadernos de nuvem, com ações azuis e células claras. */
+[data-theme="gugoucolabi"] body { background-image: none; }
+[data-theme="gugoucolabi"] :is(h1, h2, h3, .exam-label, .answer-cell label, input, select, textarea, .button) { font-family: Arial, Helvetica, sans-serif; }
+[data-theme="gugoucolabi"] h1 { font-size: clamp(2.3rem, 5.4vw, 4.4rem); letter-spacing: -.05em; }
+[data-theme="gugoucolabi"] h1 em { color: #f29900; font-style: normal; }
+[data-theme="gugoucolabi"] .masthead { border-bottom: 1px solid #dadce0; }
+[data-theme="gugoucolabi"] :is(.identification, .markdown-cell, .answer-cell, .dictionary-document) { border-radius: 8px; }
+[data-theme="gugoucolabi"] .code-cell { border-radius: 8px; border-color: #dadce0; box-shadow: 0 1px 2px rgba(60, 64, 67, .18); }
+[data-theme="gugoucolabi"] .code-head { background: #f8f9fa; }
+[data-theme="gugoucolabi"] .code-head span { color: #5f6368; }
+[data-theme="gugoucolabi"] .code-head span::before { content: "▸  "; color: #1a73e8; }
+[data-theme="gugoucolabi"] .button.primary.run-button { border-radius: 999px; border-color: transparent; background: #e8f0fe; color: #1967d2; }
+[data-theme="gugoucolabi"] .button.primary.run-button:hover { background: #d2e3fc; color: #174ea6; filter: none; }
+[data-theme="gugoucolabi"] .code-input { background: #202124; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
 
 @media (max-width: 760px) {
   .page-shell { width: min(100% - 28px, 1120px); padding-top: 18px; }
