@@ -36,6 +36,7 @@ let runtimePromise;
 let executionCounter = 0;
 let cellOutputs = {};
 let loadedDictionary;
+let examStartedAt;
 
 const $ = (selector) => document.querySelector(selector);
 
@@ -428,11 +429,13 @@ function exportNotebook() {
   saveDraft(false);
   const name = $("#student-name").value.trim();
   const studentId = $("#student-id").value.trim();
+  const theme = $("#theme-select").value;
+  const savedAt = loadDraft().savedAt || new Date().toISOString();
   if (!name || !studentId) return alert("Preencha nome e matrícula antes de baixar a entrega.");
   const notebook = structuredClone(originalNotebook);
   notebook.metadata = {
     ...notebook.metadata,
-    fgv_prova_browser: { nome: name, matricula: studentId, prova: currentExam, exportado_em: new Date().toISOString() },
+    fgv_prova_browser: { nome: name, matricula: studentId, prova: currentExam, tema: theme, iniciado_em: examStartedAt || savedAt, salvo_em: savedAt, exportado_em: new Date().toISOString() },
   };
   notebook.cells = notebook.cells.map((cell, index) => {
     const source = sourceOf(cell);
@@ -458,7 +461,10 @@ $("#student-form").addEventListener("submit", async (event) => {
   const studentId = $("#student-id").value.trim();
   if (!name || !studentId) return;
   const examKey = $("#exam-select").value;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ name, studentId, examKey }));
+  const previousIdentity = (() => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch { return null; } })();
+  const isSameSession = previousIdentity && previousIdentity.name === name && previousIdentity.studentId === studentId && previousIdentity.examKey === examKey;
+  examStartedAt = isSameSession && previousIdentity.iniciado_em ? previousIdentity.iniciado_em : new Date().toISOString();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ name, studentId, examKey, iniciado_em: examStartedAt }));
   $("#student-label").textContent = `${name} · Matrícula ${studentId}`;
   $("#identification").hidden = true;
   $("#workspace").hidden = false;
@@ -479,6 +485,7 @@ applyTheme(DEFAULT_THEME);
 
 const identity = (() => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch { return null; } })();
 if (identity) {
+  examStartedAt = identity.iniciado_em || null;
   $("#student-name").value = identity.name || "";
   $("#student-id").value = identity.studentId || "";
   const examSelect = $("#exam-select");
