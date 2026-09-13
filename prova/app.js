@@ -47,7 +47,7 @@ function status(message, kind = "") {
 }
 
 function applyTheme(theme) {
-  const selectedTheme = ["editorial", "cybersyn", "pink", "hacker", "win98", "arcade", "caderno", "solarized", "gameboy", "bauhaus", "gugoucolabi"].includes(theme) ? theme : "editorial";
+  const selectedTheme = ["editorial", "cybersyn", "pink", "hacker", "win98", "arcade", "caderno", "solarized", "gameboy", "bauhaus", "gugoucolabi", "dracula"].includes(theme) ? theme : "editorial";
   document.documentElement.dataset.theme = selectedTheme;
   $("#theme-select").value = selectedTheme;
 }

@@ -426,6 +426,36 @@ form .button { justify-self: start; margin-top: 4px; }
 [data-theme="gugoucolabi"] .button.primary.run-button:hover { background: #d2e3fc; color: #174ea6; filter: none; }
 [data-theme="gugoucolabi"] .code-input { background: #202124; }
 
+/* Dracula: contraste noturno em roxo, rosa e ciano. */
+[data-theme="dracula"] {
+  --paper: #282a36; --ink: #f8f8f2; --muted: #b9b8c7; --line: #6272a4;
+  --acid: #ff79c6; --acid-deep: #8be9fd; --night: #191a21; --night-2: #343746;
+  --terminal: #f8f8f2; --terminal-muted: #b9b8c7; --warning: #ff5555;
+  --surface: #343746; --panel: #303241; --field: #20212b;
+  --button-bg: #bd93f9; --button-fg: #282a36; --code-line: #6272a4;
+  --alert-bg: #4a2737; --alert-fg: #ffb8d8; color-scheme: dark;
+}
+[data-theme="dracula"] body { background-image: radial-gradient(rgba(189, 147, 249, .16) 1px, transparent 1px); background-size: 17px 17px; }
+[data-theme="dracula"] :is(.identification, .answer-cell, .dictionary-document) { background: var(--panel); border-color: var(--line); box-shadow: none; }
+[data-theme="dracula"] :is(.lede, form label, .dictionary-content) { color: var(--ink); }
+[data-theme="dracula"] :is(.assessment-label, .section-kicker, .exam-tools code, .markdown-cell a, .dictionary-document a) { color: var(--acid-deep); }
+[data-theme="dracula"] :is(input, select, .answer-cell textarea) { background: var(--field); color: var(--ink); border-color: var(--line); }
+[data-theme="dracula"] :is(input, select, textarea):focus { outline: 2px solid var(--acid); outline-offset: 2px; box-shadow: none; }
+[data-theme="dracula"] .markdown-cell { background: var(--surface); border-color: var(--line); }
+[data-theme="dracula"] .markdown-cell code { background: var(--night); color: var(--acid); }
+[data-theme="dracula"] :is(.button.primary, .export-button) { background: var(--button-bg); color: var(--button-fg); border-color: var(--button-bg); }
+[data-theme="dracula"] :is(.button.primary, .export-button):hover { filter: brightness(1.12); }
+[data-theme="dracula"] .code-cell { border-color: var(--code-line); box-shadow: 0 10px 24px rgba(0, 0, 0, .2); }
+[data-theme="dracula"] .code-head { background: #44475a; border-color: var(--code-line); }
+[data-theme="dracula"] .code-head span::before { content: "◈  "; color: var(--acid); }
+[data-theme="dracula"] .run-button { border-color: var(--acid); color: var(--acid); }
+[data-theme="dracula"] .run-button:hover { background: var(--acid); color: var(--night); }
+[data-theme="dracula"] .code-input { background: var(--night); background-image: none; }
+[data-theme="dracula"] .output { background: var(--night); color: var(--terminal); border-color: var(--code-line); }
+[data-theme="dracula"] .output-result { background: var(--surface); color: var(--ink); border-color: var(--code-line); }
+[data-theme="dracula"] :is(.assessment-rule, .runtime-status.error) { background: var(--alert-bg); color: var(--alert-fg); border-color: var(--warning); }
+[data-theme="dracula"] .runtime-status { background: var(--panel); color: var(--ink); }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
