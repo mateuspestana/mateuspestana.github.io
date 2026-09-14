@@ -4,14 +4,14 @@ Esta é uma versão alternativa da prova prática de Extração e Análise de Da
 
 Abra `prova-a1-festival-virabairro.ipynb` no ambiente de navegador e siga as orientações do primeiro bloco. A prova vale **6,0 pontos**, distribuídos em oito questões independentes:
 
-- Questão 1 — credencial de dados;
-- Questão 2 — oficina de restauro;
-- Questão 3 — painel da curadoria;
-- Questão 4 — agenda da campanha;
-- Questão 5 — mapa da programação;
-- Questão 6 — pistas da árvore;
-- Questão 7 — previsão de engajamento;
-- Questão 8 — bússola de impulso.
+- Questão 1 — diagnóstico inicial da base;
+- Questão 2 — tratamento dos registros;
+- Questão 3 — escolha de tema para divulgação;
+- Questão 4 — acompanhamento diário;
+- Questão 5 — tema e formato das publicações;
+- Questão 6 — variáveis mais usadas pela árvore;
+- Questão 7 — estimativa de engajamento;
+- Questão 8 — priorização de divulgação.
 
 O ambiente Python e as bibliotecas já são carregados pelo navegador. Ao final, baixe o `.ipynb` gerado automaticamente e abra-o no VS Code para conferir a entrega.
 
