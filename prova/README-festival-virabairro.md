@@ -2,13 +2,16 @@
 
 Esta é uma versão alternativa da prova prática de Extração e Análise de Dados.
 
-Abra `prova-a1-festival-virabairro.ipynb` no ambiente de navegador e siga as orientações do primeiro bloco. A prova vale **6,0 pontos**, distribuídos em cinco questões independentes:
+Abra `prova-a1-festival-virabairro.ipynb` no ambiente de navegador e siga as orientações do primeiro bloco. A prova vale **6,0 pontos**, distribuídos em oito questões independentes:
 
-- Questão 1 — credencial de dados: 0,5 ponto;
-- Questão 2 — oficina de restauro: 1,0 ponto;
-- Questão 3 — painel da curadoria: 1,0 ponto;
-- Questão 4 — mapa dos estilos: 1,5 ponto;
-- Questão 5 — bússola de impulso: 2,0 pontos.
+- Questão 1 — credencial de dados;
+- Questão 2 — oficina de restauro;
+- Questão 3 — painel da curadoria;
+- Questão 4 — agenda da campanha;
+- Questão 5 — mapa da programação;
+- Questão 6 — pistas da árvore;
+- Questão 7 — previsão de engajamento;
+- Questão 8 — bússola de impulso.
 
 O ambiente Python e as bibliotecas já são carregados pelo navegador. Ao final, baixe o `.ipynb` gerado automaticamente e abra-o no VS Code para conferir a entrega.
 

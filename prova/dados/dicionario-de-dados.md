@@ -29,4 +29,4 @@ As duas bases foram criadas sinteticamente para a prova. Cada linha representa u
 | `dia_semana` | Dia da semana; segunda = 0 e domingo = 6 | 0 a 6 |
 | `taxa_engajamento_pct` | Interações / alcance × 100 | porcentagem |
 
-Na Questão 4, `alcance`, reações e `taxa_engajamento_pct` só existem depois da publicação. Portanto, não podem ser usadas para prever o engajamento antecipadamente.
+Nas Questões 7 e 8, `alcance`, reações e `taxa_engajamento_pct` só existem depois da publicação. Portanto, não podem ser usadas para prever o engajamento antecipadamente.
