@@ -26,6 +26,7 @@ const EXAMS = {
 };
 
 const STORAGE_KEY = "fgv-prova-browser-v1";
+const THEME_STORAGE_KEY = "fgv-prova-browser-theme-v1";
 const APP_ROOT = document.documentElement.dataset.provaRoot || ".";
 const DEFAULT_THEME = document.documentElement.dataset.theme || "editorial";
 const asset = (path) => `${APP_ROOT.replace(/\/$/, "")}/${path}`;
@@ -46,10 +47,11 @@ function status(message, kind = "") {
   element.className = `runtime-status ${kind}`;
 }
 
-function applyTheme(theme) {
+function applyTheme(theme, { persist = false } = {}) {
   const selectedTheme = ["editorial", "cybersyn", "pink", "hacker", "win98", "arcade", "caderno", "solarized", "gameboy", "bauhaus", "gugoucolabi", "dracula"].includes(theme) ? theme : "editorial";
   document.documentElement.dataset.theme = selectedTheme;
   $("#theme-select").value = selectedTheme;
+  if (persist) localStorage.setItem(THEME_STORAGE_KEY, selectedTheme);
 }
 
 function safeText(value) {
@@ -474,14 +476,15 @@ $("#student-form").addEventListener("submit", async (event) => {
 $("#prepare-button").addEventListener("click", () => prepareRuntime().catch(() => {}));
 $("#save-button").addEventListener("click", () => saveDraft(true));
 $("#export-button").addEventListener("click", exportNotebook);
-$("#theme-select").addEventListener("change", (event) => applyTheme(event.currentTarget.value));
+$("#theme-select").addEventListener("change", (event) => applyTheme(event.currentTarget.value, { persist: true }));
 $("#dictionary-menu").addEventListener("toggle", (event) => {
   if (event.currentTarget.open) loadDictionary().catch((error) => {
     $("#dictionary-content").textContent = error.message;
   });
 });
 
-applyTheme(DEFAULT_THEME);
+const savedTheme = (() => { try { return localStorage.getItem(THEME_STORAGE_KEY); } catch { return null; } })();
+applyTheme(savedTheme || DEFAULT_THEME);
 
 const identity = (() => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch { return null; } })();
 if (identity) {
