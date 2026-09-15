@@ -1,12 +1,12 @@
-# Dicionário de dados — Missão Festival ViraBairro
+# Dicionário de dados: Questão Festival ViraBairro
 
 ## O caso e seus limites
 
-O **Observatório Conexão Bairro (OCB)** é uma iniciativa fictícia que está organizando o Festival ViraBairro: uma programação de cultura, mobilidade, saúde e trabalho construída com moradores. Nas semanas antes do evento, a equipe publicou pistas, guias e convites nas redes. Cada linha das bases representa uma dessas publicações fictícias.
+O **Observatório Conexão Bairro (OCB)** é uma organização fictícia que apoia iniciativas culturais locais. Para o Festival ViraBairro, ele trabalha com coletivos e serviços dos bairros para divulgar atividades gratuitas de cultura, mobilidade, saúde e trabalho. Nas oito semanas anteriores ao evento, a equipe publicou convites, informações de serviço, histórias de participantes e guias práticos nas redes. Cada linha das bases representa uma dessas publicações fictícias.
 
 As relações entre os campos também são sintéticas, criadas somente para permitir exercícios de inspeção, limpeza, métricas, visualização, segmentação e classificação. Os dados não representam pessoas, bairros, organizações ou plataformas reais e não permitem concluir causalidade nem generalizar para outras contas.
 
-`publicacoes_brutas.csv` é um recorte de chegada: contém falhas intencionais de padronização, duplicidade, tipos e ausências. `publicacoes_analise.csv` é a versão já tratada para as missões analíticas; ela não depende da limpeza feita pelo estudante.
+`publicacoes_brutas.csv` é um recorte de chegada: contém falhas intencionais de padronização, duplicidade, tipos e ausências. `publicacoes_analise.csv` é a versão já tratada para as questões analíticas; ela não depende da limpeza feita pelo estudante.
 
 ## Unidade de análise
 
@@ -18,7 +18,7 @@ Uma linha representa **uma publicação da campanha**. Alcance e interações s�
 | --- | --- | --- | --- |
 | `id_publicacao` | Identificador da publicação | texto | Não é feature: apenas identificador |
 | `data_publicacao` | Data e hora de publicação | data/hora | Sim, na hora de agendar |
-| `tema` | Trilha editorial da publicação | categoria | Sim |
+| `tema` | Tema da publicação | categoria | Sim |
 | `formato` | Formato da peça | categoria | Sim |
 | `alcance` | Contas alcançadas | contagem | Não |
 | `curtidas` | Curtidas recebidas | contagem | Não |
@@ -35,4 +35,4 @@ Uma linha representa **uma publicação da campanha**. Alcance e interações s�
 | `dia_semana` | Dia da semana; segunda = 0 e domingo = 6 | 0 a 6 | Sim |
 | `taxa_engajamento_pct` | `(curtidas + comentarios + compartilhamentos + salvamentos) / alcance × 100` | porcentagem | Não |
 
-Nas Missões 4 e 5, não use `id_publicacao`, alcance, reações ou taxas como características para decidir antecipadamente sobre uma nova publicação. Isso mistura informação posterior à decisão e cria **vazamento de dados**.
+Nas Questões 6, 7 e 8, não use `id_publicacao`, alcance, reações ou taxas como características para decidir antecipadamente sobre uma nova publicação. Isso mistura informação posterior à decisão e cria **vazamento de dados**.
