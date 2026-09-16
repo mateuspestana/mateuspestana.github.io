@@ -119,7 +119,9 @@ form .button { justify-self: start; margin-top: 4px; }
 .code-head span::before { content: "●  "; color: var(--acid); }
 .run-button { min-height: 30px; padding: 5px 10px; border-color: #476342; background: transparent; color: var(--acid); font-size: .68rem; }
 .run-button:hover { background: var(--acid); color: var(--night); }
-.code-input { display: block; width: 100%; min-height: 352px; resize: vertical; padding: 18px; border: 0; outline: none; background-color: var(--night); background-image: linear-gradient(rgba(182,245,72,.035) 1px, transparent 1px); background-size: 100% 1.55em; color: var(--terminal); font-size: .84rem; line-height: 1.55; tab-size: 4; caret-color: var(--acid); }
+.code-editor { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: stretch; min-height: 352px; background: var(--night); }
+.code-gutter { min-width: 3.5rem; margin: 0; padding: 18px 10px 18px 8px; overflow: hidden; border-right: 1px solid #2d4732; background: var(--night-2); color: var(--terminal-muted); font-family: "DM Mono", ui-monospace, monospace; font-size: .84rem; line-height: 1.55; text-align: right; user-select: none; }
+.code-input { display: block; width: 100%; min-width: 0; min-height: 352px; resize: vertical; padding: 18px; border: 0; outline: none; background-color: var(--night); background-image: linear-gradient(rgba(182,245,72,.035) 1px, transparent 1px); background-size: 100% 1.55em; color: var(--terminal); font-size: .84rem; line-height: 1.55; tab-size: 4; caret-color: var(--acid); }
 .code-input::selection { background: #557c3f; color: white; }
 .output { margin: 0; padding: 14px 17px; border-top: 1px solid #2d4732; background: #071009; color: #d5ead0; overflow: auto; white-space: pre-wrap; font-size: .8rem; line-height: 1.55; }
 .output:empty { display: none; }

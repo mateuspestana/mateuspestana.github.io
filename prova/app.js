@@ -208,18 +208,34 @@ function makeCodeCell(source, index, ordinal, saved) {
   button.className = "button primary run-button";
   button.type = "button";
   button.textContent = "Executar";
+  const editor = document.createElement("div");
+  editor.className = "code-editor";
+  const gutter = document.createElement("pre");
+  gutter.className = "code-gutter";
+  gutter.setAttribute("aria-hidden", "true");
   const textarea = document.createElement("textarea");
   textarea.className = "code-input";
   textarea.dataset.cellIndex = index;
   textarea.dataset.kind = "code";
   textarea.spellcheck = false;
   textarea.value = saved.code?.[index] ?? source;
+  const updateLineNumbers = () => {
+    const total = textarea.value.split("\n").length;
+    gutter.textContent = Array.from({ length: total }, (_, line) => line + 1).join("\n");
+    gutter.scrollTop = textarea.scrollTop;
+  };
+  updateLineNumbers();
   const output = document.createElement("div");
   output.className = "cell-output";
   button.addEventListener("click", () => runCell(index, textarea, output, button));
-  textarea.addEventListener("input", () => saveDraft(false));
+  textarea.addEventListener("input", () => {
+    updateLineNumbers();
+    saveDraft(false);
+  });
+  textarea.addEventListener("scroll", () => { gutter.scrollTop = textarea.scrollTop; });
   heading.append(title, button);
-  cell.append(heading, textarea, output);
+  editor.append(gutter, textarea);
+  cell.append(heading, editor, output);
   return cell;
 }
 
@@ -357,7 +373,7 @@ import matplotlib.pyplot as plt
 _stdout, _stderr = io.StringIO(), io.StringIO()
 _result, _error = None, None
 try:
-    _tree = ast.parse(student_code, mode="exec")
+    _tree = ast.parse(student_code, filename="<celula>", mode="exec")
     with redirect_stdout(_stdout), redirect_stderr(_stderr):
         if _tree.body and isinstance(_tree.body[-1], ast.Expr):
             _prefix = ast.Module(body=_tree.body[:-1], type_ignores=[])
