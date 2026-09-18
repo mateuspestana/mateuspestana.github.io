@@ -122,6 +122,24 @@ form .button { justify-self: start; margin-top: 4px; }
 .code-editor { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: stretch; min-height: 352px; background: var(--night); }
 .code-gutter { min-width: 3.5rem; margin: 0; padding: 18px 10px 18px 8px; overflow: hidden; border-right: 1px solid #2d4732; background: var(--night-2); color: var(--terminal-muted); font-family: "DM Mono", ui-monospace, monospace; font-size: .84rem; line-height: 1.55; text-align: right; user-select: none; }
 .code-input { display: block; width: 100%; min-width: 0; min-height: 352px; resize: vertical; padding: 18px; border: 0; outline: none; background-color: var(--night); background-image: linear-gradient(rgba(182,245,72,.035) 1px, transparent 1px); background-size: 100% 1.55em; color: var(--terminal); font-size: .84rem; line-height: 1.55; tab-size: 4; caret-color: var(--acid); }
+.code-editor-enhanced { display: block; min-height: 0; }
+.code-editor-enhanced .CodeMirror { width: 100%; height: 352px; background: var(--night); color: var(--terminal); font-family: "DM Mono", ui-monospace, monospace; font-size: .84rem; line-height: 1.55; }
+.code-editor-enhanced .CodeMirror-gutters { border-right: 1px solid #2d4732; background: var(--night-2); }
+.code-editor-enhanced .CodeMirror-linenumber { color: var(--terminal-muted); }
+.code-editor-enhanced .CodeMirror-lines { padding: 18px 0; }
+.code-editor-enhanced .CodeMirror pre.CodeMirror-line,
+.code-editor-enhanced .CodeMirror pre.CodeMirror-line-like { padding: 0 18px; }
+.code-editor-enhanced .CodeMirror-cursor { border-left-color: var(--acid); }
+.code-editor-enhanced .CodeMirror-selected { background: #557c3f !important; }
+.code-editor-enhanced .cm-keyword,
+.code-editor-enhanced .cm-def { color: #f6c945; }
+.code-editor-enhanced .cm-variable-2,
+.code-editor-enhanced .cm-property,
+.code-editor-enhanced .cm-builtin { color: #8be9fd; }
+.code-editor-enhanced .cm-string { color: #a8e36d; }
+.code-editor-enhanced .cm-number { color: #ffb86c; }
+.code-editor-enhanced .cm-comment { color: #8c9a88; }
+.code-editor-enhanced .cm-operator { color: #ff9b7a; }
 .code-input::selection { background: #557c3f; color: white; }
 .output { margin: 0; padding: 14px 17px; border-top: 1px solid #2d4732; background: #071009; color: #d5ead0; overflow: auto; white-space: pre-wrap; font-size: .8rem; line-height: 1.55; }
 .output:empty { display: none; }

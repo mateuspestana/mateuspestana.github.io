@@ -228,14 +228,35 @@ function makeCodeCell(source, index, ordinal, saved) {
   const output = document.createElement("div");
   output.className = "cell-output";
   button.addEventListener("click", () => runCell(index, textarea, output, button));
-  textarea.addEventListener("input", () => {
-    updateLineNumbers();
-    saveDraft(false);
-  });
-  textarea.addEventListener("scroll", () => { gutter.scrollTop = textarea.scrollTop; });
   heading.append(title, button);
   editor.append(gutter, textarea);
   cell.append(heading, editor, output);
+  if (window.CodeMirror) {
+    gutter.remove();
+    editor.classList.add("code-editor-enhanced");
+    const codeMirror = window.CodeMirror.fromTextArea(textarea, {
+      mode: "python",
+      lineNumbers: true,
+      indentUnit: 4,
+      tabSize: 4,
+      indentWithTabs: false,
+      extraKeys: {
+        Tab: (instance) => instance.execCommand("indentMore"),
+        "Shift-Tab": (instance) => instance.execCommand("indentLess"),
+      },
+    });
+    codeMirror.on("change", (instance) => {
+      textarea.value = instance.getValue();
+      saveDraft(false);
+    });
+    codeMirror.refresh();
+  } else {
+    textarea.addEventListener("input", () => {
+      updateLineNumbers();
+      saveDraft(false);
+    });
+    textarea.addEventListener("scroll", () => { gutter.scrollTop = textarea.scrollTop; });
+  }
   return cell;
 }
 
