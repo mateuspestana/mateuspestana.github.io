@@ -1,4 +1,10 @@
 const EXAMS = {
+  cybersyn: {
+    title: "Prova — Operação de abastecimento CyberSyn",
+    file: "prova-a1-cybersyn-abastecimento.ipynb",
+    dictionary: "dados/dicionario-cybersyn-abastecimento.md",
+    dataFiles: ["carregamentos_brutos.csv", "carregamentos_analise.csv"],
+  },
   // case: {
   //   title: "A1 prática — Case Observatório Conexão Bairro",
   //   file: "prova-a1-case.ipynb",
@@ -17,12 +23,6 @@ const EXAMS = {
   //   dictionary: "dados/dicionario-solicitacoes-urbanas.md",
   //   dataFiles: ["solicitacoes_brutas.csv", "solicitacoes_analise.csv"],
   // },
-// cybersyn: {
-//    title: "A1 prática — Operação de abastecimento CyberSyn",
-//    file: "prova-a1-cybersyn-abastecimento.ipynb",
- //   dictionary: "dados/dicionario-cybersyn-abastecimento.md",
- //   dataFiles: ["carregamentos_brutos.csv", "carregamentos_analise.csv"],
-  //},
 };
 
 const STORAGE_KEY = "fgv-prova-browser-v1";
