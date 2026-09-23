@@ -27,6 +27,8 @@ const EXAMS = {
 
 const STORAGE_KEY = "fgv-prova-browser-v1";
 const THEME_STORAGE_KEY = "fgv-prova-browser-theme-v1";
+// Barreira visual para a liberação da prova. Em um site estático, isto não substitui autenticação no servidor.
+const ACCESS_PASSWORD = "salvador";
 const APP_ROOT = document.documentElement.dataset.provaRoot || ".";
 const DEFAULT_THEME = document.documentElement.dataset.theme || "editorial";
 const asset = (path) => `${APP_ROOT.replace(/\/$/, "")}/${path}`;
@@ -498,7 +500,16 @@ $("#student-form").addEventListener("submit", async (event) => {
   event.preventDefault();
   const name = $("#student-name").value.trim();
   const studentId = $("#student-id").value.trim();
-  if (!name || !studentId) return;
+  const accessPassword = $("#access-password").value;
+  const accessError = $("#access-error");
+  if (!name || !studentId || !accessPassword) return;
+  if (accessPassword !== ACCESS_PASSWORD) {
+    accessError.hidden = false;
+    $("#access-password").value = "";
+    $("#access-password").focus();
+    return;
+  }
+  accessError.hidden = true;
   const examKey = $("#exam-select").value;
   const previousIdentity = (() => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch { return null; } })();
   const isSameSession = previousIdentity && previousIdentity.name === name && previousIdentity.studentId === studentId && previousIdentity.examKey === examKey;

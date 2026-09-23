@@ -34,6 +34,11 @@ def main():
         page.goto(f"{args.base_url}/prova/", wait_until="networkidle")
         page.locator("#student-name").fill("Teste de Linha")
         page.locator("#student-id").fill("123456")
+        page.locator("#access-password").fill("senha-incorreta")
+        page.get_by_role("button", name="Abrir caderno de prova").click()
+        assert page.locator("#workspace").is_hidden()
+        assert page.locator("#access-error").is_visible()
+        page.locator("#access-password").fill("salvador")
         page.get_by_role("button", name="Abrir caderno de prova").click()
         page.locator(".CodeMirror").first.wait_for()
 

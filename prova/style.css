@@ -53,7 +53,10 @@ h1 em { display: inline-block; margin-bottom: -.08em; padding-bottom: .08em; col
 .microcopy { margin-top: 22px !important; color: var(--muted); font-size: .82rem; }
 form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-content: start; }
 form label { display: grid; gap: 7px; color: #364038; font-family: "DM Mono", monospace; font-size: .69rem; letter-spacing: .04em; text-transform: uppercase; }
-.full-width, form .button { grid-column: 1 / -1; }
+.full-width, form .button, .form-note, .form-error { grid-column: 1 / -1; }
+.form-note, .form-error { margin: -7px 0 0; font-size: .76rem; line-height: 1.45; }
+.form-note { color: var(--muted); }
+.form-error { color: #8a2417; font-weight: 700; }
 input, select { min-height: 43px; padding: 9px 11px; border: 1px solid #929789; border-radius: 0; outline: none; background: #f5f2e9; color: var(--ink); font-family: Manrope, sans-serif; font-size: .9rem; letter-spacing: 0; text-transform: none; }
 input:focus, select:focus, textarea:focus { box-shadow: 0 0 0 3px rgba(182,245,72,.55); border-color: #3e4d38; }
 
