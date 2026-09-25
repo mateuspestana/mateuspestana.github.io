@@ -17,6 +17,12 @@ const EXAMS = {
     dictionary: "dados/dicionario-festival-virabairro.md",
     dataFiles: ["publicacoes_brutas.csv", "publicacoes_analise.csv"],
   },
+  gabarito: {
+    title: "Gabarito comentado — Operação de abastecimento CyberSyn",
+    file: "gabarito-cybersyn.ipynb",
+    dictionary: "dados/dicionario-cybersyn-abastecimento.md",
+    dataFiles: ["carregamentos_brutos.csv", "carregamentos_analise.csv"],
+  },
   // urbanos: {
   //   title: "A1 prática — Central de Serviços Urbanos",
   //   file: "prova-a1-central-servicos-urbanos.ipynb",
@@ -172,6 +178,7 @@ function formValue(cellIndex) {
 }
 
 function saveDraft(showMessage = true) {
+  if (currentExam === "gabarito") return;
   const draft = { code: {}, answers: {}, savedAt: new Date().toISOString() };
   document.querySelectorAll("textarea[data-cell-index]").forEach((input) => {
     const bucket = input.dataset.kind === "answer" ? draft.answers : draft.code;
@@ -220,7 +227,11 @@ function makeCodeCell(source, index, ordinal, saved) {
   textarea.dataset.cellIndex = index;
   textarea.dataset.kind = "code";
   textarea.spellcheck = false;
-  textarea.value = saved.code?.[index] ?? source;
+  textarea.value = currentExam === "gabarito" ? source : (saved.code?.[index] ?? source);
+  textarea.readOnly = currentExam === "gabarito";
+  if (currentExam === "gabarito") {
+    textarea.style.height = Math.min(1000, Math.max(260, textarea.value.split("\n").length * 20)) + "px";
+  }
   const updateLineNumbers = () => {
     const total = textarea.value.split("\n").length;
     gutter.textContent = Array.from({ length: total }, (_, line) => line + 1).join("\n");
@@ -242,11 +253,13 @@ function makeCodeCell(source, index, ordinal, saved) {
       indentUnit: 4,
       tabSize: 4,
       indentWithTabs: false,
+      readOnly: currentExam === "gabarito",
       extraKeys: {
         Tab: (instance) => instance.execCommand("indentMore"),
         "Shift-Tab": (instance) => instance.execCommand("indentLess"),
       },
     });
+    if (currentExam === "gabarito") codeMirror.setSize(null, Math.min(1000, Math.max(352, source.split("\n").length * 20)));
     codeMirror.on("change", (instance) => {
       textarea.value = instance.getValue();
       saveDraft(false);
@@ -259,6 +272,7 @@ function makeCodeCell(source, index, ordinal, saved) {
     });
     textarea.addEventListener("scroll", () => { gutter.scrollTop = textarea.scrollTop; });
   }
+  if (currentExam === "gabarito") renderSavedOutputs(originalNotebook.cells[index], output);
   return cell;
 }
 
@@ -272,7 +286,7 @@ function renderNotebook(notebook) {
   notebook.cells.forEach((cell, index) => {
     const source = sourceOf(cell);
     if (cell.cell_type === "code") container.append(makeCodeCell(source, index, ++codeOrdinal, saved));
-    else if (isAnswerCell(source)) container.append(makeAnswerCell(source, index, saved));
+    else if (isAnswerCell(source) && currentExam !== "gabarito") container.append(makeAnswerCell(source, index, saved));
     else container.append(renderMarkdown(source));
   });
   typesetMath(container);
@@ -382,6 +396,42 @@ async function renderOutput(result, outputElement) {
   }
 }
 
+function renderSavedOutputs(cell, outputElement) {
+  for (const entry of cell.outputs || []) {
+    if (entry.output_type === "stream") {
+      const block = makeOutputBlock("output");
+      block.textContent = Array.isArray(entry.text) ? entry.text.join("") : (entry.text || "");
+      outputElement.append(block);
+    }
+    if (entry.output_type === "error") {
+      const block = makeOutputBlock("output error-output");
+      block.textContent = (entry.traceback || [entry.evalue || "Erro"]).join("\n");
+      outputElement.append(block);
+    }
+    if (!entry.data) continue;
+    const htmlValue = entry.data["text/html"];
+    const imageValue = entry.data["image/png"];
+    const textValue = entry.data["text/plain"];
+    if (htmlValue) {
+      const html = document.createElement("div");
+      html.className = "output-result";
+      html.innerHTML = Array.isArray(htmlValue) ? htmlValue.join("") : htmlValue;
+      outputElement.append(html);
+    } else if (textValue && !imageValue) {
+      const block = makeOutputBlock("output");
+      block.textContent = Array.isArray(textValue) ? textValue.join("") : textValue;
+      outputElement.append(block);
+    }
+    if (imageValue) {
+      const visual = document.createElement("img");
+      visual.className = "output-image";
+      visual.alt = "Gráfico da solução de referência";
+      visual.src = "data:image/png;base64," + (Array.isArray(imageValue) ? imageValue.join("") : imageValue);
+      outputElement.append(visual);
+    }
+  }
+}
+
 async function runCell(index, textarea, outputElement, button) {
   button.disabled = true;
   button.textContent = "Executando…";
@@ -467,6 +517,16 @@ function notebookOutputs(result) {
 }
 
 function exportNotebook() {
+  if (currentExam === "gabarito") {
+    const blob = new Blob([JSON.stringify(originalNotebook, null, 2)], { type: "application/x-ipynb+json" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "gabarito-cybersyn.ipynb";
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(link.href), 30000);
+    status("Gabarito baixado com as soluções e os resultados.", "ready");
+    return;
+  }
   saveDraft(false);
   const name = $("#student-name").value.trim();
   const studentId = $("#student-id").value.trim();
@@ -498,6 +558,17 @@ function exportNotebook() {
 
 $("#student-form").addEventListener("submit", async (event) => {
   event.preventDefault();
+  const examKey = $("#exam-select").value;
+  if (examKey === "gabarito") {
+    $("#student-label").textContent = "Soluções de referência · consulta livre";
+    $("#identification").hidden = true;
+    $("#workspace").hidden = false;
+    try {
+      await loadExam(examKey);
+      status("Gabarito aberto com respostas e resultados. Prepare Python se quiser executar as células.", "ready");
+    } catch (error) { status(error.message, "error"); }
+    return;
+  }
   const name = $("#student-name").value.trim();
   const studentId = $("#student-id").value.trim();
   const accessPassword = $("#access-password").value;
@@ -510,7 +581,6 @@ $("#student-form").addEventListener("submit", async (event) => {
     return;
   }
   accessError.hidden = true;
-  const examKey = $("#exam-select").value;
   const previousIdentity = (() => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch { return null; } })();
   const isSameSession = previousIdentity && previousIdentity.name === name && previousIdentity.studentId === studentId && previousIdentity.examKey === examKey;
   examStartedAt = isSameSession && previousIdentity.iniciado_em ? previousIdentity.iniciado_em : new Date().toISOString();
@@ -524,6 +594,25 @@ $("#student-form").addEventListener("submit", async (event) => {
 $("#prepare-button").addEventListener("click", () => prepareRuntime().catch(() => {}));
 $("#save-button").addEventListener("click", () => saveDraft(true));
 $("#export-button").addEventListener("click", exportNotebook);
+function updateExamSelection() {
+  const selected = $("#exam-select").value;
+  const isGabarito = selected === "gabarito";
+  document.querySelectorAll(".identity-field").forEach((field) => { field.hidden = isGabarito; });
+  $("#student-name").required = !isGabarito;
+  $("#student-id").required = !isGabarito;
+  $("#access-password").closest("label").hidden = isGabarito;
+  $("#access-password").required = !isGabarito;
+  $("#access-password-note").hidden = isGabarito;
+  $("#access-error").hidden = true;
+  $("#assessment-rule").hidden = isGabarito;
+  $("#open-button").textContent = isGabarito ? "Abrir gabarito →" : (selected === "festival" ? "Abrir simulado →" : "Abrir caderno de prova →");
+  $("#intro-description").textContent = isGabarito
+    ? "Soluções, respostas comentadas e resultados da prova CyberSyn. Abra sem identificação e consulte ou execute as células."
+    : "Seu nome e sua matrícula entram automaticamente no arquivo de entrega ao final. Esta prova não envia nada sozinha.";
+  $("#save-button").hidden = isGabarito;
+  $("#export-button").textContent = isGabarito ? "Baixar gabarito .ipynb" : "Baixar entrega .ipynb";
+}
+$("#exam-select").addEventListener("change", updateExamSelection);
 $("#theme-select").addEventListener("change", (event) => applyTheme(event.currentTarget.value, { persist: true }));
 $("#dictionary-menu").addEventListener("toggle", (event) => {
   if (event.currentTarget.open) loadDictionary().catch((error) => {
@@ -544,3 +633,6 @@ if (identity) {
     examSelect.value = identity.examKey;
   }
 }
+const requestedExam = new URLSearchParams(location.search).get("material");
+if (EXAMS[requestedExam]) $("#exam-select").value = requestedExam;
+updateExamSelection();

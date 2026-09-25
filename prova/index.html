@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="description" content="Avaliação prática de Extração e Análise de Dados — FGV." />
-    <title>Avaliação prática · Extração e Análise de Dados</title>
+    <meta name="description" content="Simulado, prova e gabarito CyberSyn de Extração e Análise de Dados — FGV." />
+    <title>Simulado, prova e gabarito · Extração e Análise de Dados</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -19,7 +19,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/lib/codemirror.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/mode/python/python.js"></script>
-    <script defer src="./app.js?v=20260923-access-gate-1"></script>
+    <script defer src="./app.js?v=20260925-gabarito-1"></script>
   </head>
   <body>
     <a class="skip-link" href="#workspace">Ir para a prova</a>
@@ -58,13 +58,13 @@
         <div class="identification-copy">
           <p class="section-kicker">Antes de iniciar</p>
           <h2 id="identification-title">Identificação do caderno</h2>
-          <p>Seu nome e sua matrícula entram automaticamente no arquivo de entrega ao final. Esta prova não envia nada sozinha.</p>
-          <p class="assessment-rule"><strong>Regra de consulta.</strong> É proibida a utilização de IA nesta prova. Se for utilizada, a prova será zerada. São permitidos exclusivamente o GitHub, o <a href="https://noai.duckduckgo.com" target="_blank" rel="noreferrer">noai.duckduckgo.com</a>, a documentação de <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noreferrer">pandas</a>, <a href="https://numpy.org/doc/" target="_blank" rel="noreferrer">NumPy</a>, <a href="https://matplotlib.org/stable/" target="_blank" rel="noreferrer">Matplotlib</a>, <a href="https://altair-viz.github.io/" target="_blank" rel="noreferrer">Altair</a> e <a href="https://scikit-learn.org/stable/" target="_blank" rel="noreferrer">scikit-learn</a>, Stack Overflow e YouTube. Google e qualquer outra fonte, ferramenta ou plataforma são proibidos.</p>
+          <p id="intro-description">Seu nome e sua matrícula entram automaticamente no arquivo de entrega ao final. Esta prova não envia nada sozinha.</p>
+          <p id="assessment-rule" class="assessment-rule"><strong>Regra de consulta.</strong> É proibida a utilização de IA nesta prova. Se for utilizada, a prova será zerada. São permitidos exclusivamente o GitHub, o <a href="https://noai.duckduckgo.com" target="_blank" rel="noreferrer">noai.duckduckgo.com</a>, a documentação de <a href="https://pandas.pydata.org/docs/" target="_blank" rel="noreferrer">pandas</a>, <a href="https://numpy.org/doc/" target="_blank" rel="noreferrer">NumPy</a>, <a href="https://matplotlib.org/stable/" target="_blank" rel="noreferrer">Matplotlib</a>, <a href="https://altair-viz.github.io/" target="_blank" rel="noreferrer">Altair</a> e <a href="https://scikit-learn.org/stable/" target="_blank" rel="noreferrer">scikit-learn</a>, Stack Overflow e YouTube. Google e qualquer outra fonte, ferramenta ou plataforma são proibidos.</p>
           <p class="microcopy">Use o navegador em tela cheia e mantenha a conexão ativa enquanto o ambiente Python é preparado.</p>
         </div>
         <form id="student-form">
-          <label>Nome completo<input id="student-name" name="name" autocomplete="name" required /></label>
-          <label>Matrícula<input id="student-id" name="student-id" inputmode="numeric" autocomplete="off" required /></label>
+          <label class="identity-field">Nome completo<input id="student-name" name="name" autocomplete="name" required /></label>
+          <label class="identity-field">Matrícula<input id="student-id" name="student-id" inputmode="numeric" autocomplete="off" required /></label>
           <label class="full-width">Senha de acesso<input id="access-password" name="access-password" type="password" autocomplete="off" required aria-describedby="access-password-note access-error" /></label>
           <p id="access-password-note" class="form-note">Informe a senha comunicada pelo professor para abrir o caderno.</p>
           <p id="access-error" class="form-error" role="alert" hidden>A senha informada não está correta.</p>
@@ -73,10 +73,11 @@
               <option value="cybersyn">PROVA: Operação de abastecimento CyberSyn</option>
               <!-- <option value="case">Case Observatório Conexão Bairro</option> -->
               <option value="festival">SIMULADO: Missão Festival ViraBairro</option>
+              <option value="gabarito">GABARITO: Operação de abastecimento CyberSyn</option>
               <!-- <option value="urbanos">Central de Serviços Urbanos</option> -->
             </select>
           </label>
-          <button class="button primary" type="submit">Abrir caderno de prova <span aria-hidden="true">→</span></button>
+          <button id="open-button" class="button primary" type="submit">Abrir caderno de prova →</button>
         </form>
       </section>
 
